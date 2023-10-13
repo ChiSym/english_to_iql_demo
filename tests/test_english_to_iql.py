@@ -14,5 +14,4 @@ def test_query_to_iql():
     prompt = make_prompt(english_query, pre_prompt)
 
     iql = query_to_iql(prompt)
-    import ipdb; ipdb.set_trace()
     assert isinstance(iql, str)

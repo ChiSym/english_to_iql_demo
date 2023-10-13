@@ -12,4 +12,4 @@ def make_prompt(user_query: str, pre_prompt:str) -> str:
 def run_query(user_query: str):
     prompt  = make_prompt(user_query, pre_prompt)
     iql = query_to_iql(prompt)
-    subprocess.run(['sudo ./bin/run_iql_query_clj.sh', iql], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(f"sudo ./bin/run_iql_query_clj.sh '{iql}'", shell=True)
