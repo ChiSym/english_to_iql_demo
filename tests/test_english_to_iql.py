@@ -9,6 +9,7 @@ def test_make_prompt():
     assert isinstance(prompt, str)
     assert len(prompt) > len(english_query)
 
+
 def test_query_to_iql():
     english_query = "Show me 5 rows from the data"
     prompt = make_prompt(english_query, pre_prompt)
