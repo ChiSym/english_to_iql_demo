@@ -10,15 +10,15 @@
     <div class="mx-10">
     <div class="grid grid-col-3 gap-10 mt-10">
         <form class="relative col-span-3" hx-post="/post_english_query" hx-target="#iql_query">
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">English</label>
             {% block english_query %}
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">English</label>
             <textarea name="english_query" rows=2 id="english_query" placeholder="Ask a question" class="resize-none w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>    
             {% endblock %}
             <button id="english_query_button"  type="submit" class="absolute bottom-0 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Ask</button>
         </form>
         <form id="iql_query" class="relative" hx-post="/post_iql_query" hx-target="#plot">
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">InferenceQL</label>
             {% block iql_query %}
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">InferenceQL</label>
             <textarea name="iql_query" rows=13 placeholder="You can edit queries here" class="resize-none w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">{{ iql_query }}</textarea>
             <button type="submit" id="iql_query_button" class="absolute bottom-10 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Run</button>
             {% endblock %}
