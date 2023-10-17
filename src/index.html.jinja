@@ -7,26 +7,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
 </head>
 <body>
-    <form class="relative" hx-post="/post_english_query" hx-target="#iql_query">
-        {% block english_query %}
-        <input name="english_query" type="text" id="english_query" class="w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ask a question" required>
-        {% endblock %}
-        <button id="english_query_button"  type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ask</button>
-    </form>
-    <form hx-post="/post_iql_query" hx-target="#plot">
-        <div class="relative" id="iql_query">
-            {% block iql_query %}
-            <input name="iql_query" value="{{ iql_query }}" type="text" id="iql_query" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="You can edit queries here" required>
-            <button type="submit" id="iql_query_button" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Run</button>
+    <div class="mx-10">
+    <div class="grid grid-col-3 gap-10 mt-10">
+        <form class="relative col-span-3" hx-post="/post_english_query" hx-target="#iql_query">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">English</label>
+            {% block english_query %}
+            <textarea name="english_query" rows=2 id="english_query" placeholder="Ask a question" class="resize-none w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>    
             {% endblock %}
-        </div>
+            <button id="english_query_button"  type="submit" class="absolute bottom-0 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Ask</button>
+        </form>
+        <form id="iql_query" class="relative" hx-post="/post_iql_query" hx-target="#plot">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">InferenceQL</label>
+            {% block iql_query %}
+            <textarea name="iql_query" rows=13 placeholder="You can edit queries here" class="resize-none w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">{{ iql_query }}</textarea>
+            <button type="submit" id="iql_query_button" class="absolute bottom-10 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Run</button>
+            {% endblock %}
+        </form>
         {% block plot %}
-        <div class="flex justify-center" hx-get="/update_plot">
-            <div id="plot" />
+        <div class="col-span-2 justify-self-end" id="plot" hx-get="/update_plot">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Result</label>
+            <div id="vis" />
             <script type="text/javascript">
                 var spec = {
                     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                    "width": 600,
+                    "width": 500,
                     "height": 300,
                     "data": {
                     "url": "/query_result.csv"
@@ -35,14 +39,16 @@
                 "encoding": {
                     "x": {
                         "field": "{{ var1 }}",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "scale": {"zero": false}
                     },
                     "y": {
                         "field": "{{ var2 }}",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "scale": {"zero": false}
                     }
                     },
-                    "mark": {"type": "point"}
+                    "mark": {"type": "point", "tooltip": {"content": "data"} }
                 {% elif plot_type == "nn" %}
                 "encoding": {
                     "x": {
@@ -58,14 +64,14 @@
                     "type": "quantitative"
                     }
                 },
-                "mark": {"type": "rect"},
+                "mark": {"type": "rect", "tooltip": {"content": "data"} },
                 "config": {
                     "view": {
                     "stroke": "transparent"
                     }
                 }
                 {% elif plot_type == "qn" %}
-                "mark": {"type": "area", "opacity": .65},
+                "mark": {"type": "area", "opacity": .65, "tooltip": {"content": "data"} },
                 "transform": [
                 {
                     "density": "{{ var1 }}",
@@ -75,17 +81,18 @@
                 }
                 ],
                 "encoding": {
-                "x": {"field": "value", "type": "quantitative", "title": "{{ var1 }}", "scale": {"domain": {{ var1_extent }} }},
+                "x": {"field": "value", "type": "quantitative", "title": "{{ var1 }}", "scale": {"domain": {{ var1_extent }} } },
                 "y": {"field": "density", "type": "quantitative"},
                 "color": {"field": "{{ var2 }}", "type": "nominal"}
                 },
                 {%- endif %}
                 };
                 var opt = {"renderer": "canvas", "actions": false};
-                vegaEmbed("#plot", spec, opt);
+                vegaEmbed("#vis", spec, opt);
                 </script>
         </div>
         {% endblock %}
-        </form>
+    </div>
+    </div>
 </body>
 </html>

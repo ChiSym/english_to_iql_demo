@@ -2,11 +2,12 @@ from english_to_iql_demo.pre_prompt import pre_prompt
 import polars as pl
 import openai
 import subprocess
+import re
 
 
 def prompt_to_iql(prompt: str) -> str:
     completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}]
+        model="gpt-4", messages=[{"role": "user", "content": prompt}]
     )
     return "SELECT " + completion.choices[0].message.content
 
@@ -26,7 +27,12 @@ def run_english_query(user_query: str):
     run_iql_query(iql_query)
 
 
+def preprocess_iql_query(iql_query: str) -> str:
+    return re.sub("\s+", " ", iql_query)
+
+
 def run_iql_query(iql_query: str):
+    iql_query = preprocess_iql_query(iql_query)
     subprocess.run(f"sudo ./bin/run_iql_query_clj.sh '{iql_query}'", shell=True)
 
 

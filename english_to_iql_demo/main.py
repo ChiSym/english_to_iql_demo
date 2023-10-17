@@ -9,7 +9,6 @@ from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
 
 
-import subprocess
 import shutil
 import os
 
@@ -34,13 +33,13 @@ async def lifespan(app: FastAPI):
         os.path.join(cwd, default_dataset), os.path.join(cwd, query_result_path)
     )
 
-    try:
-        subprocess.call(
-            f"tailwindcss -i {os.path.join(cwd, 'src/input.css')} -o {os.path.join(cwd, 'dist/output.css')}",
-            shell=True,
-        )
-    except Exception as e:
-        raise RuntimeError from e
+    # try:
+    #     subprocess.call(
+    #         f"tailwindcss -i {os.path.join(cwd, 'src/input.css')} -o {os.path.join(cwd, 'dist/output.css')}",
+    #         shell=True,
+    #     )
+    # except Exception as e:
+    #     raise RuntimeError from e
     yield
 
 
