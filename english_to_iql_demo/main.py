@@ -1,12 +1,14 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import FileResponse
-from english_to_iql_demo.english_to_iql import english_query_to_iql, run_iql_query
+from english_to_iql_demo.english_to_iql import english_query_to_iql
 from english_to_iql_demo.plot import plot_context_first_vars
 from dataclasses import dataclass
 from contextlib import asynccontextmanager
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
+from english_to_iql_demo.clojure_interaction import get_iql_shell, iql_save
+import pexpect
 
 
 import shutil
@@ -17,6 +19,12 @@ templates = Jinja2Blocks(directory="src")
 
 default_dataset = "data/data_1000_sample.csv"
 query_result_path = "results/iql_out.csv"
+
+@dataclass
+class Data:
+    english_query: str
+    iql_query: str
+    iql: pexpect.pty_spawn.spawn
 
 
 @asynccontextmanager
@@ -33,6 +41,7 @@ async def lifespan(app: FastAPI):
         os.path.join(cwd, default_dataset), os.path.join(cwd, query_result_path)
     )
 
+
     # try:
     #     subprocess.call(
     #         f"tailwindcss -i {os.path.join(cwd, 'src/input.css')} -o {os.path.join(cwd, 'dist/output.css')}",
@@ -47,13 +56,8 @@ app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="dist"), name="static")
 
 
-@dataclass
-class Data:
-    english_query: str
-    iql_query: str
+data = Data(english_query="", iql_query="", iql=get_iql_shell())
 
-
-data = Data(english_query="", iql_query="")
 
 
 @app.get("/")
@@ -81,17 +85,13 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request, iql_query: Annotated[str, Form()]):
     data.iql_query = iql_query
-    update_query_result()
+    iql_save(data.iql, data.iql_query)
 
     context = plot_context_first_vars(query_result_path)
 
     return templates.TemplateResponse(
         "index.html.jinja", {"request": request, **context}, block_name="plot"
     )
-
-
-def update_query_result():
-    run_iql_query(data.iql_query)
 
 
 @app.get("/query_result.csv", response_class=FileResponse)
