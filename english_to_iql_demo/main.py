@@ -11,7 +11,9 @@ from english_to_iql_demo.clojure_interaction import get_iql_shell, iql_save
 import pexpect
 
 
+import re
 import shutil
+import urllib
 import os
 
 
@@ -83,8 +85,10 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
 
 
 @app.post("/post_iql_query")
-async def post_iql_query(request: Request, iql_query: Annotated[str, Form()]):
-    data.iql_query = iql_query
+async def post_iql_query(request: Request):
+    iql_query = request.headers['iql_query']
+    iql_query = urllib.parse.unquote(iql_query)
+    data.iql_query = re.sub("\s\s+" , " ", iql_query)
     iql_save(data.iql, data.iql_query)
 
     context = plot_context_first_vars(query_result_path)

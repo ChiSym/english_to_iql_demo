@@ -2,6 +2,24 @@
 <head>
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
     <link href="{{url_for('static',path='/output.css')}}" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@lit-labs/observers/mutation-controller.js":  "https://esm.sh/@lit-labs/observers@2.0.0/mutation-controller.js",
+          "highlight.js": "https://esm.sh/highlight.js@11.8.0/lib/core",
+          "json5": "https://esm.sh/json5@2.2.3",
+          "lit": "https://esm.sh/lit@2.8.0",
+          "lit-html/directives/if-defined": "https://esm.sh/lit-html@3.0.0/directives/if-defined.js",
+          "lit/directives/live.js": "https://esm.sh/lit@2.8.0/directives/live.js",
+          "lit/directives/ref.js": "https://esm.sh/lit@2.8.0/directives/ref.js",
+          "papaparse": "https://esm.sh/papaparse@5.4.1",
+          "vega-embed": "https://esm.sh/vega-embed@6.23.0"
+        }
+      }
+    </script>
+    <script type="module" src="{{url_for('static',path='/iql-language.mjs')}}"></script>
+    <script type="module" src="{{url_for('static',path='/iql-code.mjs')}}"></script>
+    <script type="module" src="{{url_for('static',path='/iql-textarea.mjs')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
@@ -19,8 +37,8 @@
         <form id="iql_query" class="relative" hx-post="/post_iql_query" hx-target="#plot">
             {% block iql_query %}
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">InferenceQL</label>
-            <textarea name="iql_query" rows=13 placeholder="You can edit queries here" class="resize-none w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">{{ iql_query }}</textarea>
-            <button type="submit" id="iql_query_button" class="absolute bottom-10 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Run</button>
+            <iql-textarea name="iql_query" id="iql_textarea">{{ iql_query }}</iql-textarea>
+            <button id="iql_query_button" class="absolute bottom-9 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Run</button>
             {% endblock %}
         </form>
         {% block plot %}
@@ -94,5 +112,10 @@
         {% endblock %}
     </div>
     </div>
+    <script>
+    document.body.addEventListener('htmx:configRequest', function(evt) {
+        evt.detail.headers['iql_query'] = document.getElementById("iql_textarea")._content
+    });
+    </script>
 </body>
 </html>
