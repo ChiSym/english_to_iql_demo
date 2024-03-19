@@ -6,8 +6,10 @@ from dataclasses import dataclass
 from contextlib import asynccontextmanager
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
-from typing import Annotated
-
+from typing import Annotated, Any
+from transformers import AutoTokenizer
+import transformers
+import torch
 
 import shutil
 import os
@@ -51,9 +53,20 @@ app.mount("/static", StaticFiles(directory="dist"), name="static")
 class Data:
     english_query: str
     iql_query: str
+    model: Any
+    tokenizer: Any 
+    model_pipeline: Any
 
+model = "codellama/CodeLlama-7b-hf"
 
-data = Data(english_query="", iql_query="")
+tokenizer = AutoTokenizer.from_pretrained(model)
+pipeline = transformers.pipeline(
+    "text-generation",
+    model=model,
+    torch_dtype=torch.float16,
+    device_map="auto",
+)
+data = Data(english_query="", iql_query="", model=model, tokenizer=tokenizer, model_pipeline=pipeline)
 
 
 @app.get("/")
@@ -69,7 +82,7 @@ async def root(request: Request):
 @app.post("/post_english_query")
 async def post_english_query(request: Request, english_query: Annotated[str, Form()]):
     data.english_query = english_query
-    data.iql_query = english_query_to_iql(data.english_query)
+    data.iql_query = english_query_to_iql(data.english_query, data.model_pipeline, data.tokenizer)
 
     return templates.TemplateResponse(
         "index.html.jinja",

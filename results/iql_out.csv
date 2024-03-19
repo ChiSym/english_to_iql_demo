@@ -1,0 +1,1001 @@
+YearsCode,Gender,Julia,Education,Age,Rust,SQL,R,YearsCodeProfessional,Python,C,LISP,Blockchain,Clojure,Sexuality,SalaryUSD,Java,Ethnicity,Cplusplus,Background,JavaScript,HTML_CSS
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,194400,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,5,no,yes,no,Favorable,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,no,yes
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,yes,5,yes,no,no,Indifferent,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,21,no,no,no,Very unfavorable,no,Straight / Heterosexual,102000,no,Middle Eastern,no,I am a developer by profession,yes,yes
+20,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,15,no,no,no,Unsure,no,Straight / Heterosexual,130000,no,White,yes,I am a developer by profession,yes,yes
+24,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,20,yes,no,no,Unfavorable,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,95000,yes,White,no,I am a developer by profession,no,no
+9,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,5,no,no,no,Unfavorable,no,Straight / Heterosexual,166000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+22,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,17,no,no,no,Indifferent,no,Gay or Lesbian,200000,no,White,no,I am a developer by profession,yes,no
+7,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,35000,no,White,no,I am a developer by profession,no,no
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,yes,25,no,no,no,Indifferent,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,110000,yes,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Unfavorable,no,Gay or Lesbian,98000,no,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,24,yes,no,no,Indifferent,no,Straight / Heterosexual,144000,no,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,no,no,no,Favorable,no,Straight / Heterosexual,132000,yes,White,yes,I am a developer by profession,yes,no
+4,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,0,yes,yes,no,Unfavorable,no,Gay or Lesbian,130000,no,Asian,no,I am a developer by profession,no,no
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,15,no,yes,no,Unfavorable,no,Straight / Heterosexual,200000,yes,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,3,no,no,no,Very unfavorable,yes,Straight / Heterosexual,110000,yes,White,no,I am a developer by profession,no,no
+15,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,no,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,5,yes,yes,no,Unfavorable,no,Straight / Heterosexual,75000,no,White,no,I am a developer by profession,yes,no
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,no,no,no,Very unfavorable,no,Straight / Heterosexual,147000,no,White,yes,I am a developer by profession,yes,yes
+19,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,no,no,no,Unfavorable,no,Straight / Heterosexual,101000,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,9,yes,no,no,Very favorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+8,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Favorable,no,Straight / Heterosexual,175000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+48,Man,no,Some college/university study without earning a degree,65 years or older,no,yes,no,46,yes,no,no,Very unfavorable,no,Straight / Heterosexual,100000,no,North American,no,I am a developer by profession,no,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,75000,no,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,22,no,no,no,Unfavorable,no,Straight / Heterosexual,250000,no,White,yes,I am a developer by profession,yes,yes
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,18,yes,no,no,Very unfavorable,no,Straight / Heterosexual,315000,yes,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,yes,yes,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,3,yes,no,no,Unfavorable,no,Straight / Heterosexual,83000,no,North American,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,yes,no,no,Indifferent,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,206000,no,White,no,I am a developer by profession,yes,yes
+3,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,45000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,yes,no,no,Very unfavorable,no,Gay or Lesbian,130000,no,White,no,I am a developer by profession,no,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,12,no,no,no,Indifferent,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,no,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,4,yes,no,no,Very unfavorable,no,Bisexual,130000,no,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,1,yes,no,no,Indifferent,no,Straight / Heterosexual,80000,no,White,yes,I am a developer by profession,yes,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,240000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,75000,yes,White,no,I am a developer by profession,yes,yes
+4,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,no,no
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,11,yes,no,no,Very favorable,no,Bisexual,150000,yes,White,yes,I am a developer by profession,yes,yes
+14,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,14,yes,no,no,Very unfavorable,no,Straight / Heterosexual,120000,yes,White,no,I am a developer by profession,yes,no
+26,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,20,no,no,no,Favorable,no,Straight / Heterosexual,210000,yes,Indian,no,I am a developer by profession,no,no
+50,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",65 years or older,no,yes,no,40,yes,no,no,Indifferent,no,Straight / Heterosexual,350000,yes,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,109000,no,White,no,I am a developer by profession,no,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,no,no
+10,Man,no,Some college/university study without earning a degree,18-24 years old,yes,yes,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,52800,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,no,no,no,Indifferent,no,Straight / Heterosexual,124000,yes,White,no,I am a developer by profession,yes,no
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,20,no,no,no,Unfavorable,no,Straight / Heterosexual,205000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,Some college/university study without earning a degree,18-24 years old,yes,no,no,4,yes,yes,yes,Very unfavorable,no,Straight / Heterosexual,100000,no,White,yes,I am a developer by profession,no,no
+5,"Non-binary, genderqueer, or gender non-conforming",no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,yes,yes,no,Indifferent,no,Gay or Lesbian,76000,yes,White,yes,I am a developer by profession,yes,yes
+11,Man,no,"Associate degree (A.A., A.S., etc.)",18-24 years old,yes,no,no,8,yes,no,no,Favorable,no,Straight / Heterosexual,200000,no,North American,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,9,no,no,no,Very unfavorable,no,Straight / Heterosexual,350000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,Some college/university study without earning a degree,18-24 years old,yes,no,no,0,yes,yes,yes,Indifferent,no,Straight / Heterosexual,160000,yes,Asian,yes,I am a developer by profession,yes,no
+11,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,yes,yes,no,6,no,no,no,Very favorable,yes,Straight / Heterosexual,80000,no,White,no,I am a developer by profession,yes,yes
+3,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,1,no,no,no,Unfavorable,no,Straight / Heterosexual,55000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,Some college/university study without earning a degree,18-24 years old,no,no,no,1,yes,no,no,Favorable,no,Bisexual,75000,no,White,yes,I am a developer by profession,yes,yes
+9,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,8,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,140000,no,White,yes,I am a developer by profession,no,yes
+28,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,17,no,no,no,Very unfavorable,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,5,yes,no,no,Favorable,no,Straight / Heterosexual,110000,yes,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,300000,yes,Asian,no,I am a developer by profession,no,no
+10,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,no,yes,no,4,no,no,no,Very unfavorable,no,Straight / Heterosexual,53000,no,White,no,I am a developer by profession,yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,3,yes,no,no,Very unfavorable,no,Gay or Lesbian,72000,no,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,50000,no,White,no,I am a developer by profession,no,no
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,2,yes,no,no,Very favorable,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,no,no,no,Very unfavorable,no,Straight / Heterosexual,171000,yes,White,no,I am a developer by profession,yes,no
+22,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,14,yes,no,no,Very unfavorable,no,Straight / Heterosexual,86000,yes,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,2,no,no,no,Favorable,no,Straight / Heterosexual,78000,yes,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,78337,no,White,yes,I am a developer by profession,no,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,11,yes,no,no,Very unfavorable,no,Straight / Heterosexual,215000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,162373,no,White,yes,I am a developer by profession,no,no
+6,"Non-binary, genderqueer, or gender non-conforming",no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,1,no,no,no,Very unfavorable,no,Bisexual,55000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,no
+31,Man,no,Some college/university study without earning a degree,55-64 years old,yes,yes,no,31,yes,no,no,Indifferent,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,yes,no
+18,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,18,yes,no,no,Very favorable,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,yes
+13,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,no,yes,no,2,yes,no,no,Unfavorable,no,Straight / Heterosexual,250000,no,White,no,I am a developer by profession,no,no
+12,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,4,yes,yes,no,Very unfavorable,no,Queer,82000,no,White,yes,I am a developer by profession,no,no
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,25,no,yes,no,Unsure,yes,Straight / Heterosexual,150000,yes,Asian,yes,I am a developer by profession,no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,7,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,180000,no,White,yes,I am a developer by profession,yes,no
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,yes,no,20,no,yes,no,Unsure,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Very unfavorable,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Favorable,no,Straight / Heterosexual,75000,yes,White,no,I am a developer by profession,yes,yes
+32,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,23,no,no,no,Favorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,120000,yes,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,25,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,161000,yes,White,yes,I am a developer by profession,no,no
+17,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,11,no,no,no,Favorable,no,Straight / Heterosexual,175000,no,Asian,no,I am a developer by profession,no,yes
+30,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,20,no,no,no,Very unfavorable,yes,Straight / Heterosexual,172000,no,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,75000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Favorable,no,Straight / Heterosexual,125000,yes,White,no,I am a developer by profession,yes,yes
+5,Man,no,Some college/university study without earning a degree,18-24 years old,yes,no,no,4,no,no,no,Very unfavorable,no,Straight / Heterosexual,85000,yes,White,no,I am a developer by profession,yes,yes
+20,Man,no,Some college/university study without earning a degree,35-44 years old,yes,yes,no,6,no,no,no,Very unfavorable,yes,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,105000,yes,White,yes,I am a developer by profession,no,no
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Unfavorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+9,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,3,yes,no,no,Very unfavorable,no,Gay or Lesbian,120000,yes,White,no,I am a developer by profession,no,yes
+5,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,2,no,no,no,Favorable,no,Straight / Heterosexual,115000,no,White,no,I am a developer by profession,no,no
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,yes,no,12,yes,no,no,Very unfavorable,no,Straight / Heterosexual,250000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,6,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,160000,yes,White,no,I am a developer by profession,no,no
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,12,no,no,no,Very unfavorable,no,Straight / Heterosexual,160000,no,Hispanic or Latino/a,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,1,yes,no,no,Very unfavorable,no,Straight / Heterosexual,145,no,White,no,I am a developer by profession,no,no
+24,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,13,no,no,no,Indifferent,no,Straight / Heterosexual,88000,yes,White,no,I am a developer by profession,no,yes
+25,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,yes,no,20,no,no,no,Indifferent,yes,Straight / Heterosexual,134000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+7,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,6,no,no,no,Unsure,yes,Straight / Heterosexual,175000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,147000,no,North American,no,I am a developer by profession,yes,yes
+13,Man,no,Some college/university study without earning a degree,35-44 years old,yes,no,no,10,no,yes,no,Unfavorable,no,Straight / Heterosexual,165000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,8,no,no,no,Unfavorable,no,Straight / Heterosexual,140000,no,White,yes,I am a developer by profession,yes,no
+11,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Unfavorable,no,Bisexual,116000,no,White,no,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,155000,yes,White,yes,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,4,no,no,no,Very unfavorable,no,Straight / Heterosexual,61000,no,White,no,I am a developer by profession,no,no
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,24,no,no,no,Indifferent,no,Straight / Heterosexual,178000,yes,White,yes,I am a developer by profession,yes,no
+10,Man,no,"Professional degree (JD, MD, etc.)",35-44 years old,no,no,no,10,no,no,no,Indifferent,yes,Straight / Heterosexual,160000,yes,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,89000,yes,White,no,I am a developer by profession,yes,yes
+3,Man,no,"Associate degree (A.A., A.S., etc.)",18-24 years old,no,no,no,0,no,no,no,Favorable,no,Straight / Heterosexual,50000,no,White,no,I am a developer by profession,yes,yes
+27,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,13,yes,no,no,Unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,yes,no,no,Very unfavorable,yes,Straight / Heterosexual,320000,yes,White,no,I am a developer by profession,no,no
+9,Man,no,Some college/university study without earning a degree,18-24 years old,no,yes,no,7,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,62500,no,White,yes,I am a developer by profession,yes,no
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,11,no,no,no,Very favorable,yes,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,80000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,80000,no,Asian,no,I am a developer by profession,yes,no
+6,Man,no,Some college/university study without earning a degree,18-24 years old,no,no,no,4,no,no,no,Favorable,yes,Straight / Heterosexual,170000,yes,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,yes,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,yes,yes,no,Indifferent,no,Straight / Heterosexual,165000,yes,White,yes,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,250000,no,White,no,I am a developer by profession,no,no
+10,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,95000,yes,White,yes,I am a developer by profession,yes,no
+23,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,no,no,9,no,no,no,Unfavorable,no,Straight / Heterosexual,81000,no,White,no,I am a developer by profession,no,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,7,yes,yes,no,Favorable,no,Straight / Heterosexual,80000,no,White,yes,I am a developer by profession,yes,yes
+9,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,no,yes,no,0,yes,no,no,Very unfavorable,no,Straight / Heterosexual,105000,yes,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,14,yes,no,no,Indifferent,no,Straight / Heterosexual,195000,no,White,no,I am a developer by profession,yes,no
+4,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Indifferent,no,Bisexual,181000,no,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,82000,yes,White,no,I am a developer by profession,yes,yes
+9,Man,no,Some college/university study without earning a degree,25-34 years old,yes,no,no,9,yes,no,no,Unfavorable,no,Bisexual,180000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,8,yes,yes,no,Unfavorable,no,Straight / Heterosexual,230000,yes,White,yes,I am a developer by profession,yes,no
+3,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,204000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,7,yes,no,no,Very unfavorable,yes,Straight / Heterosexual,236000,no,White,no,I am a developer by profession,no,no
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,20,no,no,no,Unfavorable,no,Straight / Heterosexual,112000,yes,White,no,I am a developer by profession,yes,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,122500,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Indifferent,no,Straight / Heterosexual,91000,yes,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,7,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,150000,no,White,yes,I am a developer by profession,no,no
+14,Man,yes,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,no,yes,no,3,yes,no,no,Very unfavorable,no,Gay or Lesbian,92000,yes,White,yes,I am a developer by profession,yes,yes
+2,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,no,yes,no,0,no,no,no,Favorable,no,Straight / Heterosexual,45000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,1,yes,no,no,Very unfavorable,no,Straight / Heterosexual,110000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+15,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,100000,no,White,yes,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Unfavorable,no,Straight / Heterosexual,85000,no,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,7,yes,no,no,Very unfavorable,no,Straight / Heterosexual,230000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,no,no,no,Unfavorable,no,Straight / Heterosexual,165000,yes,White,no,I am a developer by profession,no,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,no,yes,no,Indifferent,no,Straight / Heterosexual,85000,no,White,yes,I am a developer by profession,no,yes
+28,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",,no,no,no,24,no,yes,no,Indifferent,no,Straight / Heterosexual,130000,no,Asian,yes,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Favorable,yes,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,3,yes,no,no,Indifferent,no,Straight / Heterosexual,93000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,7,yes,no,no,Favorable,no,Straight / Heterosexual,100000,yes,White,no,I am a developer by profession,no,no
+4,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,yes,no,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,151000,no,White,yes,I am a developer by profession,yes,yes
+7,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,yes,no,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,200000,no,White,yes,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,159000,yes,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,4,no,no,no,Very unfavorable,no,Straight / Heterosexual,70000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,yes,no,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,218000,no,White,no,I am a developer by profession,no,no
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,30,yes,no,no,Indifferent,no,Straight / Heterosexual,355000,no,White,no,I am a developer by profession,no,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,3,yes,yes,no,Indifferent,no,Straight / Heterosexual,155000,no,White,yes,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,2,no,no,no,Very unfavorable,no,Straight / Heterosexual,90000,no,White,yes,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,yes,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,yes,I am a developer by profession,no,no
+34,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,20,no,yes,no,Very unfavorable,no,Straight / Heterosexual,115500,no,White,yes,I am a developer by profession,yes,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,7,no,no,no,Very favorable,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,no,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,no,no
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,300000,yes,White,no,I am a developer by profession,yes,no
+46,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,37,yes,no,no,Indifferent,no,Straight / Heterosexual,126000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,155000,no,White,yes,I am a developer by profession,no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,180000,yes,White,no,I am a developer by profession,yes,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Unfavorable,no,Bisexual,66000,yes,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,18,yes,no,no,Unfavorable,no,Gay or Lesbian,300000,yes,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,2,no,no,no,Indifferent,no,Straight / Heterosexual,300000,no,Asian,no,I am a developer by profession,yes,no
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,19,no,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,no,no
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,yes,no,no,Indifferent,yes,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,yes,yes,no,Indifferent,no,Straight / Heterosexual,88000,no,White,yes,I am a developer by profession,no,yes
+12,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,167000,no,White,yes,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,3,yes,yes,yes,Unfavorable,no,Bisexual,73000,yes,Hispanic or Latino/a,yes,I am a developer by profession,yes,yes
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,31,no,no,no,Very unfavorable,no,Straight / Heterosexual,305000,yes,White,no,I am a developer by profession,yes,no
+20,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,10,yes,no,no,Very unfavorable,no,Bisexual,165000,no,White,no,I am a developer by profession,yes,yes
+3,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,0,no,no,no,Indifferent,no,Straight / Heterosexual,94000,yes,White,no,I am a developer by profession,no,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,2,no,no,no,Very unfavorable,no,Bisexual,230000,yes,White,no,I am a developer by profession,yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,yes,no,no,Favorable,no,Straight / Heterosexual,86000,yes,White,no,I am a developer by profession,yes,no
+7,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,0,yes,no,no,Indifferent,no,Bisexual,89000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Very unfavorable,no,Straight / Heterosexual,125000,no,Asian,no,I am a developer by profession,yes,yes
+6,Man,no,Some college/university study without earning a degree,18-24 years old,no,no,no,3,yes,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,no,no
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,16,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,185000,yes,White,yes,I am a developer by profession,no,no
+2,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,1,no,no,no,Very unfavorable,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,12,no,no,no,Indifferent,yes,Straight / Heterosexual,250000,yes,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,2,no,no,no,Very unfavorable,no,Straight / Heterosexual,145000,yes,White,no,I am a developer by profession,yes,no
+18,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,12,yes,no,no,Unsure,no,Straight / Heterosexual,113000,no,White,no,I am a developer by profession,no,no
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,15,no,no,no,Favorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,104750,no,Asian,yes,I am a developer by profession,no,no
+21,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,14,yes,yes,no,Unfavorable,no,Straight / Heterosexual,140000,yes,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Unfavorable,no,Straight / Heterosexual,123141,yes,White,no,I am a developer by profession,no,no
+22,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,no,no,18,no,no,no,Very unfavorable,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,yes,no
+8,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,0,yes,no,no,Very unfavorable,no,Gay or Lesbian,80000,yes,White,no,I am a developer by profession,no,no
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,102000,no,White,yes,I am a developer by profession,no,no
+17,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,yes,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,110000,yes,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,260,no,White,no,I am a developer by profession,yes,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,9,yes,no,no,Very unfavorable,no,Straight / Heterosexual,115000,yes,White,no,I am a developer by profession,yes,no
+15,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,no,no,11,no,no,no,Indifferent,no,Straight / Heterosexual,83000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,4,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,128000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,23,no,no,no,Unfavorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,no,no,no,Favorable,no,Straight / Heterosexual,90000,yes,White,no,I am a developer by profession,yes,yes
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,23,no,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,3,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,165000,no,White,yes,I am a developer by profession,no,no
+5,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,0,no,yes,no,Indifferent,no,Bisexual,74000,no,White,yes,I am a developer by profession,no,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,yes,no,no,Very unfavorable,no,Straight / Heterosexual,180000,yes,White,yes,I am a developer by profession,yes,no
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,160000,no,Middle Eastern,no,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,9,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,130000,no,White,yes,I am a developer by profession,no,no
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,yes,no,no,Very unfavorable,no,Straight / Heterosexual,175000,no,White,yes,I am a developer by profession,no,no
+6,Man,no,Some college/university study without earning a degree,18-24 years old,no,yes,no,3,yes,no,no,Very unfavorable,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,11,no,yes,no,Favorable,no,Straight / Heterosexual,130000,no,White,yes,I am a developer by profession,no,no
+2,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,0,yes,no,no,Very unfavorable,no,Straight / Heterosexual,95000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,16,yes,no,no,Very unfavorable,no,Straight / Heterosexual,195000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,2,yes,yes,no,Very unfavorable,no,Gay or Lesbian,62000,yes,White,no,I am a developer by profession,no,no
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,15,no,no,no,Unfavorable,no,Straight / Heterosexual,68000,no,White,no,I am a developer by profession,no,no
+14,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,12,no,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,no,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,10,yes,yes,yes,Very unfavorable,no,Straight / Heterosexual,70000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+45,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,yes,no,42,no,no,no,Very unfavorable,yes,Bisexual,180000,no,White,no,I am a developer by profession,no,no
+4,Man,no,Primary/elementary school,25-34 years old,yes,yes,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,yes,no,11,yes,no,no,Very unfavorable,no,Straight / Heterosexual,151992,no,White,no,I am a developer by profession,no,no
+43,Man,no,Some college/university study without earning a degree,55-64 years old,no,yes,no,38,yes,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,13,yes,no,no,Indifferent,no,Bisexual,73000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,9,yes,no,no,Unfavorable,yes,Straight / Heterosexual,135000,no,White,no,I am a developer by profession,yes,yes
+23,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,14,yes,no,no,Very unfavorable,no,Queer,225000,no,White,no,I am a developer by profession,yes,no
+42,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,yes,no,35,no,no,no,Unfavorable,no,Straight / Heterosexual,152000,no,White,no,I am a developer by profession,no,yes
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,28,yes,no,no,Indifferent,no,Straight / Heterosexual,200000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,yes,no,no,Unfavorable,no,Bisexual,99000,no,White,no,I am a developer by profession,yes,no
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,32,yes,no,no,Indifferent,no,Straight / Heterosexual,260000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,Some college/university study without earning a degree,35-44 years old,yes,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,no,yes,no,Unfavorable,no,Straight / Heterosexual,92700,yes,White,yes,I am a developer by profession,no,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Favorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,no
+1,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,yes,no,no,Unfavorable,no,Straight / Heterosexual,60000,yes,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,190000,no,Indian,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,no,no,no,Very unfavorable,no,Straight / Heterosexual,96000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,3,yes,no,no,Very unfavorable,no,Bisexual,72000,no,White,no,I am a developer by profession,yes,no
+3,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,no,yes,no,1,yes,no,no,Very unfavorable,no,Bisexual,82000,yes,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,100625,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,9,yes,no,no,Favorable,no,Straight / Heterosexual,135000,no,Middle Eastern,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,4,no,no,no,Very unfavorable,no,Straight / Heterosexual,107000,yes,White,no,I am a developer by profession,yes,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,7,yes,no,no,Very unfavorable,no,Straight / Heterosexual,132000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,yes,yes,no,Unfavorable,no,Bisexual,130000,no,White,no,I am a developer by profession,no,no
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,30,no,no,no,Favorable,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,no,no
+16,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,yes,no,no,Favorable,no,Straight / Heterosexual,250000,yes,Indian,no,I am a developer by profession,yes,no
+1,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,1,no,no,no,Indifferent,no,Straight / Heterosexual,80000,no,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,12,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,150000,no,Hispanic or Latino/a,yes,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,1,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,101000,yes,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+25,Man,no,"Associate degree (A.A., A.S., etc.)",45-54 years old,no,yes,no,20,no,no,no,Favorable,no,Straight / Heterosexual,115000,no,White,no,I am a developer by profession,yes,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,yes,5,no,no,no,Favorable,no,Straight / Heterosexual,114000,yes,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,130000,yes,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,187000,yes,White,no,I am a developer by profession,no,no
+28,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,20,yes,yes,no,Favorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,9,no,no,no,Very unfavorable,no,Straight / Heterosexual,175000,yes,White,yes,I am a developer by profession,yes,no
+22,Man,no,Some college/university study without earning a degree,25-34 years old,yes,no,no,13,yes,no,no,Indifferent,no,Straight / Heterosexual,129000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,1,no,no,no,Unfavorable,no,Straight / Heterosexual,89000,no,African,no,I am a developer by profession,no,no
+9,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,6,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,150000,no,White,yes,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,no,no,no,Unfavorable,no,Straight / Heterosexual,200000,no,Asian,no,I am a developer by profession,no,no
+,Man,no,Some college/university study without earning a degree,25-34 years old,yes,yes,no,,no,no,no,Favorable,no,Gay or Lesbian,220000,no,White,no,I am a developer by profession,yes,no
+9,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,90000,yes,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Very unfavorable,no,Gay or Lesbian,130000,no,White,no,I am a developer by profession,no,yes
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,20,no,no,no,Unfavorable,no,Straight / Heterosexual,201000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,140000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,2,yes,no,no,Unfavorable,no,Straight / Heterosexual,120000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,240000,yes,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,1,no,yes,no,Very unfavorable,no,Straight / Heterosexual,180000,yes,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,yes,no,no,Very favorable,no,Straight / Heterosexual,86000,yes,White,no,I am a developer by profession,no,yes
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,18,yes,no,no,Indifferent,no,Straight / Heterosexual,175000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,yes,4,yes,no,no,Unfavorable,no,Gay or Lesbian,115000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,150000,yes,Indian,no,I am a developer by profession,yes,no
+14,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,8,no,no,yes,Very unfavorable,no,Straight / Heterosexual,95000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,yes,6,yes,no,no,Indifferent,no,Straight / Heterosexual,150000,no,Asian,no,I am a developer by profession,yes,yes
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,80000,no,White,no,I am a developer by profession,yes,yes
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,yes,no,no,25,no,yes,no,Unsure,yes,Gay or Lesbian,140000,no,White,no,I am a developer by profession,no,no
+3,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,yes,no,no,Unfavorable,no,Straight / Heterosexual,82500,no,White,no,I am a developer by profession,no,no
+34,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,23,no,yes,no,Indifferent,no,Straight / Heterosexual,120000,no,White,yes,I am a developer by profession,no,no
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,4,yes,no,no,Very favorable,no,Straight / Heterosexual,300000,no,Indian,no,I am a developer by profession,yes,no
+14,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,8,no,no,no,Unsure,no,Straight / Heterosexual,296000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,yes,3,yes,no,yes,Very unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,12,yes,yes,no,Favorable,no,Straight / Heterosexual,320000,no,White,no,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,12,yes,no,no,Unfavorable,no,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,3,yes,yes,no,Indifferent,no,Straight / Heterosexual,95000,yes,White,yes,I am a developer by profession,yes,yes
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,14,no,no,no,Favorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,1,yes,no,no,Indifferent,no,Straight / Heterosexual,170000,yes,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,8,no,no,no,Unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,no
+23,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,22,no,no,no,Indifferent,no,Straight / Heterosexual,300000,no,White,yes,I am a developer by profession,yes,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,9,yes,no,no,Indifferent,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,no,no
+3,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,no,no,no,Unsure,no,Straight / Heterosexual,80000,yes,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,99000,no,White,no,I am a developer by profession,yes,yes
+5,Woman,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",18-24 years old,yes,no,no,0,no,yes,no,Very unfavorable,no,Gay or Lesbian,80000,no,White,yes,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,0,yes,no,no,Unfavorable,no,Straight / Heterosexual,78000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,1,yes,no,no,Unfavorable,no,Straight / Heterosexual,65000,yes,White,no,I am a developer by profession,yes,yes
+13,Man,no,Primary/elementary school,18-24 years old,no,yes,no,7,yes,no,no,Very unfavorable,no,Straight / Heterosexual,115000,yes,White,no,I am a developer by profession,yes,yes
+7,Woman,no,Some college/university study without earning a degree,25-34 years old,no,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,yes,yes
+27,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,19,no,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,25,no,no,no,Favorable,no,Straight / Heterosexual,130000,yes,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,140000,yes,Indian,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,2,no,yes,no,Very unfavorable,no,Straight / Heterosexual,97600,no,Indian,no,I am a developer by profession,no,no
+13,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,6,no,no,no,Very unfavorable,no,Straight / Heterosexual,145000,no,White,no,I am a developer by profession,no,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,120000,no,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,2,yes,no,no,Favorable,no,Straight / Heterosexual,45000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+9,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,yes,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,183000,no,White,no,I am a developer by profession,no,no
+40,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,no,no,25,no,no,no,Unfavorable,no,Straight / Heterosexual,205000,yes,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Indifferent,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Associate degree (A.A., A.S., etc.)",18-24 years old,no,yes,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,yes,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,95000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,12,yes,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,14,no,no,no,Unfavorable,yes,Straight / Heterosexual,161000,no,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,3,no,yes,no,Unfavorable,no,Straight / Heterosexual,141000,yes,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,no,no,no,Indifferent,no,Straight / Heterosexual,140000,no,White,yes,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,yes,no,no,Very unfavorable,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,Some college/university study without earning a degree,35-44 years old,yes,no,no,15,no,no,no,Indifferent,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,6,no,no,no,Favorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,yes,4,yes,yes,no,Unfavorable,no,Straight / Heterosexual,88000,no,White,yes,I am a developer by profession,yes,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,no,no,no,Very unfavorable,no,Straight / Heterosexual,74000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,15,no,no,no,Indifferent,no,Straight / Heterosexual,280000,no,White,no,I am a developer by profession,no,no
+35,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,25,no,no,no,Unfavorable,no,Straight / Heterosexual,160000,yes,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,0,yes,no,no,Unfavorable,no,Straight / Heterosexual,74000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,9,no,no,no,Very unfavorable,no,Straight / Heterosexual,264000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Favorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,yes,no,no,Unfavorable,no,Straight / Heterosexual,95000,no,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,yes,no,0,yes,no,no,Indifferent,no,Straight / Heterosexual,129500,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,yes,no,no,Unfavorable,no,Straight / Heterosexual,135000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+16,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,12,yes,no,no,Indifferent,no,Straight / Heterosexual,100000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+22,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,16,no,no,no,Very unfavorable,no,Straight / Heterosexual,205000,no,White,yes,I am a developer by profession,no,no
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,no,no,no,Indifferent,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,10,no,no,no,Favorable,no,Straight / Heterosexual,240000,yes,North American,no,I am a developer by profession,no,no
+34,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,no,27,yes,no,no,Very unfavorable,no,Straight / Heterosexual,85000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,155000,yes,White,no,I am a developer by profession,yes,no
+24,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",45-54 years old,no,no,no,24,yes,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,70000,yes,White,no,I am a developer by profession,yes,yes
+14,Man,no,Some college/university study without earning a degree,18-24 years old,yes,no,no,6,no,no,no,Very unfavorable,no,Bisexual,102000,no,White,no,I am a developer by profession,yes,yes
+26,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,26,no,no,no,Very unfavorable,no,Gay or Lesbian,130000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Very unfavorable,no,Straight / Heterosexual,264000,yes,White,no,I am a developer by profession,yes,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,9,yes,no,no,Favorable,no,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,210000,no,White,yes,I am a developer by profession,no,no
+12,Man,yes,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,1,no,yes,no,Unfavorable,no,Straight / Heterosexual,200000,yes,White,yes,I am a developer by profession,yes,no
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,82000,no,White,no,I am a developer by profession,no,no
+15,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",35-44 years old,no,no,no,10,no,no,no,Unsure,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,8,no,no,no,Unfavorable,no,Straight / Heterosexual,40000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,yes,no,no,Very unfavorable,no,Straight / Heterosexual,95000,no,White,no,I am a developer by profession,yes,yes
+27,Woman,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,yes,yes,15,yes,no,no,Very unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,12,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,150000,no,White,yes,I am a developer by profession,no,no
+14,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,10,yes,no,no,Favorable,no,Straight / Heterosexual,128000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,206800,yes,White,no,I am a developer by profession,no,no
+6,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,yes,yes,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,145000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,yes
+38,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,yes,no,yes,22,yes,yes,no,Unfavorable,no,Bisexual,170000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,125000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",18-24 years old,yes,yes,no,1,no,no,no,Very unfavorable,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Unfavorable,no,Bisexual,130000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,Hispanic or Latino/a,no,I am a developer by profession,no,no
+4,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,no,yes
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,21,no,no,no,Very unfavorable,yes,Straight / Heterosexual,172000,no,White,no,I am a developer by profession,no,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,2,yes,no,no,Unsure,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,12,no,no,no,Favorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,235000,yes,Asian,no,I am a developer by profession,yes,no
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Very unfavorable,no,Straight / Heterosexual,205000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,6,no,yes,no,Very unfavorable,no,Straight / Heterosexual,162500,no,White,yes,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,175000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,yes,no,no,Indifferent,no,Straight / Heterosexual,138000,no,White,no,I am a developer by profession,yes,yes
+23,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,21,no,no,no,Very unfavorable,no,Straight / Heterosexual,190000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,yes,no,no,Indifferent,no,Straight / Heterosexual,251000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,3,yes,yes,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,no,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,350000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,8,yes,no,no,Unfavorable,no,Straight / Heterosexual,180000,yes,White,no,I am a developer by profession,no,no
+15,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,yes,no,no,9,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,172000,no,White,yes,I am a developer by profession,no,no
+5,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,105000,yes,White,no,I am a developer by profession,no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,no,no,yes,Very unfavorable,no,Straight / Heterosexual,224250,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Favorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,170000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,20,no,no,no,Unfavorable,yes,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,yes,no
+42,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,yes,no,no,30,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,330000,no,White,yes,I am a developer by profession,no,no
+31,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,31,no,no,no,Indifferent,no,Straight / Heterosexual,165000,yes,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,3,yes,no,no,Unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,11,yes,no,no,Very unfavorable,no,Straight / Heterosexual,217000,yes,White,no,I am a developer by profession,yes,yes
+40,Man,no,Some college/university study without earning a degree,55-64 years old,yes,no,no,30,no,no,no,Favorable,no,Straight / Heterosexual,100000,yes,White,no,I am a developer by profession,yes,yes
+12,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Indifferent,no,Bisexual,58000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,8,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,11,no,no,no,Unfavorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,yes,no,no,1,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,300000,no,White,yes,I am a developer by profession,no,no
+25,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,22,yes,no,no,Very unfavorable,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,yes,no,no,0,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,175000,no,Asian,no,I am a developer by profession,no,no
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,yes,no,no,Unfavorable,no,Straight / Heterosexual,260000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,120000,no,White,yes,I am a developer by profession,no,yes
+27,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,25,no,yes,no,Unfavorable,no,Straight / Heterosexual,250000,yes,White,no,I am a developer by profession,yes,no
+25,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,16,no,no,no,Very unfavorable,no,Straight / Heterosexual,121000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,no,no,no,Very unfavorable,no,Straight / Heterosexual,85000,yes,White,no,I am a developer by profession,no,no
+16,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,yes,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,no,no,no,Very unfavorable,no,Straight / Heterosexual,280000,no,White,no,I am a developer by profession,yes,yes
+14,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,4,yes,no,no,Very unfavorable,no,Gay or Lesbian,140000,no,Asian,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,no,no,no,Unfavorable,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,9,yes,no,no,Unfavorable,no,Straight / Heterosexual,185000,yes,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Very favorable,no,Straight / Heterosexual,91000,yes,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,95000,yes,Hispanic or Latino/a,no,I am a developer by profession,no,no
+37,Man,no,Some college/university study without earning a degree,45-54 years old,yes,yes,no,29,yes,no,no,Very unfavorable,no,Straight / Heterosexual,316000,no,White,no,I am a developer by profession,yes,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,yes,no,no,Favorable,no,Straight / Heterosexual,160000,yes,White,no,I am a developer by profession,no,yes
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,14,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,yes,14,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,275500,yes,Hispanic or Latino/a,yes,I am a developer by profession,yes,yes
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,12,no,no,no,Unfavorable,no,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,14,no,no,no,Unfavorable,no,Straight / Heterosexual,215000,no,White,no,I am a developer by profession,yes,no
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,13,no,no,no,Very favorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,5,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,325000,no,White,yes,I am a developer by profession,no,no
+4,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,136000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,yes,no,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,120000,yes,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,no,no,no,Favorable,no,Straight / Heterosexual,110000,no,White,yes,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,yes,no,no,23,yes,no,no,Indifferent,no,Straight / Heterosexual,300000,no,White,yes,I am a developer by profession,no,no
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,yes,no,no,Very unfavorable,no,Straight / Heterosexual,95000,yes,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,8,no,no,no,Unfavorable,no,Straight / Heterosexual,125000,yes,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,98900,no,North American,no,I am a developer by profession,yes,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,177000,yes,White,no,I am a developer by profession,no,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,72000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,yes,no,no,Very unfavorable,no,Bisexual,152000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,13,yes,no,no,Very unfavorable,no,Straight / Heterosexual,360000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,9,no,no,no,Indifferent,no,Gay or Lesbian,115000,no,White,no,I am a developer by profession,yes,yes
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,15,no,no,no,Unfavorable,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,yes,yes
+34,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Very unfavorable,no,Straight / Heterosexual,110000,yes,White,no,I am a developer by profession,yes,yes
+6,Man,no,Some college/university study without earning a degree,18-24 years old,no,no,no,5,no,no,no,Unfavorable,no,Straight / Heterosexual,330000,no,White,no,I am a developer by profession,yes,yes
+35,Man,no,Some college/university study without earning a degree,55-64 years old,yes,yes,no,32,no,no,no,Very unfavorable,no,Straight / Heterosexual,245000,no,White,yes,I am a developer by profession,no,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,14,yes,yes,no,Unfavorable,no,Straight / Heterosexual,110000,no,White,yes,I am a developer by profession,yes,no
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,165000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,1,yes,no,no,Very unfavorable,no,Straight / Heterosexual,85000,yes,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+7,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,135000,no,White,yes,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,9,yes,no,no,Indifferent,no,Straight / Heterosexual,190000,yes,White,no,I am a developer by profession,yes,no
+21,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,yes,no,13,yes,no,no,Very unfavorable,no,Straight / Heterosexual,196000,yes,White,no,I am a developer by profession,no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,140000,yes,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+30,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,14,yes,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,no,no
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,10,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,yes,I am a developer by profession,yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Favorable,no,Straight / Heterosexual,153000,no,White,no,I am a developer by profession,yes,no
+3,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,1,yes,yes,no,Unfavorable,no,Straight / Heterosexual,90000,no,White,yes,I am a developer by profession,yes,yes
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,22,yes,no,no,Indifferent,no,Straight / Heterosexual,187000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,15,no,no,no,Indifferent,no,Straight / Heterosexual,209000,no,North American,no,I am a developer by profession,yes,yes
+23,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,12,yes,no,yes,Very unfavorable,no,Straight / Heterosexual,300000,no,White,yes,I am a developer by profession,no,yes
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,305000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,78000,yes,North American,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Very unfavorable,yes,Bisexual,109000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,8,no,no,yes,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,3,no,no,no,Favorable,no,Straight / Heterosexual,250000,yes,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,115000,yes,White,no,I am a developer by profession,no,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,no,yes
+16,Man,no,Some college/university study without earning a degree,35-44 years old,yes,yes,no,15,yes,no,no,Unfavorable,no,Straight / Heterosexual,133000,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,yes,no,yes,2,yes,no,no,Very unfavorable,no,Gay or Lesbian,167000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,0,yes,no,no,Very unfavorable,no,Straight / Heterosexual,140000,yes,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,9,no,no,no,Very unfavorable,no,Straight / Heterosexual,275000,no,White,yes,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,4,yes,no,no,Unsure,no,Straight / Heterosexual,184000,yes,White,no,I am a developer by profession,yes,no
+15,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,9,no,no,no,Indifferent,no,Straight / Heterosexual,177000,no,Asian,no,I am a developer by profession,no,no
+3,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,12,no,no,no,Very favorable,no,Straight / Heterosexual,176000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,4,yes,yes,no,Unfavorable,no,Straight / Heterosexual,122000,no,White,yes,I am a developer by profession,no,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,10,yes,no,no,Favorable,no,Straight / Heterosexual,132000,no,White,no,I am a developer by profession,yes,no
+2,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,160000,yes,Asian,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+20,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,yes,yes,no,18,yes,no,no,Favorable,no,Bisexual,320000,no,White,no,I am a developer by profession,yes,yes
+17,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,yes,yes,no,8,yes,no,no,Indifferent,no,Straight / Heterosexual,125350,no,White,no,I am a developer by profession,no,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,150000,no,Asian,no,I am a developer by profession,yes,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,190000,no,White,no,I am a developer by profession,yes,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,yes,yes,no,Favorable,no,Straight / Heterosexual,145000,yes,White,no,I am a developer by profession,no,no
+6,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,6,yes,yes,no,Indifferent,no,Straight / Heterosexual,300000,no,North American,yes,I am a developer by profession,no,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,0,no,yes,no,Indifferent,no,Straight / Heterosexual,148000,yes,White,yes,I am a developer by profession,yes,no
+5,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,2,no,no,no,Indifferent,no,Straight / Heterosexual,156000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,no
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,25,yes,yes,no,Indifferent,no,Straight / Heterosexual,60000,no,White,yes,I am a developer by profession,no,no
+45,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,34,yes,yes,yes,Unfavorable,yes,Straight / Heterosexual,175000,yes,White,yes,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,12,no,no,yes,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,8,no,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,no,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,260000,yes,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+7,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,no,yes,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,140000,no,White,yes,I am a developer by profession,no,no
+14,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,yes,6,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,150000,yes,White,yes,I am a developer by profession,yes,yes
+20,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,14,yes,no,no,Favorable,no,Straight / Heterosexual,100000,no,White,yes,I am a developer by profession,yes,yes
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,no,25,yes,no,no,Unfavorable,no,Straight / Heterosexual,240000,no,Indian,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,4,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,85000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,22,no,no,no,Unsure,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,no,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,230000,yes,White,no,I am a developer by profession,no,no
+2,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,yes,2,yes,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,yes,no,no,Indifferent,no,Straight / Heterosexual,210000,no,White,no,I am a developer by profession,no,yes
+15,Man,yes,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,no,no,2,no,yes,yes,Unfavorable,no,Straight / Heterosexual,113000,yes,White,yes,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,140800,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,yes,no,no,Unsure,no,Straight / Heterosexual,107800,no,Hispanic or Latino/a,yes,I am a developer by profession,no,no
+15,Man,no,"Professional degree (JD, MD, etc.)",25-34 years old,yes,yes,no,8,yes,no,no,Unfavorable,no,Straight / Heterosexual,300000,no,Asian,yes,I am a developer by profession,yes,yes
+29,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,9,yes,no,no,Very unfavorable,no,Straight / Heterosexual,145000,no,White,no,I am a developer by profession,yes,no
+30,Man,no,"Associate degree (A.A., A.S., etc.)",45-54 years old,no,yes,no,30,no,no,no,Indifferent,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,15,yes,no,no,Unfavorable,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,yes
+14,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,5,no,no,no,Favorable,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,2,no,no,no,Very unfavorable,no,Straight / Heterosexual,75000,yes,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,16,no,no,no,Favorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,no,no
+12,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,9,no,no,no,Very unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,3,yes,no,no,Very unfavorable,no,Straight / Heterosexual,177000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Associate degree (A.A., A.S., etc.)",55-64 years old,yes,no,no,20,no,no,no,Indifferent,no,Straight / Heterosexual,102000,no,White,no,I am a developer by profession,no,no
+2,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,yes,yes,no,1,no,no,no,Unfavorable,no,Straight / Heterosexual,177000,no,Asian,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,93000,no,White,yes,I am a developer by profession,no,no
+12,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,6,yes,no,no,Very favorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,122000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,no,no,no,Very favorable,no,Straight / Heterosexual,120000,yes,Hispanic or Latino/a,no,I am a developer by profession,yes,no
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,14,yes,yes,no,Very favorable,no,Straight / Heterosexual,350000,yes,White,no,I am a developer by profession,yes,yes
+43,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,yes,yes,no,40,no,no,no,Very unfavorable,no,Straight / Heterosexual,223000,no,White,no,I am a developer by profession,yes,yes
+42,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,no,no,37,yes,no,no,Indifferent,no,Straight / Heterosexual,210000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,0,yes,no,no,Favorable,no,Straight / Heterosexual,66000,no,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,10,yes,no,no,Very favorable,yes,Straight / Heterosexual,215000,yes,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,no,no,no,Unfavorable,no,Bisexual,128500,yes,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,yes
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,15,yes,no,no,Unfavorable,no,Straight / Heterosexual,214000,no,White,yes,I am a developer by profession,yes,yes
+10,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,6,yes,no,no,Very favorable,no,Straight / Heterosexual,180000,yes,White,no,I am a developer by profession,yes,yes
+5,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,no,yes
+44,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,yes,no,40,no,no,no,Unfavorable,no,Gay or Lesbian,200000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,yes,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,139000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,yes
+6,Woman,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Bisexual,101000,no,White,no,I am a developer by profession,yes,yes
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,14,yes,no,no,Indifferent,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,Some college/university study without earning a degree,18-24 years old,no,no,no,8,no,yes,no,Very unfavorable,no,Bisexual,100000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,165000,yes,White,no,I am a developer by profession,yes,yes
+13,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,no,no,no,Favorable,no,Straight / Heterosexual,387000,yes,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,no,no
+14,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,no,no,6,yes,no,no,Very favorable,no,Straight / Heterosexual,280000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,4,no,no,no,Unfavorable,no,Straight / Heterosexual,86900,no,White,no,I am a developer by profession,yes,yes
+14,Woman,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,5,yes,no,no,Indifferent,no,Bisexual,59000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+20,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,18,no,no,no,Indifferent,no,Straight / Heterosexual,112000,no,White,no,I am a developer by profession,no,no
+14,Man,no,Some college/university study without earning a degree,55-64 years old,no,no,no,8,no,no,no,Unsure,no,Straight / Heterosexual,72000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,30,yes,yes,no,Unfavorable,no,Straight / Heterosexual,140000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+23,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,19,no,no,no,Indifferent,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,yes
+7,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,153000,no,White,yes,I am a developer by profession,no,no
+51,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",65 years or older,no,no,no,7,yes,yes,no,Indifferent,no,Straight / Heterosexual,150000,no,White,yes,I am a developer by profession,no,no
+5,Woman,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,yes,5,no,no,no,Favorable,no,Straight / Heterosexual,126000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Favorable,no,Straight / Heterosexual,123500,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+28,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,21,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+38,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,33,no,no,no,Unfavorable,no,Straight / Heterosexual,240000,yes,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,26,no,no,no,Very unfavorable,no,Straight / Heterosexual,220000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+40,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,29,no,no,no,Unsure,no,Straight / Heterosexual,134217,no,White,no,I am a developer by profession,no,yes
+43,Man,yes,Some college/university study without earning a degree,55-64 years old,no,no,no,37,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,45000,no,White,yes,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,no,no,3,yes,yes,no,Very unfavorable,yes,Straight / Heterosexual,135000,yes,White,no,I am a developer by profession,yes,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,11,yes,no,no,Unfavorable,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,15,yes,no,no,Unfavorable,no,Straight / Heterosexual,90000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,yes
+35,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,15,no,no,no,Very unfavorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,no,no
+7,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,yes,yes
+32,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",45-54 years old,no,yes,no,20,yes,no,no,Very favorable,no,Straight / Heterosexual,230000,no,White,no,I am a developer by profession,yes,yes
+45,Man,no,Some college/university study without earning a degree,65 years or older,no,no,no,40,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,226000,yes,White,yes,I am a developer by profession,yes,yes
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,30,yes,yes,no,Indifferent,no,Straight / Heterosexual,155000,yes,White,yes,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,175000,no,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,180000,yes,White,yes,I am a developer by profession,yes,no
+45,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,30,yes,no,no,Indifferent,no,Straight / Heterosexual,213000,no,White,no,I am a developer by profession,yes,yes
+21,Man,no,"Professional degree (JD, MD, etc.)",35-44 years old,no,no,no,15,yes,no,no,Indifferent,no,Straight / Heterosexual,220000,yes,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,no,no,no,Indifferent,no,Bisexual,65000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,12,no,no,no,Very unfavorable,no,Straight / Heterosexual,206500,no,White,no,I am a developer by profession,yes,yes
+46,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,no,yes,40,yes,yes,no,Indifferent,no,Straight / Heterosexual,160000,no,White,yes,I am a developer by profession,no,no
+28,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,24,no,no,no,Unfavorable,no,Straight / Heterosexual,109000,no,White,no,I am a developer by profession,yes,yes
+31,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,23,no,no,no,Indifferent,no,Straight / Heterosexual,125000,yes,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,23,no,no,no,Indifferent,no,Straight / Heterosexual,143000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,9,yes,no,no,Very unfavorable,no,Straight / Heterosexual,135000,no,White,no,I am a developer by profession,yes,no
+6,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,4,no,no,no,Indifferent,no,Straight / Heterosexual,105000,yes,White,no,I am a developer by profession,yes,no
+16,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,no
+41,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,35,yes,no,no,Indifferent,no,Straight / Heterosexual,260000,no,White,no,I am a developer by profession,no,no
+26,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,23,yes,no,no,Unsure,no,Straight / Heterosexual,113000,no,White,no,I am a developer by profession,yes,yes
+27,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,27,no,no,no,Indifferent,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,yes
+28,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,25,yes,no,no,Very unfavorable,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,yes,yes
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,16,no,no,no,Indifferent,no,Straight / Heterosexual,210000,no,White,no,I am a developer by profession,yes,no
+13,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,9,no,no,no,Very unfavorable,no,Bisexual,139000,yes,White,no,I am a developer by profession,yes,yes
+24,Woman,no,Some college/university study without earning a degree,35-44 years old,no,no,no,18,no,no,no,Unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,183000,no,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,68000,yes,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+10,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,yes,yes,8,no,no,no,Favorable,no,Straight / Heterosexual,250000,no,White,no,I am a developer by profession,no,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,97000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,12,no,no,no,Indifferent,no,Straight / Heterosexual,290000,no,White,no,I am a developer by profession,yes,yes
+35,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,35,no,no,no,Indifferent,no,Straight / Heterosexual,115000,yes,Asian,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,15,yes,no,no,Unsure,no,Straight / Heterosexual,100000,yes,White,no,I am a developer by profession,yes,yes
+6,Man,no,Some college/university study without earning a degree,25-34 years old,yes,no,no,7,yes,no,no,Unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,no,no
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,20,no,no,no,Unsure,no,Straight / Heterosexual,117000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,94000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Very unfavorable,no,Straight / Heterosexual,77000,no,White,no,I am a developer by profession,yes,yes
+25,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,12,no,yes,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,no,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,135000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,9,yes,no,no,Very unfavorable,yes,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,200000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+27,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,27,no,no,no,Indifferent,no,Straight / Heterosexual,101291,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",45-54 years old,no,yes,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,no,no
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,19,no,yes,no,Indifferent,no,Straight / Heterosexual,145000,yes,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,108000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",18-24 years old,no,no,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,65000,yes,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,18,no,no,no,Favorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,18,yes,no,no,Unfavorable,no,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,4,yes,no,no,Unsure,no,Straight / Heterosexual,95000,yes,White,no,I am a developer by profession,no,no
+20,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,13,no,no,no,Indifferent,no,Straight / Heterosexual,120000,yes,White,no,I am a developer by profession,yes,yes
+11,"Non-binary, genderqueer, or gender non-conforming",no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,1,yes,no,no,Unfavorable,no,Straight / Heterosexual,138000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,11,no,no,no,Indifferent,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,yes,no,Unfavorable,no,Straight / Heterosexual,55000,no,North American,yes,I am a developer by profession,yes,yes
+16,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,12,yes,no,no,Very favorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,yes
+24,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,19,no,no,no,Very unfavorable,no,Straight / Heterosexual,204000,no,White,no,I am a developer by profession,no,no
+5,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,0,no,no,no,Indifferent,no,Straight / Heterosexual,84500,no,White,no,I am a developer by profession,no,no
+35,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,25,no,no,no,Indifferent,no,Straight / Heterosexual,250000,yes,White,no,I am a developer by profession,no,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,107000,no,Asian,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,yes,no,no,Unfavorable,no,Bisexual,120000,no,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,21,no,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Associate degree (A.A., A.S., etc.)",18-24 years old,no,no,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,36000,no,White,no,I am a developer by profession,no,no
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,7,yes,no,no,Favorable,no,Straight / Heterosexual,175000,no,White,yes,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,22,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+35,Man,no,Some college/university study without earning a degree,35-44 years old,yes,no,no,25,yes,no,no,Very favorable,no,Straight / Heterosexual,250000,yes,White,yes,I am a developer by profession,no,no
+42,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,35,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+24,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,yes,no,23,yes,no,no,Very favorable,no,Straight / Heterosexual,320000,no,White,no,I am a developer by profession,yes,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,196000,no,White,no,I am a developer by profession,yes,yes
+5,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,no
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,14,yes,no,no,Very unfavorable,no,Bisexual,145000,yes,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,6,yes,yes,no,Indifferent,no,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,21,no,no,no,Indifferent,no,Straight / Heterosexual,112500,no,White,no,I am a developer by profession,yes,no
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Indifferent,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,no,no
+8,Man,no,Some college/university study without earning a degree,18-24 years old,yes,no,no,3,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,108000,no,White,yes,I am a developer by profession,yes,yes
+2,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,yes,no,no,0,yes,no,no,Very unfavorable,no,Straight / Heterosexual,78000,yes,Middle Eastern,yes,I am a developer by profession,no,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,no,no,no,Indifferent,no,Straight / Heterosexual,107000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,200000,yes,White,yes,I am a developer by profession,no,no
+15,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,5,yes,no,no,Indifferent,no,Straight / Heterosexual,127000,no,White,no,I am a developer by profession,yes,no
+34,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,30,yes,no,no,Unfavorable,no,Bisexual,175000,yes,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,no,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,105000,yes,White,no,I am a developer by profession,yes,no
+39,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,35,yes,yes,yes,Indifferent,no,Straight / Heterosexual,175000,yes,White,no,I am a developer by profession,yes,yes
+22,"Non-binary, genderqueer, or gender non-conforming",no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,12,no,no,no,Indifferent,no,Bisexual,73000,no,White,no,I am a developer by profession,yes,yes
+13,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,7,yes,no,no,Very favorable,no,Straight / Heterosexual,135000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,no
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,22,no,no,no,Unfavorable,no,Bisexual,175000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,no,no,no,Unsure,no,Straight / Heterosexual,232000,yes,White,no,I am a developer by profession,yes,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Unfavorable,no,Straight / Heterosexual,180000,no,White,yes,I am a developer by profession,no,no
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,2,no,no,no,Favorable,no,Gay or Lesbian,93000,no,White,no,I am a developer by profession,yes,yes
+43,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,36,yes,no,no,Unfavorable,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,yes,no,no,Favorable,no,Straight / Heterosexual,170000,yes,White,no,I am a developer by profession,no,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,72000,yes,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,85000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Favorable,no,Straight / Heterosexual,175000,yes,White,no,I am a developer by profession,no,no
+10,Man,no,Some college/university study without earning a degree,25-34 years old,yes,yes,no,7,no,no,no,Indifferent,no,Bisexual,134000,yes,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,yes,9,no,no,no,Unfavorable,no,Straight / Heterosexual,120000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+40,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",55-64 years old,no,no,no,30,yes,yes,no,Unfavorable,no,Straight / Heterosexual,120000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+12,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Very unfavorable,no,Bisexual,110000,no,White,no,I am a developer by profession,yes,yes
+10,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,no,no,no,Unfavorable,no,Straight / Heterosexual,46000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",55-64 years old,no,no,no,25,no,no,no,Unfavorable,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Very favorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,8,yes,no,no,Indifferent,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,12,no,no,no,Favorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,yes,yes
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,30,yes,no,no,Favorable,no,Straight / Heterosexual,180000,yes,White,yes,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,14,yes,no,no,Favorable,no,Straight / Heterosexual,275866,no,North American,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,3,yes,no,no,Very favorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,no
+16,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,13,yes,no,no,Favorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,no
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,14,no,no,no,Unfavorable,no,Straight / Heterosexual,300000,yes,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+,Man,yes,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,21,no,no,no,Very unfavorable,no,Straight / Heterosexual,120000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,165000,no,White,yes,I am a developer by profession,yes,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,no,no
+19,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,8,yes,no,no,Unfavorable,no,Straight / Heterosexual,105000,no,White,yes,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,no,no,no,Very favorable,no,Straight / Heterosexual,151000,no,White,no,I am a developer by profession,yes,no
+30,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,30,yes,no,no,Very unfavorable,no,Straight / Heterosexual,73000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,18,no,no,no,Indifferent,no,Straight / Heterosexual,250000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,108000,no,White,no,I am a developer by profession,yes,yes
+27,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,23,no,no,no,Indifferent,no,Straight / Heterosexual,125000,yes,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,5,yes,yes,no,Unfavorable,no,Straight / Heterosexual,100000,yes,White,yes,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,115000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,170000,no,Asian,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,no,0,no,no,yes,Very unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,27,yes,yes,no,Unfavorable,no,Straight / Heterosexual,112000,yes,White,no,I am a developer by profession,yes,yes
+6,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,no,yes,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,83597,no,White,no,I am a developer by profession,no,yes
+8,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,6,no,no,no,Favorable,no,Bisexual,120000,no,White,yes,I am a developer by profession,no,no
+9,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,4,yes,no,no,Indifferent,no,Straight / Heterosexual,143000,no,White,no,I am a developer by profession,no,no
+37,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,30,no,no,no,Very unfavorable,no,Straight / Heterosexual,85000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Unfavorable,no,Straight / Heterosexual,86000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+42,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,no,30,yes,yes,no,Indifferent,no,Straight / Heterosexual,325000,no,White,yes,I am a developer by profession,yes,yes
+36,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,14,yes,no,no,Favorable,no,Straight / Heterosexual,170000,yes,White,no,I am a developer by profession,yes,yes
+4,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,125000,yes,Asian,no,I am a developer by profession,yes,no
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,8,yes,no,no,Unfavorable,no,Straight / Heterosexual,126000,yes,White,yes,I am a developer by profession,yes,yes
+10,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,6,no,no,no,Very unfavorable,no,Straight / Heterosexual,117000,no,White,no,I am a developer by profession,yes,no
+7,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,6,yes,no,no,Indifferent,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,no,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,yes,no,Indifferent,no,Straight / Heterosexual,140000,yes,White,yes,I am a developer by profession,yes,yes
+35,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,30,yes,yes,yes,Indifferent,no,Straight / Heterosexual,170560,no,White,yes,I am a developer by profession,yes,no
+8,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,6,no,no,no,Very favorable,no,Straight / Heterosexual,85000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,13,yes,no,no,Indifferent,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,yes,yes
+31,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,24,yes,no,no,Indifferent,yes,Straight / Heterosexual,250000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,yes,3,yes,yes,no,Indifferent,no,Straight / Heterosexual,100000,yes,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,4,yes,no,no,Indifferent,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,no,no
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,12,no,no,no,Favorable,no,Straight / Heterosexual,100000,no,Asian,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,yes,7,yes,no,no,Unfavorable,no,Straight / Heterosexual,141400,no,White,no,I am a developer by profession,yes,no
+9,Man,no,Some college/university study without earning a degree,18-24 years old,no,yes,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,62000,no,Hispanic or Latino/a,no,I am a developer by profession,no,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,13,no,no,no,Unfavorable,no,Straight / Heterosexual,273504,yes,White,no,I am a developer by profession,no,no
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,11,no,no,no,Indifferent,no,Straight / Heterosexual,130000,yes,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,no,25,yes,no,no,Indifferent,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,yes
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,yes,no,no,Unfavorable,no,Straight / Heterosexual,266688,yes,White,no,I am a developer by profession,yes,no
+5,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,3,yes,no,no,Indifferent,no,Straight / Heterosexual,135000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+28,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,yes,21,yes,no,no,Very favorable,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+21,Man,no,Some college/university study without earning a degree,35-44 years old,yes,yes,no,20,yes,no,no,Very unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,yes,no,12,yes,no,no,Unfavorable,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,no,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,197000,yes,White,no,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,14,no,no,no,Unsure,no,Straight / Heterosexual,115000,no,White,no,I am a developer by profession,yes,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,170000,yes,White,no,I am a developer by profession,yes,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,75000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,15,no,no,no,Indifferent,no,Straight / Heterosexual,147000,no,White,no,I am a developer by profession,yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,yes,no,no,Indifferent,no,Straight / Heterosexual,75000,no,Hispanic or Latino/a,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+37,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,24,yes,no,no,Very unfavorable,no,Straight / Heterosexual,285000,no,White,no,I am a developer by profession,no,no
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,yes,no,36,no,yes,no,Unfavorable,no,Gay or Lesbian,200000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,245000,yes,Asian,no,I am a developer by profession,yes,yes
+36,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,22,no,no,no,Unfavorable,no,Straight / Heterosexual,199999,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,27,yes,no,no,Very unfavorable,yes,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,72000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,11,yes,no,no,Very unfavorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Very unfavorable,no,Gay or Lesbian,103700,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,103000,yes,White,no,I am a developer by profession,yes,no
+30,Man,no,Some college/university study without earning a degree,35-44 years old,yes,yes,no,9,yes,no,no,Favorable,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,no,no,no,Very unfavorable,no,Straight / Heterosexual,100000,no,Hispanic or Latino/a,no,I am a developer by profession,no,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,yes,6,yes,no,no,Favorable,no,Straight / Heterosexual,85000,yes,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+19,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,13,no,no,no,Favorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,3,yes,no,no,Very favorable,no,Bisexual,125000,no,White,yes,I am a developer by profession,no,no
+43,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,yes,no,41,yes,no,no,Unsure,no,Straight / Heterosexual,195000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,no
+45,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",55-64 years old,no,yes,no,36,no,yes,no,Very favorable,no,Straight / Heterosexual,125000,no,White,yes,I am a developer by profession,no,yes
+15,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,13,yes,no,no,Unfavorable,no,Straight / Heterosexual,78000,no,White,yes,I am a developer by profession,yes,yes
+23,Man,no,"Associate degree (A.A., A.S., etc.)",45-54 years old,no,no,no,23,no,no,no,Indifferent,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,2,no,no,no,Unfavorable,no,Bisexual,86000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,15,no,no,no,Favorable,no,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,no
+8,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,8,no,no,no,Very unfavorable,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,no
+43,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,no,no,32,yes,no,no,Unfavorable,no,Straight / Heterosexual,180000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Favorable,no,Straight / Heterosexual,105000,yes,White,no,I am a developer by profession,no,no
+5,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,3,yes,no,no,Unfavorable,no,Straight / Heterosexual,124500,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,9,yes,no,no,Unfavorable,yes,Straight / Heterosexual,146000,yes,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,8,no,yes,no,Very unfavorable,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,12,yes,no,no,Favorable,no,Straight / Heterosexual,158000,no,White,no,I am a developer by profession,yes,yes
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,23,yes,no,no,Favorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,145000,no,White,no,I am a developer by profession,no,no
+38,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,32,no,no,no,Very unfavorable,no,Straight / Heterosexual,80000,no,White,no,I am a developer by profession,yes,yes
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,3,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,90000,no,White,yes,I am a developer by profession,no,no
+40,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,22,no,yes,no,Unfavorable,no,Straight / Heterosexual,300000,no,White,yes,I am a developer by profession,no,no
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,11,yes,no,no,Very unfavorable,yes,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+6,Man,yes,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,4,yes,no,no,Indifferent,no,Straight / Heterosexual,240000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Very unfavorable,no,Straight / Heterosexual,127000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,116000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,no,no,no,Very unfavorable,yes,Straight / Heterosexual,147400,no,White,no,I am a developer by profession,no,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,13,no,no,no,Indifferent,no,Straight / Heterosexual,90000,no,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",18-24 years old,no,no,no,1,yes,no,no,Unfavorable,no,Straight / Heterosexual,160000,yes,White,no,I am a developer by profession,no,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,no,no,no,Favorable,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,yes,3,no,no,no,Unfavorable,no,Gay or Lesbian,90000,no,White,yes,I am a developer by profession,no,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,10,yes,no,no,Unsure,no,Straight / Heterosexual,158000,yes,Hispanic or Latino/a,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,0,no,no,no,Indifferent,no,Straight / Heterosexual,58800,no,White,no,I am a developer by profession,no,yes
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,13,no,no,no,Indifferent,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+23,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,15,no,no,no,Unsure,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,no
+22,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,15,yes,no,no,Unsure,no,Straight / Heterosexual,111000,yes,Asian,no,I am a developer by profession,yes,no
+15,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,1,yes,no,no,Unfavorable,no,Straight / Heterosexual,92000,yes,White,yes,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,5,no,yes,no,Indifferent,no,Straight / Heterosexual,99000,no,White,yes,I am a developer by profession,yes,yes
+30,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,25,no,no,no,Unsure,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,115000,yes,White,no,I am a developer by profession,yes,no
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,26,yes,yes,no,Indifferent,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,no,no
+19,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Unsure,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",25-34 years old,no,yes,no,2,no,no,no,Very unfavorable,no,Straight / Heterosexual,40000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,141000,no,White,no,I am a developer by profession,yes,yes
+27,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,20,no,no,no,Favorable,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,yes,no
+17,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,8,yes,no,no,Unfavorable,no,Straight / Heterosexual,230000,no,Indian,no,I am a developer by profession,no,no
+2,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,1,no,no,no,Very unfavorable,no,Straight / Heterosexual,80000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,20,no,no,no,Indifferent,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,127000,yes,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,19,no,no,no,Unfavorable,no,Straight / Heterosexual,175000,no,Asian,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,no,no,no,Favorable,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,yes,no,no,Very unfavorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+28,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,yes,13,yes,yes,no,Favorable,no,Straight / Heterosexual,140000,yes,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Favorable,no,Straight / Heterosexual,172000,yes,White,yes,I am a developer by profession,yes,yes
+44,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,40,no,yes,no,Favorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,yes,no,no,Unfavorable,yes,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+23,Man,no,Primary/elementary school,35-44 years old,no,yes,no,20,no,yes,no,Very unfavorable,no,Bisexual,190000,no,White,yes,I am a developer by profession,no,no
+10,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,4,yes,no,no,Very unfavorable,no,Bisexual,35000,no,White,no,I am a developer by profession,no,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Indifferent,no,Straight / Heterosexual,85000,no,White,no,I am a developer by profession,yes,yes
+45,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",45-54 years old,yes,no,no,15,yes,no,no,Indifferent,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,yes,no,no,Favorable,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,7,yes,yes,no,Favorable,no,Straight / Heterosexual,140000,no,White,yes,I am a developer by profession,no,no
+27,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,18,no,yes,yes,Very unfavorable,yes,Bisexual,200000,no,White,no,I am a developer by profession,no,no
+20,Man,no,Some college/university study without earning a degree,35-44 years old,yes,yes,no,15,yes,no,no,Very favorable,no,Straight / Heterosexual,105000,yes,White,no,I am a developer by profession,yes,no
+10,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,126000,no,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,12,no,no,no,Very unfavorable,no,Bisexual,131100,yes,White,no,I am a developer by profession,no,no
+13,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,11,yes,no,no,Favorable,no,Straight / Heterosexual,280000,no,White,no,I am a developer by profession,yes,yes
+40,Man,no,"Associate degree (A.A., A.S., etc.)",45-54 years old,no,no,no,26,yes,no,no,Unsure,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+35,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,33,yes,no,no,Indifferent,no,Straight / Heterosexual,81000,yes,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,11,yes,no,no,Unsure,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,30,yes,no,no,Indifferent,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,no,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Very unfavorable,no,Straight / Heterosexual,148000,no,White,no,I am a developer by profession,yes,yes
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,16,yes,no,no,Favorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,300000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,121000,yes,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,no,no,20,yes,yes,no,Favorable,no,Straight / Heterosexual,300000,no,North American,yes,I am a developer by profession,yes,yes
+38,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,25,yes,no,no,Indifferent,no,Straight / Heterosexual,250000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+17,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,9,no,no,no,Very unfavorable,no,Straight / Heterosexual,115000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,70000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,175000,yes,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,4,no,no,no,Very favorable,no,Straight / Heterosexual,140500,yes,Hispanic or Latino/a,no,I am a developer by profession,no,no
+11,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,no,no,no,Unfavorable,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,no,no
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,16,no,no,no,Very unfavorable,no,Straight / Heterosexual,220000,no,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,9,yes,no,no,Very unfavorable,no,Straight / Heterosexual,300000,yes,White,yes,I am a developer by profession,no,no
+6,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,6,yes,no,no,Favorable,no,Gay or Lesbian,140000,no,Asian,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+5,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Indifferent,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Favorable,no,Straight / Heterosexual,97000,no,White,no,I am a developer by profession,yes,no
+3,Woman,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,2,yes,no,no,Unfavorable,no,Bisexual,85000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,95000,yes,White,yes,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,no,no,no,Unfavorable,no,Straight / Heterosexual,103000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,yes,no,Indifferent,no,Straight / Heterosexual,73000,yes,White,no,I am a developer by profession,yes,yes
+3,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,2,yes,no,no,Unfavorable,no,Straight / Heterosexual,65000,yes,White,no,I am a developer by profession,yes,yes
+27,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,25,no,no,no,Indifferent,no,Straight / Heterosexual,86000,no,White,yes,I am a developer by profession,no,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,no,no,no,Unsure,no,Straight / Heterosexual,120000,no,White,no,I am a developer by profession,yes,yes
+46,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",55-64 years old,no,no,no,37,yes,no,no,Unsure,no,Straight / Heterosexual,22000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,11,yes,no,no,Unfavorable,no,Straight / Heterosexual,96000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Indifferent,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+2,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,2,yes,no,no,Unfavorable,no,Straight / Heterosexual,57000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,15,no,no,no,Indifferent,no,Straight / Heterosexual,103000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,140000,yes,White,no,I am a developer by profession,yes,yes
+3,Man,no,Some college/university study without earning a degree,18-24 years old,yes,no,no,1,yes,no,no,Very unfavorable,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,3,no,no,no,Very unfavorable,no,Straight / Heterosexual,280000,yes,North American,no,I am a developer by profession,yes,no
+5,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,3,yes,no,no,Favorable,no,Straight / Heterosexual,165000,yes,White,no,I am a developer by profession,yes,no
+20,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,5,yes,yes,no,Indifferent,no,Straight / Heterosexual,92000,no,White,yes,I am a developer by profession,no,no
+40,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",55-64 years old,no,no,no,38,no,no,no,Unfavorable,no,Straight / Heterosexual,114000,no,White,no,I am a developer by profession,no,no
+12,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,10,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,111000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,4,no,no,no,Indifferent,no,Bisexual,153500,no,White,no,I am a developer by profession,yes,no
+6,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,2,yes,no,no,Very favorable,no,Straight / Heterosexual,140000,no,White,yes,I am a developer by profession,no,no
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,14,no,no,no,Very unfavorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,20,yes,no,no,Favorable,no,Straight / Heterosexual,160000,no,White,yes,I am a developer by profession,yes,yes
+16,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,12,no,no,no,Unfavorable,no,Straight / Heterosexual,130000,yes,White,no,I am a developer by profession,yes,no
+15,"Non-binary, genderqueer, or gender non-conforming",no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,yes,no,no,Unfavorable,no,Queer,110000,no,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,yes,no,no,Very favorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,18,no,no,no,Very unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+36,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,31,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,205000,no,White,no,I am a developer by profession,yes,yes
+23,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,no,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,15,yes,no,no,Very unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,22,no,no,no,Very unfavorable,no,Straight / Heterosexual,98000,yes,White,no,I am a developer by profession,yes,no
+,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,12,no,no,no,Unsure,no,Straight / Heterosexual,44000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,130000,no,North American,yes,I am a developer by profession,yes,yes
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,yes,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,110000,no,White,yes,I am a developer by profession,no,yes
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,yes,7,no,no,no,Unfavorable,no,Straight / Heterosexual,82000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,yes,no,no,Very unfavorable,no,Bisexual,159000,yes,White,no,I am a developer by profession,no,no
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Very unfavorable,yes,Straight / Heterosexual,160000,yes,White,yes,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Very favorable,no,Straight / Heterosexual,170000,no,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Favorable,no,Straight / Heterosexual,72000,yes,African,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,yes,5,yes,no,no,Unfavorable,no,Straight / Heterosexual,115000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,11,yes,no,no,Indifferent,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,150000,no,Middle Eastern,no,I am a developer by profession,yes,yes
+25,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,no,no,no,18,yes,no,no,Very favorable,no,Straight / Heterosexual,215000,no,White,yes,I am a developer by profession,yes,no
+40,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",55-64 years old,no,yes,no,13,yes,no,no,Unfavorable,no,Straight / Heterosexual,80000,no,White,no,I am a developer by profession,yes,no
+25,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,17,no,no,no,Very unfavorable,no,Straight / Heterosexual,210000,yes,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,8,no,no,no,Favorable,no,Straight / Heterosexual,167000,no,White,no,I am a developer by profession,no,no
+40,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,16,yes,no,no,Indifferent,no,Straight / Heterosexual,50000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,18,no,no,no,Very favorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,yes
+10,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,6,no,no,no,Very unfavorable,no,Straight / Heterosexual,97000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+42,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,yes,yes,no,40,yes,yes,no,Indifferent,no,Straight / Heterosexual,150000,yes,White,yes,I am a developer by profession,yes,yes
+4,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,0,yes,no,no,Unfavorable,no,Straight / Heterosexual,65000,yes,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,yes,no,12,yes,no,no,Indifferent,no,Straight / Heterosexual,115000,no,White,yes,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,yes,no,no,Very unfavorable,no,Straight / Heterosexual,160000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Unfavorable,no,Bisexual,80000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,5,no,no,no,Very favorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,180000,yes,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,6,yes,no,no,Unfavorable,no,Straight / Heterosexual,263500,no,White,no,I am a developer by profession,yes,no
+5,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,5,no,no,no,Very favorable,no,Straight / Heterosexual,94600,no,White,no,I am a developer by profession,yes,no
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,yes,no,Favorable,no,Straight / Heterosexual,135000,yes,White,yes,I am a developer by profession,yes,yes
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,15,no,no,no,Very unfavorable,no,Straight / Heterosexual,260000,no,White,no,I am a developer by profession,no,no
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,yes,no,no,Indifferent,no,Straight / Heterosexual,109953,no,White,no,I am a developer by profession,yes,yes
+32,Man,no,Some college/university study without earning a degree,55-64 years old,no,no,no,26,no,no,no,Indifferent,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,10,no,no,no,Very unfavorable,yes,Straight / Heterosexual,230000,no,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,no,no,no,Unsure,no,Straight / Heterosexual,210000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,no,no,no,Indifferent,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,yes,yes
+17,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,13,yes,no,no,Unfavorable,no,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,no,yes
+14,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,11,yes,no,no,Indifferent,no,Straight / Heterosexual,150000,yes,White,yes,I am a developer by profession,yes,yes
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,7,yes,no,no,Very unfavorable,no,Straight / Heterosexual,210000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Favorable,no,Straight / Heterosexual,120000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,230000,no,White,yes,I am a developer by profession,no,yes
+3,Man,no,Some college/university study without earning a degree,18-24 years old,no,no,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,240000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+23,Man,no,Some college/university study without earning a degree,35-44 years old,yes,no,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,190400,yes,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,125000,no,White,no,I am a developer by profession,yes,no
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,yes,no,no,Unsure,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,yes,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,63000,no,North American,no,I am a developer by profession,yes,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,8,no,no,no,Indifferent,no,Straight / Heterosexual,135000,no,White,no,I am a developer by profession,yes,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,yes,yes,yes,2,yes,yes,yes,Indifferent,no,Straight / Heterosexual,85500,yes,White,yes,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,yes,no,no,7,no,yes,no,Very unfavorable,no,Straight / Heterosexual,235000,no,White,no,I am a developer by profession,no,no
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,yes,no,26,no,no,no,Very unfavorable,no,Straight / Heterosexual,149000,no,White,no,I am a developer by profession,yes,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,12,no,no,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,no
+12,Man,no,Some college/university study without earning a degree,25-34 years old,yes,no,no,6,yes,no,no,Very unfavorable,no,Straight / Heterosexual,85000,no,White,no,I am a developer by profession,yes,yes
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,yes,no,no,18,no,no,no,Indifferent,no,Straight / Heterosexual,230000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,8,yes,no,no,Unsure,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,no
+5,"Non-binary, genderqueer, or gender non-conforming",no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,5,yes,no,no,Very unfavorable,no,Queer,103000,no,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,1,no,no,no,Favorable,no,Straight / Heterosexual,55000,yes,White,no,I am a developer by profession,no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Unfavorable,no,Straight / Heterosexual,112000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,no,no,no,Unsure,no,Straight / Heterosexual,98000,no,White,no,I am a developer by profession,no,yes
+6,Man,no,"Associate degree (A.A., A.S., etc.)",25-34 years old,no,no,no,3,no,no,no,Indifferent,no,Straight / Heterosexual,55000,yes,White,yes,I am a developer by profession,yes,no
+18,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,11,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,108000,yes,White,yes,I am a developer by profession,yes,yes
+14,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",45-54 years old,no,no,no,14,no,no,no,Favorable,no,Straight / Heterosexual,200000,no,Middle Eastern,yes,I am a developer by profession,no,no
+7,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,5,yes,no,no,Favorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,no
+21,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,20,no,no,no,Very unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,205000,yes,White,no,I am a developer by profession,yes,yes
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,97500,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,110000,no,White,yes,I am a developer by profession,no,no
+15,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,yes,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,yes,no,no,Unfavorable,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,yes,4,yes,no,no,Unsure,no,Straight / Heterosexual,42000,yes,White,no,I am a developer by profession,yes,yes
+3,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,0,no,no,no,Indifferent,no,Straight / Heterosexual,78000,yes,White,no,I am a developer by profession,yes,no
+6,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,2,yes,no,no,Very unfavorable,no,Straight / Heterosexual,109917,yes,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,15,yes,no,no,Favorable,no,Straight / Heterosexual,280000,no,White,yes,I am a developer by profession,no,no
+10,Man,no,"Professional degree (JD, MD, etc.)",35-44 years old,no,yes,no,6,no,no,no,Unfavorable,no,Straight / Heterosexual,105000,no,White,no,I am a developer by profession,yes,yes
+24,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,no,no,6,no,no,no,Very unfavorable,no,Straight / Heterosexual,115000,no,White,no,I am a developer by profession,yes,yes
+29,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",35-44 years old,no,no,no,19,no,no,no,Indifferent,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,3,yes,yes,no,Very unfavorable,no,Bisexual,91000,yes,White,yes,I am a developer by profession,no,no
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,17,no,no,no,Indifferent,no,Straight / Heterosexual,162000,no,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,6,no,no,no,Unsure,no,Gay or Lesbian,140000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,yes,yes,no,Favorable,no,Straight / Heterosexual,120000,no,White,yes,I am a developer by profession,no,no
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,9,yes,no,no,Indifferent,yes,Straight / Heterosexual,130000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+35,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,29,no,no,no,Indifferent,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,yes
+25,Man,no,Some college/university study without earning a degree,45-54 years old,no,yes,no,23,yes,no,no,Very unfavorable,no,Straight / Heterosexual,320000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,Some college/university study without earning a degree,25-34 years old,yes,yes,no,4,yes,yes,no,Unsure,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,no,no,1,no,no,no,Favorable,no,Straight / Heterosexual,144000,yes,White,no,I am a developer by profession,no,no
+26,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,26,no,no,no,Very unfavorable,no,Straight / Heterosexual,205000,no,White,no,I am a developer by profession,no,no
+20,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,yes,no,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,50000,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Indifferent,no,Straight / Heterosexual,116748,no,White,no,I am a developer by profession,no,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,3,no,no,no,Unsure,no,Bisexual,100000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,12,no,no,no,Unfavorable,no,Straight / Heterosexual,240000,no,White,no,I am a developer by profession,yes,no
+9,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,6,yes,no,no,Unfavorable,no,Straight / Heterosexual,130000,no,White,no,I am a developer by profession,no,no
+25,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,20,no,yes,no,Indifferent,no,Straight / Heterosexual,30000,no,White,yes,I am a developer by profession,yes,yes
+22,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,17,no,no,no,Indifferent,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,Some college/university study without earning a degree,35-44 years old,no,no,no,10,yes,no,no,Indifferent,no,Straight / Heterosexual,260000,no,White,no,I am a developer by profession,yes,yes
+31,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,27,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,270000,yes,White,no,I am a developer by profession,no,no
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,0,no,yes,no,Unfavorable,no,Bisexual,80000,no,White,no,I am a developer by profession,no,no
+24,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,15,no,yes,no,Unfavorable,no,Straight / Heterosexual,273000,no,North American,no,I am a developer by profession,no,yes
+46,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,38,no,no,no,Very unfavorable,no,Straight / Heterosexual,300000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+9,Woman,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,5,yes,no,no,Very unfavorable,no,Gay or Lesbian,80000,no,White,no,I am a developer by profession,yes,yes
+8,Man,no,Some college/university study without earning a degree,25-34 years old,no,no,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,no,no
+15,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",45-54 years old,no,no,yes,12,no,no,no,Unfavorable,no,Straight / Heterosexual,110000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,15,yes,no,no,Indifferent,no,Straight / Heterosexual,175000,no,White,no,I am a developer by profession,yes,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",18-24 years old,no,yes,no,3,no,no,no,Unfavorable,no,Straight / Heterosexual,122500,no,White,no,I am a developer by profession,no,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Unfavorable,no,Straight / Heterosexual,72000,no,White,no,I am a developer by profession,yes,yes
+15,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,9,no,no,no,Very unfavorable,no,Gay or Lesbian,170000,yes,White,no,I am a developer by profession,no,no
+51,Man,no,"Professional degree (JD, MD, etc.)",65 years or older,no,yes,no,45,no,no,no,Indifferent,no,Straight / Heterosexual,20000,no,White,no,I am a developer by profession,yes,no
+18,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,14,yes,no,no,Unfavorable,no,Straight / Heterosexual,122000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,10,yes,no,no,Unfavorable,no,Straight / Heterosexual,150000,yes,White,no,I am a developer by profession,yes,yes
+7,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,yes,no,no,Very unfavorable,no,Straight / Heterosexual,125000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+25,Man,no,"Associate degree (A.A., A.S., etc.)",45-54 years old,no,yes,no,17,no,no,no,Very unfavorable,no,Straight / Heterosexual,127000,no,White,no,I am a developer by profession,yes,yes
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,11,yes,no,no,Indifferent,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+9,Man,no,"Associate degree (A.A., A.S., etc.)",18-24 years old,no,yes,no,1,yes,no,no,Unsure,no,Straight / Heterosexual,75000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,7,no,no,no,Indifferent,no,Straight / Heterosexual,157000,no,White,no,I am a developer by profession,yes,no
+22,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,12,no,yes,yes,Unfavorable,no,Straight / Heterosexual,163000,yes,White,no,I am a developer by profession,yes,no
+25,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",35-44 years old,no,no,no,25,no,no,no,Very favorable,no,Straight / Heterosexual,193000,no,White,no,I am a developer by profession,no,no
+15,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,15,no,no,no,Very favorable,no,Straight / Heterosexual,155000,no,White,no,I am a developer by profession,yes,yes
+45,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,45,no,no,no,Very unfavorable,no,Straight / Heterosexual,80000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,no
+8,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,4,no,no,no,Unfavorable,no,Bisexual,110000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,11,no,no,no,Unfavorable,no,Straight / Heterosexual,235000,no,White,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,3,yes,yes,no,Indifferent,no,Straight / Heterosexual,100000,no,White,yes,I am a developer by profession,no,no
+28,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,yes,no,no,22,yes,no,no,Very favorable,yes,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,no,yes
+20,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,yes,no,no,Unfavorable,no,Straight / Heterosexual,225000,no,White,no,I am a developer by profession,yes,yes
+20,Man,no,"Professional degree (JD, MD, etc.)",35-44 years old,no,yes,no,10,yes,no,no,Favorable,no,Straight / Heterosexual,300000,no,White,yes,"I am not primarily a developer, but I write code sometimes as part of my work",yes,no
+32,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,26,no,no,no,Indifferent,no,Straight / Heterosexual,165000,no,White,no,I am a developer by profession,yes,no
+8,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,8,no,no,no,Favorable,no,Straight / Heterosexual,202000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,25,no,no,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,11,yes,no,no,Very unfavorable,no,Straight / Heterosexual,163000,no,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,no,no,7,yes,no,no,Unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,yes,no
+2,Man,no,Some college/university study without earning a degree,45-54 years old,no,no,no,2,yes,no,no,Unsure,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,10,yes,no,no,Unfavorable,yes,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,8,yes,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+11,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,no,no,6,no,no,no,Indifferent,no,Straight / Heterosexual,112000,no,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,150000,yes,Indian,no,I am a developer by profession,no,no
+4,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,2,no,no,no,Indifferent,no,Straight / Heterosexual,65000,no,White,no,I am a developer by profession,yes,yes
+14,Woman,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,no,no,14,no,no,no,Very favorable,no,Bisexual,118000,no,White,no,I am a developer by profession,yes,yes
+22,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,yes,no,16,no,no,no,Very unfavorable,no,Straight / Heterosexual,300000,no,White,no,I am a developer by profession,yes,no
+30,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",45-54 years old,no,yes,no,24,yes,no,no,Very unfavorable,no,Straight / Heterosexual,175000,yes,White,no,I am a developer by profession,yes,yes
+12,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,4,no,no,no,Favorable,no,Straight / Heterosexual,110000,no,White,no,I am a developer by profession,yes,yes
+42,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,35,yes,no,yes,Indifferent,no,Straight / Heterosexual,260000,no,White,no,I am a developer by profession,no,no
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,12,no,no,no,Indifferent,no,Gay or Lesbian,113000,no,White,no,I am a developer by profession,yes,yes
+19,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,11,yes,no,no,Unfavorable,no,Straight / Heterosexual,144000,no,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,9,no,no,no,Indifferent,no,Straight / Heterosexual,70000,yes,White,no,I am a developer by profession,yes,yes
+23,Man,no,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",35-44 years old,no,yes,no,20,no,no,no,Favorable,no,Straight / Heterosexual,140000,no,White,no,I am a developer by profession,yes,yes
+26,Man,no,"Associate degree (A.A., A.S., etc.)",35-44 years old,no,yes,no,16,yes,no,no,Favorable,no,Straight / Heterosexual,200000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,5,no,no,no,Very unfavorable,no,Straight / Heterosexual,200000,no,White,no,I am a developer by profession,yes,yes
+5,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,3,no,no,no,Unsure,no,Straight / Heterosexual,48000,no,Hispanic or Latino/a,no,I am a developer by profession,yes,yes
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,no,no,7,no,no,no,Unfavorable,no,Straight / Heterosexual,250000,yes,White,yes,I am a developer by profession,yes,yes
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",45-54 years old,no,no,no,22,yes,no,no,Very unfavorable,no,Straight / Heterosexual,156056,no,White,no,I am a developer by profession,no,no
+6,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,yes,yes,no,3,yes,no,no,Very unfavorable,no,Straight / Heterosexual,67000,no,White,no,I am a developer by profession,no,yes
+22,Woman,no,"Associate degree (A.A., A.S., etc.)",45-54 years old,no,yes,no,5,no,no,no,Unsure,no,Straight / Heterosexual,44000,no,White,no,I am a developer by profession,yes,yes
+27,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",35-44 years old,no,yes,no,14,yes,no,no,Unfavorable,no,Straight / Heterosexual,150000,no,White,no,I am a developer by profession,no,no
+26,Woman,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,yes,yes,7,yes,yes,no,Very unfavorable,no,Straight / Heterosexual,108000,yes,White,no,I am a developer by profession,yes,yes
+10,Man,yes,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,2,yes,no,no,Indifferent,no,Straight / Heterosexual,125000,no,White,yes,I am a developer by profession,no,no
+13,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,10,no,no,no,Indifferent,no,Straight / Heterosexual,107000,no,White,no,I am a developer by profession,yes,yes
+16,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",25-34 years old,no,yes,no,9,yes,no,no,Very unfavorable,no,Gay or Lesbian,325000,yes,African,no,I am a developer by profession,yes,yes
+40,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",55-64 years old,no,no,no,30,no,no,no,Unfavorable,no,Straight / Heterosexual,172500,no,White,no,I am a developer by profession,no,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,yes,yes,no,7,yes,no,no,Indifferent,no,Straight / Heterosexual,86700,no,White,no,I am a developer by profession,no,no
+10,Man,no,"Master???s degree (M.A., M.S., M.Eng., MBA, etc.)",25-34 years old,no,yes,no,5,no,no,no,Indifferent,no,Straight / Heterosexual,135000,yes,Asian,no,I am a developer by profession,yes,no
+24,Man,no,Some college/university study without earning a degree,35-44 years old,no,yes,no,22,no,no,no,Very favorable,no,Straight / Heterosexual,185000,no,White,no,I am a developer by profession,yes,yes
+14,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,14,yes,yes,no,Favorable,no,Straight / Heterosexual,134000,no,White,no,"I am not primarily a developer, but I write code sometimes as part of my work",no,yes
+8,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",25-34 years old,no,no,no,8,yes,no,no,Indifferent,no,Straight / Heterosexual,100000,no,White,no,I am a developer by profession,no,yes
+12,Man,no,Some college/university study without earning a degree,25-34 years old,no,yes,no,11,no,no,no,Very unfavorable,no,Straight / Heterosexual,90000,no,White,no,I am a developer by profession,yes,yes
+30,Man,no,"Other doctoral degree (Ph.D., Ed.D., etc.)",35-44 years old,yes,no,no,25,yes,yes,no,Unfavorable,no,Straight / Heterosexual,180000,no,White,no,I am a developer by profession,no,no
+11,Man,no,"Bachelor???s degree (B.A., B.S., B.Eng., etc.)",35-44 years old,no,no,no,10,no,no,no,Very unfavorable,no,Bisexual,70000,no,North American,no,"I am not primarily a developer, but I write code sometimes as part of my work",yes,yes
+5,Man,no,"Associate degree (A.A., A.S., etc.)",18-24 years old,yes,yes,no,4,yes,no,no,Favorable,no,Straight / Heterosexual,110000,yes,White,no,I am a developer by profession,yes,yes

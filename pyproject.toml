@@ -18,6 +18,8 @@ jinja2-fragments = "^1.1.0"
 python-multipart = "^0.0.6"
 pytailwindcss = "^0.2.0"
 black = "^23.9.1"
+requests = "^2.31.0"
+transformers = "^4.38.2"
 
 
 [build-system]
