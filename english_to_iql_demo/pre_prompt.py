@@ -1,12 +1,21 @@
 pre_prompt = """
-### IQL table with properties
-# data(SalaryUSD, Gender, Ethnicity, YearsCodeProfessional, Background)
-# Stackoverflow Developer Survey
-# Explore the developer records
+You have access to an IQL table named developer_records with the following columns:
+SalaryUSD, Gender, Ethnicity, YearsCodeProfessional, Background.
+Here are a few example instructions and their corresponding IQL queries:
+
+Instruction: Show me 5 rows from the data.
+
+Query: 
 SELECT * FROM developer_records LIMIT 5
-# Show me developers' salary, gender, and ethnicity
+
+Instruction: Show me developers' salary, gender, and ethnicity
+
+Query: 
 SELECT SalaryUSD, Gender, Ethnicity FROM developer_records
-# List the 10 most frequent gender and ethnicity pairs
+
+Instruction: List the 10 most frequent gender and ethnicity pairs
+
+Query: 
 SELECT
   COUNT(*) AS n,
   Gender,
@@ -15,7 +24,10 @@ FROM developer_records
 GROUP BY Gender, Ethnicity
 ORDER BY n DESC
 LIMIT 10
-# Show me the probability of developers' salaries given their gender
+
+Instruction: Show me the probability of developers' salaries given their gender
+Query: 
+
 SELECT
   SalaryUSD,
   Gender,
@@ -24,7 +36,10 @@ SELECT
       GIVEN Gender
         AS probability_salary
 FROM developer_records
-# Show me the probability of developers' salaries given their ethnicity
+
+Instruction: Show me the probability of developers' salaries given their ethnicity
+
+Query: 
 SELECT
   SalaryUSD,
   Ethnicity,
@@ -33,7 +48,10 @@ SELECT
       GIVEN Ethnicity
         AS probability_salary
 FROM developer_records
-# Show me developers gender, ethnicity, and how likely they are to be underpaid based on their experience and background
+
+Instruction: Show me developers gender, ethnicity, and how likely they are to be underpaid based on their experience and background
+
+Query:
   SELECT
     PROBABILITY OF SalaryUSD >  SalaryUSD
       UNDER developer_record_generator
@@ -43,5 +61,8 @@ FROM developer_records
     Ethnicity
     FROM
     SELECT * FROM developer_records
-# {user_query}
+
+Instruction: {user_query}
+
+Query:
 SELECT"""

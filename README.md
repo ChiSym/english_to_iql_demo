@@ -1,11 +1,10 @@
 # english_to_iql_demo
 
-rough instructions:
+Instructions:
 
+- install poetry
 - run `poetry install`
-- run `export OPENAI_API_KEY="yourkey"`
-- clone inferenceql.query, place it in the same directory as this repo.
-- install clojure
-
-
+- make a huggingface account, and agree to the gemma conditions https://huggingface.co/google/gemma-7b
+- create a huggingface authentication token
+- run `huggingface-cli login`, paste your token
 - run `uvicorn english_to_iql_demo.main:app --reload`

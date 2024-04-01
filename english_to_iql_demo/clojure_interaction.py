@@ -1,20 +1,23 @@
-import pexpect
+import requests
+import urllib.parse
+import json
+import polars as pl
 
-def get_iql_shell():
-    child = pexpect.spawnu('./bin/run_iql_query_sppl.sh', timeout=200)
-    child.expect('iql> ')
+def iql_save(iql_url, query, outfile="results/iql_out.csv"):
+    df = iql_run(iql_url, query)
+    df.write_csv(outfile)
 
-    return child
+def iql_run(iql_url, query):
+    url = urllib.parse.urljoin(iql_url, "/api/query")
 
-def iql_save(iql, prompt, outfile="results/iql_out.csv"):
-    result = iql_run(iql, prompt)
-    with open(outfile, "w") as f:
-        f.write(result)
+    request = {"query": query}
+    headers ={
+        "Content-type": "application/json",
+        "Accept": "application/json"
+        }
+    x = requests.post(url, json = request, headers=headers)
 
-def iql_run(iql, prompt):
-    iql.sendline(prompt)
-    iql.expect('\r\r\niql> ')
-    result = iql.before
-    result = result.split('[K\r')[-1]
-    result = result.replace('\r\r\n', '\n')
-    return result
+    response = json.loads(x.text)
+    df = pl.from_dicts(response['rows'])
+
+    return df

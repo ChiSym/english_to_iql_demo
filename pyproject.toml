@@ -20,7 +20,9 @@ pytailwindcss = "^0.2.0"
 black = "^23.9.1"
 sppl = { git = "https://github.com/Joaoloula/sppl", branch = "permissive_versions" }
 invoke = "^2.2.0"
-pexpect = "^4.8.0"
+transformers = "^4.39.2"
+accelerate = "^0.28.0"
+bitsandbytes = "^0.43.0"
 
 [build-system]
 requires = ["poetry-core"]

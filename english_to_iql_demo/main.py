@@ -7,8 +7,9 @@ from contextlib import asynccontextmanager
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
-from english_to_iql_demo.clojure_interaction import get_iql_shell, iql_save
-import pexpect
+from english_to_iql_demo.clojure_interaction import iql_save
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from transformers import PreTrainedTokenizerBase, PreTrainedModel
 
 
 import re
@@ -26,13 +27,16 @@ query_result_path = "results/iql_out.csv"
 class Data:
     english_query: str
     iql_query: str
-    iql: pexpect.pty_spawn.spawn
+    iql_url: str
+    model: PreTrainedModel
+    tokenizer: PreTrainedTokenizerBase
+
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Context manager for FastAPI app. It will run all code before `yield`
-    on app startup, and will run code after `yeld` on app shutdown. This method
+    on app startup, and will run code after `yield` on app shutdown. This method
     runs a subprocess on app startup which is the equivalent of running the
     tailwindcss command `tailwindcss -i ./src/tw.css -o ./css/main.css`.
 
@@ -57,9 +61,17 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="dist"), name="static")
 
+quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
+model = AutoModelForCausalLM.from_pretrained("google/gemma-7b-it", quantization_config=quantization_config)
 
-data = Data(english_query="", iql_query="", iql=get_iql_shell())
-
+data = Data(
+    english_query="", 
+    iql_query="", 
+    iql_url="http://44.200.189.145:60082/",
+    tokenizer=tokenizer,
+    model=model,
+    )
 
 
 @app.get("/")
@@ -75,7 +87,11 @@ async def root(request: Request):
 @app.post("/post_english_query")
 async def post_english_query(request: Request, english_query: Annotated[str, Form()]):
     data.english_query = english_query
-    data.iql_query = english_query_to_iql(data.english_query)
+    data.iql_query = english_query_to_iql(
+        data.model,
+        data.tokenizer,
+        data.english_query
+        )
 
     return templates.TemplateResponse(
         "index.html.jinja",
@@ -86,10 +102,13 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
 
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request):
-    iql_query = request.headers['iql_query']
-    iql_query = urllib.parse.unquote(iql_query)
-    data.iql_query = re.sub("\s\s+" , " ", iql_query)
-    iql_save(data.iql, data.iql_query)
+    # note: commented the lines below because there the 'iql_query' property
+    # seemed to be empty, but this might remove the capacity to manually
+    # edit the query
+    # iql_query = request.headers['iql_query']
+    # iql_query = urllib.parse.unquote(iql_query)
+    # data.iql_query = re.sub("\s\s+" , " ", iql_query)
+    iql_save(data.iql_url, data.iql_query)
 
     context = plot_context_first_vars(query_result_path)
 
