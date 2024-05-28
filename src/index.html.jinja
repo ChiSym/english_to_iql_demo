@@ -38,7 +38,7 @@
             {% block iql_query %}
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">InferenceQL</label>
             <iql-textarea name="iql_query" id="iql_textarea">{{ iql_query }}</iql-textarea>
-            <button id="iql_query_button" class="absolute bottom-9 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Run</button>
+            <button id="iql_query_button" class="z-10 absolute bottom-20 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Run</button>
             {% endblock %}
         </form>
         {% block plot %}
