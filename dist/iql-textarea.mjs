@@ -80,7 +80,6 @@ class IQLTextarea extends LitElement {
         spellcheck="false"
         @input=${this._handleInput}
         @scroll=${this._handleScroll}
-        rows="19"
         wrap="off"
         placeholder="You can edit queries here"
       >${text}</textarea>

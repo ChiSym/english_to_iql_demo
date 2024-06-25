@@ -15,12 +15,11 @@ def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> st
         "max_tokens": 100,
         "'76'": ''
         }
-    headers ={
+    headers = {
         "Content-type": "application/json",
         "Accept": "application/json"
         }
     x = requests.post(genparse_url, json = request, headers=headers)
-    import ipdb; ipdb.set_trace()
 
     response = json.loads(x.text)
     posterior = response['posterior']

@@ -8,6 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
 from english_to_iql_demo.clojure_interaction import iql_run
+from itertools import count
 
 import polars as pl
 import shutil
@@ -15,6 +16,7 @@ import os
 
 
 templates = Jinja2Blocks(directory="src")
+query_counter = count(1)
 
 @dataclass
 class Data:
@@ -42,13 +44,16 @@ data = Data(
     )
 
 
+
 @app.get("/")
 async def root(request: Request):
     context = plot(data.df)
 
     return templates.TemplateResponse(
         "index.html.jinja",
-        {"request": request, **context},
+        {"request": request, 
+         "idnum": next(query_counter),
+        **context},
     )
 
 
@@ -94,21 +99,21 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request):
     form_data = await request.form()
-
-    # this post request is triggering twice, 
-    # using this hack to get around it
+    
     if form_data.get('iql_query', '') != '':
         data.iql_query = form_data.get('iql_query', '')
-    
-    data.df = iql_run(data.iql_url, data.iql_query)
+
+    data.df = iql_run(data.iql_url, form_data.get('iql_query', ''))
 
     context = plot(data.df)
 
     return templates.TemplateResponse(
-        "index.html.jinja", {"request": request, **context}, block_name="plot"
+        "index.html.jinja", 
+        {"request": request, 
+         "english_query": form_data["english_query"], 
+         "gensql_query": form_data["iql_query"], 
+         "idnum": next(query_counter), 
+         **context}, 
+        block_name="plot"
     )
 
-
-@app.get("/query_result.csv", response_class=FileResponse)
-async def get_query_result():
-    return query_result_path
