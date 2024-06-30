@@ -86,15 +86,39 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
         block_name="iql_query",
     )
 
+# @app.post("/update_iql_query")
+# async def update_iql_query(request: Request):
+#     form_data = await request.form()
+#     data.iql_query = form_data['iql_query']
+#     print(form_data)
+#     return data.iql_query
+
+
+# @app.post("/post_iql_query")
+# async def post_iql_query(request: Request):
+#     # note: commented the lines below because there the 'iql_query' property
+#     # seemed to be empty, but this might remove the capacity to manually
+#     # edit the query
+#     # iql_query = request.headers['iql_query']
+#     # iql_query = urllib.parse.unquote(iql_query)
+#     # data.iql_query = re.sub("\s\s+" , " ", iql_query)
+#     iql_save(data.iql_url, data.iql_query)
+
+#     context = plot_context_first_vars(query_result_path)
+
+#     return templates.TemplateResponse(
+#         "index.html.jinja", {"request": request, **context}, block_name="plot"
+#     )
 
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request):
-    # note: commented the lines below because there the 'iql_query' property
-    # seemed to be empty, but this might remove the capacity to manually
-    # edit the query
-    # iql_query = request.headers['iql_query']
-    # iql_query = urllib.parse.unquote(iql_query)
-    # data.iql_query = re.sub("\s\s+" , " ", iql_query)
+    form_data = await request.form()
+
+    # this post request is triggering twice, 
+    # using this hack to get around it
+    if form_data.get('iql_query', '') != '':
+        data.iql_query = form_data.get('iql_query', '')
+    
     iql_save(data.iql_url, data.iql_query)
 
     context = plot_context_first_vars(query_result_path)
