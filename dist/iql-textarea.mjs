@@ -1,4 +1,3 @@
-import hljs from 'highlight.js';
 import { LitElement, css, html } from 'lit';
 import { live } from 'lit/directives/live.js';
 import { createRef, ref } from 'lit/directives/ref.js'

@@ -1,4 +1,3 @@
-import hljs from 'highlight.js';
 
 export const iql = ({ regex }) => {
   const COMMA = {

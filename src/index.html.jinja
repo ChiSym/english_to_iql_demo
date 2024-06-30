@@ -6,7 +6,6 @@
       {
         "imports": {
           "@lit-labs/observers/mutation-controller.js":  "https://esm.sh/@lit-labs/observers@2.0.0/mutation-controller.js",
-          "highlight.js": "https://esm.sh/highlight.js@11.8.0/lib/core",
           "json5": "https://esm.sh/json5@2.2.3",
           "lit": "https://esm.sh/lit@2.8.0",
           "lit-html/directives/if-defined": "https://esm.sh/lit-html@3.0.0/directives/if-defined.js",
@@ -17,6 +16,7 @@
         }
       }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script type="module" src="{{url_for('static',path='/iql-language.mjs')}}"></script>
     <script type="module" src="{{url_for('static',path='/iql-code.mjs')}}"></script>
     <script type="module" src="{{url_for('static',path='/iql-textarea.mjs')}}"></script>

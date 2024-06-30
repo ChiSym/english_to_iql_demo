@@ -9,10 +9,7 @@ from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
 from english_to_iql_demo.clojure_interaction import iql_save
 
-
-import re
 import shutil
-import urllib
 import os
 
 
@@ -59,7 +56,8 @@ app.mount("/static", StaticFiles(directory="dist"), name="static")
 data = Data(
     english_query="", 
     iql_query="", 
-    iql_url="http://44.200.189.145:60082/",
+    # iql_url="http://34.45.8.32:3000/",
+    iql_url="http://localhost:8888/",
     genparse_url="http://34.122.30.137:8888/infer",
     )
 

@@ -1,4 +1,3 @@
-import hljs from 'highlight.js';
 import { LitElement, css } from 'lit';
 import { MutationController } from '@lit-labs/observers/mutation-controller.js';
 import { iql } from './iql-language.mjs';
