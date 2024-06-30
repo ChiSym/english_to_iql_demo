@@ -8,8 +8,6 @@ from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
 from english_to_iql_demo.clojure_interaction import iql_save
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-from transformers import PreTrainedTokenizerBase, PreTrainedModel
 
 
 import re
@@ -26,12 +24,9 @@ query_result_path = "results/iql_out.csv"
 @dataclass
 class Data:
     english_query: str
+    genparse_url: str
     iql_query: str
     iql_url: str
-    model: PreTrainedModel
-    tokenizer: PreTrainedTokenizerBase
-
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -61,16 +56,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="dist"), name="static")
 
-quantization_config = BitsAndBytesConfig(load_in_4bit=True)
-tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
-model = AutoModelForCausalLM.from_pretrained("google/gemma-7b-it", quantization_config=quantization_config)
-
 data = Data(
     english_query="", 
     iql_query="", 
     iql_url="http://44.200.189.145:60082/",
-    tokenizer=tokenizer,
-    model=model,
+    genparse_url="http://34.122.30.137:8888/infer",
     )
 
 
@@ -88,9 +78,8 @@ async def root(request: Request):
 async def post_english_query(request: Request, english_query: Annotated[str, Form()]):
     data.english_query = english_query
     data.iql_query = english_query_to_iql(
-        data.model,
-        data.tokenizer,
-        data.english_query
+        data.english_query,
+        data.genparse_url,
         )
 
     return templates.TemplateResponse(
