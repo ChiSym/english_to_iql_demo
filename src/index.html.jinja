@@ -46,65 +46,7 @@
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Result</label>
             <div id="vis" />
             <script type="text/javascript">
-                var spec = {
-                    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                    "width": 500,
-                    "height": 300,
-                    "data": {
-                    "url": "/query_result.csv"
-                    },
-                {% if plot_type == "qq" %}
-                "encoding": {
-                    "x": {
-                        "field": "{{ var1 }}",
-                        "type": "quantitative",
-                        "scale": {"zero": false}
-                    },
-                    "y": {
-                        "field": "{{ var2 }}",
-                        "type": "quantitative",
-                        "scale": {"zero": false}
-                    }
-                    },
-                    "mark": {"type": "point", "tooltip": {"content": "data"} }
-                {% elif plot_type == "nn" %}
-                "encoding": {
-                    "x": {
-                    "field": "{{ var1 }}",
-                    "type": "nominal"
-                    },
-                    "y": {
-                    "field": "{{ var2 }}",
-                    "type": "nominal"
-                    },
-                    "color": {
-                    "aggregate": "count",
-                    "type": "quantitative"
-                    }
-                },
-                "mark": {"type": "rect", "tooltip": {"content": "data"} },
-                "config": {
-                    "view": {
-                    "stroke": "transparent"
-                    }
-                }
-                {% elif plot_type == "qn" %}
-                "mark": {"type": "area", "opacity": .65, "tooltip": {"content": "data"} },
-                "transform": [
-                {
-                    "density": "{{ var1 }}",
-                    "groupby": ["{{ var2 }}"],
-                    "function": "kde",
-                    "extent": {{ var1_extent }}
-                }
-                ],
-                "encoding": {
-                "x": {"field": "value", "type": "quantitative", "title": "{{ var1 }}", "scale": {"domain": {{ var1_extent }} } },
-                "y": {"field": "density", "type": "quantitative"},
-                "color": {"field": "{{ var2 }}", "type": "nominal"}
-                },
-                {%- endif %}
-                };
+                var spec = {{ chart | tojson }} ;
                 var opt = {"renderer": "canvas", "actions": false};
                 vegaEmbed("#vis", spec, opt);
                 </script>
