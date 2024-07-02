@@ -75,6 +75,22 @@ FROM data
 GROUP BY Credit_rating, Age
 )
 
+Instruction: 
+
+How does the probability that someone has no commute change with race?
+
+Query:
+
+SELECT
+PROBABILITY OF Commute_minutes = '(a) no commute' UNDER lpm GIVEN Race AS p,
+Race
+FROM (
+SELECT 
+Race
+FROM data
+GROUP BY Race
+)
+
 Now, the user will write an instruction and the IQL query will be generated. DO NOT ADD UNNECESSARY VARIABLES TO THE QUERY---for example, if the user asks about how race affects the probability of someone being conservative, you should not include age in the query.
 
 Instruction:
