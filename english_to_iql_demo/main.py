@@ -9,11 +9,15 @@ from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
 from english_to_iql_demo.clojure_interaction import iql_run
 from itertools import count
+import requests
 
 import polars as pl
 import shutil
 import os
+import logging as log
 
+
+log.getLogger().setLevel(log.DEBUG)
 
 templates = Jinja2Blocks(directory="src")
 query_counter = count(1)
@@ -36,8 +40,8 @@ with open("tiny_iql.lark", "r") as f:
 data = Data(
     english_query="", 
     iql_query="", 
-    # iql_url="http://34.45.8.32:3000/",
-    iql_url="http://localhost:8888/",
+    iql_url="http://34.45.8.32:3000/",
+    # iql_url="http://localhost:8888/",
     genparse_url="http://34.122.30.137:8888/infer",
     grammar=grammar,
     df = pl.DataFrame()
@@ -60,11 +64,20 @@ async def root(request: Request):
 @app.post("/post_english_query")
 async def post_english_query(request: Request, english_query: Annotated[str, Form()]):
     data.english_query = english_query
-    data.iql_query = english_query_to_iql(
-        data.english_query,
-        data.genparse_url,
-        data.grammar,
-        )
+
+    try:
+        data.iql_query = english_query_to_iql(
+            data.english_query,
+            data.genparse_url,
+            data.grammar,
+            )
+    except Exception as e:
+        log.error(f"Error converting English query to GenSQL: {e}")
+        return templates.TemplateResponse(
+            "index.html.jinja",
+            {"request": request, 
+             "iql_query": f"{e}"},
+            block_name="iql_query")
 
     return templates.TemplateResponse(
         "index.html.jinja",
@@ -99,11 +112,24 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request):
     form_data = await request.form()
+    log.debug(f"/post_iql_query form data: {form_data}")
     
     if form_data.get('iql_query', '') != '':
         data.iql_query = form_data.get('iql_query', '')
 
-    data.df = iql_run(data.iql_url, form_data.get('iql_query', ''))
+    try:
+        data.df = iql_run(data.iql_url, form_data.get('iql_query', ''))
+    except Exception as e:
+        log.error(f"Error running GenSQL query: {e}")
+        return templates.TemplateResponse(
+            "index.html.jinja",
+            {"request": request, 
+             "english_query": form_data["english_query"], 
+             "gensql_query": form_data["iql_query"], 
+             "idnum": next(query_counter), 
+             "error": f"{e}"},
+            block_name="plot",
+        )
 
     context = plot(data.df)
 

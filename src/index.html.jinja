@@ -36,14 +36,25 @@
             <div id="plot-{{idnum}}" class="grid gap-4 grid-cols-2 grid-rows-2 grid-flow-col p-2 justify-self-end {% if idnum and idnum is even %} bg-slate-50 border border-slate-200 {% endif %} ">
                 <div id="english-{{idnum}}" class="whitespace-pre-wrap">{{ english_query | default("Show me some stuff") }}</div>
                 <div id="gensql-{{idnum}}"><iql-code>{{ gensql_query | default("SELECT * FROM developer_records") }}</iql-code></div>
-                <div id="vis-{{idnum}}" class="row-span-2"></div>
-                <script type="text/javascript">
-                    var spec = {{ chart | tojson }} ;
-                    var opt = {"renderer": "svg", "actions": false};
-                    vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
-                        document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-                        console.debug("Inserted plot {{idnum}}");
-                    })
+                    {% if chart %}
+                        <div id="vis-{{idnum}}" class="row-span-2"></div>
+                        <script type="text/javascript">
+                            var spec = {{ chart | tojson }} ;
+                            var opt = {"renderer": "svg", "actions": false};
+                            vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
+                                document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                                console.debug("Inserted plot {{idnum}}");
+                            })
+                        </script>
+                    {% elif error %}
+                        <div id="vis-{{idnum}}" class="row-span-2 text-red-500">Error: {{ error }}</div>
+                        <script type="text/javascript">
+                            document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                        </script>
+                    {% else %}
+                        <div id="vis-{{idnum}}" class="row-span-2 text-red-500">Missing fields. Template was given nothing to render.</div>
+                        <script>document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});</script>
+                    {% endif %} 
                 </script>
             </div>
             {% endblock %}

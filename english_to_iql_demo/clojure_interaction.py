@@ -2,10 +2,6 @@ import requests
 import urllib.parse
 import json
 import polars as pl
-import hashlib
-
-def query_hash(query):
-    return hashlib.sha256(query.encode()).hexdigest()
 
 
 def iql_run(iql_url, query):
@@ -17,6 +13,7 @@ def iql_run(iql_url, query):
         "Accept": "application/json"
         }
     x = requests.post(url, json = request, headers = headers)
+    x.raise_for_status()
 
     # # ipdb.set_trace()
     # print(f"Response: {x.text}")
