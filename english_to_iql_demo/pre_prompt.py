@@ -1,86 +1,45 @@
-pre_prompt = """
-You have access to an IQL table named data with the following columns:
-"Commute_minutes" | "Age" | "Total_income" | "Race" | "Political_ideology" | "Religious_inspiration" | "Credit_rating" | "Education"
-Your goal is to write a query given an instruction. A query can have one of two forms: 
+def make_preamble(constructor):
+    return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in the query.
 
-Form 1:
-SELECT 
-PROBABILITY OF <variable> UNDER lpm GIVEN <variables>,
-<variables>
-FROM (
-SELECT
-<variable>, <variables>
-GROUP BY <variable>, <variables>
-)
+Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple of the following variables:
 
-Form 2:
-SELECT 
-PROBABILITY OF <variable> = <value> UNDER lpm GIVEN <variables>,
-<variables>
-FROM (
-SELECT
-<variables>
-GROUP BY <variables>
-)
+- Commute_minutes
+- Age
+- Total_income
+- Race
+- Political_ideology
+- Religious_inspiration
+- Credit_rating
+- Education
+- Commute_minutes = '(a) no commute'
+- Political_ideology = 'Likely Conservative'
 
-Here are some example instructions and corresponding queries:
+The variables X and Y should be closely related to the entities mentioned in the user query.
 
-Instruction: 
-
-How does someone's age affect their income?
-
-Query: 
-
-SELECT
-PROBABILITY OF Total_income UNDER lpm GIVEN Age AS p,
-Total_income,
-Age
-FROM (
-SELECT 
-Total_income, Age
-FROM data
-GROUP BY Total_income, Age
-)
-
-Instruction: 
-
-How does someone's credit rating affect whether or not they are conservative? 
-
-Query:
-
-SELECT
-PROBABILITY OF Political_ideology = 'Likely Conservative' UNDER lpm GIVEN Credit_rating AS p,
-Credit_rating
-FROM (
-SELECT 
-Credit_rating
-FROM data
-GROUP BY Credit_rating
-)
-
-Instruction: 
-
-How does someone's credit rating and race affect whether or not they are conservative? 
-
-Query:
-
-SELECT
-PROBABILITY OF Political_ideology = 'Likely Conservative' UNDER lpm GIVEN Credit_rating AND Race AS p,
-Credit_rating,
-Race
-FROM (
-SELECT 
-Credit_rating, Race
-FROM data
-GROUP BY Credit_rating, Age
-)
-
-Now, the user will write an instruction and the IQL query will be generated. DO NOT ADD UNNECESSARY VARIABLES TO THE QUERY---for example, if the user asks about how race affects the probability of someone being conservative, you should not include age in the query.
-
-Instruction:
-
-{user_query}
-
-Query:
+Here are some examples of user queries and paired translations:
 
 """
+
+def make_prompt(preamble, example_pairs, eos=None):
+    examples = '\n\n'.join([f"Q: {nl}\nA: {fl}{f' {eos}' if eos is not None else ''}" for (nl,fl) in example_pairs]) + "\n\nQ: {user_query}\nA:"
+    return preamble + examples  
+
+def make_example_pairs(constructor):
+    return [
+        ("How does someone's age affect their income?", 
+         constructor("Total_income", ["Age"])),
+        ("How does someone's credit rating affect whether or not they are conservative?", 
+         constructor("Political_ideology='Likely Conservative'", ["Credit_rating"])),
+        ("How does someone's credit rating and race affect whether or not they are conservative? ", 
+         constructor("Political_ideology='Likely Conservative'", ["Credit_rating", "Race"])),
+         ("How does the probability that someone is conservative change by income?",
+           constructor("Political_ideology='Likely Conservative'", ["Total_income"])),
+    ]
+
+constructor = lambda event, conditioners : f"probability of {event} given {', '.join(conditioners)}"
+
+pre_prompt = make_prompt(
+    preamble=make_preamble(constructor), 
+    example_pairs=make_example_pairs(constructor), 
+    eos=None
+)

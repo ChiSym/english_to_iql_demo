@@ -13,7 +13,7 @@ def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> st
         "proposal_name": "character",
         "proposal_args": {},
         "max_tokens": 100,
-        "'76'": ''
+        "temperature": 0.4
         }
     headers = {
         "Content-type": "application/json",
