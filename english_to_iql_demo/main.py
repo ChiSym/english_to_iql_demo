@@ -34,7 +34,7 @@ class Data:
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="dist"), name="static")
 
-with open("tiny_iql.lark", "r") as f:
+with open("us_lpm_grammar.lark", "r") as f:
     grammar = f.read()
 
 data = Data(
