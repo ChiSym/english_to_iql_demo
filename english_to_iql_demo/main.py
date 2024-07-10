@@ -1,19 +1,20 @@
 from fastapi import FastAPI, Request, Form
-from fastapi.responses import FileResponse
 from english_to_iql_demo.english_to_iql import english_query_to_iql
 from english_to_iql_demo.plot import plot
 from dataclasses import dataclass
-from contextlib import asynccontextmanager
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
-from english_to_iql_demo.clojure_interaction import iql_run
+from english_to_iql_demo.run_query import run_query
+from jax_multimix.interpreter import Interpreter
+from lark import Lark
 from itertools import count
-import requests
+from jax_multimix.model import mixture_model
+from jax_multimix.model import SumProductInference
 
+
+import pickle
 import polars as pl
-import shutil
-import os
 import logging as log
 
 
@@ -26,23 +27,39 @@ query_counter = count(1)
 class Data:
     english_query: str
     genparse_url: str
-    iql_query: str
-    iql_url: str
+    query: str
     grammar: str
+    parser: Lark
+    interpreter: Interpreter
     df: pl.DataFrame
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="dist"), name="static")
 
 with open("us_lpm_grammar.lark", "r") as f:
-    grammar = f.read()
+    lark_grammar_str = f.read()
+
+parser = Lark(lark_grammar_str)
+
+# grammar = lark_grammar_str
+grammar = "start: /.+/"
+
+interpreter_metadata = pickle.load(open("interpreter_metadata.pkl", "rb"))
+# %%
+interpreter = Interpreter(
+    variables=interpreter_metadata["variables"],
+    schema=interpreter_metadata["schema"],
+    model=mixture_model,
+    args=interpreter_metadata["args"],
+    inf_alg=SumProductInference(),
+)
 
 data = Data(
     english_query="", 
-    iql_query="", 
-    iql_url="http://34.45.8.32:3000/",
-    # iql_url="http://localhost:8888/",
+    query="", 
     genparse_url="http://34.122.30.137:8888/infer",
+    parser=parser,
+    interpreter=interpreter,
     grammar=grammar,
     df = pl.DataFrame()
     )
@@ -85,40 +102,16 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
         block_name="iql_query",
     )
 
-# @app.post("/update_iql_query")
-# async def update_iql_query(request: Request):
-#     form_data = await request.form()
-#     data.iql_query = form_data['iql_query']
-#     print(form_data)
-#     return data.iql_query
-
-
-# @app.post("/post_iql_query")
-# async def post_iql_query(request: Request):
-#     # note: commented the lines below because there the 'iql_query' property
-#     # seemed to be empty, but this might remove the capacity to manually
-#     # edit the query
-#     # iql_query = request.headers['iql_query']
-#     # iql_query = urllib.parse.unquote(iql_query)
-#     # data.iql_query = re.sub("\s\s+" , " ", iql_query)
-#     iql_save(data.iql_url, data.iql_query)
-
-#     context = plot_context_first_vars(query_result_path)
-
-#     return templates.TemplateResponse(
-#         "index.html.jinja", {"request": request, **context}, block_name="plot"
-#     )
-
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request):
     form_data = await request.form()
     log.debug(f"/post_iql_query form data: {form_data}")
     
     if form_data.get('iql_query', '') != '':
-        data.iql_query = form_data.get('iql_query', '')
+        data.query = form_data.get('iql_query', '')
 
     try:
-        data.df = iql_run(data.iql_url, form_data.get('iql_query', ''))
+        data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         return templates.TemplateResponse(
@@ -142,4 +135,3 @@ async def post_iql_query(request: Request):
          **context}, 
         block_name="plot"
     )
-

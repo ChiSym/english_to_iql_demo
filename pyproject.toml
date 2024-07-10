@@ -7,11 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-pytest = "^7.4.2"
+pytest = "^8.2.2"
 ipdb = "^0.13.13"
 fastapi = "^0.103.2"
 uvicorn = "^0.23.2"
-polars = "^0.19.8"
+polars = "^1.1.0"
 jinja2 = "^3.1.2"
 jinja2-fragments = "^1.1.0"
 python-multipart = "^0.0.6"
@@ -23,9 +23,15 @@ altair = "^5.3.0"
 pyarrow = "^16.1.0"
 lark = "^1.1.9"
 
+jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git"}
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "gcp"
+url = "https://us-west1-python.pkg.dev/probcomp-caliban/probcomp/simple/"
+priority = "explicit"

@@ -44,7 +44,7 @@ def plot(df: pl.DataFrame) -> dict:
         q_var2 = df.columns[quantitative_idxs[1]]
 
         # make sure p is always in the y-axis
-        if q_var1 == "p":
+        if q_var1.startswith("p_"):
             q_var1, q_var2 = q_var2, q_var1
 
         chart = alt.Chart(df).mark_line().encode(
@@ -107,7 +107,7 @@ def plot(df: pl.DataFrame) -> dict:
 
 
 def get_col_type(df: pl.DataFrame, col: str) -> str:
-    if df[col].is_numeric():
+    if df[col].dtype == pl.Float32:
         return "quantitative"
     else:
         return "nominal"
