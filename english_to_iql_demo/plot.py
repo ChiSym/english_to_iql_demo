@@ -1,6 +1,7 @@
 import polars as pl
 import altair as alt
 import json
+import logging as log
 from collections import Counter
 
 custom_order  = {"Credit_rating": [
@@ -19,6 +20,7 @@ ordinal_vars = ["Credit_rating", "Total_income", "Commute_minutes", "Education"]
 def plot(df: pl.DataFrame) -> dict:
     width = 600
     height = 400
+    area_opacity = 0.3
 
     # this gets around altair's protests against plotting >5000 points
     # TODO: look into vegafusion as a better solution
@@ -58,18 +60,27 @@ def plot(df: pl.DataFrame) -> dict:
     col_types = [get_col_type(nonp_df, col) for col in nonp_df.columns[:3]]
 
     col_counter = Counter(col_types)
+    log.debug(col_counter)
+    chart = None
 
     if col_counter['quantitative'] == 1 and col_counter['nominal'] == 0:
         q_var = nonp_df.columns[0]
         # make sure p is always in the y-axis
 
-        chart = alt.Chart(df).mark_line().encode(
-            x=alt.X(f'{q_var}:Q'),
-            y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
-            tooltip=[f'{q_var}', f'{p_mean_var}'],
-        ).properties(
-            width=width,
-            height=height
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                alt.X(f'{q_var}:Q'),
+                alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                tooltip=[f'{q_var}', f'{p_mean_var}'],
+            ).properties(
+                width=width,
+                height=height
+            ),
+            alt.Chart(df).mark_area(opacity=area_opacity).encode(
+                alt.X(f'{q_var}:Q'),
+                alt.Y(f'{p_min_var}:Q'),
+                alt.Y2(f'{p_max_var}:Q')
+            )
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 1:
@@ -80,13 +91,20 @@ def plot(df: pl.DataFrame) -> dict:
         if n_var in custom_order.keys():
             x = x.sort(custom_order[n_var])
 
-        chart = alt.Chart(df).mark_line().encode(
-            x=x,
-            y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
-            tooltip=[f'{n_var}', f'{p_mean_var}'],
-        ).properties(
-            width=width,
-            height=height
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                x=x,
+                y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                tooltip=[f'{n_var}', f'{p_mean_var}'],
+            ).properties(
+                width=width,
+                height=height
+            ),
+            alt.Chart(df).mark_area(opacity=area_opacity).encode(
+                x=x,
+                y=alt.Y(f'{p_min_var}:Q'),
+                y2=alt.Y2(f'{p_max_var}:Q')
+            )
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 2:
@@ -108,16 +126,39 @@ def plot(df: pl.DataFrame) -> dict:
         if n_var2 in ordinal_vars:
             color = color.scale(scheme="viridis")
 
-        chart = alt.Chart(df).mark_line().encode(
-            x=x,
-            y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
-            color=color,
-            tooltip=[f'{p_mean_var}', f'{n_var1}', f'{n_var2}'],
-        ).properties(
-            width=width,
-            height=height
+        selection = alt.selection_point(on='pointerover', nearest=True, empty=False)
+        cond_opacity = alt.condition(
+            selection,
+            alt.value(0.3),
+            alt.value(0.0)
         )
 
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                x=x,
+                y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                color=color,
+                tooltip=[f'{p_mean_var}', f'{n_var1}', f'{n_var2}'],
+                order=alt.condition(selection, alt.value(1), alt.value(0))
+            ).properties(
+                width=width,
+                height=height
+            ),
+            alt.Chart(df).mark_area().encode(
+                x=x,
+                y=alt.Y(f'{p_min_var}:Q'),
+                y2=alt.Y2(f'{p_max_var}:Q'),
+                color=color,
+                opacity=cond_opacity,
+                order=alt.condition(selection, alt.value(1), alt.value(0))
+            ).add_params(
+                selection
+            )
+        )
+
+    if not chart:
+        raise ValueError("No chart type matches the data's column types")
+    
     return {"chart": json.loads(chart.to_json())}
 
 
