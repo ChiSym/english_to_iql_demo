@@ -3,9 +3,6 @@ import urllib.parse
 import json
 import polars as pl
 
-def iql_save(iql_url, query, outfile="results/iql_out.csv"):
-    df = iql_run(iql_url, query)
-    df.write_csv(outfile)
 
 def iql_run(iql_url, query):
     url = urllib.parse.urljoin(iql_url, "/api/query")
@@ -15,9 +12,12 @@ def iql_run(iql_url, query):
         "Content-type": "application/json",
         "Accept": "application/json"
         }
-    x = requests.post(url, json = request, headers=headers)
+    x = requests.post(url, json = request, headers = headers)
+    x.raise_for_status()
+
+    # # ipdb.set_trace()
+    # print(f"Response: {x.text}")
 
     response = json.loads(x.text)
     df = pl.from_dicts(response['rows'])
-
-    return df
+    return df.drop_nulls()

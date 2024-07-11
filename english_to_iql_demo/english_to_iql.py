@@ -1,19 +1,21 @@
 import requests
-import urllib.parse
 import json
+from english_to_iql_demo.pre_prompt import pre_prompt
 
 
-def english_query_to_iql(user_query: str, genparse_url: str) -> str:
+def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> str:
+    prompt = pre_prompt.format(user_query=user_query)
     request = {
-        "prompt": user_query,
+        "prompt": prompt,
         "method": "smc-standard",
         "n_particles": 10,
-        "grammar_name": "tiny_sql",
+        "lark_grammar": grammar,
         "proposal_name": "character",
         "proposal_args": {},
-        "max_tokens": 50
+        "max_tokens": 100,
+        "'76'": ''
         }
-    headers ={
+    headers = {
         "Content-type": "application/json",
         "Accept": "application/json"
         }
@@ -21,4 +23,5 @@ def english_query_to_iql(user_query: str, genparse_url: str) -> str:
 
     response = json.loads(x.text)
     posterior = response['posterior']
-    return max(posterior, key=posterior.get)
+    map_particle = max(posterior, key=posterior.get)
+    return map_particle

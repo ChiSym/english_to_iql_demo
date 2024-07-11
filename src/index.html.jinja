@@ -1,5 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>GenParse/GenSQL demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
     <link href="{{url_for('static',path='/output.css')}}" rel="stylesheet">
     <script type="importmap">
@@ -23,112 +27,84 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+
+    {# Required for overlaying loading indicator on top of textareas. Default htmx classes change opacity which messes with layout #}
+    <style>
+        .loading-indicator{
+            display:none;
+        }
+        .htmx-request .loading-indicator{
+            display:flex;
+        }
+        .htmx-request.loading-indicator{
+            display:flex;
+        }
+    </style>
 </head>
 <body>
-    <div class="mx-10">
-    <div class="grid grid-col-3 gap-10 mt-10">
-        <form class="relative col-span-3" hx-post="/post_english_query" hx-target="#iql_query">
-            {% block english_query %}
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">English</label>
-            <textarea name="english_query" rows=2 id="english_query" placeholder="Ask a question" class="resize-none w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>    
-            {% endblock %}
-            <button id="english_query_button"  type="submit" class="absolute bottom-0 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200" >Ask</button>
-        </form>
-        <form id="iql_query" class="relative" hx-post="/post_iql_query" hx-target="#plot" hx-trigger="submit">
-            {% block iql_query %}
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">InferenceQL</label>
-            <iql-textarea name="iql_query" id="iql_textarea">{{ iql_query }}</iql-textarea>
-            <button id="iql_query_button" type="submit" class="z-10 absolute bottom-20 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
-            {% endblock %}
-        </form>
-        {% block plot %}
-        <div class="col-span-2 justify-self-end" id="plot" hx-get="/update_plot">
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Result</label>
-            <div id="vis" />
-            <script type="text/javascript">
-                var spec = {
-                    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                    "width": 500,
-                    "height": 300,
-                    "data": {
-                    "url": "/query_result.csv"
-                    },
-                {% if plot_type == "qq" %}
-                "encoding": {
-                    "x": {
-                        "field": "{{ var1 }}",
-                        "type": "quantitative",
-                        "scale": {"zero": false}
-                    },
-                    "y": {
-                        "field": "{{ var2 }}",
-                        "type": "quantitative",
-                        "scale": {"zero": false}
-                    }
-                    },
-                    "mark": {"type": "point", "tooltip": {"content": "data"} }
-                {% elif plot_type == "nn" %}
-                "encoding": {
-                    "x": {
-                    "field": "{{ var1 }}",
-                    "type": "nominal"
-                    },
-                    "y": {
-                    "field": "{{ var2 }}",
-                    "type": "nominal"
-                    },
-                    "color": {
-                    "aggregate": "count",
-                    "type": "quantitative"
-                    }
-                },
-                "mark": {"type": "rect", "tooltip": {"content": "data"} },
-                "config": {
-                    "view": {
-                    "stroke": "transparent"
-                    }
-                }
-                {% elif plot_type == "qn" %}
-                "mark": {"type": "area", "opacity": .65, "tooltip": {"content": "data"} },
-                "transform": [
-                {
-                    "density": "{{ var1 }}",
-                    "groupby": ["{{ var2 }}"],
-                    "function": "kde",
-                    "extent": {{ var1_extent }}
-                }
-                ],
-                "encoding": {
-                "x": {"field": "value", "type": "quantitative", "title": "{{ var1 }}", "scale": {"domain": {{ var1_extent }} } },
-                "y": {"field": "density", "type": "quantitative"},
-                "color": {"field": "{{ var2 }}", "type": "nominal"}
-                },
-                {%- endif %}
-                };
-                var opt = {"renderer": "canvas", "actions": false};
-                vegaEmbed("#vis", spec, opt);
+
+    <main class="h-dvh flex flex-col flex-nowrap justify-between gap-4 md:container md:mx-auto">
+        <div id="chat" class="grow gap-10 overflow-y-auto overflow-x-hidden overscroll-contain h-full">
+            {% block plot %}
+            <div id="plot-{{idnum}}" class="grid gap-4 grid-cols-2 grid-rows-2 grid-flow-col p-2 justify-self-end {% if idnum and idnum is even %} bg-slate-50 border border-slate-200 {% endif %} ">
+                <div id="english-{{idnum}}" class="whitespace-pre-wrap">{{ english_query | default("Show me some stuff") }}</div>
+                <div id="gensql-{{idnum}}"><iql-code>{{ gensql_query | default("SELECT * FROM developer_records") }}</iql-code></div>
+                    {% if chart %}
+                        <div id="vis-{{idnum}}" class="row-span-2"></div>
+                        <script type="text/javascript">
+                            var spec = {{ chart | tojson }} ;
+                            var opt = {"renderer": "svg", "actions": false};
+                            vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
+                                document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                                console.debug("Inserted plot {{idnum}}");
+                            })
+                        </script>
+                    {% elif error %}
+                        <div id="vis-{{idnum}}" class="row-span-2 text-red-500">Error: {{ error }}</div>
+                        <script type="text/javascript">
+                            document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                        </script>
+                    {% else %}
+                        <div id="vis-{{idnum}}" class="row-span-2 text-red-500">Missing fields. Template was given nothing to render.</div>
+                        <script>document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});</script>
+                    {% endif %} 
                 </script>
+            </div>
+            {% endblock %}
         </div>
-        {% endblock %}
-    </div>
-    </div>
-    <script>
-        document.getElementById('iql_query').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            formData.set('iql_query', document.getElementById("iql_textarea")._content);
-            
-            fetch('/post_iql_query', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('plot').innerHTML = html;
-            });
-        });
 
-
-    </script>
+        <section id="inputs" class="flex flex-row flex-initial justify-stretch items-stretch p-2 gap-4">
+            <form class="w-full h-full flex flex-col justify-stretch items-end gap-2" hx-post="/post_english_query" hx-target="#iql_query" {# hx-indicator="#iql_query" #}>
+                {% block english_query %}
+                <label for="english_query" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">English:</label>
+                <div class="w-full h-full relative">
+                    <div class='loading-indicator absolute flex space-x-2 justify-center items-center bg-white h-full w-full dark:invert'>
+                        <span class='sr-only'>Loading...</span>
+                        <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                        <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                        <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
+                    </div>
+                    <textarea name="english_query" id="english_query" placeholder="Ask a question in plain English" class="p-2 min-h-32 resize-none w-full text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 h-full"></textarea>
+                </div>
+                {% endblock %}
+                <button id="english_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
+            </form>
+            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend" hx-trigger="submit" hx-vals='js:{iql_query: document.getElementById("iql_textarea")._content}' hx-include="previous [name='english_query']">
+                {% block iql_query %}
+                <label for="iql_textarea" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">GenSQL:</label>
+                <div class="p-1 w-full h-full relative">
+                    <div class='loading-indicator absolute flex space-x-2 justify-center items-center bg-white h-full w-full dark:invert'>
+                        <span class='sr-only'>Loading...</span>
+                        <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                        <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                        <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
+                    </div>
+                    <iql-textarea name="iql_query" id="iql_textarea" class="resize-none w-full text-gray-900 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 h-full">{{ iql_query }}</iql-textarea>
+                </div>
+                <button id="iql_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
+                {% endblock %}
+            </form>
+        </section>
+    </main>
 </body>
 </html>

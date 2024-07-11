@@ -1,22 +1,26 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import FileResponse
 from english_to_iql_demo.english_to_iql import english_query_to_iql
-from english_to_iql_demo.plot import plot_context_first_vars
+from english_to_iql_demo.plot import plot
 from dataclasses import dataclass
 from contextlib import asynccontextmanager
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
-from english_to_iql_demo.clojure_interaction import iql_save
+from english_to_iql_demo.clojure_interaction import iql_run
+from itertools import count
+import requests
 
+import polars as pl
 import shutil
 import os
+import logging as log
 
+
+log.getLogger().setLevel(log.DEBUG)
 
 templates = Jinja2Blocks(directory="src")
-
-default_dataset = "data/data_1000_sample.csv"
-query_result_path = "results/iql_out.csv"
+query_counter = count(1)
 
 @dataclass
 class Data:
@@ -24,61 +28,56 @@ class Data:
     genparse_url: str
     iql_query: str
     iql_url: str
+    grammar: str
+    df: pl.DataFrame
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Context manager for FastAPI app. It will run all code before `yield`
-    on app startup, and will run code after `yield` on app shutdown. This method
-    runs a subprocess on app startup which is the equivalent of running the
-    tailwindcss command `tailwindcss -i ./src/tw.css -o ./css/main.css`.
-
-    Must be passed as a property of the FastAPI app. (app = FastAPI(lifespan=lifespan))
-    """
-    cwd = os.getcwd()
-    shutil.copyfile(
-        os.path.join(cwd, default_dataset), os.path.join(cwd, query_result_path)
-    )
-
-
-    # try:
-    #     subprocess.call(
-    #         f"tailwindcss -i {os.path.join(cwd, 'src/input.css')} -o {os.path.join(cwd, 'dist/output.css')}",
-    #         shell=True,
-    #     )
-    # except Exception as e:
-    #     raise RuntimeError from e
-    yield
-
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 app.mount("/static", StaticFiles(directory="dist"), name="static")
+
+with open("tiny_iql.lark", "r") as f:
+    grammar = f.read()
 
 data = Data(
     english_query="", 
     iql_query="", 
-    # iql_url="http://34.45.8.32:3000/",
-    iql_url="http://localhost:8888/",
+    iql_url="http://34.45.8.32:3000/",
+    # iql_url="http://localhost:8888/",
     genparse_url="http://34.122.30.137:8888/infer",
+    grammar=grammar,
+    df = pl.DataFrame()
     )
+
 
 
 @app.get("/")
 async def root(request: Request):
-    context = plot_context_first_vars(query_result_path)
+    context = plot(data.df)
 
     return templates.TemplateResponse(
         "index.html.jinja",
-        {"request": request, **context},
+        {"request": request, 
+         "idnum": next(query_counter),
+        **context},
     )
 
 
 @app.post("/post_english_query")
 async def post_english_query(request: Request, english_query: Annotated[str, Form()]):
     data.english_query = english_query
-    data.iql_query = english_query_to_iql(
-        data.english_query,
-        data.genparse_url,
-        )
+
+    try:
+        data.iql_query = english_query_to_iql(
+            data.english_query,
+            data.genparse_url,
+            data.grammar,
+            )
+    except Exception as e:
+        log.error(f"Error converting English query to GenSQL: {e}")
+        return templates.TemplateResponse(
+            "index.html.jinja",
+            {"request": request, 
+             "iql_query": f"{e}"},
+            block_name="iql_query")
 
     return templates.TemplateResponse(
         "index.html.jinja",
@@ -113,21 +112,34 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
 @app.post("/post_iql_query")
 async def post_iql_query(request: Request):
     form_data = await request.form()
-
-    # this post request is triggering twice, 
-    # using this hack to get around it
+    log.debug(f"/post_iql_query form data: {form_data}")
+    
     if form_data.get('iql_query', '') != '':
         data.iql_query = form_data.get('iql_query', '')
-    
-    iql_save(data.iql_url, data.iql_query)
 
-    context = plot_context_first_vars(query_result_path)
+    try:
+        data.df = iql_run(data.iql_url, form_data.get('iql_query', ''))
+    except Exception as e:
+        log.error(f"Error running GenSQL query: {e}")
+        return templates.TemplateResponse(
+            "index.html.jinja",
+            {"request": request, 
+             "english_query": form_data["english_query"], 
+             "gensql_query": form_data["iql_query"], 
+             "idnum": next(query_counter), 
+             "error": f"{e}"},
+            block_name="plot",
+        )
+
+    context = plot(data.df)
 
     return templates.TemplateResponse(
-        "index.html.jinja", {"request": request, **context}, block_name="plot"
+        "index.html.jinja", 
+        {"request": request, 
+         "english_query": form_data["english_query"], 
+         "gensql_query": form_data["iql_query"], 
+         "idnum": next(query_counter), 
+         **context}, 
+        block_name="plot"
     )
 
-
-@app.get("/query_result.csv", response_class=FileResponse)
-async def get_query_result():
-    return query_result_path

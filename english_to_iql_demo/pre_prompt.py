@@ -1,68 +1,86 @@
 pre_prompt = """
-You have access to an IQL table named developer_records with the following columns:
-SalaryUSD, Gender, Ethnicity, YearsCodeProfessional, Background.
-Here are a few example instructions and their corresponding IQL queries:
+You have access to an IQL table named data with the following columns:
+"Commute_minutes" | "Age" | "Total_income" | "Race" | "Political_ideology" | "Religious_inspiration" | "Credit_rating" | "Education"
+Your goal is to write a query given an instruction. A query can have one of two forms: 
 
-Instruction: Show me 5 rows from the data.
-
-Query: 
-SELECT * FROM developer_records LIMIT 5
-
-Instruction: Show me developers' salary, gender, and ethnicity
-
-Query: 
-SELECT SalaryUSD, Gender, Ethnicity FROM developer_records
-
-Instruction: List the 10 most frequent gender and ethnicity pairs
-
-Query: 
+Form 1:
+SELECT 
+PROBABILITY OF <variable> UNDER lpm GIVEN <variables>,
+<variables>
+FROM (
 SELECT
-  COUNT(*) AS n,
-  Gender,
-  Ethnicity
-FROM developer_records
-GROUP BY Gender, Ethnicity
-ORDER BY n DESC
-LIMIT 10
+<variable>, <variables>
+GROUP BY <variable>, <variables>
+)
 
-Instruction: Show me the probability of developers' salaries given their gender
+Form 2:
+SELECT 
+PROBABILITY OF <variable> = <value> UNDER lpm GIVEN <variables>,
+<variables>
+FROM (
+SELECT
+<variables>
+GROUP BY <variables>
+)
+
+Here are some example instructions and corresponding queries:
+
+Instruction: 
+
+How does someone's age affect their income?
+
 Query: 
 
 SELECT
-  SalaryUSD,
-  Gender,
-  PROBABILITY OF SalaryUSD
-    UNDER developer_record_generator
-      GIVEN Gender
-        AS probability_salary
-FROM developer_records
+PROBABILITY OF Total_income UNDER lpm GIVEN Age AS p,
+Total_income,
+Age
+FROM (
+SELECT 
+Total_income, Age
+FROM data
+GROUP BY Total_income, Age
+)
 
-Instruction: Show me the probability of developers' salaries given their ethnicity
+Instruction: 
 
-Query: 
-SELECT
-  SalaryUSD,
-  Ethnicity,
-  PROBABILITY OF SalaryUSD
-    UNDER developer_record_generator
-      GIVEN Ethnicity
-        AS probability_salary
-FROM developer_records
-
-Instruction: Show me developers gender, ethnicity, and how likely they are to be underpaid based on their experience and background
+How does someone's credit rating affect whether or not they are conservative? 
 
 Query:
-  SELECT
-    PROBABILITY OF SalaryUSD >  SalaryUSD
-      UNDER developer_record_generator
-        GIVEN YearsCodeProfessional AND Background
-        AS probability_underpaid,
-    Gender,
-    Ethnicity
-    FROM
-    SELECT * FROM developer_records
 
-Instruction: {user_query}
+SELECT
+PROBABILITY OF Political_ideology = 'Likely Conservative' UNDER lpm GIVEN Credit_rating AS p,
+Credit_rating
+FROM (
+SELECT 
+Credit_rating
+FROM data
+GROUP BY Credit_rating
+)
+
+Instruction: 
+
+How does someone's credit rating and race affect whether or not they are conservative? 
 
 Query:
-SELECT"""
+
+SELECT
+PROBABILITY OF Political_ideology = 'Likely Conservative' UNDER lpm GIVEN Credit_rating AND Race AS p,
+Credit_rating,
+Race
+FROM (
+SELECT 
+Credit_rating, Race
+FROM data
+GROUP BY Credit_rating, Age
+)
+
+Now, the user will write an instruction and the IQL query will be generated. DO NOT ADD UNNECESSARY VARIABLES TO THE QUERY---for example, if the user asks about how race affects the probability of someone being conservative, you should not include age in the query.
+
+Instruction:
+
+{user_query}
+
+Query:
+
+"""
