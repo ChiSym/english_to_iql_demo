@@ -1,5 +1,5 @@
 def run_query(parser, interpreter, query):
-    tree = parser.parse(query)
+    tree = parser.parse(query + "\n")
     df = interpreter.transform(tree)
 
     # currently getting some nulls, will investigate 
