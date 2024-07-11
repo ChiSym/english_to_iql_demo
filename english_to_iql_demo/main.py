@@ -6,11 +6,11 @@ from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 from typing import Annotated
 from english_to_iql_demo.run_query import run_query
-from jax_multimix.interpreter import Interpreter
+# from jax_multimix.interpreter import Interpreter
 from lark import Lark
 from itertools import count
-from jax_multimix.model import mixture_model
-from jax_multimix.model import SumProductInference
+# from jax_multimix.model import mixture_model
+# from jax_multimix.model import SumProductInference
 
 
 import pickle
@@ -30,7 +30,7 @@ class Data:
     query: str
     grammar: str
     parser: Lark
-    interpreter: Interpreter
+    # interpreter: Interpreter
     df: pl.DataFrame
 
 app = FastAPI()
@@ -44,22 +44,22 @@ parser = Lark(lark_grammar_str)
 # grammar = lark_grammar_str
 grammar = "start: /.+/"
 
-interpreter_metadata = pickle.load(open("interpreter_metadata.pkl", "rb"))
+# interpreter_metadata = pickle.load(open("interpreter_metadata.pkl", "rb"))
 # %%
-interpreter = Interpreter(
-    variables=interpreter_metadata["variables"],
-    schema=interpreter_metadata["schema"],
-    model=mixture_model,
-    args=interpreter_metadata["args"],
-    inf_alg=SumProductInference(),
-)
+# interpreter = Interpreter(
+#     variables=interpreter_metadata["variables"],
+#     schema=interpreter_metadata["schema"],
+#     model=mixture_model,
+#     args=interpreter_metadata["args"],
+#     inf_alg=SumProductInference(),
+# )
 
 data = Data(
     english_query="", 
     query="", 
     genparse_url="http://34.122.30.137:8888/infer",
     parser=parser,
-    interpreter=interpreter,
+    # interpreter=interpreter,
     grammar=grammar,
     df = pl.DataFrame()
     )
@@ -111,7 +111,8 @@ async def post_iql_query(request: Request):
         data.query = form_data.get('iql_query', '')
 
     try:
-        data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
+        # data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
+        data.df = run_query(data.parser, form_data.get('iql_query', ''))
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         return templates.TemplateResponse(
