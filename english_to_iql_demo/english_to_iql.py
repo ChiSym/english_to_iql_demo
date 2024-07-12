@@ -1,9 +1,10 @@
 import requests
 import json
-from english_to_iql_demo.pre_prompt import pre_prompt
+from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 
 
-def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> str:
+def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: str, grammar_path: str) -> str:
+    pre_prompt = pre_prompt_dispatch(grammar_path)
     prompt = pre_prompt.format(user_query=user_query)
     request = {
         "prompt": prompt,
@@ -23,7 +24,10 @@ def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> st
 
     response = json.loads(x.text)
     posterior = response['posterior']
-    sorted_posterior = {k: v for k, v in sorted(posterior.items(), key=lambda item: -item[1])}
-    response = [{"query": k.strip(), "pval": v} for k, v in sorted_posterior.items()]
-
-    return response
+    log_ml_estimate = response['log_ml_estimate']
+    response = [
+        {"query": k.strip(), "pval": v} 
+        for k, v 
+        in sorted(posterior.items(), key=lambda item: -item[1])
+    ]
+    return response, log_ml_estimate
