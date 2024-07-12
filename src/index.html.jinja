@@ -89,7 +89,7 @@
                 {% endblock %}
                 <button id="english_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
             </form>
-            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend" hx-trigger="submit" hx-vals='js:{iql_query: document.getElementById("iql_textarea").content}' hx-include="previous [name='english_query']">
+            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend" hx-trigger="submit" hx-vals='js:{iql_query: document.getElementById("iql_textarea").content}' hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
                 {% block iql_query %}
                 <label for="iql_textarea" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">GenSQL:</label>
                 <div class="p-1 w-full h-full relative">
@@ -325,11 +325,31 @@
                             });
                         });
                     </script>
+                    <div>
+                        <label for="autorunPvalThreshold" class="mb-2 inline-block text-sm font-medium text-gray-900 dark:text-white">Autorun threshold</label>
+                        <input id="autorunPvalThreshold" hx-preserve type="range" class="transparent h-[4px] w-full cursor-pointer appearance-none border-transparent bg-neutral-200 dark:bg-neutral-600" min="0" max="1" step="0.01" value="0.6" />
+                    </div>
                     <button id="iql_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
                 </div>
                 {% endblock %}
             </form>
         </section>
     </main>
+    <script>
+        {# Check the value of incoming parses to see if any cross the autorun thr, and if so, run it #}
+        function checkAutorun() {
+            console.debug("Checking autorun threshold");
+
+            const autorunPvalThreshold = parseFloat(document.getElementById("autorunPvalThreshold")?.value ?? '1');
+            console.debug("Autorun threshold:", autorunPvalThreshold);
+            if (parses?.[0]?.pval >= autorunPvalThreshold) {
+                console.info("Autorunning query \"", parses[0].query, "\"");
+                // Can't just call form.submit(), it will reload the whole page
+                htmx.trigger(document.getElementById("iql_query"), "submit"); 
+            } else {
+                console.info("No queries met or exceed thr with p>=", autorunPvalThreshold);
+            }
+        }
+    </script>
 </body>
 </html>
