@@ -24,9 +24,9 @@
     <script type="module" src="{{url_for('static',path='/iql-language.mjs')}}"></script>
     <script type="module" src="{{url_for('static',path='/iql-code.mjs')}}"></script>
     <script type="module" src="{{url_for('static',path='/iql-textarea.mjs')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.19.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
 
     {# Required for overlaying loading indicator on top of textareas. Default htmx classes change opacity which messes with layout #}
     <style>
@@ -89,7 +89,7 @@
                 {% endblock %}
                 <button id="english_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
             </form>
-            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend" hx-trigger="submit" hx-vals='js:{iql_query: document.getElementById("iql_textarea")._content}' hx-include="previous [name='english_query']">
+            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend" hx-trigger="submit" hx-vals='js:{iql_query: document.getElementById("iql_textarea").content}' hx-include="previous [name='english_query']">
                 {% block iql_query %}
                 <label for="iql_textarea" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">GenSQL:</label>
                 <div class="p-1 w-full h-full relative">
@@ -101,7 +101,232 @@
                     </div>
                     <iql-textarea name="iql_query" id="iql_textarea" class="resize-none w-full text-gray-900 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 h-full">{{ iql_query }}</iql-textarea>
                 </div>
-                <button id="iql_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
+                <div class="flex flex-row justify-between p-0 w-full">
+                    <div id="qpbar"></div>
+                    <script>
+                        // Array of maps of generated GenSQL and pvals. Each map has keys 'query' and 'pval'.
+                        var parses = {{ iql_queries | default([]) | tojson }}; 
+
+                        var vegaSpec = {
+                            "$schema": "https://vega.github.io/schema/vega/v5.json",
+                            "width": 100,
+                            "height": 50,
+                            "autosize": "fit-y",
+                            "data": [
+                                {
+                                    "name": "source",
+                                    "values": parses
+                                },
+                                {
+                                    "name": "selected",
+                                    "source": "source",
+                                    "transform": [
+                                        {
+                                            "type": "filter",
+                                            "expr": "datum.selected"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "signals": [
+                                {
+                                    "name": "tooltip",
+                                    "value": {},
+                                    "on": [
+                                        {
+                                            "events": "rect:mouseover",
+                                            "update": "datum"
+                                        },
+                                        {
+                                            "events": "rect:mouseout",
+                                            "update": "{}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "highlight",
+                                    "value": null,
+                                    "on": [
+                                        {
+                                            "events": "mouseover",
+                                            "update": "datum"
+                                        },
+                                        {
+                                            "events": "mouseout",
+                                            "update": "null"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "select",
+                                    "init": 'data("source")[0]', // They better be ordered...
+                                    "on": [
+                                        {
+                                            "events": "click",
+                                            "update": "datum === select ? null : datum"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "scales": [
+                                {
+                                    "name": "x",
+                                    "type": "band",
+                                    "domain": {
+                                        "data": "source",
+                                        "field": "query"
+                                    },
+                                    "range": "width",
+                                    "padding": 0.2
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "log",
+                                    "domain": [
+                                        0.00001,
+                                        1
+                                    ],
+                                    "range": "height",
+                                    "nice": true,
+                                    "zero": false,
+                                    "clamp": true
+                                }
+                            ],
+                            "axes": [
+                                {
+                                    "orient": "bottom",
+                                    "scale": "x",
+                                    "labels": false,
+                                    "ticks": false
+                                },
+                                {
+                                    "orient": "left",
+                                    "scale": "y",
+                                    "ticks": false,
+                                    "labels": false
+                                }
+                            ],
+                            "marks": [
+                                {
+                                    "type": "rect",
+                                    "from": {
+                                        "data": "source"
+                                    },
+                                    "encode": {
+                                        "enter": {
+                                            "x": {
+                                                "scale": "x",
+                                                "field": "query"
+                                            },
+                                            "width": {
+                                                "scale": "x",
+                                                "band": 1
+                                            },
+                                            "y": {
+                                                "scale": "y",
+                                                "field": "pval"
+                                            },
+                                            "y2": {
+                                                "scale": "y",
+                                                "value": 0.00001
+                                            },
+                                            "fill": {
+                                                "value": "#4C78A8"
+                                            },
+                                            "stroke": {
+                                                "value": "black"
+                                            },
+                                            "cursor": {
+                                                "value": "pointer"
+                                            }
+                                        },
+                                        "update": {
+                                            "fillOpacity": [
+                                                {
+                                                    "test": "datum === select",
+                                                    "value": 1
+                                                },
+                                                {
+                                                    "value": 0.3
+                                                }
+                                            ],
+                                            "strokeWidth": [
+                                                {
+                                                    "test": "datum === select",
+                                                    "value": 2
+                                                },
+                                                {
+                                                    "test": "datum === highlight",
+                                                    "value": 1
+                                                },
+                                                {
+                                                    "value": 0
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "encode": {
+                                        "enter": {
+                                            "align": {
+                                                "value": "center"
+                                            },
+                                            "baseline": {
+                                                "value": "bottom"
+                                            },
+                                            "fill": {
+                                                "value": "#333"
+                                            }
+                                        },
+                                        "update": {
+                                            "x": {
+                                                "scale": "x",
+                                                "signal": "tooltip.query",
+                                                "band": 0.5
+                                            },
+                                            "y": {
+                                                "scale": "y",
+                                                "signal": "tooltip.pval",
+                                                "offset": -2
+                                            },
+                                            "text": {
+                                                "signal": "tooltip.pval ? format(tooltip.pval, '.2~e') : ''"
+                                            },
+                                            "fillOpacity": [
+                                                {
+                                                    "test": "isNaN(tooltip.pval)",
+                                                    "value": 0
+                                                },
+                                                {
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        };
+
+                        {# Attach a signal listener to update the query textarea when an uncertainty bar is clicked #}
+                        var vegaResult;
+                        vegaEmbed("#qpbar", vegaSpec, {"renderer": "svg", "actions": false}).then(result => {
+                            console.debug("Updated query pval bar plot");
+                            vegaResult = result;
+
+                            result.view.addSignalListener('select', (name, value) => {
+                                if (value) {
+                                    console.debug("Clicked bar data:", value);
+                                    document.getElementById("iql_textarea").setContent(value.query);
+                                } else {
+                                    console.debug("Bar deselected");
+                                }
+                            });
+                        });
+                    </script>
+                    <button id="iql_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
+                </div>
                 {% endblock %}
             </form>
         </section>

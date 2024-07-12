@@ -52,14 +52,14 @@ class IQLTextarea extends LitElement {
   `;
 
   static properties = {
-    _content: { type: String },
+    content: { type: String },
   };
 
   textareaRef = createRef();
   codeRef = createRef();
 
   _handleInput(event) {
-    this._content = event.target.value;
+    this.content = event.target.value;
   }
 
   _handleScroll(event) {
@@ -69,11 +69,15 @@ class IQLTextarea extends LitElement {
 
   constructor() {
     super();
-    this._content = this.textContent || '';
+    this.content = this.textContent || '';
+  }
+
+  setContent(newContent) {
+    this.content = newContent;
   }
 
   render() {
-    const text = this._content[this._content.length-1] == "\n" ? this._content + ' ' : this._content;
+    const text = this.content[this.content.length-1] == "\n" ? this.content + ' ' : this.content;
     return html`
       <textarea
         ref=${ref(this.textareaRef)}
