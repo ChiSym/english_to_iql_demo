@@ -62,11 +62,27 @@ def plot(df: pl.DataFrame) -> dict:
     col_counter = Counter(col_types)
     log.debug(col_counter)
     chart = None
+    log.debug(col_counter)
+    chart = None
 
     if col_counter['quantitative'] == 1 and col_counter['nominal'] == 0:
         q_var = nonp_df.columns[0]
         # make sure p is always in the y-axis
 
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                alt.X(f'{q_var}:Q'),
+                alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                tooltip=[f'{q_var}', f'{p_mean_var}'],
+            ).properties(
+                width=width,
+                height=height
+            ),
+            alt.Chart(df).mark_area(opacity=area_opacity).encode(
+                alt.X(f'{q_var}:Q'),
+                alt.Y(f'{p_min_var}:Q'),
+                alt.Y2(f'{p_max_var}:Q')
+            )
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
                 alt.X(f'{q_var}:Q'),
@@ -91,6 +107,20 @@ def plot(df: pl.DataFrame) -> dict:
         if n_var in custom_order.keys():
             x = x.sort(custom_order[n_var])
 
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                x=x,
+                y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                tooltip=[f'{n_var}', f'{p_mean_var}'],
+            ).properties(
+                width=width,
+                height=height
+            ),
+            alt.Chart(df).mark_area(opacity=area_opacity).encode(
+                x=x,
+                y=alt.Y(f'{p_min_var}:Q'),
+                y2=alt.Y2(f'{p_max_var}:Q')
+            )
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
                 x=x,
