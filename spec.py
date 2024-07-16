@@ -1,4 +1,5 @@
 import pickle
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Dict, List
 
@@ -72,16 +73,15 @@ def main():
 
     def run_query_using_best_dsl(data):
         def score_query_dsls(data):
-            def score_query_dsl(data, idx):
+            def score_query_dsl(idx):
                 data.posteriors[idx], data.log_ml_estimates[idx] = english_query_to_iql_posterior(
                     data.english_query, data.genparse_urls[idx], data.grammars[idx], data.grammar_paths[idx]
                 )
                 map_particle = max(data.posteriors[idx], key=data.posteriors[idx].get).split('\n')[0].strip() + "\n"
                 data.queries[idx] = map_particle
 
-            # TODO: parallelize this
-            [score_query_dsl(data, idx) for idx in indices]
-            return None
+            with ThreadPoolExecutor() as executor:
+                executor.map(score_query_dsl, indices)
 
         def select_best_dsl(data):
             return max(indices, key=lambda idx: data.log_ml_estimates[idx])
