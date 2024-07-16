@@ -89,16 +89,28 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
             data.grammar,
             )
     except Exception as e:
-        log.error(f"Error converting English query to GenSQL: {e}")
+        log.error(f"Error converting English query (\"{english_query}\") to GenSQL: {e}")
         return templates.TemplateResponse(
             "index.html.jinja",
             {"request": request, 
-             "iql_query": f"{e}"},
+             "idnum": next(query_counter),
+             "iql_query": f"{e}",
+             "iql_queries": [{"query": f"{e}", "pval": 0.999999}]
+             },
             block_name="iql_query")
 
     return templates.TemplateResponse(
         "index.html.jinja",
-        {"request": request, "iql_query": data.iql_query},
+        {"request": request, 
+         "idnum": next(query_counter),
+         "iql_query": data.iql_query, 
+         "iql_queries": [
+             {"query": "probability of Total_income given Political_ideology = 'Likely Conservative'",
+              "pval": 0.5},
+              {"query": "probability of Total_outgo given Political_ideology = 'UnLikely Conservative'",
+              "pval": 0.2},
+              {"query": "probability of Totalling_your_car given Political_ideology = 'Drunk driving'",
+              "pval": 0.01}]},
         block_name="iql_query",
     )
 
