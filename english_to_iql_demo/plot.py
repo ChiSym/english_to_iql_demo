@@ -65,8 +65,6 @@ def plot(df: pl.DataFrame) -> dict:
     log.debug(col_counter)
     chart = None
 
-    import ipdb; ipdb.set_trace()
-
     if col_counter['quantitative'] == 1 and col_counter['nominal'] == 0:
         q_var = nonp_df.columns[0]
         # make sure p is always in the y-axis
@@ -74,7 +72,7 @@ def plot(df: pl.DataFrame) -> dict:
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
                 alt.X(f'{q_var}:Q'),
-                alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{q_var}', f'{p_mean_var}'],
             ).properties(
                 width=width,
@@ -98,7 +96,7 @@ def plot(df: pl.DataFrame) -> dict:
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
                 x=x,
-                y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
             ).properties(
                 width=width,
@@ -116,6 +114,9 @@ def plot(df: pl.DataFrame) -> dict:
         n_var1 = nonp_df.columns[nominal_idxs[0]]
         n_var2 = nonp_df.columns[nominal_idxs[1]]
 
+        if len(df[n_var1].unique()) <= len(df[n_var2].unique()):
+            n_var1, n_var2 = n_var2, n_var1
+
         x=alt.X(f'{n_var1}:N')
 
         if n_var1 in custom_order.keys():
@@ -130,7 +131,7 @@ def plot(df: pl.DataFrame) -> dict:
         if n_var2 in ordinal_vars:
             color = color.scale(scheme="viridis")
 
-        selection = alt.selection_point(on='pointerover', nearest=True, empty=False)
+        selection = alt.selection_point(on='click', empty=False)
         cond_opacity = alt.condition(
             selection,
             alt.value(0.3),
@@ -140,7 +141,7 @@ def plot(df: pl.DataFrame) -> dict:
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
                 x=x,
-                y=alt.Y(f'{p_mean_var}:Q').scale(zero=False),
+                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 color=color,
                 tooltip=[f'{p_mean_var}', f'{n_var1}', f'{n_var2}'],
                 order=alt.condition(selection, alt.value(1), alt.value(0))

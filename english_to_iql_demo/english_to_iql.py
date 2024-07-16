@@ -13,7 +13,7 @@ def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> st
         "proposal_name": "character",
         "proposal_args": {},
         "max_tokens": 100,
-        "temperature": 0.4
+        "temperature": 1.
         }
     headers = {
         "Content-type": "application/json",
@@ -23,7 +23,7 @@ def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> st
 
     response = json.loads(x.text)
     posterior = response['posterior']
-    sorted_posterior = {k: v for k, v in sorted(posterior.items(), key=lambda item: item[1])}
-    response = [{"query": k.strip(), "pval": v}for k, v in sorted_posterior.items()]
+    sorted_posterior = {k: v for k, v in sorted(posterior.items(), key=lambda item: -item[1])}
+    response = [{"query": k.strip(), "pval": v} for k, v in sorted_posterior.items()]
 
     return response

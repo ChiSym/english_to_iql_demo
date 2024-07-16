@@ -1,6 +1,7 @@
-start: "probability of " var [" given " var_list] EOS
+start: " probability of " var [" given " var_list] EOS
 EOS: /\n/
-var_list: var (", " var)*
+// var_list: var (", " var)*
+var_list: var | var ", " var
 var: variable | assignment
 assignment: NORMAL0 OPERATOR DIGIT DIGIT? DIGIT?
 	| CATEGORICAL0 OPERATOR CATEGORICAL0_VAL

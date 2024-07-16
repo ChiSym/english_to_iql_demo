@@ -42,6 +42,7 @@ with open("us_lpm_grammar.lark", "r") as f:
 parser = Lark(lark_grammar_str)
 
 grammar = lark_grammar_str
+# grammar = "start: /.+/"
 
 interpreter_metadata = pickle.load(open("interpreter_metadata.pkl", "rb"))
 interpreter = Interpreter(
