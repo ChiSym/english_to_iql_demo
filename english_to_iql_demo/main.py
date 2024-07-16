@@ -42,10 +42,8 @@ with open("us_lpm_grammar.lark", "r") as f:
 parser = Lark(lark_grammar_str)
 
 grammar = lark_grammar_str
-# grammar = "start: /.+/"
 
 interpreter_metadata = pickle.load(open("interpreter_metadata.pkl", "rb"))
-# %%
 interpreter = Interpreter(
     variables=interpreter_metadata["variables"],
     schema=interpreter_metadata["schema"],
@@ -83,22 +81,29 @@ async def post_english_query(request: Request, english_query: Annotated[str, For
     data.english_query = english_query
 
     try:
-        data.iql_query = english_query_to_iql(
+        data.iql_queries = english_query_to_iql(
             data.english_query,
             data.genparse_url,
             data.grammar,
             )
+        data.iql_query = data.iql_queries[0]["query"]
     except Exception as e:
-        log.error(f"Error converting English query to GenSQL: {e}")
+        log.error(f"Error converting English query (\"{english_query}\") to GenSQL: {e}")
         return templates.TemplateResponse(
             "index.html.jinja",
             {"request": request, 
-             "iql_query": f"{e}"},
+             "idnum": next(query_counter),
+             "iql_query": f"{e}",
+             "iql_queries": [{"query": f"{e}", "pval": 0.999999}]
+             },
             block_name="iql_query")
 
     return templates.TemplateResponse(
         "index.html.jinja",
-        {"request": request, "iql_query": data.iql_query},
+        {"request": request, 
+         "idnum": next(query_counter),
+         "iql_query": data.iql_query, 
+         "iql_queries": data.iql_queries},
         block_name="iql_query",
     )
 

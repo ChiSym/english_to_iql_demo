@@ -23,7 +23,7 @@ def english_query_to_iql(user_query: str, genparse_url: str, grammar: str) -> st
 
     response = json.loads(x.text)
     posterior = response['posterior']
-    map_particle = max(posterior, key=posterior.get)
-    # hack for unconstrained grammar
-    map_particle = map_particle.split('\n')[0].strip() + "\n"
-    return map_particle
+    sorted_posterior = {k: v for k, v in sorted(posterior.items(), key=lambda item: item[1])}
+    response = [{"query": k.strip(), "pval": v}for k, v in sorted_posterior.items()]
+
+    return response
