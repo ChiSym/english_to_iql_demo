@@ -181,14 +181,11 @@
                                 },
                                 {
                                     "name": "y",
-                                    "type": "log",
-                                    "domain": [
-                                        0.00001,
-                                        1
-                                    ],
+                                    "type": "linear",
+                                    "domain": [0, 1],
                                     "range": "height",
                                     "nice": true,
-                                    "zero": false,
+                                    "zero": true,
                                     "clamp": true
                                 }
                             ],
@@ -222,13 +219,13 @@
                                                 "scale": "x",
                                                 "band": 1
                                             },
-                                            "y": {
-                                                "scale": "y",
-                                                "field": "pval"
-                                            },
                                             "y2": {
                                                 "scale": "y",
-                                                "value": 0.00001
+                                                "signal": "max(datum.pval, 0.1)"
+                                            },
+                                            "y": {
+                                                "scale": "y",
+                                                "value": 0
                                             },
                                             "fill": {
                                                 "value": "#4C78A8"
@@ -327,7 +324,7 @@
                     </script>
                     <div>
                         <label for="autorunPvalThreshold" class="mb-2 inline-block text-sm font-medium text-gray-900 dark:text-white">Autorun threshold</label>
-                        <input id="autorunPvalThreshold" hx-preserve type="range" class="transparent h-[4px] w-full cursor-pointer appearance-none border-transparent bg-neutral-200 dark:bg-neutral-600" min="0" max="1" step="0.01" value="0.6" />
+                        <input id="autorunPvalThreshold" hx-preserve type="range" class="transparent h-[4px] w-full cursor-pointer border-transparent bg-neutral-200 dark:bg-neutral-600" min="0" max="1" step="0.01" value="0.6" />
                     </div>
                     <button id="iql_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
                 </div>
