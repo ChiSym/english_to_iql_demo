@@ -44,8 +44,8 @@ def load_grammar(grammar_path):
 
 grammar_paths = ["us_lpm_prob.lark", "us_lpm_cols.lark"]
 indices = range(len(grammar_paths))
-genparse_urls = ["http://34.122.30.137:8888/infer" for _ in indices] # TODO: add 2nd endpoint for the column DSL
-assert len(grammar_paths) == len(genparse_urls)
+genparse_urls = ["http://34.122.30.137:8888/infer", "http://35.225.217.118:8888/infer"]
+assert len(grammar_paths) == len(set(genparse_urls))
 
 grammars = list(map(load_grammar, grammar_paths))
 parsers = list(map(Lark, grammars))
