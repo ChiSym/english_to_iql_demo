@@ -1,10 +1,15 @@
+import json
+import yaml
+
 def pre_prompt_dispatch(grammar_path):
     with open(f"grammars/{grammar_path}", "r") as f:
         grammar = f.read()
     if grammar_path == "us_lpm_prob.lark":
         return make_prob_pre_prompt(grammar)
     elif grammar_path == "us_lpm_cols.lark":
-        return make_cols_pre_prompt(grammar)
+        with open("us_lpm.json", "r", encoding="utf-8") as f:
+            datadict = yaml.dump(json.loads(f.read()))
+        return make_cols_pre_prompt(datadict)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")
 
@@ -16,17 +21,17 @@ def make_prob_pre_prompt(grammar):
         return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in the query.
 
 
-    Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The grammar used is the following:
+Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The grammar used is the following:
 
-    ```
-    {grammar}
-    ```
+```
+{grammar}
+```
 
-    The variables X and Y should be closely related to the entities mentioned in the user query.
+The variables X and Y should be closely related to the entities mentioned in the user query.
 
-    Here are some examples of user queries and paired translations:
+Here are some examples of user queries and paired translations:
 
-    """
+"""
 
     def make_example_pairs(constructor):
         return [
@@ -42,7 +47,7 @@ def make_prob_pre_prompt(grammar):
     
     def make_prompt(preamble, example_pairs, eos=None):
         examples = '\n\n'.join([f"Q: {nl}\nA: {fl}{f' {eos}' if eos is not None else ''}" for (nl,fl) in example_pairs]) + "\n\nQ: {user_query}\nA:"
-        return preamble + examples  
+        return preamble + examples
 
     pre_prompt = make_prompt(
         preamble=make_preamble(constructor), 
@@ -52,6 +57,33 @@ def make_prob_pre_prompt(grammar):
 
     return pre_prompt
 
-def make_cols_pre_prompt(grammar):
-    # TODO
-    return "Q: {user_query}\nA:"
+def make_cols_pre_prompt(datadict):
+    preamble = """Your goal is to translate user questions about which variables are present in the model into lists of column names.
+
+Here is the data dictionary containing all the column names and their descriptions:
+
+```
+{datadict}
+```
+
+Here are some examples of user queries and paired translations:
+
+"""
+
+    def make_prompt(preamble, example_pairs, eos=None):
+        examples = '\n\n'.join([f"Q: {nl}\nA: {fl}{f' {eos}' if eos is not None else ''}" for (nl,fl) in example_pairs]) + "\n\nQ: {user_query}\nA:"
+        return preamble + examples  
+
+    example_pairs = [
+        ("What are variables related to income?",
+        "Total_income"),
+        ("Tell me the variables in the model related to someone's credit rating",
+        "Credit_rating"),
+        ("Tell me all the variables in the model related to someone's insurace",
+        "Health_insurance_coverage, Insurance_health_private, Insurance_health_public, Insurance_via_employer, Insurance_purchased_directly, Insurance_Medicare"),
+        ("List two variables that could be confounders of the relationship of between Credit_rating and Race",
+        "Education, Total_income")
+    ]
+
+    pre_prompt = make_prompt(preamble.format(datadict=datadict), example_pairs)
+    return pre_prompt
