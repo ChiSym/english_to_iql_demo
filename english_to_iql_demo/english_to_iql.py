@@ -1,6 +1,38 @@
-import requests
 import json
-from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
+import requests
+from concurrent.futures import ThreadPoolExecutor
+
+
+OOD_REPLY = "Sorry, I can't answer that. Could you try again?"
+
+
+def english_query_to_iql(data):
+    indices = range(len(data.grammars))
+    def score_query_dsls(data):
+        def score_query_dsl(idx):
+            data.sorted_posteriors[idx], data.log_ml_estimates[idx] = english_query_to_iql_posterior(
+                data.english_query, data.genparse_urls[idx], data.grammars[idx], data.pre_prompts[idx]
+            )
+            map_particle = data.sorted_posteriors[idx][0]["query"]
+            data.queries[idx] = map_particle
+
+        with ThreadPoolExecutor() as executor:
+            executor.map(score_query_dsl, indices)
+        assert all(data.queries), "Failure in scoring queries"
+
+    def select_best_dsl(data):
+        options = [idx for idx in indices if data.queries[idx]!="I can't answer that"]
+        if not options:
+            return -1
+        return max(options, key=lambda idx: data.log_ml_estimates[idx])
+
+    score_query_dsls(data)
+    idx = select_best_dsl(data)
+    if idx == -1:
+        return [{"query": OOD_REPLY, "pval": 0.999999}]
+    data.parser = data.parsers[idx]
+    data.interpreter = data.interpreters[idx]
+    return data.sorted_posteriors[idx]
 
 
 def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: str, pre_prompt: str) -> str:
