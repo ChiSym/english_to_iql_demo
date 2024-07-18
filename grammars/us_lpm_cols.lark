@@ -1,4 +1,4 @@
-start: " " var_list EOS
+start: " " var_list EOS | " I can't answer that\n"
 EOS: "\n"
 var_list: var | var ", " var | var ", " var ", " var | var ", " var ", " var ", " var | var ", " var ", " var ", " var ", " var
 var: NORMAL0

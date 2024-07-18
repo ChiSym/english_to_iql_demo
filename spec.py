@@ -69,10 +69,15 @@ def main():
             assert all(data.queries), "Failure in scoring queries"
 
         def select_best_dsl(data):
-            return max(indices, key=lambda idx: data.log_ml_estimates[idx])
+            options = [idx for idx in indices if data.queries[idx]!="I can't answer that"]
+            if not options:
+                return -1
+            return max(options, key=lambda idx: data.log_ml_estimates[idx])
 
         score_query_dsls(data)
         idx = select_best_dsl(data)
+        if idx == -1:
+            return "Sorry, I can't answer that. Could you try again?"
         out = run_query(data.parsers[idx], data.interpreters[idx], data.queries[idx])
         return out
 
@@ -92,6 +97,7 @@ def main():
 
     test_run_query_using_best_dsl("What is the relationship between commute time and age?")
     test_run_query_using_best_dsl("Tell me what are some variables in this model relevant for religion?")
+    test_run_query_using_best_dsl("What is the color blue?")
 
 
 if __name__ == "__main__":

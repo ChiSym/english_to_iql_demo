@@ -1,4 +1,4 @@
-start: " probability of " var [" given " var_list] EOS
+start: " probability of " var [" given " var_list] EOS | " I can't answer that\n"
 EOS: /\n/
 // var_list: var (", " var)*
 var_list: var | var ", " var

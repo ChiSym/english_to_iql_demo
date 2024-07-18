@@ -29,6 +29,8 @@ Statements should take the form "{constructor('X','Y')}" where X is one of the f
 
 The variables X and Y should be closely related to the entities mentioned in the user query.
 
+If the answer is not about probabilities, you can type "I can't answer that".
+
 Here are some examples of user queries and paired translations:
 
 """
@@ -37,10 +39,14 @@ Here are some examples of user queries and paired translations:
         return [
             ("How does someone's age affect their income?", 
             constructor("Total_income", ["Age"])),
+            ("What are variables related to income?",
+             "I can't answer that"),
             ("How does someone's credit rating affect whether or not they are conservative?", 
             constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating"])),
             ("How does someone's credit rating and race affect whether or not they are conservative? ", 
             constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating", "Race"])),
+            ("Why is the sky grey sometimes?",
+            "I can't answer that"),
             ("How does the probability that someone is conservative change by income?",
             constructor("Political_ideology = 'Likely Conservative'", ["Total_income"])),
         ]
@@ -66,6 +72,10 @@ Here is the data dictionary containing all the column names and their descriptio
 {datadict}
 ```
 
+Return a series of variables from the selection above.
+
+If the answer is not about listing variables, you can type "I can't answer that".
+
 Here are some examples of user queries and paired translations:
 
 """
@@ -77,10 +87,14 @@ Here are some examples of user queries and paired translations:
     example_pairs = [
         ("What are variables related to income?",
         "Total_income"),
+        ("How does someone's age affect their income?",
+         "I can't answer that"),
         ("Tell me the variables in the model related to someone's credit rating",
         "Credit_rating"),
         ("Tell me all the variables in the model related to someone's insurace",
         "Health_insurance_coverage, Insurance_health_private, Insurance_health_public, Insurance_via_employer, Insurance_purchased_directly, Insurance_Medicare"),
+        ("Why is the sky grey sometimes?",
+        "I can't answer that"),
         ("List two variables that could be confounders of the relationship of between Credit_rating and Race",
         "Education, Total_income")
     ]
