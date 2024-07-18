@@ -18,7 +18,6 @@ ordinal_vars = ["Credit_rating", "Total_income", "Commute_minutes", "Education"]
 
 
 def plot(df: pl.DataFrame) -> dict:
-    width = 600
     height = 400
     area_opacity = 0.3
 
@@ -37,9 +36,9 @@ def plot(df: pl.DataFrame) -> dict:
         chart = alt.Chart(df).mark_point().encode(
             x='x:Q',
             y='y:Q',
-            ).properties(
-            width=width,
-            height=height
+        ).properties(
+            height=height,
+            autosize={"type": "fit", "contains": "padding"}
         )
         return {"chart": json.loads(chart.to_json())}
 
@@ -75,7 +74,6 @@ def plot(df: pl.DataFrame) -> dict:
                 alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{q_var}', f'{p_mean_var}'],
             ).properties(
-                width=width,
                 height=height
             ),
             alt.Chart(df).mark_area(opacity=area_opacity).encode(
@@ -83,6 +81,8 @@ def plot(df: pl.DataFrame) -> dict:
                 alt.Y(f'{p_min_var}:Q'),
                 alt.Y2(f'{p_max_var}:Q')
             )
+        ).properties(
+            autosize={"type": "fit", "contains": "padding"}
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 1:
@@ -99,7 +99,6 @@ def plot(df: pl.DataFrame) -> dict:
                 y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
             ).properties(
-                width=width,
                 height=height
             ),
             alt.Chart(df).mark_area(opacity=area_opacity).encode(
@@ -107,6 +106,8 @@ def plot(df: pl.DataFrame) -> dict:
                 y=alt.Y(f'{p_min_var}:Q'),
                 y2=alt.Y2(f'{p_max_var}:Q')
             )
+        ).properties(
+            autosize={"type": "fit", "contains": "padding"}
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 2:
@@ -146,7 +147,6 @@ def plot(df: pl.DataFrame) -> dict:
                 tooltip=[f'{p_mean_var}', f'{n_var1}', f'{n_var2}'],
                 order=alt.condition(selection, alt.value(1), alt.value(0))
             ).properties(
-                width=width,
                 height=height
             ),
             alt.Chart(df).mark_area().encode(
@@ -159,7 +159,9 @@ def plot(df: pl.DataFrame) -> dict:
             ).add_params(
                 selection
             )
-        )
+        ).properties(
+            autosize={"type": "fit", "contains": "padding"}
+        )  
 
     if not chart:
         raise ValueError("No chart type matches the data's column types")
