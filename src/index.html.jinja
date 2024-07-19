@@ -93,36 +93,36 @@
             {% endblock %}
         </div>
 
-        <section id="inputs" class="flex flex-row flex-initial justify-stretch items-stretch p-2 gap-4">
-            <form class="w-full h-full flex flex-col justify-stretch items-end gap-2" hx-post="/post_english_query" hx-target="#iql_query" {# hx-indicator="#iql_query" #}>
+        <section id="inputs" class="grid grid-cols-12 grid-rows-5 justify-stretch items-stretch p-2 gap-y-2 gap-x-4">
+            <form class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_english_query" hx-target="#iql_query">
                 {% block english_query %}
-                <label for="english_query" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">English:</label>
-                <div class="w-full h-full relative">
+                <label for="english_query" class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">English</label>
+                <div class="col-span-6 row-span-3 relative">
                     <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm rounded-sm border border-gray-300'>
                         <span class='sr-only'>Loading...</span>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
                     </div>
-                    <textarea name="english_query" id="english_query" placeholder="Ask a question in plain English" class="p-2 min-h-32 resize-none w-full text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 h-full"></textarea>
+                    <textarea name="english_query" id="english_query" placeholder="Ask a question in plain English" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
                 </div>
                 {% endblock %}
-                <button id="english_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
+                <button id="english_query_button" type="submit" class="col-span-1 col-start-6 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
             </form>
-            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
+            <form id="iql_query" class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
                 {% block iql_query %}
-                <label for="iql_textarea" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">GenSQL:</label>
-                <div class="p-1 w-full h-full relative">
+                <label for="iql_textarea" class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">GenSQL</label>
+                <div class="col-span-6 row-span-3 relative">
                     <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm'>
                         <span class='sr-only'>Loading...</span>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
                     </div>
-                    <textarea name="iql_query" id="iql_textarea" class="resize-none w-full text-gray-900 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 h-full">{{ iql_query }}</textarea>
+                    <textarea name="iql_query" id="iql_textarea" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="GenSQL query">{{ iql_query }}</textarea>
                 </div>
-                <div class="flex flex-row justify-between p-0 w-full">
-                    <div id="qpbar"></div>
+                <div class="col-span-6 grid grid-cols-subgrid grid-rows-subgrid justify-between p-0">
+                    <div id="qpbar" class="col-span-2"></div>
                     <script>
                         // Array of maps of generated GenSQL and pvals. Each map has keys 'query' and 'pval'.
                         var parses = {{ iql_queries | default([]) | tojson | safe }}; 
@@ -337,11 +337,11 @@
                             });
                         }
                     </script>
-                    <div>
-                        <label for="autorunPvalThreshold" class="mb-2 inline-block text-sm font-medium text-gray-900 dark:text-white">Autorun threshold</label>
+                    <div class="col-span-3">
+                        <label for="autorunPvalThreshold" class="block text-sm font-medium text-gray-900 dark:text-white">Autorun threshold</label>
                         <input id="autorunPvalThreshold" hx-preserve type="range" class="transparent h-[4px] w-full cursor-pointer border-transparent bg-neutral-200 dark:bg-neutral-600" min="0" max="1" step="0.01" value="0.6" />
                     </div>
-                    <button id="iql_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
+                    <button id="iql_query_button" type="submit" class="col-span-1 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
                 </div>
                 {% endblock %}
             </form>
