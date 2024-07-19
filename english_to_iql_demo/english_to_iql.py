@@ -4,6 +4,10 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 OOD_REPLY = "Sorry, I can't answer that. Could you try again?"
+DSLs = [
+    "LPM",
+    "data",
+]
 
 
 def english_query_to_iql(data):
@@ -23,12 +27,13 @@ def english_query_to_iql(data):
     def select_best_dsl(data):
         options = [idx for idx in indices if data.queries[idx]!="I can't answer that"]
         if not options:
-            return -1
+            return len(DSLs)
         return max(options, key=lambda idx: data.log_ml_estimates[idx])
 
     score_query_dsls(data)
     idx = select_best_dsl(data)
-    if idx == -1:
+    data.current_dsl = DSLs[idx]
+    if idx == len(DSLs):
         return [{"query": OOD_REPLY, "pval": 0.999999}]
     data.parser = data.parsers[idx]
     data.interpreter = data.interpreters[idx]

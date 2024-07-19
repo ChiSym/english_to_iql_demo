@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 
 from english_to_iql_demo.english_to_iql import english_query_to_iql, OOD_REPLY
-from english_to_iql_demo.plot import plot
+from english_to_iql_demo.plot import plot_dispatch
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
 
@@ -36,6 +36,7 @@ class Data:
     log_ml_estimates: List[float]
     queries: List[str]
     df: pl.DataFrame
+    current_dsl: str
 
 def load_grammar(grammar_path):
     with open(f"grammars/{grammar_path}", "r", encoding="utf-8") as f:
@@ -62,12 +63,13 @@ data = Data(
     sorted_posteriors=[[{"query": "", "pval": 1.0}] for _ in indices],
     log_ml_estimates=[-float("inf") for _ in indices],
     queries=["" for _ in indices],
-    df=pl.DataFrame(),
+    df=pl.read_csv("harmonized-consumer-PUMS-100k-rows.csv"),
+    current_dsl="OOD",
 )
 
 @app.get("/")
 async def root(request: Request):
-    context = plot(pl.DataFrame())
+    context = plot_dispatch(data.current_dsl, data.df)
 
     return templates.TemplateResponse(
         "index.html.jinja",
@@ -128,6 +130,8 @@ async def post_iql_query(request: Request):
              "error": f"{e}"},
             block_name="plot",
         )
+
+    context = plot_dispatch(data.current_dsl, data.df)
 
     return templates.TemplateResponse(
         "index.html.jinja", 

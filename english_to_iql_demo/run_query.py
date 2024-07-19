@@ -1,5 +1,6 @@
 from typing import Union
 
+import polars as pl
 import json
 import pickle
 
@@ -8,15 +9,18 @@ from jax_multimix.model import mixture_model, SumProductInference
 
 
 class ColumnInterpreter:
-    def __init__(self, datadict):
+    def __init__(self, datadict, df):
         self.datadict = datadict
+        self.df = df
 
     def transform(self, tree):
         keep = []
         for st in tree.iter_subtrees():
             if st.data.value=="var":
                 keep.append(st.children[0].value)
-        return {k: self.datadict[k] for k in keep}
+
+        # return {k: self.datadict[k] for k in keep}
+        return self.df[keep]
 
 Interpreter = Union[ProbInterpreter, ColumnInterpreter]
 
@@ -35,7 +39,8 @@ def interpreter_dispatch(grammar_path):
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
             col_interpreter_metadata = json.load(f)[0]
-        return ColumnInterpreter(col_interpreter_metadata)
+        df = pl.read_csv("harmonized-consumer-PUMS-100k-rows.csv")
+        return ColumnInterpreter(col_interpreter_metadata, df)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")
 

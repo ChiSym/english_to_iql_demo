@@ -3,6 +3,10 @@ import altair as alt
 import json
 import logging as log
 from collections import Counter
+import altair as alt
+
+
+alt.data_transformers.enable("vegafusion")
 
 custom_order  = {"Credit_rating": [
         "Under 499",
@@ -16,17 +20,55 @@ custom_order  = {"Credit_rating": [
 }
 ordinal_vars = ["Credit_rating", "Total_income", "Commute_minutes", "Education"]
 
+def plot_dispatch(dsl: str, df: pl.DataFrame) -> dict:
+    if dsl == "LPM":
+        return plot_lpm(df)
+    elif dsl == "data":
+        return plot_data(df)
+    elif dsl == "OOD":
+        # TODO handle this more elegantly
+        return plot_ood(df)
+    else:
+        raise ValueError
 
-def plot(df: pl.DataFrame) -> dict:
-    height = 300
-    width = 400
+def plot_ood(df: pl.DataFrame) -> dict:
+    width = 600
+    height = 400
+    chart = alt.Chart(df).mark_bar().encode(
+        x=alt.X('Age:Q', bin=True),
+        y='count()',
+        ).properties(
+        width=width,
+        height=height
+    )
+
+    return {"chart": json.loads(chart.to_json(format="vega"))}
+
+def plot_data(df: pl.DataFrame) -> dict:
+    # plot at most 4 variables
+    # col_types = [get_col_type(df, col) for col in df.columns[:4]]
+
+    # x_encodings = [
+    #     f"{x}:Q" if x_type == "quantitative" else f"{x}:N"
+    #     for x, x_type in zip(df.columns[:4], col_types)
+    # ]
+    x_encodings = df.columns[:4]
+
+    chart = alt.Chart(df, width=300, height=200).mark_bar().encode(
+        x=alt.X(alt.repeat('repeat'), type="nominal"),
+        y='count()'
+    ).repeat(
+        repeat=x_encodings,
+        columns=2
+    )
+
+    return {"chart": json.loads(chart.to_json(format="vega"))}
+
+def plot_lpm(df: pl.DataFrame) -> dict:
+    width = 600
+    height = 400
     area_opacity = 0.3
     background="#FFFFFF00" # transparent
-
-    # this gets around altair's protests against plotting >5000 points
-    # TODO: look into vegafusion as a better solution
-    if len(df) >= 5000:
-        df = df.sample(n=4999, seed=0) 
 
     # this handles the fact that variable assignment (i.e. X=x)
     # creates columns with a single value
@@ -172,7 +214,7 @@ def plot(df: pl.DataFrame) -> dict:
     if not chart:
         raise ValueError("No chart type matches the data's column types")
     
-    return {"chart": json.loads(chart.to_json())}
+    return {"chart": json.loads(chart.to_json(format="vega"))}
 
 
 def get_col_type(df: pl.DataFrame, col: str) -> str:
