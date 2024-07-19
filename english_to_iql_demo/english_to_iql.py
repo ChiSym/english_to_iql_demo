@@ -4,10 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 OOD_REPLY = "Sorry, I can't answer that. Could you try again?"
-DSLs = [
-    "LPM",
-    "data",
-]
+DSLs = ["LPM", "data"] + ["OOD"] # if updating, OOD must remain last
 
 
 def english_query_to_iql(data):
@@ -33,7 +30,7 @@ def english_query_to_iql(data):
     score_query_dsls(data)
     idx = select_best_dsl(data)
     data.current_dsl = DSLs[idx]
-    if idx == len(DSLs):
+    if data.current_dsl == "OOD":
         return [{"query": OOD_REPLY, "pval": 0.999999}]
     data.parser = data.parsers[idx]
     data.interpreter = data.interpreters[idx]

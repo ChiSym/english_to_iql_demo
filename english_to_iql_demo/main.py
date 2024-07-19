@@ -52,6 +52,7 @@ grammars = list(map(load_grammar, grammar_paths))
 parsers = list(map(Lark, grammars))
 pre_prompts = list(map(pre_prompt_dispatch, grammar_paths))
 interpreters = list(map(interpreter_dispatch, grammar_paths))
+default_df = pl.read_csv("harmonized-consumer-PUMS-100k-rows.csv")
 
 data = Data(
     english_query="",
@@ -63,7 +64,7 @@ data = Data(
     sorted_posteriors=[[{"query": "", "pval": 1.0}] for _ in indices],
     log_ml_estimates=[-float("inf") for _ in indices],
     queries=["" for _ in indices],
-    df=pl.read_csv("harmonized-consumer-PUMS-100k-rows.csv"),
+    df=default_df,
     current_dsl="OOD",
 )
 
@@ -116,9 +117,10 @@ async def post_iql_query(request: Request):
         data.query = form_data.get('iql_query', '')
 
     try:
-        assert data.query!=OOD_REPLY # TODO: need to handle case when can't answer and returns generic OOD reply
-        data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
-        assert isinstance(data.df, pl.DataFrame) # TODO: need to handle processing of column datadict output
+        if data.current_dsl == "OOD":
+            data.df = default_df
+        else:
+            data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         return templates.TemplateResponse(
