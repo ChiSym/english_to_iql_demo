@@ -118,6 +118,8 @@ async def post_iql_query(request: Request):
 
     try:
         data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
+        context = plot(data.df)
+        
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         return templates.TemplateResponse(
@@ -129,8 +131,6 @@ async def post_iql_query(request: Request):
              "error": f"{e}"},
             block_name="plot",
         )
-
-    context = plot(data.df)
 
     return templates.TemplateResponse(
         "index.html.jinja", 

@@ -40,23 +40,46 @@
             display:flex;
         }
     </style>
+
+
 </head>
 <body>
 
-    <main class="h-dvh flex flex-col flex-nowrap justify-between gap-4 md:container md:mx-auto">
+    <main class="h-dvh flex flex-col flex-nowrap justify-between gap-4 p-2 lg:container lg:mx-auto">
         <div id="chat" class="grow gap-10 overflow-y-auto overflow-x-hidden overscroll-contain h-full">
             {% block plot %}
             <div id="plot-{{idnum}}" class="grid gap-4 grid-cols-2 grid-rows-2 grid-flow-col p-2 justify-self-end {% if idnum and idnum is even %} bg-slate-50 border border-slate-200 {% endif %} ">
                 <div id="english-{{idnum}}" class="whitespace-pre-wrap">{{ english_query | default("") }}</div>
                 <div id="gensql-{{idnum}}"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
                     {% if chart %}
-                        <div id="vis-{{idnum}}" class="row-span-2"></div>
+                        <div id="vis-{{idnum}}" class="row-span-2 w-full h-full overflow-x-auto"></div>
                         <script type="text/javascript">
-                            var spec = {{ chart | tojson }} ;
-                            var opt = {"renderer": "svg", "actions": false};
+                            var spec = {{ chart | tojson | safe }} ;
+                            var opt = {
+                                "renderer": "svg", 
+                                "actions": false,
+                                "width": "container",
+                                "height": "container"
+                            };
                             vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
                                 document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
                                 console.debug("Inserted plot {{idnum}}");
+
+                                // Add a resize handler
+                                function resizeChart() {
+                                    result.view.width('container').height('container').run();
+                                }
+
+                                // Debounce function to limit how often resizeChart is called
+                                function debounce(func, timeout = 250) {
+                                    let timer;
+                                    return (...args) => {
+                                        clearTimeout(timer);
+                                        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+                                    };
+                                }
+                                // Add event listener for window resize
+                                window.addEventListener('resize', debounce(resizeChart));
                             })
                         </script>
                     {% elif error %}
