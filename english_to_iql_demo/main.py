@@ -19,6 +19,9 @@ import logging as log
 
 
 log.getLogger().setLevel(log.DEBUG)
+log.getLogger("jax").setLevel(log.WARNING)
+log.getLogger("asyncio").setLevel(log.WARNING)
+
 
 templates = Jinja2Blocks(directory="src")
 query_counter = count(1)

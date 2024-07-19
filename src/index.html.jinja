@@ -40,19 +40,16 @@
             display:flex;
         }
     </style>
-
-
 </head>
 <body>
-
     <main class="h-dvh flex flex-col flex-nowrap justify-between gap-4 p-2 lg:container lg:mx-auto">
         <div id="chat" class="grow gap-10 overflow-y-auto overflow-x-hidden overscroll-contain h-full">
             {% block plot %}
-            <div id="plot-{{idnum}}" class="grid gap-4 grid-cols-2 grid-rows-2 grid-flow-col p-2 justify-self-end {% if idnum and idnum is even %} bg-slate-50 border border-slate-200 {% endif %} ">
-                <div id="english-{{idnum}}" class="whitespace-pre-wrap">{{ english_query | default("") }}</div>
-                <div id="gensql-{{idnum}}"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
+            <div id="row-{{idnum}}" class="grid gap-4 grid-cols-12 grid-rows-2 grid-flow-col p-2 justify-self-end even:bg-slate-50 even:border even:border-slate-200">
+                <div id="english-{{idnum}}" class="col-span-4 whitespace-pre-wrap">{{ english_query | default("") }}</div>
+                <div id="gensql-{{idnum}}" class="col-span-4"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
                     {% if chart %}
-                        <div id="vis-{{idnum}}" class="row-span-2 w-full h-full overflow-x-auto"></div>
+                        <div id="vis-{{idnum}}" class="col-span-8 row-span-2 w-full h-full overflow-x-auto"></div>
                         <script type="text/javascript">
                             var spec = {{ chart | tojson | safe }} ;
                             var opt = {
@@ -83,12 +80,12 @@
                             })
                         </script>
                     {% elif error %}
-                        <div id="vis-{{idnum}}" class="row-span-2 text-red-500">Error: {{ error }}</div>
+                        <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Error: {{ error }}</div>
                         <script type="text/javascript">
                             document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
                         </script>
                     {% else %}
-                        <div id="vis-{{idnum}}" class="row-span-2 text-red-500">Missing fields. Template was given nothing to render.</div>
+                        <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Missing fields. Template was given nothing to render.</div>
                         <script>document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});</script>
                     {% endif %} 
                 </script>
@@ -101,7 +98,7 @@
                 {% block english_query %}
                 <label for="english_query" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">English:</label>
                 <div class="w-full h-full relative">
-                    <div class='loading-indicator absolute flex space-x-2 justify-center items-center bg-white h-full w-full dark:invert'>
+                    <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm rounded-sm border border-gray-300'>
                         <span class='sr-only'>Loading...</span>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
@@ -112,11 +109,11 @@
                 {% endblock %}
                 <button id="english_query_button" type="submit" class="bottom-1 right-1 font-medium text-sm px-3 py-1.5 mb-1 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
             </form>
-            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
+            <form id="iql_query" class="w-full flex flex-col justify-stretch items-end relative" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
                 {% block iql_query %}
                 <label for="iql_textarea" class="w-full mb-2 text-lg font-medium text-gray-900 dark:text-white">GenSQL:</label>
                 <div class="p-1 w-full h-full relative">
-                    <div class='loading-indicator absolute flex space-x-2 justify-center items-center bg-white h-full w-full dark:invert'>
+                    <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm'>
                         <span class='sr-only'>Loading...</span>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
@@ -330,20 +327,15 @@
                         };
 
                         {# Attach a signal listener to update the query textarea when an uncertainty bar is clicked #}
-                        var vegaResult;
-                        vegaEmbed("#qpbar", vegaSpec, {"renderer": "svg", "actions": false}).then(result => {
-                            console.debug("Updated query pval bar plot");
-                            vegaResult = result;
-
-                            result.view.addSignalListener('select', (name, value) => {
-                                if (value) {
-                                    console.debug("Clicked bar data:", value);
-                                    document.getElementById("iql_textarea").value = value.query;
-                                } else {
-                                    console.debug("Bar deselected");
-                                }
+                        if (parses.length > 0) {
+                            vegaEmbed("#qpbar", vegaSpec, {"renderer": "svg", "actions": false}).then(result => {
+                                result.view.addSignalListener('select', (name, value) => {
+                                    if (value) {
+                                        document.getElementById("iql_textarea").value = value.query;
+                                    }
+                                });
                             });
-                        });
+                        }
                     </script>
                     <div>
                         <label for="autorunPvalThreshold" class="mb-2 inline-block text-sm font-medium text-gray-900 dark:text-white">Autorun threshold</label>
