@@ -16,7 +16,7 @@ class IQLCode extends LitElement {
       font-family: monospace;
       line-height: 1rem;
 
-      white-space: pre;
+      white-space: pre-line;
     }
 
     :host::part(built-in) { color: #e36209 }
