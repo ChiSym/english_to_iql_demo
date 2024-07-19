@@ -24,7 +24,7 @@ def english_query_to_iql(data):
     def select_best_dsl(data):
         options = [idx for idx in indices if data.queries[idx]!="I can't answer that"]
         if not options:
-            return len(DSLs)
+            return -1
         return max(options, key=lambda idx: data.log_ml_estimates[idx])
 
     score_query_dsls(data)
