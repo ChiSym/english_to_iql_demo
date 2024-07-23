@@ -54,29 +54,11 @@
                             var spec = {{ chart | tojson | safe }} ;
                             var opt = {
                                 "renderer": "svg", 
-                                "actions": false,
-                                "width": "container",
-                                "height": "container"
+                                "actions": false
                             };
                             vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
                                 document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
                                 console.debug("Inserted plot {{idnum}}");
-
-                                // Add a resize handler
-                                function resizeChart() {
-                                    result.view.width('container').height('container').run();
-                                }
-
-                                // Debounce function to limit how often resizeChart is called
-                                function debounce(func, timeout = 250) {
-                                    let timer;
-                                    return (...args) => {
-                                        clearTimeout(timer);
-                                        timer = setTimeout(() => { func.apply(this, args); }, timeout);
-                                    };
-                                }
-                                // Add event listener for window resize
-                                window.addEventListener('resize', debounce(resizeChart));
                             })
                         </script>
                     {% elif error %}
