@@ -43,35 +43,37 @@
 </head>
 <body>
     <main class="h-dvh flex flex-col flex-nowrap justify-between gap-4 p-2 lg:container lg:mx-auto">
-        <div id="chat" class="grow gap-10 overflow-y-auto overflow-x-hidden overscroll-contain h-full">
+        <div id="chat" class="grow gap-10 overflow-y-auto overflow-x-hidden overscroll-contain h-full divide-y-2 divide-slate-200">
             {% block plot %}
-            <div id="row-{{idnum}}" class="grid gap-4 grid-cols-12 grid-rows-2 grid-flow-col p-2 justify-self-end even:bg-slate-50 even:border even:border-slate-200">
-                <div id="english-{{idnum}}" class="col-span-4 whitespace-pre-wrap">{{ english_query | default("") }}</div>
-                <div id="gensql-{{idnum}}" class="col-span-4"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
-                    {% if chart %}
-                        <div id="vis-{{idnum}}" class="col-span-8 row-span-2 w-full h-full overflow-x-auto"></div>
-                        <script type="text/javascript">
-                            var spec = {{ chart | tojson | safe }} ;
-                            var opt = {
-                                "renderer": "svg", 
-                                "actions": false
-                            };
-                            vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
-                                document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-                                console.debug("Inserted plot {{idnum}}");
-                            })
+                {% if not root %}
+                    <div id="row-{{idnum}}" class="grid gap-4 grid-cols-12 grid-rows-2 grid-flow-col p-2 justify-self-end even:bg-slate-50">
+                        <div id="english-{{idnum}}" class="col-span-4 whitespace-pre-wrap">{{ english_query | default("") }}</div>
+                        <div id="gensql-{{idnum}}" class="col-span-4"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
+                            {% if chart %}
+                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2 w-full h-full overflow-x-auto"></div>
+                                <script type="text/javascript">
+                                    var spec = {{ chart | tojson | safe }} ;
+                                    var opt = {
+                                        "renderer": "svg", 
+                                        "actions": false
+                                    };
+                                    vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
+                                        document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                                        console.debug("Inserted plot {{idnum}}");
+                                    })
+                                </script>
+                            {% elif error %}
+                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Error: {{ error }}</div>
+                                <script type="text/javascript">
+                                    document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                                </script>
+                            {% else %}
+                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Missing fields. Template was given nothing to render.</div>
+                                <script>document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});</script>
+                            {% endif %} 
                         </script>
-                    {% elif error %}
-                        <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Error: {{ error }}</div>
-                        <script type="text/javascript">
-                            document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-                        </script>
-                    {% else %}
-                        <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Missing fields. Template was given nothing to render.</div>
-                        <script>document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});</script>
-                    {% endif %} 
-                </script>
-            </div>
+                    </div>
+                {% endif %}
             {% endblock %}
         </div>
 

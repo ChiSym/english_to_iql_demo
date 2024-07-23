@@ -70,12 +70,13 @@ data = Data(
 
 @app.get("/")
 async def root(request: Request):
-    context = plot(data.df)
+    context = plot(pl.DataFrame())
 
     return templates.TemplateResponse(
         "index.html.jinja",
         {"request": request, 
          "idnum": next(query_counter),
+         "root": True,
         **context},
     )
 
