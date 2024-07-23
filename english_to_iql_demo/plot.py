@@ -21,6 +21,7 @@ def plot(df: pl.DataFrame) -> dict:
     height = 300
     width = 400
     area_opacity = 0.3
+    background="#FFFFFF00" # transparent
 
     # this gets around altair's protests against plotting >5000 points
     # TODO: look into vegafusion as a better solution
@@ -39,7 +40,8 @@ def plot(df: pl.DataFrame) -> dict:
             y='y:Q',
         ).properties(
             height=height,
-            width=width
+            width=width,
+            background=background
         )
         return {"chart": json.loads(chart.to_json())}
 
@@ -76,7 +78,8 @@ def plot(df: pl.DataFrame) -> dict:
                 tooltip=[f'{q_var}', f'{p_mean_var}'],
             ).properties(
                 height=height,
-                width=width
+                width=width,
+                background=background
             ),
             alt.Chart(df).mark_area(opacity=area_opacity).encode(
                 alt.X(f'{q_var}:Q'),
@@ -100,7 +103,8 @@ def plot(df: pl.DataFrame) -> dict:
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
             ).properties(
                 height=height,
-                width=width
+                width=width,
+                background=background
             ),
             alt.Chart(df).mark_area(opacity=area_opacity).encode(
                 x=x,
@@ -160,6 +164,8 @@ def plot(df: pl.DataFrame) -> dict:
             ).add_params(
                 selection
             )
+        ).properties(
+            background=background
         )
 
 
