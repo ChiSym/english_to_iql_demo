@@ -52,7 +52,7 @@ grammars = list(map(load_grammar, grammar_paths))
 parsers = list(map(Lark, grammars))
 pre_prompts = list(map(pre_prompt_dispatch, grammar_paths))
 interpreters = list(map(interpreter_dispatch, grammar_paths))
-default_df = pl.read_csv("harmonized-consumer-PUMS-100k-rows.csv")
+default_df = pl.DataFrame()
 
 data = Data(
     english_query="",

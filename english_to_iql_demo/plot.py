@@ -26,23 +26,23 @@ def plot_dispatch(dsl: str, df: pl.DataFrame) -> dict:
     elif dsl == "data":
         return plot_data(df)
     elif dsl == "OOD":
-        # TODO handle this more elegantly
         return plot_ood(df)
     else:
         raise ValueError
 
 def plot_ood(df: pl.DataFrame) -> dict:
-    width = 600
-    height = 400
-    chart = alt.Chart(df).mark_bar().encode(
-        x=alt.X('Age:Q', bin=True),
-        y='count()',
-        ).properties(
+    height = 300
+    width = 400
+    background="#FFFFFF00" # transparent
+    chart = alt.Chart(df).mark_point().encode(
+        x='x:Q',
+        y='y:Q',
+    ).properties(
+        height=height,
         width=width,
-        height=height
+        background=background
     )
-
-    return {"chart": json.loads(chart.to_json(format="vega"))}
+    return {"chart": json.loads(chart.to_json())}
 
 def plot_data(df: pl.DataFrame) -> dict:
     # plot at most 4 variables
@@ -65,8 +65,8 @@ def plot_data(df: pl.DataFrame) -> dict:
     return {"chart": json.loads(chart.to_json(format="vega"))}
 
 def plot_lpm(df: pl.DataFrame) -> dict:
-    width = 600
-    height = 400
+    height = 300
+    width = 400
     area_opacity = 0.3
     background="#FFFFFF00" # transparent
 
@@ -77,15 +77,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             df = df.drop(col)
 
     if len(df) == 0:
-        chart = alt.Chart(df).mark_point().encode(
-            x='x:Q',
-            y='y:Q',
-        ).properties(
-            height=height,
-            width=width,
-            background=background
-        )
-        return {"chart": json.loads(chart.to_json())}
+        return plot_ood(df)
 
     # for now, we're going to assume that we're only getting results
     # for probability_of queries
