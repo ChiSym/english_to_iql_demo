@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GenParse/GenSQL demo</title>
+    <title>{% block title %}Probcomp demo{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
     <link href="{{url_for('static',path='/output.css')}}" rel="stylesheet">
@@ -48,7 +48,7 @@
                 {% if not root %}
                     <div id="row-{{idnum}}" class="grid gap-4 grid-cols-12 grid-rows-2 grid-flow-col p-2 justify-self-end even:bg-slate-50">
                         <div id="english-{{idnum}}" class="col-span-4 whitespace-pre-wrap">{{ english_query | default("") }}</div>
-                        <div id="gensql-{{idnum}}" class="col-span-4"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
+                        <div id="query2-{{idnum}}" class="col-span-4"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
                             {% if chart %}
                                 <div id="vis-{{idnum}}" class="col-span-8 row-span-2 w-full h-full overflow-x-auto"></div>
                                 <script type="text/javascript">
@@ -78,9 +78,8 @@
         </div>
 
         <section id="inputs" class="grid grid-cols-12 grid-rows-5 justify-stretch items-stretch p-2 gap-y-2 gap-x-4">
-            <form class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_english_query" hx-target="#iql_query">
-                {% block english_query %}
-                <label for="english_query" class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">English</label>
+            <form class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="{% block query1_post_url %}/post_genfact_query{% endblock query1_post_url %}" hx-target="#query2">
+                <div class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">English</div>
                 <div class="col-span-6 row-span-3 relative">
                     <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm rounded-sm border border-gray-300'>
                         <span class='sr-only'>Loading...</span>
@@ -88,14 +87,14 @@
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
                     </div>
-                    <textarea name="english_query" id="english_query" placeholder="Ask a question in plain English" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
+                    <textarea name="english_query" id="english_query" placeholder="{% block query1_placeholder %}Ask a question in plain English{% endblock query1_placeholder %}" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
                 </div>
-                {% endblock %}
-                <button id="english_query_button" type="submit" class="col-span-1 col-start-6 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
+                <button id="english_query_button" type="submit" class="col-span-1 col-start-6 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">{% block query1_button %}Ask{% endblock query1_button %}</button>
             </form>
-            <form id="iql_query" class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
-                {% block iql_query %}
-                <label for="iql_textarea" class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">GenSQL</label>
+
+            <form id="query2" class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
+                {% block query2 %}
+                <div class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">{% block query2_title %}GenSQL{% endblock query2_title %}</div>
                 <div class="col-span-6 row-span-3 relative">
                     <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm'>
                         <span class='sr-only'>Loading...</span>
@@ -103,13 +102,21 @@
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
                     </div>
-                    <textarea name="iql_query" id="iql_textarea" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="GenSQL query">{{ iql_query }}</textarea>
+                    <textarea name="iql_query" id="query2-textarea" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="{% block query2_placeholder %}GenSQL query{% endblock query2_placeholder %}">{{ iql_query }}</textarea>
                 </div>
                 <div class="col-span-6 grid grid-cols-subgrid grid-rows-subgrid justify-between p-0">
                     <div id="qpbar" class="col-span-2"></div>
                     <script>
                         // Array of maps of generated GenSQL and pvals. Each map has keys 'query' and 'pval'.
-                        var parses = {{ iql_queries | default([]) | tojson | safe }}; 
+                        var query2Vals = {{ iql_queries | default([]) | tojson | safe }}; 
+
+                        query2Vals = query2Vals.map(x => {
+                            if ("probability" in x) {
+                                x.pval = x.probability; 
+                            }
+                          
+                            return x;   
+                        });
 
                         var vegaSpec = {
                             "$schema": "https://vega.github.io/schema/vega/v5.json",
@@ -119,7 +126,7 @@
                             "data": [
                                 {
                                     "name": "source",
-                                    "values": parses
+                                    "values": query2Vals
                                 },
                                 {
                                     "name": "selected",
@@ -311,11 +318,11 @@
                         };
 
                         {# Attach a signal listener to update the query textarea when an uncertainty bar is clicked #}
-                        if (parses.length > 0) {
+                        if (query2Vals.length > 0) {
                             vegaEmbed("#qpbar", vegaSpec, {"renderer": "svg", "actions": false}).then(result => {
                                 result.view.addSignalListener('select', (name, value) => {
                                     if (value) {
-                                        document.getElementById("iql_textarea").value = value.query;
+                                        document.getElementById("query2-textarea").value = value.query;
                                     }
                                 });
                             });
@@ -325,23 +332,23 @@
                         <label for="autorunPvalThreshold" class="block text-sm font-medium text-gray-900 dark:text-white">Autorun threshold</label>
                         <input id="autorunPvalThreshold" hx-preserve type="range" class="transparent h-[4px] w-full cursor-pointer border-transparent bg-neutral-200 dark:bg-neutral-600" min="0" max="1" step="0.01" value="0.6" />
                     </div>
-                    <button id="iql_query_button" type="submit" class="col-span-1 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
+                    <button id="query2_button" type="submit" class="col-span-1 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Run</button>
                 </div>
-                {% endblock %}
+                {% endblock query2 %}
             </form>
         </section>
     </main>
     <script>
-        {# Check the value of incoming parses to see if any cross the autorun thr, and if so, run it #}
+        {# Check the value of incoming query2Vals to see if any cross the autorun thr, and if so, run it #}
         function checkAutorun() {
             console.debug("Checking autorun threshold");
 
             const autorunPvalThreshold = parseFloat(document.getElementById("autorunPvalThreshold")?.value ?? '1');
             console.debug("Autorun threshold:", autorunPvalThreshold);
-            if (parses?.[0]?.pval >= autorunPvalThreshold) {
-                console.info("Autorunning query \"", parses[0].query, "\"");
+            if (query2Vals?.[0]?.pval >= autorunPvalThreshold) {
+                console.info("Autorunning query \"", query2Vals[0].query, "\"");
                 // Can't just call form.submit(), it will reload the whole page
-                htmx.trigger(document.getElementById("iql_query"), "submit"); 
+                htmx.trigger(document.getElementById("query2"), "submit"); 
             } else {
                 console.info("No queries met or exceed thr with p>=", autorunPvalThreshold);
             }
