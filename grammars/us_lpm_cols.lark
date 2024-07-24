@@ -1,0 +1,151 @@
+start: " " var_list EOS | " I can't answer that\n"
+EOS: "\n"
+var_list: var | var ", " var | var ", " var ", " var | var ", " var ", " var ", " var | var ", " var ", " var ", " var ", " var
+var: NORMAL0
+    | CATEGORICAL0
+    | CATEGORICAL1
+    | CATEGORICAL2
+    | CATEGORICAL3
+    | CATEGORICAL4
+    | CATEGORICAL5
+    | CATEGORICAL6
+    | CATEGORICAL7
+    | CATEGORICAL8
+    | CATEGORICAL9
+    | CATEGORICAL10
+    | CATEGORICAL11
+    | CATEGORICAL12
+    | CATEGORICAL13
+    | CATEGORICAL14
+    | CATEGORICAL15
+    | CATEGORICAL16
+    | CATEGORICAL17
+    | CATEGORICAL18
+    | CATEGORICAL19
+    | CATEGORICAL20
+    | CATEGORICAL21
+    | CATEGORICAL22
+    | CATEGORICAL23
+    | CATEGORICAL24
+    | CATEGORICAL25
+    | CATEGORICAL26
+    | CATEGORICAL27
+    | CATEGORICAL28
+    | CATEGORICAL29
+    | CATEGORICAL30
+    | CATEGORICAL31
+    | CATEGORICAL32
+    | CATEGORICAL33
+    | CATEGORICAL34
+    | CATEGORICAL35
+    | CATEGORICAL36
+    | CATEGORICAL37
+    | CATEGORICAL38
+    | CATEGORICAL39
+    | CATEGORICAL40
+    | CATEGORICAL41
+    | CATEGORICAL42
+    | CATEGORICAL43
+    | CATEGORICAL44
+    | CATEGORICAL45
+    | CATEGORICAL46
+    | CATEGORICAL47
+    | CATEGORICAL48
+    | CATEGORICAL49
+    | CATEGORICAL50
+    | CATEGORICAL51
+    | CATEGORICAL52
+    | CATEGORICAL53
+    | CATEGORICAL54
+    | CATEGORICAL55
+    | CATEGORICAL56
+    | CATEGORICAL57
+    | CATEGORICAL58
+    | CATEGORICAL59
+    | CATEGORICAL60
+    | CATEGORICAL61
+    | CATEGORICAL62
+    | CATEGORICAL63
+    | CATEGORICAL64
+    | CATEGORICAL65
+    | CATEGORICAL66
+    | CATEGORICAL67
+    | CATEGORICAL68
+    | CATEGORICAL69
+    | CATEGORICAL70
+    | CATEGORICAL71
+    | CATEGORICAL72
+NORMAL0: "Age"
+CATEGORICAL0: "Sex"
+CATEGORICAL1: "Marital_status"
+CATEGORICAL2: "Total_income"
+CATEGORICAL3: "Grandparents_living_with_grandchildren"
+CATEGORICAL4: "Occupation"
+CATEGORICAL5: "Education"
+CATEGORICAL6: "Race"
+CATEGORICAL7: "World_region_of_birth"
+CATEGORICAL8: "Citizen_status"
+CATEGORICAL9: "Political_ideology"
+CATEGORICAL10: "Registered_to_vote"
+CATEGORICAL11: "Dwelling_type"
+CATEGORICAL12: "Owns_credit_card"
+CATEGORICAL13: "Credit_rating"
+CATEGORICAL14: "Home_mortgage_amount"
+CATEGORICAL15: "Home_owner"
+CATEGORICAL16: "Career_improvement"
+CATEGORICAL17: "Childrens_general"
+CATEGORICAL18: "Consumer_electronics"
+CATEGORICAL19: "Electronics_computers"
+CATEGORICAL20: "Home_and_garden"
+CATEGORICAL21: "Home_improvement"
+CATEGORICAL22: "Donor_animal_welfare"
+CATEGORICAL23: "Apparel_childrens"
+CATEGORICAL24: "Apparel_infant_toddlers"
+CATEGORICAL25: "Apparel_mens"
+CATEGORICAL26: "Apparel_womens"
+CATEGORICAL27: "Auto_work"
+CATEGORICAL28: "Book_buyer"
+CATEGORICAL29: "Camping_hiking"
+CATEGORICAL30: "Childrens_babycare"
+CATEGORICAL31: "Childrens_learning_toys"
+CATEGORICAL32: "Collectibles_antiques"
+CATEGORICAL33: "Collectibles_arts"
+CATEGORICAL34: "Collectibles_coins"
+CATEGORICAL35: "Cooking_general"
+CATEGORICAL36: "Cosmetics_beauty"
+CATEGORICAL37: "Dieting_weightloss"
+CATEGORICAL38: "Exercise_enthusiast"
+CATEGORICAL39: "Food_wines"
+CATEGORICAL40: "Health_and_beauty"
+CATEGORICAL41: "Woodwork"
+CATEGORICAL42: "Investments"
+CATEGORICAL43: "Jewelry_buyer"
+CATEGORICAL44: "Online_buyer"
+CATEGORICAL45: "Outdoor_enthusiast"
+CATEGORICAL46: "Pets_cats"
+CATEGORICAL47: "Pets_dogs"
+CATEGORICAL48: "Religious_inspiration"
+CATEGORICAL49: "Smoking"
+CATEGORICAL50: "Active_nascar"
+CATEGORICAL51: "Active_snow_skiing"
+CATEGORICAL52: "Sports_grouping"
+CATEGORICAL53: "Travel_grouping"
+CATEGORICAL54: "Political_contributor"
+CATEGORICAL55: "Religious_contributor"
+CATEGORICAL56: "Difficulty_hearing"
+CATEGORICAL57: "Difficulty_vision"
+CATEGORICAL58: "Difficulty_cognitive"
+CATEGORICAL59: "English_fluency"
+CATEGORICAL60: "Health_insurance_coverage"
+CATEGORICAL61: "Insurance_health_private"
+CATEGORICAL62: "Insurance_health_public"
+CATEGORICAL63: "Insurance_via_employer"
+CATEGORICAL64: "Insurance_purchased_directly"
+CATEGORICAL65: "Means_of_transportation"
+CATEGORICAL66: "Military_served_Vietnam_era"
+CATEGORICAL67: "Work_looking"
+CATEGORICAL68: "School_enrollment"
+CATEGORICAL69: "Employment_status"
+CATEGORICAL70: "Disability"
+CATEGORICAL71: "Commute_minutes"
+CATEGORICAL72: "Insurance_Medicare"

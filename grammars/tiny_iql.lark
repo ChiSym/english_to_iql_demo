@@ -1,0 +1,13 @@
+start: iql_select_clause
+iql_select_clause: "SELECT" NEWLINE iql_select_expr NEWLINE "FROM" WS "(" NEWLINE "SELECT" WS var_list NEWLINE "FROM data" [NEWLINE "GROUP BY" WS var_list] NEWLINE ")"
+bool_condition: bool_expr | bool_expr WS "AND" WS bool_expr
+bool_expr: "Commute_minutes = '(a) no commute'" | "Political_ideology = 'Likely Conservative'"
+orderby_expr: var_list WS "ASC" | var_list WS "DESC"
+iql_select_expr: probability_expr | probability_expr "," NEWLINE var |  probability_expr "," NEWLINE var "," NEWLINE var
+var_list: var | var ", " var
+probability_expr: "PROBABILITY OF " var " UNDER lpm GIVEN " var_conjunction " AS p" | "PROBABILITY OF " bool_expr " UNDER lpm GIVEN " var_conjunction " AS p"
+var_conjunction: var | var " AND " var | var " AND " var " AND " var
+var: "Commute_minutes" | "Age" | "Total_income" | "Race" | "Political_ideology" | "Religious_inspiration" | "Credit_rating" | "Education"
+WS: " "
+NEWLINE: /\n/
+// WS: " "

@@ -1,0 +1,482 @@
+[{
+    "Grandparents_living_with_grandchildren": {
+        "parsed": "Grandparents living with grandchildren",
+        "type": "nominal",
+        "description": "Whether the grandparents of the household live with their grandchildren"
+    },
+    "Jewelry_buyer": {
+        "parsed": "Jewelry buyer",
+        "type": "nominal",
+        "description": "Whether the individual purchases jewelry"
+    },
+    "Age": {
+        "parsed": "Age",
+        "type": "numerical",
+        "description": "The age of the individual"
+    },
+    "Childrens_learning_toys": {
+        "parsed": "Children's learning toys",
+        "type": "nominal",
+        "description": "Whether the household purchases educational toys for children"
+    },
+    "Insurance_health_public": {
+        "parsed": "Public health insurance",
+        "type": "nominal",
+        "description": "Whether the individual has public health insurance coverage"
+    },
+    "Income_public_assistance": {
+        "parsed": "Income from public assistance",
+        "type": "numerical",
+        "description": "The amount of income received from public assistance programs"
+    },
+    "Gave_bith_last_12_months": {
+        "parsed": "Gave birth in the last 12 months",
+        "type": "nominal",
+        "description": "Whether the individual gave birth in the last 12 months"
+    },
+    "Childrens_back_to_school": {
+        "parsed": "Children's back-to-school",
+        "type": "nominal",
+        "description": "Whether the household purchases back-to-school items for children"
+    },
+    "Income_salary_wages": {
+        "parsed": "Income from salary and wages",
+        "type": "numerical",
+        "description": "The amount of income received from salary and wages"
+    },
+    "Divorced_in_past_12_months": {
+        "parsed": "Divorced in the past 12 months",
+        "type": "nominal",
+        "description": "Whether the individual got divorced in the past 12 months"
+    },
+    "Photography_video_equip": {
+        "parsed": "Photography and video equipment",
+        "type": "nominal",
+        "description": "Whether the household purchases photography and video equipment"
+    },
+    "Military_served_Vietnam_era": {
+        "parsed": "Served in Vietnam era",
+        "type": "nominal",
+        "description": "Whether the individual served in the military during the Vietnam era"
+    },
+    "Pets_cats": {
+        "parsed": "Has pet cats",
+        "type": "nominal",
+        "description": "Whether the household has pet cat(s)"
+    },
+    "Sports_grouping": {
+        "parsed": "Sports grouping",
+        "type": "nominal",
+        "description": "The individual's participation or interest in grouped sports activities"
+    },
+    "Apparel_mens": {
+        "parsed": "Men's apparel",
+        "type": "nominal",
+        "description": "Whether the household purchases men's apparel"
+    },
+    "Donor_animal_welfare": {
+        "parsed": "Animal welfare donor",
+        "type": "nominal",
+        "description": "Whether the individual donates to animal welfare causes"
+    },
+    "Income_other": {
+        "parsed": "Other income",
+        "type": "numerical",
+        "description": "The amount of income received from other sources"
+    },
+    "Apparel_childrens": {
+        "parsed": "Children's apparel",
+        "type": "nominal",
+        "description": "Whether the household purchases children's apparel"
+    },
+    "Insurance_health_private": {
+        "parsed": "Private health insurance",
+        "type": "nominal",
+        "description": "Whether the individual has private health insurance coverage"
+    },
+    "Owns_credit_card": {
+        "parsed": "Owns a credit card",
+        "type": "nominal",
+        "description": "Whether the individual owns a credit card"
+    },
+    "Difficulty_hearing": {
+        "parsed": "Difficulty hearing",
+        "type": "nominal",
+        "description": "Whether the individual has difficulty hearing"
+    },
+    "Education": {
+        "parsed": "Education",
+        "type": "nominal",
+        "description": "The highest level of education attained by the individual"
+    },
+    "Collectibles_coins": {
+        "parsed": "Coin collectibles",
+        "type": "nominal",
+        "description": "Whether the individual collects coins"
+    },
+    "Commute_minutes": {
+        "parsed": "Commute time",
+        "type": "numerical",
+        "description": "The time spent commuting to work (in minutes)"
+    },
+    "Exercise_enthusiast": {
+        "parsed": "Exercise enthusiast",
+        "type": "nominal",
+        "description": "Whether the individual is enthusiastic about exercising"
+    },
+    "Camping_hiking": {
+        "parsed": "Camping and hiking enthusiast",
+        "type": "nominal",
+        "description": "Whether the individual participates in camping and hiking activities"
+    },
+    "Difficulty_cognitive": {
+        "parsed": "Cognitive difficulty",
+        "type": "nominal",
+        "description": "Whether the individual has cognitive difficulties"
+    },
+    "Religious_inspiration": {
+        "parsed": "Religious inspiration",
+        "type": "nominal",
+        "description": "Whether the individual seeks religious inspiration"
+    },
+    "Income_self_employment": {
+        "parsed": "Income from self-employment",
+        "type": "numerical",
+        "description": "The amount of income received from self-employment"
+    },
+    "Disability": {
+        "parsed": "Disability",
+        "type": "nominal",
+        "description": "Whether the individual has a disability"
+    },
+    "House_plants": {
+        "parsed": "Has house plants",
+        "type": "nominal",
+        "description": "Whether the household has house plants"
+    },
+    "Insurance_Medicare": {
+        "parsed": "Has Medicare insurance",
+        "type": "nominal",
+        "description": "Whether the individual is covered by Medicare insurance"
+    },
+    "Sex": {
+        "parsed": "Sex",
+        "type": "nominal",
+        "description": "The sex of the individual"
+    },
+    "Business_owner": {
+        "parsed": "Business owner",
+        "type": "nominal",
+        "description": "Whether the individual owns a business"
+    },
+    "Auto_work": {
+        "parsed": "Involved in the automobile industry",
+        "type": "nominal",
+        "description": "Whether the individual takes an automobile to work"
+    },
+    "Cooking_general": {
+        "parsed": "General cooking",
+        "type": "nominal",
+        "description": "Whether the individual is interested in general cooking"
+    },
+    "Apparel_womens": {
+        "parsed": "Women's apparel",
+        "type": "nominal",
+        "description": "Whether the household purchases women's apparel"
+    },
+    "Race": {
+        "parsed": "Race",
+        "type": "nominal",
+        "description": "The race of the individual"
+    },
+    "Food_wines": {
+        "parsed": "Food and wines",
+        "type": "nominal",
+        "description": "Whether the individual is interested in food and wines"
+    },
+    "Outdoor_enthusiast": {
+        "parsed": "Outdoor enthusiast",
+        "type": "nominal",
+        "description": "Whether the individual is enthusiastic about outdoor activities"
+    },
+    "Investments": {
+        "parsed": "Investments",
+        "type": "nominal",
+        "description": "Whether the individual makes investments"
+    },
+    "English_fluency": {
+        "parsed": "English fluency",
+        "type": "nominal",
+        "description": "The level of fluency in English of the individual"
+    },
+    "Credit_rating": {
+        "parsed": "Credit rating",
+        "type": "nominal",
+        "description": "The credit rating of the individual"
+    },
+    "Electronics_computers": {
+        "parsed": "Electronics and computers",
+        "type": "nominal",
+        "description": "Whether the household purchases electronics and computers"
+    },
+    "Donor_arts_cultural": {
+        "parsed": "Arts and cultural donor",
+        "type": "nominal",
+        "description": "Whether the individual donates to arts and cultural causes"
+    },
+    "Health_and_beauty": {
+        "parsed": "Health and beauty",
+        "type": "nominal",
+        "description": "Whether the household purchases health and beauty products"
+    },
+    "Collectibles_arts": {
+        "parsed": "Arts collectibles",
+        "type": "nominal",
+        "description": "Whether the individual collects arts-related items"
+    },
+    "Insurance_purchased_directly": {
+        "parsed": "Insurance purchased directly",
+        "type": "nominal",
+        "description": "Whether the individual has purchased insurance directly"
+    },
+    "Married_in_past_12_months": {
+        "parsed": "Married in the past 12 months",
+        "type": "nominal",
+        "description": "Whether the individual got married in the past 12 months"
+    },
+    "World_region_of_birth": {
+        "parsed": "World region of birth",
+        "type": "nominal",
+        "description": "The world region where the individual was born"
+    },
+    "Collectibles_antiques": {
+        "parsed": "Antique collectibles",
+        "type": "nominal",
+        "description": "Whether the individual collects antiques"
+    },
+    "Political_ideology": {
+        "parsed": "Political ideology",
+        "type": "nominal",
+        "description": "The political ideology of the individual"
+    },
+    "Smoking": {
+        "parsed": "Smoking",
+        "type": "nominal",
+        "description": "Whether the individual smokes"
+    },
+    "Health_insurance_coverage": {
+        "parsed": "Health insurance coverage",
+        "type": "nominal",
+        "description": "Whether the individual has health insurance coverage"
+    },
+    "Work_looking": {
+        "parsed": "Looking for work",
+        "type": "nominal",
+        "description": "Whether the individual is looking for work"
+    },
+    "Insurance_via_employer": {
+        "parsed": "Insurance via employer",
+        "type": "nominal",
+        "description": "Whether the individual has insurance coverage through an employer"
+    },
+    "Home_and_garden": {
+        "parsed": "Home and garden",
+        "type": "nominal",
+        "description": "Whether the household purchases home and garden products"
+    },
+    "Home_mortgage_amount": {
+        "parsed": "Home mortgage amount",
+        "type": "numerical",
+        "description": "The amount of home mortgage"
+    },
+    "Occupation": {
+        "parsed": "Occupation",
+        "type": "nominal",
+        "description": "The occupation of the individual"
+    },
+    "Income_supplementary_security": {
+        "parsed": "Income from supplementary security",
+        "type": "numerical",
+        "description": "The amount of income received from supplementary security"
+    },
+    "Religious_contributor": {
+        "parsed": "Religious contributor",
+        "type": "nominal",
+        "description": "Whether the individual contributes to religious organizations"
+    },
+    "Military_served_WW2": {
+        "parsed": "Served in WWII",
+        "type": "nominal",
+        "description": "Whether the individual served in the military during World War II"
+    },
+    "Book_buyer": {
+        "parsed": "Book buyer",
+        "type": "nominal",
+        "description": "Whether the individual purchases books"
+    },
+    "Dwelling_type": {
+        "parsed": "Dwelling type",
+        "type": "nominal",
+        "description": "The type of dwelling the individual lives in"
+    },
+    "Active_snow_skiing": {
+        "parsed": "Active in snow skiing",
+        "type": "nominal",
+        "description": "Whether the individual actively participates in snow skiing"
+    },
+    "Apparel_infant_toddlers": {
+        "parsed": "Infant and toddler apparel",
+        "type": "nominal",
+        "description": "Whether the household purchases apparel for infants and toddlers"
+    },
+    "Income_retirement": {
+        "parsed": "Income from retirement",
+        "type": "numerical",
+        "description": "The amount of income received from retirement funds"
+    },
+    "Childrens_babycare": {
+        "parsed": "Children's babycare",
+        "type": "nominal",
+        "description": "Whether the household purchases babycare products for children"
+    },
+    "Political_contributor": {
+        "parsed": "Political contributor",
+        "type": "nominal",
+        "description": "Whether the individual contributes to political organizations"
+    },
+    "Marital_status": {
+        "parsed": "Marital status",
+        "type": "nominal",
+        "description": "The marital status of the individual"
+    },
+    "Pets_dogs": {
+        "parsed": "Dogs as pets",
+        "type": "nominal",
+        "description": "Whether the household has dogs as pets"
+    },
+    "Military_served_Korean_war_era": {
+        "parsed": "Served in Korean War era",
+        "type": "nominal",
+        "description": "Whether the individual served in the military during the Korean War era"
+    },
+    "Means_of_transportation": {
+        "parsed": "Means of transportation",
+        "type": "nominal",
+        "description": "The means of transportation used by the individual"
+    },
+    "Games_video": {
+        "parsed": "Video games",
+        "type": "nominal",
+        "description": "Whether the individual plays video games"
+    },
+    "Woodwork": {
+        "parsed": "Woodwork",
+        "type": "nominal",
+        "description": "Whether the individual is interested in woodwork"
+    },
+    "School_enrollment": {
+        "parsed": "School enrollment",
+        "type": "nominal",
+        "description": "Whether the individual is enrolled in school"
+    },
+    "Consumer_electronics": {
+        "parsed": "Consumer electronics",
+        "type": "nominal",
+        "description": "Whether the household purchases consumer electronics"
+    },
+    "Total_earnings": {
+        "parsed": "Total earnings",
+        "type": "numerical",
+        "description": "The total amount of earnings"
+    },
+    "State": {
+        "parsed": "State",
+        "type": "nominal",
+        "description": "The state of residence of the individual"
+    },
+    "Travel_grouping": {
+        "parsed": "Travel grouping",
+        "type": "nominal",
+        "description": "The individual's participation or interest in grouped travel activities"
+    },
+    "Aviation_int": {
+        "parsed": "International aviation",
+        "type": "nominal",
+        "description": "Whether the individual is involved in international aviation"
+    },
+    "Home_owner": {
+        "parsed": "Homeowner",
+        "type": "nominal",
+        "description": "Whether the individual is a homeowner"
+    },
+    "Dieting_weightloss": {
+        "parsed": "Involved in dieting / weight loss",
+        "type": "nominal",
+        "description": "Whether the individual is involved in dieting and weight loss activities"
+    },
+    "Childrens_general": {
+        "parsed": "Children's general",
+        "type": "nominal",
+        "description": "Whether the household purchases general items for children"
+    },
+    "Total_income": {
+        "parsed": "Total income",
+        "type": "nominal",
+        "description": "The total income of the individual"
+    },
+    "Military_memorabilia_weapons": {
+        "parsed": "Military memorabilia and weapons",
+        "type": "nominal",
+        "description": "Whether the individual collects military memorabilia and weapons"
+    },
+    "Cosmetics_beauty": {
+        "parsed": "Cosmetics and beauty",
+        "type": "nominal",
+        "description": "Whether the household purchases cosmetics and beauty products"
+    },
+    "Citizen_status": {
+        "parsed": "Citizenship status",
+        "type": "nominal",
+        "description": "The citizenship status of the individual"
+    },
+    "Home_improvement": {
+        "parsed": "Home improvement",
+        "type": "nominal",
+        "description": "Whether the household engages in home improvement activities"
+    },
+    "Difficulty_vision": {
+        "parsed": "Difficulty seeing",
+        "type": "nominal",
+        "description": "Whether the individual has difficulty seeing"
+    },
+    "Active_nascar": {
+        "parsed": "Active in NASCAR",
+        "type": "nominal",
+        "description": "Whether the individual actively participates in NASCAR events"
+    },
+    "Employment_status": {
+        "parsed": "Employment status",
+        "type": "nominal",
+        "description": "The employment status of the individual"
+    },
+    "Income_social_security": {
+        "parsed": "Income from social security",
+        "type": "numerical",
+        "description": "The amount of income received from social security"
+    },
+    "Online_buyer": {
+        "parsed": "Is an online buyer",
+        "type": "nominal",
+        "description": "Whether the individual purchases items online"
+    },
+    "Career_improvement": {
+        "parsed": "Seeks career improvement",
+        "type": "nominal",
+        "description": "Whether the individual seeks career improvement"
+    },
+    "Registered_to_vote": {
+        "parsed": "Registered to vote",
+        "type": "nominal",
+        "description": "Whether the individual is registered to vote"
+    }
+}]
