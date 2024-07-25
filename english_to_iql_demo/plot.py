@@ -76,16 +76,16 @@ def plot(df: pl.DataFrame) -> dict:
                 alt.X(f'{q_var}:Q'),
                 alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{q_var}', f'{p_mean_var}'],
-            ).properties(
-                height=height,
-                width=width,
-                background=background
             ),
             alt.Chart(df).mark_area(opacity=area_opacity).encode(
                 alt.X(f'{q_var}:Q'),
                 alt.Y(f'{p_min_var}:Q'),
                 alt.Y2(f'{p_max_var}:Q')
             )
+        ).properties(
+            height=height,
+            width=width,
+            background=background
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 1:
@@ -101,16 +101,16 @@ def plot(df: pl.DataFrame) -> dict:
                 x=x,
                 y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
-            ).properties(
-                height=height,
-                width=width,
-                background=background
             ),
             alt.Chart(df).mark_area(opacity=area_opacity).encode(
                 x=x,
                 y=alt.Y(f'{p_min_var}:Q'),
                 y2=alt.Y2(f'{p_max_var}:Q')
             )
+        ).properties(
+            height=height,
+            width=width,
+            background=background
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 2:
@@ -149,10 +149,6 @@ def plot(df: pl.DataFrame) -> dict:
                 color=color,
                 tooltip=[f'{p_mean_var}', f'{n_var1}', f'{n_var2}'],
                 order=alt.condition(selection, alt.value(1), alt.value(0))
-            )
-            .properties(
-                height=height,
-                width=width
             ),
             alt.Chart(df).mark_area().encode(
                 x=x,
@@ -165,6 +161,8 @@ def plot(df: pl.DataFrame) -> dict:
                 selection
             )
         ).properties(
+            height=height,
+            width=width,
             background=background
         )
 
