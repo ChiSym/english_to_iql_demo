@@ -39,7 +39,7 @@ def interpreter_dispatch(grammar_path):
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
             col_interpreter_metadata = json.load(f)[0]
-        df = pl.read_csv("harmonized-consumer-PUMS-100k-rows.csv")
+        df = pl.read_parquet("data-subsample-columns.parquet")
         return ColumnInterpreter(col_interpreter_metadata, df)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")

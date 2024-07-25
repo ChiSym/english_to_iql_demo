@@ -2,10 +2,10 @@ import json
 import yaml
 
 def pre_prompt_dispatch(grammar_path):
-    with open(f"grammars/{grammar_path}", "r") as f:
-        grammar = f.read()
     if grammar_path == "us_lpm_prob.lark":
-        return make_prob_pre_prompt(grammar)
+        with open("schema.json", "r", encoding="utf-8") as f:
+            schema = json.load(f)
+        return make_prob_pre_prompt(schema)
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
             datadict = yaml.dump(json.loads(f.read()))
@@ -14,7 +14,7 @@ def pre_prompt_dispatch(grammar_path):
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")
 
 
-def make_prob_pre_prompt(grammar):
+def make_prob_pre_prompt(schema):
     constructor = lambda event, conditioners : f"probability of {event} given {', '.join(conditioners)}"
 
     def make_preamble(constructor):
@@ -24,7 +24,7 @@ def make_prob_pre_prompt(grammar):
 Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The grammar used is the following:
 
 ```
-{grammar}
+{schema}
 ```
 
 The variables X and Y should be closely related to the entities mentioned in the user query.

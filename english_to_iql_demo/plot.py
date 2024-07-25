@@ -34,7 +34,7 @@ def plot_ood(df: pl.DataFrame) -> dict:
     height = 300
     width = 400
     background="#FFFFFF00" # transparent
-    chart = alt.Chart(df).mark_point().encode(
+    chart = alt.Chart(df).mark_point(opacity=0).encode(
         x='x:Q',
         y='y:Q',
     ).properties(
@@ -42,7 +42,7 @@ def plot_ood(df: pl.DataFrame) -> dict:
         width=width,
         background=background
     )
-    return {"chart": json.loads(chart.to_json())}
+    return {"chart": json.loads(chart.to_json(format="vega"))}
 
 def plot_data(df: pl.DataFrame) -> dict:
     # plot at most 4 variables
