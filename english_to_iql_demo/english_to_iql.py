@@ -42,7 +42,7 @@ def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: 
     request = {
         "prompt": prompt,
         "method": "smc-standard",
-        "n_particles": 10,
+        "n_particles": 60,
         "lark_grammar": grammar,
         "proposal_name": "character",
         "proposal_args": {},
