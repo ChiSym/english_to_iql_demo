@@ -9,7 +9,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 
-from english_to_iql_demo.english_to_iql import english_query_to_iql, OOD_REPLY
+from english_to_iql_demo.english_to_iql import english_query_to_iql
 from english_to_iql_demo.plot import plot_dispatch
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
@@ -45,7 +45,11 @@ def load_grammar(grammar_path):
 
 grammar_paths = ["us_lpm_prob.lark", "us_lpm_cols.lark"]
 indices = range(len(grammar_paths))
-genparse_urls = ["http://34.122.30.137:8888/infer", "http://35.225.217.118:8888/infer"]
+genparse_urls = [
+    "http://34.31.182.25:8888/infer",
+    # "http://34.122.30.137:8888/infer", 
+    "http://35.225.217.118:8888/infer",
+    ]
 assert len(grammar_paths) == len(set(genparse_urls))
 
 grammars = list(map(load_grammar, grammar_paths))

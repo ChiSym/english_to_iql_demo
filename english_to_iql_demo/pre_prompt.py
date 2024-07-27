@@ -4,7 +4,17 @@ import yaml
 def pre_prompt_dispatch(grammar_path):
     if grammar_path == "us_lpm_prob.lark":
         with open("schema.json", "r", encoding="utf-8") as f:
-            schema = json.load(f)
+            schema = json.loads(f.read())
+            schema['var_metadata']['State_PUMA10'] = []
+            schema['var_metadata']['Zipcode'] = []
+
+            new_schema_normal = {var: "number" for var in schema['types']['normal']}
+            new_schema_cat = {var: schema['var_metadata'][var]['levels']
+                if var not in ['Zipcode', 'State_PUMA10'] else []
+                for var in schema['types']['categorical']}
+
+            schema = new_schema_normal | new_schema_cat
+            schema = yaml.dump(schema)
         return make_prob_pre_prompt(schema)
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
@@ -16,6 +26,8 @@ def pre_prompt_dispatch(grammar_path):
 
 def make_prob_pre_prompt(schema):
     constructor = lambda event, conditioners : f"probability of {event} given {', '.join(conditioners)}"
+    # edit schema to remove PUMA10 levels, so that we fit the context window
+
 
     def make_preamble(constructor):
         return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in the query.

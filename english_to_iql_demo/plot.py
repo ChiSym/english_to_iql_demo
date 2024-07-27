@@ -67,7 +67,6 @@ def plot_data(df: pl.DataFrame) -> dict:
 def plot_lpm(df: pl.DataFrame) -> dict:
     height = 300
     width = 400
-    area_opacity = 0.3
     background="#FFFFFF00" # transparent
 
     # this handles the fact that variable assignment (i.e. X=x)
@@ -84,13 +83,22 @@ def plot_lpm(df: pl.DataFrame) -> dict:
     # and we're always going to plot p_ on the y-axis
     # that means we'll have continuous variables p_..., p_min_..., p_max_...
     # + whichever continuous and discrete variables we have mentioned in the query
-    p_df = df.select(pl.col('^p_.*$'))
-    nonp_df = df.select(pl.exclude('^p_.*$'))
-    assert len(p_df.columns) == 3
+    p_df = df.select(
+        pl.col('^p_.*$'),
+        pl.col("model"),
+        pl.col('^weight_.*$')
+        )
+    nonp_df = df.select(
+        pl.exclude(
+            '^p_.*$',
+            "model",
+            '^weight_.*$'
+        ))
+    assert len(p_df.columns) == 4
     # TODO make this nicer
     p_mean_var = p_df.select(pl.col('^p_mean.*$')).columns[0]
-    p_min_var = p_df.select(pl.col('^p_min.*$')).columns[0]
-    p_max_var = p_df.select(pl.col('^p_max.*$')).columns[0]
+    p_sample_var = p_df.select(pl.col('^p_sample.*$')).columns[0]
+    weight_var = p_df.select(pl.col('^weight.*$')).columns[0]
 
     # for now, plot at most 3 variables
     col_types = [get_col_type(nonp_df, col) for col in nonp_df.columns[:3]]
@@ -115,10 +123,10 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 width=width,
                 background=background
             ),
-            alt.Chart(df).mark_area(opacity=area_opacity).encode(
+            alt.Chart(df).mark_line().encode(
                 alt.X(f'{q_var}:Q'),
-                alt.Y(f'{p_min_var}:Q'),
-                alt.Y2(f'{p_max_var}:Q')
+                alt.Y(f'{p_sample_var}:Q'),
+                alt.Opacity(f'{weight_var}:Q')
             )
         )
 
@@ -140,10 +148,10 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 width=width,
                 background=background
             ),
-            alt.Chart(df).mark_area(opacity=area_opacity).encode(
+            alt.Chart(df).mark_line().encode(
                 x=x,
-                y=alt.Y(f'{p_min_var}:Q'),
-                y2=alt.Y2(f'{p_max_var}:Q')
+                y=alt.Y(f'{p_sample_var}:Q'),
+                opacity=alt.Opacity(f'{weight_var}:Q')
             )
         )
 
@@ -172,7 +180,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         selection = alt.selection_point(on='click', empty=False)
         cond_opacity = alt.condition(
             selection,
-            alt.value(0.3),
+            alt.Opacity(f'{weight_var}:Q'),
             alt.value(0.0)
         )
 
@@ -188,10 +196,9 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 height=height,
                 width=width
             ),
-            alt.Chart(df).mark_area().encode(
+            alt.Chart(df).mark_line().encode(
                 x=x,
-                y=alt.Y(f'{p_min_var}:Q'),
-                y2=alt.Y2(f'{p_max_var}:Q'),
+                y=alt.Y(f'{p_sample_var}:Q'),
                 color=color,
                 opacity=cond_opacity,
                 order=alt.condition(selection, alt.value(1), alt.value(0))

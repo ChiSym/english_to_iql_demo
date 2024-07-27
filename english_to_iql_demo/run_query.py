@@ -47,7 +47,8 @@ def interpreter_dispatch(grammar_path):
 
 def run_query(parser, interpreter, query):
     bos, eos = " ", "\n"
-    query = bos + query + eos
+    # restrip to handle user-inserted spaces
+    query = bos + query.strip() + eos
     tree = parser.parse(query)
     out = interpreter.transform(tree)
     if isinstance(interpreter, ProbInterpreter):

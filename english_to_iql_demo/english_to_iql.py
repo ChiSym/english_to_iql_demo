@@ -17,8 +17,10 @@ def english_query_to_iql(data):
             map_particle = data.sorted_posteriors[idx][0]["query"]
             data.queries[idx] = map_particle
 
-        with ThreadPoolExecutor() as executor:
-            executor.map(score_query_dsl, indices)
+        # with ThreadPoolExecutor() as executor:
+        #     executor.map(score_query_dsl, indices)
+        score_query_dsl(0)
+        score_query_dsl(1)
         assert all(data.queries), "Failure in scoring queries"
 
     def select_best_dsl(data):
@@ -38,11 +40,12 @@ def english_query_to_iql(data):
 
 
 def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: str, pre_prompt: str) -> str:
+    import ipdb; ipdb.set_trace()
     prompt = pre_prompt.format(user_query=user_query)
     request = {
         "prompt": prompt,
         "method": "smc-standard",
-        "n_particles": 10,
+        "n_particles": 60,
         "lark_grammar": grammar,
         "proposal_name": "character",
         "proposal_args": {},
@@ -56,6 +59,7 @@ def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: 
     x = requests.post(genparse_url, json = request, headers=headers)
 
     response = json.loads(x.text)
+    print(response)
     posterior = response['posterior']
     log_ml_estimate = response['log_ml_estimate']
     sorted_posterior = [
