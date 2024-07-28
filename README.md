@@ -1,12 +1,4 @@
-# english_to_iql_demo
-
-### Prequisites
-
-#### Huggingface
-
-1. Make a [Huggingface](https://huggingface.co/) account if you don't have one.
-2. Create a [huggingface user access token](https://huggingface.co/settings/tokens) if you don't have one.
-3. Agree to the [gemma model conditions](https://huggingface.co/google/gemma-7b).
+# genfact_demo
 
 ### Installation
 
