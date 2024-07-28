@@ -1,22 +1,7 @@
 # english_to_iql_demo
 
-### Prequisites
-
-#### Huggingface
-
-1. Make a [Huggingface](https://huggingface.co/) account if you don't have one.
-2. Create a [huggingface user access token](https://huggingface.co/settings/tokens) if you don't have one.
-3. Agree to the [gemma model conditions](https://huggingface.co/google/gemma-7b).
-
-### Installation
-
-1. Install [poetry](https://python-poetry.org/docs/#installation)
-2. Run `poetry install`
-3. Run `poetry shell`
-4. Run `npm install`
-4. Run `huggingface-cli login`, and paste in your user access token
-
-### Development
-
-1. To start the web server, run `uvicorn english_to_iql_demo.main:app --reload`
-2. To work on the Tailwind CSS, run `npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch`
+clone repo, checkout to ces_dispatch
+poetry install (might be missing a few packages---in particular I think we were having issues with autoinstalling genjax?)
+follow the genjax install instructions on the genjax repo
+tar -xzvf interpreter_metadata.tar.gz
+run uvicorn english_to_iql_demo.main:app --reload
