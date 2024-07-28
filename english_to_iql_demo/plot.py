@@ -180,7 +180,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         selection = alt.selection_point(on='click', empty=False)
         cond_opacity = alt.condition(
             selection,
-            alt.Opacity(f'{weight_var}:Q'),
+            alt.Opacity(f'{weight_var}:Q', legend=None),
             alt.value(0.0)
         )
 
@@ -196,11 +196,13 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 height=height,
                 width=width
             ),
-            alt.Chart(df).mark_line().encode(
+            alt.Chart(df).mark_circle().encode(
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
                 color=color,
                 opacity=cond_opacity,
+                # opacity=alt.Opacity(f'{weight_var}:Q', legend=None),
+                detail="model:N",
                 order=alt.condition(selection, alt.value(1), alt.value(0))
             ).add_params(
                 selection

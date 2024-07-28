@@ -17,10 +17,8 @@ def english_query_to_iql(data):
             map_particle = data.sorted_posteriors[idx][0]["query"]
             data.queries[idx] = map_particle
 
-        # with ThreadPoolExecutor() as executor:
-        #     executor.map(score_query_dsl, indices)
-        score_query_dsl(0)
-        score_query_dsl(1)
+        with ThreadPoolExecutor() as executor:
+            executor.map(score_query_dsl, indices)
         assert all(data.queries), "Failure in scoring queries"
 
     def select_best_dsl(data):
@@ -40,7 +38,6 @@ def english_query_to_iql(data):
 
 
 def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: str, pre_prompt: str) -> str:
-    import ipdb; ipdb.set_trace()
     prompt = pre_prompt.format(user_query=user_query)
     request = {
         "prompt": prompt,
