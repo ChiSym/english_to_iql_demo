@@ -121,13 +121,14 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             ).properties(
                 height=height,
                 width=width,
-                background=background
             ),
-            alt.Chart(df).mark_line().encode(
+            alt.Chart(df).mark_circle().encode(
                 alt.X(f'{q_var}:Q'),
                 alt.Y(f'{p_sample_var}:Q'),
-                alt.Opacity(f'{weight_var}:Q')
+                alt.Opacity(f'{weight_var}:Q', legend=None)
             )
+        ).properties(
+            background=background
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 1:
@@ -146,13 +147,65 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             ).properties(
                 height=height,
                 width=width,
-                background=background
             ),
-            alt.Chart(df).mark_line().encode(
+            alt.Chart(df).mark_circle().encode(
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
-                opacity=alt.Opacity(f'{weight_var}:Q')
+                opacity=alt.Opacity(f'{weight_var}:Q', legend=None)
             )
+        ).properties(
+            background=background
+        )
+
+    if col_counter['quantitative'] == 1 and col_counter['nominal'] == 1:
+        nominal_idx = [i for i, x in enumerate(col_types) if x == 'nominal'][0]
+        continuous_idx = [i for i, x in enumerate(col_types) if x == 'quantitative'][0]
+        n_var = nonp_df.columns[nominal_idx]
+        q_var = nonp_df.columns[continuous_idx]
+
+        x=alt.X(f'{q_var}:Q')
+
+        color=alt.Color(f'{n_var}:N')
+        # color=alt.Color(f'{n_var2}:O')
+
+        if n_var in custom_order.keys():
+            color = color.sort(custom_order[n_var])
+        
+        if n_var in ordinal_vars:
+            color = color.scale(scheme="viridis")
+
+        selection = alt.selection_point(on='click', empty=False)
+        cond_opacity = alt.condition(
+            selection,
+            alt.Opacity(f'{weight_var}:Q', legend=None),
+            alt.value(0.0)
+        )
+
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                x=x,
+                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
+                color=color,
+                tooltip=[f'{p_mean_var}', f'{n_var}', f'{q_var}'],
+                order=alt.condition(selection, alt.value(1), alt.value(0))
+            )
+            .properties(
+                height=height,
+                width=width
+            ),
+            alt.Chart(df).mark_circle().encode(
+                x=x,
+                y=alt.Y(f'{p_sample_var}:Q'),
+                color=color,
+                opacity=cond_opacity,
+                # opacity=alt.Opacity(f'{weight_var}:Q', legend=None),
+                detail="model:N",
+                order=alt.condition(selection, alt.value(1), alt.value(0))
+            ).add_params(
+                selection
+            )
+        ).properties(
+            background=background
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 2:
