@@ -163,6 +163,9 @@
                                     {% else %}
                                         <p class="text-gray-500">No combined data available.</p>
                                     {% endif %}
+                                    <div class="min-w-full text-left text-md font-extrabold text-surface dark:text-white mt-2">
+                                        Probability that entity is not in database: {{ "{:.2f}".format(not_found_pval * 100) }}%
+                                    </div>
                                 </div>
                             {% elif error %}
                                 <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Error: {{ error }}</div>

@@ -107,11 +107,16 @@ async def post_pclean_query(request: Request,
         response = requests.post(genfact_url, json=pclean_payload, timeout=90.0)
         pclean_resp = response.json()
 
+        # log.debug(f"pclean response: {pclean_resp}")
+
         extracted_results = extract_docs_and_biz(pclean_resp)
         
         combined = pclean_resp["results"]
         combined.sort(key=lambda x: x["count"], reverse=True)
         normalize_counts(combined)
+
+        sample_count = pclean_resp["count"]
+        not_found_pval = (sample_count - entities_count(combined)) / sample_count
 
         return templates.TemplateResponse(
             "genfact.html.jinja",
@@ -120,6 +125,7 @@ async def post_pclean_query(request: Request,
             "english_query": english_query,
             "genfact_entity": genfact_entity,
             "combined": combined,
+            "not_found_pval": not_found_pval,
             **extracted_results,
             },
             block_name="plot")
@@ -160,8 +166,6 @@ def extract_docs_and_biz(pclean_result: dict) -> dict:
             biz[biz_id]["id"] = biz_id
             biz[biz_id]["count"] = pclean_result["business_histogram"][biz_id]
             
-    # normalize_counts(docs)
-    # normalize_counts(biz)
 
     # Sort the dicts' values by the "count" field for the histograms
     sorted_docs = sorted(docs.values(), key=lambda x: x["count"], reverse=True)
@@ -173,29 +177,18 @@ def extract_docs_and_biz(pclean_result: dict) -> dict:
     # print(f"docs: {docs}")
     # print(">>>>>>>")
     # print(f"biz: {biz}")
-    print(f"sorted biz {sorted_biz}")
+    # print(f"sorted biz {sorted_biz}")
     # print(f"doc keys: {doc_keys}")
     # print(">>>>>>>")
     # print(f"biz keys: {biz_keys}")
     return {"docs": sorted_docs, "biz": sorted_biz, "doc_keys": doc_keys, "biz_keys": biz_keys}
 
-# def normalize_counts(entities: dict) -> None:
-#     log.debug(f"normalizing entities: {entities}")
-#     total_count = sum([ent["count"] for ent in entities.values()])
-#     log.debug(f"total count: {total_count}")
-#     for id, ent in entities.items():
-#         ent["proportion"] = ent["count"] / total_count
-
-# def normalize_combined_counts(combined: list) -> None:
-#     log.debug(f"normalizing combined entities: {combined}")
-#     total_count = sum([ent["count"] for ent in combined])
-#     log.debug(f"total combined count: {total_count}")
-#     for ent in combined:
-#         ent["proportion"] = ent["count"] / total_count
+def entities_count(entities: list) -> int:
+    return sum([ent["count"] for ent in entities])
 
 def normalize_counts(entities: list) -> None:
     log.debug(f"normalizing entities entities: {entities}")
-    total_count = sum([ent["count"] for ent in entities])
+    total_count = entities_count(entities)
     log.debug(f"total entities count: {total_count}")
     for ent in entities:
         ent["proportion"] = ent["count"] / total_count
