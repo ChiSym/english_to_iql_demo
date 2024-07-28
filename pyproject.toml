@@ -22,7 +22,10 @@ requests = "^2.32.3"
 altair = "^5.3.0"
 pyarrow = "^16.1.0"
 lark = "^1.1.9"
-jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git"}
+jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git", branch="test_us_lpm"}
+genjax = {version = "^0.5.0", source = "gcp"}
+pyyaml = "^6.0.1"
+vegafusion = {extras = ["embed"], version = "^1.6.9"}
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
@@ -35,3 +38,4 @@ build-backend = "poetry.core.masonry.api"
 name = "gcp"
 url = "https://us-west1-python.pkg.dev/probcomp-caliban/probcomp/simple/"
 priority = "explicit"
+
