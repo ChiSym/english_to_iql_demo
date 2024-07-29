@@ -264,6 +264,48 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             background=background
         )
 
+    if col_counter['quantitative'] == 2 and col_counter['nominal'] == 0:
+        quantitative_idxs = [i for i, x in enumerate(col_types) if x == 'quantitative']
+        q_var1 = nonp_df.columns[quantitative_idxs[0]]
+        q_var2 = nonp_df.columns[quantitative_idxs[1]]
+
+        x=alt.X(f'{q_var1}:Q')
+        color=alt.Color(f'{q_var2}:Q')
+        color = color.scale(scheme="viridis")
+
+        selection = alt.selection_point(on='click', empty=False)
+        cond_opacity = alt.condition(
+            selection,
+            alt.Opacity(f'{weight_var}:Q', legend=None),
+            alt.value(0.0)
+        )
+
+        chart = alt.layer(
+            alt.Chart(df).mark_line().encode(
+                x=x,
+                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
+                color=color,
+                tooltip=[f'{p_mean_var}', f'{q_var1}', f'{q_var2}'],
+                order=alt.condition(selection, alt.value(1), alt.value(0))
+            )
+            .properties(
+                height=height,
+                width=width
+            ),
+            alt.Chart(df).mark_circle().encode(
+                x=x,
+                y=alt.Y(f'{p_sample_var}:Q'),
+                color=color,
+                opacity=cond_opacity,
+                # opacity=alt.Opacity(f'{weight_var}:Q', legend=None),
+                detail="model:N",
+                order=alt.condition(selection, alt.value(1), alt.value(0))
+            ).add_params(
+                selection
+            )
+        ).properties(
+            background=background
+        )
 
     if not chart:
         raise ValueError("No chart type matches the data's column types")
