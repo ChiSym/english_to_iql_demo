@@ -3,6 +3,7 @@ from typing import Union
 import polars as pl
 import json
 import pickle
+import geopandas as gpd
 
 from jax_multimix.interpreter import Interpreter as ProbInterpreter
 from jax_multimix.model import mixture_model, SumProductInference
@@ -35,6 +36,8 @@ def interpreter_dispatch(grammar_path):
             model=mixture_model,
             args=prob_interpreter_metadata["args"],
             inf_alg=SumProductInference(),
+            df=pl.read_parquet("data-subsample-columns.parquet"),
+            geo_df=gpd.read_file('geodataframe.gpkg', engine='pyogrio', use_arrow=True),
         )
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
@@ -53,5 +56,5 @@ def run_query(parser, interpreter, query):
     out = interpreter.transform(tree)
     if isinstance(interpreter, ProbInterpreter):
         # currently getting some nulls, will investigate
-        return out.drop_nulls()
+        return out
     return out

@@ -4,6 +4,7 @@ import json
 import logging as log
 from collections import Counter
 import altair as alt
+import geopandas as gpd
 
 
 alt.data_transformers.enable("vegafusion")
@@ -45,6 +46,7 @@ def plot_ood(df: pl.DataFrame) -> dict:
     return {"chart": json.loads(chart.to_json(format="vega"))}
 
 def plot_data(df: pl.DataFrame) -> dict:
+    df = df.drop_nulls()
     # plot at most 4 variables
     # col_types = [get_col_type(df, col) for col in df.columns[:4]]
 
@@ -69,6 +71,18 @@ def plot_lpm(df: pl.DataFrame) -> dict:
     width = 400
     background="#FFFFFF00" # transparent
 
+    if isinstance(df, gpd.GeoDataFrame):
+        chart = alt.Chart(df, title="Vega-Altair").mark_geoshape().encode(
+            alt.Color("probability:Q")
+        ).project(
+            type='albersUsa'
+        ).properties(
+                height=height,
+                width=width,
+            )
+        return {"chart": json.loads(chart.to_json(format="vega"))}
+
+    df = df.drop_nulls()
     # this handles the fact that variable assignment (i.e. X=x)
     # creates columns with a single value
     for col in df.columns:

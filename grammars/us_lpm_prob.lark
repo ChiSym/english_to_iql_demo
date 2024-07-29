@@ -1,4 +1,6 @@
-start: " probability of " var [" given " var_list] /\n/ | " I can't answer that\n"
+start: " probability of " var [" given " var_list] /\n/ 
+	| " I can't answer that\n"
+	| " probability of " assignment " given State_PUMA10\n" -> geo
 var_list: var (", " var)*
 var: variable | assignment
 assignment: NORMAL0 OPERATOR DIGIT DIGIT? DIGIT?
@@ -72,7 +74,6 @@ assignment: NORMAL0 OPERATOR DIGIT DIGIT? DIGIT?
 	| NORMAL68 OPERATOR DIGIT DIGIT? DIGIT?
 	| NORMAL69 OPERATOR DIGIT DIGIT? DIGIT?
 	| CATEGORICAL0 OPERATOR CATEGORICAL0_VAL
-	| CATEGORICAL1 OPERATOR CATEGORICAL1_VAL
 	| CATEGORICAL2 OPERATOR CATEGORICAL2_VAL
 	| CATEGORICAL3 OPERATOR CATEGORICAL3_VAL
 	| CATEGORICAL4 OPERATOR CATEGORICAL4_VAL
@@ -250,7 +251,6 @@ variable: NORMAL0
 	| NORMAL68
 	| NORMAL69
 	| CATEGORICAL0
-	| CATEGORICAL1
 	| CATEGORICAL2
 	| CATEGORICAL3
 	| CATEGORICAL4
