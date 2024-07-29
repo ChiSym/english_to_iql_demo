@@ -174,38 +174,54 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         if n_var in ordinal_vars:
             color = color.scale(scheme="viridis")
 
-        selection = alt.selection_point(on='click', empty=False)
+        group_col = n_var
+
+        selection = alt.selection_point(
+            on='click', 
+            # what should the selection return when nothing is selected? altair weirdly selects *everything*
+            empty=False, 
+            # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
+            nearest=True, 
+            # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
+            fields=[group_col] 
+        )
+
+        # opacity is based on weight var when selected, invisible otherwise
         cond_opacity = alt.condition(
             selection,
             alt.Opacity(f'{weight_var}:Q', legend=None),
             alt.value(0.0)
         )
 
+        # Needed for visible line, and invisible point marks
+        shared_line_encoding = {
+            "x": x,
+            "y": alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False)
+        }
+
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
-                x=x,
-                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 color=color,
-                tooltip=[f'{p_mean_var}', f'{n_var}', f'{q_var}'],
-                order=alt.condition(selection, alt.value(1), alt.value(0))
-            )
-            .properties(
-                height=height,
-                width=width
+                strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
+                **shared_line_encoding
+            ),
+            # These invisible point marks exist to support "nearest" selection, 
+            # which doesn't work well with line/area marks
+            alt.Chart(df).mark_point().encode(
+                opacity = {"value": 0},
+                **shared_line_encoding
+            ).add_params( # adding this to other views breaks clicking, just add to the one used for targeting
+                selection
             ),
             alt.Chart(df).mark_circle().encode(
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
                 color=color,
                 opacity=cond_opacity,
-                # opacity=alt.Opacity(f'{weight_var}:Q', legend=None),
-                detail="model:N",
-                order=alt.condition(selection, alt.value(1), alt.value(0))
-            ).add_params(
-                selection
             )
         ).properties(
-            background=background
+            height=height,
+            width=width
         )
 
     if col_counter['quantitative'] == 0 and col_counter['nominal'] == 2:
@@ -230,38 +246,54 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         if n_var2 in ordinal_vars:
             color = color.scale(scheme="viridis")
 
-        selection = alt.selection_point(on='click', empty=False)
+        group_col = n_var2
+
+        selection = alt.selection_point(
+            on='click', 
+            # what should the selection return when nothing is selected? altair weirdly selects *everything*
+            empty=False, 
+            # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
+            nearest=True, 
+            # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
+            fields=[group_col] 
+        )
+
+        # opacity is based on weight var when selected, invisible otherwise
         cond_opacity = alt.condition(
             selection,
             alt.Opacity(f'{weight_var}:Q', legend=None),
             alt.value(0.0)
         )
 
+        # Needed for visible line, and invisible point marks
+        shared_line_encoding = {
+            "x": x,
+            "y": alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False)
+        }
+        
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
-                x=x,
-                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 color=color,
-                tooltip=[f'{p_mean_var}', f'{n_var1}', f'{n_var2}'],
-                order=alt.condition(selection, alt.value(1), alt.value(0))
-            )
-            .properties(
-                height=height,
-                width=width
+                strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
+                **shared_line_encoding
+            ),
+            # These invisible point marks exist to support "nearest" selection, 
+            # which doesn't work well with line/area marks
+            alt.Chart(df).mark_point().encode(
+                opacity = {"value": 0},
+                **shared_line_encoding
+            ).add_params( # adding this to other views breaks clicking, just add to the one used for targeting
+                selection
             ),
             alt.Chart(df).mark_circle().encode(
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
                 color=color,
                 opacity=cond_opacity,
-                # opacity=alt.Opacity(f'{weight_var}:Q', legend=None),
-                detail="model:N",
-                order=alt.condition(selection, alt.value(1), alt.value(0))
-            ).add_params(
-                selection
             )
         ).properties(
-            background=background
+            height=height,
+            width=width
         )
 
     if col_counter['quantitative'] == 2 and col_counter['nominal'] == 0:
@@ -273,38 +305,54 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         color=alt.Color(f'{q_var2}:Q')
         color = color.scale(scheme="viridis")
 
-        selection = alt.selection_point(on='click', empty=False)
+        group_col = q_var2
+
+        selection = alt.selection_point(
+            on='click', 
+            # what should the selection return when nothing is selected? altair weirdly selects *everything*
+            empty=False, 
+            # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
+            nearest=True, 
+            # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
+            fields=[group_col] 
+        )
+
+        # opacity is based on weight var when selected, invisible otherwise
         cond_opacity = alt.condition(
             selection,
             alt.Opacity(f'{weight_var}:Q', legend=None),
             alt.value(0.0)
         )
 
+        # Needed for visible line, and invisible point marks
+        shared_line_encoding = {
+            "x": x,
+            "y": alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False)
+        }
+
         chart = alt.layer(
             alt.Chart(df).mark_line().encode(
-                x=x,
-                y=alt.Y(f'{p_mean_var}:Q', title="probability").scale(zero=False),
                 color=color,
-                tooltip=[f'{p_mean_var}', f'{q_var1}', f'{q_var2}'],
-                order=alt.condition(selection, alt.value(1), alt.value(0))
-            )
-            .properties(
-                height=height,
-                width=width
+                strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
+                **shared_line_encoding
+            ),
+            # These invisible point marks exist to support "nearest" selection, 
+            # which doesn't work well with line/area marks
+            alt.Chart(df).mark_point().encode(
+                opacity = {"value": 0},
+                **shared_line_encoding
+            ).add_params( # adding this to other views breaks clicking, just add to the one used for targeting
+                selection
             ),
             alt.Chart(df).mark_circle().encode(
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
                 color=color,
                 opacity=cond_opacity,
-                # opacity=alt.Opacity(f'{weight_var}:Q', legend=None),
-                detail="model:N",
-                order=alt.condition(selection, alt.value(1), alt.value(0))
-            ).add_params(
-                selection
             )
         ).properties(
-            background=background
+            height=height,
+            width=width
         )
 
     if not chart:
