@@ -9,7 +9,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 
-from english_to_iql_demo.english_to_iql import english_query_to_iql
+from english_to_iql_demo.english_to_iql import english_query_to_iql, sync_query_state
 from english_to_iql_demo.plot import plot_dispatch
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
@@ -34,7 +34,9 @@ class Data:
     interpreters: List[Interpreter]
     sorted_posteriors: List[List[dict]]
     log_ml_estimates: List[float]
-    queries: List[str]
+    dsl_map_queries: List[str]
+    iql_queries: List[str]
+    iql_query: str
     df: pl.DataFrame
     current_dsl: str
 
@@ -67,7 +69,9 @@ data = Data(
     interpreters=interpreters,
     sorted_posteriors=[[{"query": "", "pval": 1.0}] for _ in indices],
     log_ml_estimates=[-float("inf") for _ in indices],
-    queries=["" for _ in indices],
+    dsl_map_queries=["" for _ in indices],
+    iql_queries=[""],
+    iql_query="",
     df=default_df,
     current_dsl="OOD",
 )
@@ -117,14 +121,15 @@ async def post_iql_query(request: Request):
     form_data = await request.form()
     log.debug(f"/post_iql_query form data: {form_data}")
     
-    if form_data.get('iql_query', '') != '':
-        data.query = form_data.get('iql_query', '')
+    form_query = form_data.get('iql_query', '')
+    if form_query != data.iql_query:
+        sync_query_state(data, form_query)
 
     try:
         if data.current_dsl == "OOD":
             data.df = default_df
         else:
-            data.df = run_query(data.parser, data.interpreter, form_data.get('iql_query', ''))
+            data.df = run_query(data.parser, data.interpreter, form_query)
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         return templates.TemplateResponse(

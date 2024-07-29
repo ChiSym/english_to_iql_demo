@@ -15,14 +15,14 @@ def english_query_to_iql(data):
                 data.english_query, data.genparse_urls[idx], data.grammars[idx], data.pre_prompts[idx]
             )
             map_particle = data.sorted_posteriors[idx][0]["query"]
-            data.queries[idx] = map_particle
+            data.dsl_map_queries[idx] = map_particle
 
         with ThreadPoolExecutor() as executor:
             executor.map(score_query_dsl, indices)
-        assert all(data.queries), "Failure in scoring queries"
+        assert all(data.dsl_map_queries), "Failure in scoring queries"
 
     def select_best_dsl(data):
-        options = [idx for idx in indices if data.queries[idx]!="I can't answer that"]
+        options = [idx for idx in indices if data.dsl_map_queries[idx]!="I can't answer that"]
         if not options:
             return -1
         return max(options, key=lambda idx: data.log_ml_estimates[idx])
@@ -65,3 +65,26 @@ def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: 
         in sorted(posterior.items(), key=lambda item: -item[1])
     ]
     return sorted_posterior, log_ml_estimate
+
+def sync_query_state(data, form_query):
+    def set_ood():
+        data.current_dsl = "OOD"
+        data.iql_query = OOD_REPLY
+        data.iql_queries = [data.iql_query]
+    bos, eos = " ", "\n"
+    query = bos + form_query.strip() + eos
+    if query == " I can't answer that\n":
+        set_ood()
+        return
+    for idx, parser in enumerate(data.parsers):
+        try:
+            parser.parse(query)
+            data.current_dsl = DSLs[idx]
+            data.iql_query = form_query
+            data.iql_queries = [data.iql_query]
+            data.parser = parser
+            data.interpreter = data.interpreters[idx]
+            return
+        except:
+            pass
+    set_ood()
