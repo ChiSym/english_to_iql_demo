@@ -41,7 +41,7 @@ Statements should take the form "{constructor('X','Y')}" where X is one of the f
 
 The variables X and Y should be closely related to the entities mentioned in the user query.
 
-If the answer is about variables which are not in the schema, you can should answer "I can't answer that". Only answer this when the user has asked a question about something which is not in the above schema.
+If the answer is about variables which are not in the schema, you can should answer "I can't answer that". When deciding whether to answer "I can't answer that", pay attention to the above variables.
 
 Here are some examples of user queries and paired translations:
 
@@ -112,7 +112,8 @@ Here are some examples of user queries and paired translations:
         ("Why is the sky grey sometimes?",
         "I can't answer that"),
         ("List two variables that could be confounders of the relationship of between Credit_rating and Race",
-        "Education, Total_income")
+        "Education, Total_income"),
+        ("What variables are about education?", "Education, Educational_attainment")
     ]
 
     pre_prompt = make_prompt(preamble.format(datadict=datadict), example_pairs)

@@ -1,79 +1,88 @@
-start: " probability of " var [" given " var_list] /\n/ 
-	| " I can't answer that\n"
-	| " probability of " assignment " given State_PUMA10\n" -> geo
-var_list: var (", " var)*
-var: variable | assignment
-assignment: NORMAL0 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL1 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL2 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL3 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL4 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL5 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL6 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL7 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL8 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL9 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL10 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL11 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL12 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL13 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL14 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL15 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL16 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL17 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL18 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL19 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL20 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL21 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL22 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL23 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL24 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL25 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL26 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL27 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL28 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL29 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL30 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL31 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL32 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL33 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL34 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL35 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL36 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL37 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL38 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL39 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL40 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL41 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL42 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL43 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL44 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL45 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL46 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL47 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL48 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL49 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL50 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL51 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL52 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL53 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL54 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL55 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL56 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL57 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL58 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL59 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL60 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL61 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL62 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL63 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL64 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL65 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL66 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL67 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL68 OPERATOR DIGIT DIGIT? DIGIT?
-	| NORMAL69 OPERATOR DIGIT DIGIT? DIGIT?
+start: " probability of " variable EOS
+| " probability of " variable " given " variable EOS
+| " probability of " variable " given " assignment EOS 
+| " probability of " variable " given " assignment ", " variable EOS
+| " probability of " variable " given " variable ", " assignment EOS
+| " probability of " variable " given " assignment ", " assignment EOS
+| " probability of " assignment " given " variable EOS
+| " probability of " assignment " given " variable ", " variable EOS
+| " probability of " assignment " given " assignment ", " variable EOS
+| " probability of " assignment " given " variable ", " assignment EOS
+| " probability of " assignment " given State_PUMA10\n" -> geo
+| " I can't answer that" EOS
+EOS: "\n"
+assignment: NORMAL0 OPERATOR NORM_DIGIT
+	| NORMAL1 OPERATOR NORM_DIGIT
+	| NORMAL2 OPERATOR NORM_DIGIT
+	| NORMAL3 OPERATOR NORM_DIGIT
+	| NORMAL4 OPERATOR NORM_DIGIT
+	| NORMAL5 OPERATOR NORM_DIGIT
+	| NORMAL6 OPERATOR NORM_DIGIT
+	| NORMAL7 OPERATOR NORM_DIGIT
+	| NORMAL8 OPERATOR NORM_DIGIT
+	| NORMAL9 OPERATOR NORM_DIGIT
+	| NORMAL10 OPERATOR NORM_DIGIT
+	| NORMAL11 OPERATOR NORM_DIGIT
+	| NORMAL12 OPERATOR NORM_DIGIT
+	| NORMAL13 OPERATOR NORM_DIGIT
+	| NORMAL14 OPERATOR NORM_DIGIT
+	| NORMAL15 OPERATOR NORM_DIGIT
+	| NORMAL16 OPERATOR NORM_DIGIT
+	| NORMAL17 OPERATOR NORM_DIGIT
+	| NORMAL18 OPERATOR NORM_DIGIT
+	| NORMAL19 OPERATOR NORM_DIGIT
+	| NORMAL20 OPERATOR NORM_DIGIT
+	| NORMAL21 OPERATOR NORM_DIGIT
+	| NORMAL22 OPERATOR NORM_DIGIT
+	| NORMAL23 OPERATOR NORM_DIGIT
+	| NORMAL24 OPERATOR NORM_DIGIT
+	| NORMAL25 OPERATOR NORM_DIGIT
+	| NORMAL26 OPERATOR NORM_DIGIT
+	| NORMAL27 OPERATOR NORM_DIGIT
+	| NORMAL28 OPERATOR NORM_DIGIT
+	| NORMAL29 OPERATOR NORM_DIGIT
+	| NORMAL30 OPERATOR NORM_DIGIT
+	| NORMAL31 OPERATOR NORM_DIGIT
+	| NORMAL32 OPERATOR NORM_DIGIT
+	| NORMAL33 OPERATOR NORM_DIGIT
+	| NORMAL34 OPERATOR NORM_DIGIT
+	| NORMAL35 OPERATOR NORM_DIGIT
+	| NORMAL36 OPERATOR NORM_DIGIT
+	| NORMAL37 OPERATOR NORM_DIGIT
+	| NORMAL38 OPERATOR NORM_DIGIT
+	| NORMAL39 OPERATOR NORM_DIGIT
+	| NORMAL40 OPERATOR NORM_DIGIT
+	| NORMAL41 OPERATOR NORM_DIGIT
+	| NORMAL42 OPERATOR NORM_DIGIT
+	| NORMAL43 OPERATOR NORM_DIGIT
+	| NORMAL44 OPERATOR NORM_DIGIT
+	| NORMAL45 OPERATOR NORM_DIGIT
+	| NORMAL46 OPERATOR NORM_DIGIT
+	| NORMAL47 OPERATOR NORM_DIGIT
+	| NORMAL48 OPERATOR NORM_DIGIT
+	| NORMAL49 OPERATOR NORM_DIGIT
+	| NORMAL50 OPERATOR NORM_DIGIT
+	| NORMAL51 OPERATOR NORM_DIGIT
+	| NORMAL52 OPERATOR NORM_DIGIT
+	| NORMAL53 OPERATOR NORM_DIGIT
+	| NORMAL54 OPERATOR NORM_DIGIT
+	| NORMAL55 OPERATOR NORM_DIGIT
+	| NORMAL56 OPERATOR NORM_DIGIT
+	| NORMAL57 OPERATOR NORM_DIGIT
+	| NORMAL58 OPERATOR NORM_DIGIT
+	| NORMAL59 OPERATOR NORM_DIGIT
+	| NORMAL60 OPERATOR NORM_DIGIT
+	| NORMAL61 OPERATOR NORM_DIGIT
+	| NORMAL62 OPERATOR NORM_DIGIT
+	| NORMAL63 OPERATOR NORM_DIGIT
+	| NORMAL64 OPERATOR NORM_DIGIT
+	| NORMAL65 OPERATOR NORM_DIGIT
+	| NORMAL66 OPERATOR NORM_DIGIT
+	| NORMAL67 OPERATOR NORM_DIGIT
+	| NORMAL68 OPERATOR NORM_DIGIT
+	| NORMAL69 OPERATOR NORM_DIGIT
 	| CATEGORICAL0 OPERATOR CATEGORICAL0_VAL
+	| CATEGORICAL1 OPERATOR CATEGORICAL1_VAL
 	| CATEGORICAL2 OPERATOR CATEGORICAL2_VAL
 	| CATEGORICAL3 OPERATOR CATEGORICAL3_VAL
 	| CATEGORICAL4 OPERATOR CATEGORICAL4_VAL
@@ -99,6 +108,7 @@ assignment: NORMAL0 OPERATOR DIGIT DIGIT? DIGIT?
 	| CATEGORICAL24 OPERATOR CATEGORICAL24_VAL
 	| CATEGORICAL25 OPERATOR CATEGORICAL25_VAL
 	| CATEGORICAL26 OPERATOR CATEGORICAL26_VAL
+	| CATEGORICAL27 OPERATOR CATEGORICAL27_VAL
 	| CATEGORICAL28 OPERATOR CATEGORICAL28_VAL
 	| CATEGORICAL29 OPERATOR CATEGORICAL29_VAL
 	| CATEGORICAL30 OPERATOR CATEGORICAL30_VAL
@@ -178,8 +188,6 @@ assignment: NORMAL0 OPERATOR DIGIT DIGIT? DIGIT?
 	| CATEGORICAL104 OPERATOR CATEGORICAL104_VAL
 	| CATEGORICAL105 OPERATOR CATEGORICAL105_VAL
 	| CATEGORICAL106 OPERATOR CATEGORICAL106_VAL
-	| CATEGORICAL107 OPERATOR CATEGORICAL107_VAL
-
 variable: NORMAL0
 	| NORMAL1
 	| NORMAL2
@@ -251,6 +259,7 @@ variable: NORMAL0
 	| NORMAL68
 	| NORMAL69
 	| CATEGORICAL0
+	| CATEGORICAL1
 	| CATEGORICAL2
 	| CATEGORICAL3
 	| CATEGORICAL4
@@ -276,6 +285,7 @@ variable: NORMAL0
 	| CATEGORICAL24
 	| CATEGORICAL25
 	| CATEGORICAL26
+	| CATEGORICAL27
 	| CATEGORICAL28
 	| CATEGORICAL29
 	| CATEGORICAL30
@@ -355,7 +365,6 @@ variable: NORMAL0
 	| CATEGORICAL104
 	| CATEGORICAL105
 	| CATEGORICAL106
-	| CATEGORICAL107
 NORMAL0: "Age"
 NORMAL1: "Commute_minutes"
 NORMAL2: "Total_earnings"
@@ -453,86 +462,86 @@ CATEGORICAL23: "Year"
 CATEGORICAL24: "Data_source"
 CATEGORICAL25: "Occupation"
 CATEGORICAL26: "Environment"
-CATEGORICAL28: "Registered_to_vote"
-CATEGORICAL29: "Religion"
-CATEGORICAL30: "Union_member"
-CATEGORICAL31: "Did_you_vote"
-CATEGORICAL32: "How_did_you_vote"
-CATEGORICAL33: "Where_was_ballot_returned"
-CATEGORICAL34: "Problem_voting"
-CATEGORICAL35: "State_senate_vote"
-CATEGORICAL36: "Lower_chamber_vote"
-CATEGORICAL37: "Waiting_for_voting"
-CATEGORICAL38: "Device_used"
-CATEGORICAL39: "Party_allegiance"
-CATEGORICAL40: "Used_social_media_in_past_24hrs"
-CATEGORICAL41: "Watched_tv_news_in_past_24hrs"
-CATEGORICAL42: "Read_newspaper_in_past_24hrs"
-CATEGORICAL43: "Listened_to_radio_news_in_past_24hrs"
-CATEGORICAL44: "National_econony_has"
-CATEGORICAL45: "My_house_income_has"
-CATEGORICAL46: "Prices_have"
-CATEGORICAL47: "Lost_job_last_year"
-CATEGORICAL48: "Finished_school_last_year"
-CATEGORICAL49: "Retired_last_year"
-CATEGORICAL50: "Had_a_child_last_year"
-CATEGORICAL51: "Taken_new_job_last_year"
-CATEGORICAL52: "Been_victim_of_crime_last_year"
-CATEGORICAL53: "Visited_emergency_room_last_year"
-CATEGORICAL54: "Visited_doctor_for_regular_examination_last_year"
-CATEGORICAL55: "Received_a_raise_last_year"
-CATEGORICAL56: "Jad_pay_cut_last_year"
-CATEGORICAL57: "Police_makes_me_feel"
-CATEGORICAL58: "I_had_covid_last_year"
-CATEGORICAL59: "Family_member_had_covid_last_year"
-CATEGORICAL60: "Friend_had_covid_last_year"
-CATEGORICAL61: "Co_worker_had_covid_last_year"
-CATEGORICAL62: "Vaccination_status"
-CATEGORICAL63: "Pandemic_work_hours_reduced"
-CATEGORICAL64: "Pandemic_work_hours_restored"
-CATEGORICAL65: "Pandemic_temporarily_laid_off"
-CATEGORICAL66: "Pandemic_re_hired_after_temporarily_laid_off"
-CATEGORICAL67: "Pandemic_multiple_jobs_lost_one"
-CATEGORICAL68: "Pandemic_hours_increased"
-CATEGORICAL69: "Pandemic_take_additional_jobs"
-CATEGORICAL70: "Pay_for_emergency_with_credit_card_pay_off_next_statement"
-CATEGORICAL71: "Pay_for_emergency_with_credit_card_pay_off_over_time"
-CATEGORICAL72: "Pay_for_emergency_with_money_in_credit_savings_account"
-CATEGORICAL73: "Pay_for_emergency_with_bank_loan"
-CATEGORICAL74: "Pay_for_emergency_by_borrowing_from_friends_or_family"
-CATEGORICAL75: "Pay_for_emergency_with_advance_or_overdraft"
-CATEGORICAL76: "Pay_for_emergency_by_sell_something"
-CATEGORICAL77: "Mental_health_status"
-CATEGORICAL78: "Which_party_has_majority_house"
-CATEGORICAL79: "Which_party_has_majority_senate"
-CATEGORICAL80: "Which_party_has_majority_in_my_state_senate"
-CATEGORICAL81: "Which_party_has_majority_in_my_state_lower_chamber"
-CATEGORICAL82: "Apporoval_president"
-CATEGORICAL83: "Apporoval_congress"
-CATEGORICAL84: "Apporoval_governor"
-CATEGORICAL85: "Apporoval_state_legislature"
-CATEGORICAL86: "Apporoval_my_current_member_congress"
-CATEGORICAL87: "Apporoval_my_current_second_senator"
-CATEGORICAL88: "Policy_support_expanding_medicare"
-CATEGORICAL89: "Policy_support_government_negotiate_with_drug_companies"
-CATEGORICAL90: "Policy_support_repealing_aca"
-CATEGORICAL91: "Policy_support_allow_states_import_drugs_from_other_countries"
-CATEGORICAL92: "Policy_support_prohibiting_states_publishing_names_of_gun_owners"
-CATEGORICAL93: "Policy_support_ban_assault_rifles"
-CATEGORICAL94: "Policy_support_easier_to_get_concealed_carry_permit"
-CATEGORICAL95: "Policy_support_take_guns_away_from_people_who_pose_threat"
-CATEGORICAL96: "Policy_support_background_checks_guns"
-CATEGORICAL97: "Policy_support_allowing_teachers_to_carry_guns"
-CATEGORICAL98: "Policy_support_grant_legal_status_if_working_for_3_years"
-CATEGORICAL99: "Policy_support_increase_border_patrol"
-CATEGORICAL100: "Policy_support_eliminate_visa_lottery_and_family_based_immigration"
-CATEGORICAL101: "Policy_support_increase_spending_on_border_security_25_billions_and_build_wall"
-CATEGORICAL102: "Policy_support_always_allow_abortion"
-CATEGORICAL103: "Policy_support_permit_abortion_only_in_emergency"
-CATEGORICAL104: "Policy_support_prohbit_all_abortions_after_week_20"
-CATEGORICAL105: "Policy_support_allow_employers_deny_abortion_coverage"
-CATEGORICAL106: "Policy_support_prohibit_federal_funds_be_used_for_abortion"
-CATEGORICAL107: "Policy_support_make_all_abortions_illegal"
+CATEGORICAL27: "Registered_to_vote"
+CATEGORICAL28: "Religion"
+CATEGORICAL29: "Union_member"
+CATEGORICAL30: "Did_you_vote"
+CATEGORICAL31: "How_did_you_vote"
+CATEGORICAL32: "Where_was_ballot_returned"
+CATEGORICAL33: "Problem_voting"
+CATEGORICAL34: "State_senate_vote"
+CATEGORICAL35: "Lower_chamber_vote"
+CATEGORICAL36: "Waiting_for_voting"
+CATEGORICAL37: "Device_used"
+CATEGORICAL38: "Party_allegiance"
+CATEGORICAL39: "Used_social_media_in_past_24hrs"
+CATEGORICAL40: "Watched_tv_news_in_past_24hrs"
+CATEGORICAL41: "Read_newspaper_in_past_24hrs"
+CATEGORICAL42: "Listened_to_radio_news_in_past_24hrs"
+CATEGORICAL43: "National_econony_has"
+CATEGORICAL44: "My_house_income_has"
+CATEGORICAL45: "Prices_have"
+CATEGORICAL46: "Lost_job_last_year"
+CATEGORICAL47: "Finished_school_last_year"
+CATEGORICAL48: "Retired_last_year"
+CATEGORICAL49: "Had_a_child_last_year"
+CATEGORICAL50: "Taken_new_job_last_year"
+CATEGORICAL51: "Been_victim_of_crime_last_year"
+CATEGORICAL52: "Visited_emergency_room_last_year"
+CATEGORICAL53: "Visited_doctor_for_regular_examination_last_year"
+CATEGORICAL54: "Received_a_raise_last_year"
+CATEGORICAL55: "Jad_pay_cut_last_year"
+CATEGORICAL56: "Police_makes_me_feel"
+CATEGORICAL57: "I_had_covid_last_year"
+CATEGORICAL58: "Family_member_had_covid_last_year"
+CATEGORICAL59: "Friend_had_covid_last_year"
+CATEGORICAL60: "Co_worker_had_covid_last_year"
+CATEGORICAL61: "Vaccination_status"
+CATEGORICAL62: "Pandemic_work_hours_reduced"
+CATEGORICAL63: "Pandemic_work_hours_restored"
+CATEGORICAL64: "Pandemic_temporarily_laid_off"
+CATEGORICAL65: "Pandemic_re_hired_after_temporarily_laid_off"
+CATEGORICAL66: "Pandemic_multiple_jobs_lost_one"
+CATEGORICAL67: "Pandemic_hours_increased"
+CATEGORICAL68: "Pandemic_take_additional_jobs"
+CATEGORICAL69: "Pay_for_emergency_with_credit_card_pay_off_next_statement"
+CATEGORICAL70: "Pay_for_emergency_with_credit_card_pay_off_over_time"
+CATEGORICAL71: "Pay_for_emergency_with_money_in_credit_savings_account"
+CATEGORICAL72: "Pay_for_emergency_with_bank_loan"
+CATEGORICAL73: "Pay_for_emergency_by_borrowing_from_friends_or_family"
+CATEGORICAL74: "Pay_for_emergency_with_advance_or_overdraft"
+CATEGORICAL75: "Pay_for_emergency_by_sell_something"
+CATEGORICAL76: "Mental_health_status"
+CATEGORICAL77: "Which_party_has_majority_house"
+CATEGORICAL78: "Which_party_has_majority_senate"
+CATEGORICAL79: "Which_party_has_majority_in_my_state_senate"
+CATEGORICAL80: "Which_party_has_majority_in_my_state_lower_chamber"
+CATEGORICAL81: "Apporoval_president"
+CATEGORICAL82: "Apporoval_congress"
+CATEGORICAL83: "Apporoval_governor"
+CATEGORICAL84: "Apporoval_state_legislature"
+CATEGORICAL85: "Apporoval_my_current_member_congress"
+CATEGORICAL86: "Apporoval_my_current_second_senator"
+CATEGORICAL87: "Policy_support_expanding_medicare"
+CATEGORICAL88: "Policy_support_government_negotiate_with_drug_companies"
+CATEGORICAL89: "Policy_support_repealing_aca"
+CATEGORICAL90: "Policy_support_allow_states_import_drugs_from_other_countries"
+CATEGORICAL91: "Policy_support_prohibiting_states_publishing_names_of_gun_owners"
+CATEGORICAL92: "Policy_support_ban_assault_rifles"
+CATEGORICAL93: "Policy_support_easier_to_get_concealed_carry_permit"
+CATEGORICAL94: "Policy_support_take_guns_away_from_people_who_pose_threat"
+CATEGORICAL95: "Policy_support_background_checks_guns"
+CATEGORICAL96: "Policy_support_allowing_teachers_to_carry_guns"
+CATEGORICAL97: "Policy_support_grant_legal_status_if_working_for_3_years"
+CATEGORICAL98: "Policy_support_increase_border_patrol"
+CATEGORICAL99: "Policy_support_eliminate_visa_lottery_and_family_based_immigration"
+CATEGORICAL100: "Policy_support_increase_spending_on_border_security_25_billions_and_build_wall"
+CATEGORICAL101: "Policy_support_always_allow_abortion"
+CATEGORICAL102: "Policy_support_permit_abortion_only_in_emergency"
+CATEGORICAL103: "Policy_support_prohbit_all_abortions_after_week_20"
+CATEGORICAL104: "Policy_support_allow_employers_deny_abortion_coverage"
+CATEGORICAL105: "Policy_support_prohibit_federal_funds_be_used_for_abortion"
+CATEGORICAL106: "Policy_support_make_all_abortions_illegal"
 CATEGORICAL0_VAL: "'Illinois'"
 	| "'Florida'"
 	| "'Texas'"
@@ -3467,9 +3476,9 @@ CATEGORICAL25_VAL: "'Manager, Professional Administrator'"
 	| "'Protective Service'"
 CATEGORICAL26_VAL: "'Urban'"
 	| "'Rural'"
-CATEGORICAL28_VAL: "'Yes'"
+CATEGORICAL27_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL29_VAL: "'Nothing in particular'"
+CATEGORICAL28_VAL: "'Nothing in particular'"
 	| "'Protestant'"
 	| "'Agnostic'"
 	| "'Atheist'"
@@ -3481,19 +3490,19 @@ CATEGORICAL29_VAL: "'Nothing in particular'"
 	| "'Buddhist'"
 	| "'Eastern or Greek Orthodox'"
 	| "'Muslim'"
-CATEGORICAL30_VAL: "'formerly'"
+CATEGORICAL29_VAL: "'formerly'"
 	| "'no, never'"
 	| "'Yes'"
-CATEGORICAL31_VAL: "'(e) I definitely voted in the November 2022 General Election'"
+CATEGORICAL30_VAL: "'(e) I definitely voted in the November 2022 General Election'"
 	| "'(a) I did not vote in the election this November'"
 	| "'(b) I thought about voting this time – but didn't'"
 	| "'(c) I usually vote, but didn't this time'"
 	| "'(d) I attempted to vote but did not or could not'"
-CATEGORICAL32_VAL: "'mail'"
+CATEGORICAL31_VAL: "'mail'"
 	| "'in person, on election day'"
 	| "'in person, before election day'"
 	| "'don't know'"
-CATEGORICAL33_VAL: "'Drop box used only for ballots, not located at an election office or polling place'"
+CATEGORICAL32_VAL: "'Drop box used only for ballots, not located at an election office or polling place'"
 	| "'Post office box at a U.S. Postal Service location'"
 	| "'Picked up by the postal worker who delivers mail to my home'"
 	| "'Official post office box not at a U.S. Postal Service location'"
@@ -3502,56 +3511,58 @@ CATEGORICAL33_VAL: "'Drop box used only for ballots, not located at an election 
 	| "'Voting center, not a neighborhood polling place'"
 	| "'I don’t know'"
 	| "'Other'"
-CATEGORICAL34_VAL: "'No'"
+CATEGORICAL33_VAL: "'No'"
 	| "'Yes'"
+CATEGORICAL34_VAL: "'Democratic'"
+	| "'Republican'"
+	| "'Did not vote in this race'"
+	| "'There was no race for this office'"
+	| "'Other'"
 CATEGORICAL35_VAL: "'Democratic'"
 	| "'Republican'"
 	| "'Did not vote in this race'"
-	| "'There was no race for this office'"
-	| "'Other'"
-CATEGORICAL36_VAL: "'Democratic'"
-	| "'Republican'"
-	| "'Did not vote in this race'"
 	| "'Other'"
 	| "'There was no race for this office'"
-CATEGORICAL37_VAL: "'(a) Not at all'"
+CATEGORICAL36_VAL: "'(a) Not at all'"
 	| "'(f) I don’t know'"
 	| "'(b) Less than 10 minutes'"
 	| "'(d) 31 minutes – 1 hour'"
 	| "'(c) 10-30 minutes'"
 	| "'(e) More than 1 hour'"
-CATEGORICAL38_VAL: "'phone'"
+CATEGORICAL37_VAL: "'phone'"
 	| "'computer'"
 	| "'tablet'"
-CATEGORICAL39_VAL: "'Democrat'"
+CATEGORICAL38_VAL: "'Democrat'"
 	| "'independent'"
 	| "'other'"
 	| "'Repulican'"
 	| "'not sure'"
+CATEGORICAL39_VAL: "'Yes'"
+	| "'No'"
 CATEGORICAL40_VAL: "'Yes'"
 	| "'No'"
 CATEGORICAL41_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL42_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL43_VAL: "'No'"
+CATEGORICAL42_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL44_VAL: "'(b) Gotten somewhat better'"
+CATEGORICAL43_VAL: "'(b) Gotten somewhat better'"
 	| "'(e) Gotten much worse'"
 	| "'(d) Gotten somewhat worse'"
 	| "'6.0'"
 	| "'(a) Gotten much better'"
 	| "'(c) Stayed about the same'"
-CATEGORICAL45_VAL: "'(c) Stayed about the same'"
+CATEGORICAL44_VAL: "'(c) Stayed about the same'"
 	| "'(b) Increased somewhat'"
 	| "'(a) Increased a lot'"
 	| "'(e) Decreased somewhat'"
 	| "'(f) Decreased a lot'"
-CATEGORICAL46_VAL: "'(b) Increased somewhat'"
+CATEGORICAL45_VAL: "'(b) Increased somewhat'"
 	| "'(a) Increased a lot'"
 	| "'(c) Stayed about the same'"
 	| "'(e) Decreased somewhat'"
 	| "'(f) Decreased a lot'"
+CATEGORICAL46_VAL: "'No'"
+	| "'Yes'"
 CATEGORICAL47_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL48_VAL: "'No'"
@@ -3564,30 +3575,30 @@ CATEGORICAL51_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL52_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL53_VAL: "'No'"
-	| "'Yes'"
+CATEGORICAL53_VAL: "'Yes'"
+	| "'No'"
 CATEGORICAL54_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL55_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL56_VAL: "'No'"
+CATEGORICAL55_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL57_VAL: "'(b) Somewhat safe'"
+CATEGORICAL56_VAL: "'(b) Somewhat safe'"
 	| "'(c) Somewhat unsafe'"
 	| "'(a) Mostly safe'"
 	| "'(d) Mostly unsafe'"
-CATEGORICAL58_VAL: "'Yes'"
+CATEGORICAL57_VAL: "'Yes'"
 	| "'No'"
+CATEGORICAL58_VAL: "'No'"
+	| "'Yes'"
 CATEGORICAL59_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL60_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL61_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL62_VAL: "'(a) fully vaccinated and have received at least one booster shot'"
+CATEGORICAL61_VAL: "'(a) fully vaccinated and have received at least one booster shot'"
 	| "'(b) fully vaccinated but have not received a booster shot'"
 	| "'(d) not vaccinated at all'"
 	| "'(c) partially vaccinated'"
+CATEGORICAL62_VAL: "'No'"
+	| "'Yes'"
 CATEGORICAL63_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL64_VAL: "'No'"
@@ -3600,103 +3611,103 @@ CATEGORICAL67_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL68_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL69_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL70_VAL: "'Yes'"
+CATEGORICAL69_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL71_VAL: "'No'"
+CATEGORICAL70_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL72_VAL: "'Yes'"
+CATEGORICAL71_VAL: "'Yes'"
 	| "'No'"
+CATEGORICAL72_VAL: "'No'"
+	| "'Yes'"
 CATEGORICAL73_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL74_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL75_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL76_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL77_VAL: "'(c) Good'"
+CATEGORICAL76_VAL: "'(c) Good'"
 	| "'(a) Excellent'"
 	| "'(b) Very good'"
 	| "'(d) Fair'"
 	| "'(e) Poor'"
+CATEGORICAL77_VAL: "'Democrats'"
+	| "'not sure'"
+	| "'Republicans'"
+	| "'neither'"
 CATEGORICAL78_VAL: "'Democrats'"
 	| "'not sure'"
 	| "'Republicans'"
 	| "'neither'"
-CATEGORICAL79_VAL: "'Democrats'"
+CATEGORICAL79_VAL: "'Republicans'"
+	| "'Democrats'"
 	| "'not sure'"
-	| "'Republicans'"
 	| "'neither'"
 CATEGORICAL80_VAL: "'Republicans'"
 	| "'Democrats'"
 	| "'not sure'"
 	| "'neither'"
-CATEGORICAL81_VAL: "'Republicans'"
-	| "'Democrats'"
-	| "'not sure'"
-	| "'neither'"
-CATEGORICAL82_VAL: "'(b) somewhat approve'"
+CATEGORICAL81_VAL: "'(b) somewhat approve'"
 	| "'(e) strongly disapprove'"
 	| "'(a) strongly approve'"
 	| "'(c) not sure'"
 	| "'(d) somewhat disapprove'"
-CATEGORICAL83_VAL: "'(d) somewhat disapprove'"
+CATEGORICAL82_VAL: "'(d) somewhat disapprove'"
 	| "'(e) strongly disapprove'"
 	| "'(c) not sure'"
 	| "'(b) somewhat approve'"
 	| "'(a) strongly approve'"
-CATEGORICAL84_VAL: "'(e) strongly disapprove'"
+CATEGORICAL83_VAL: "'(e) strongly disapprove'"
 	| "'(b) somewhat approve'"
 	| "'(d) somewhat disapprove'"
 	| "'(a) strongly approve'"
 	| "'(c) not sure'"
-CATEGORICAL85_VAL: "'(a) strongly approve'"
+CATEGORICAL84_VAL: "'(a) strongly approve'"
 	| "'(b) somewhat approve'"
 	| "'(d) somewhat disapprove'"
 	| "'(e) strongly disapprove'"
 	| "'(c) not sure'"
-CATEGORICAL86_VAL: "'(e) strongly disapprove'"
+CATEGORICAL85_VAL: "'(e) strongly disapprove'"
 	| "'(d) somewhat disapprove'"
 	| "'(c) not sure'"
 	| "'(b) somewhat approve'"
 	| "'(a) strongly approve'"
-CATEGORICAL87_VAL: "'(d) somewhat disapprove'"
+CATEGORICAL86_VAL: "'(d) somewhat disapprove'"
 	| "'(e) strongly disapprove'"
 	| "'(c) not sure'"
 	| "'(a) strongly approve'"
 	| "'(b) somewhat approve'"
+CATEGORICAL87_VAL: "'Yes'"
+	| "'No'"
 CATEGORICAL88_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL89_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL90_VAL: "'No'"
+CATEGORICAL89_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL91_VAL: "'Yes'"
+CATEGORICAL90_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL92_VAL: "'No'"
+CATEGORICAL91_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL93_VAL: "'Yes'"
+CATEGORICAL92_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL94_VAL: "'No'"
+CATEGORICAL93_VAL: "'No'"
 	| "'Yes'"
+CATEGORICAL94_VAL: "'Yes'"
+	| "'No'"
 CATEGORICAL95_VAL: "'Yes'"
 	| "'No'"
-CATEGORICAL96_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL97_VAL: "'No'"
+CATEGORICAL96_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL98_VAL: "'Yes'"
+CATEGORICAL97_VAL: "'Yes'"
 	| "'No'"
+CATEGORICAL98_VAL: "'No'"
+	| "'Yes'"
 CATEGORICAL99_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL100_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL101_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL102_VAL: "'Yes'"
+CATEGORICAL101_VAL: "'Yes'"
 	| "'No'"
+CATEGORICAL102_VAL: "'No'"
+	| "'Yes'"
 CATEGORICAL103_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL104_VAL: "'No'"
@@ -3705,11 +3716,9 @@ CATEGORICAL105_VAL: "'No'"
 	| "'Yes'"
 CATEGORICAL106_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL107_VAL: "'No'"
-	| "'Yes'"
-
 OPERATOR: "=" | " = "
+NORM_DIGIT: "-2" | "-1" | "0" | "1" | "2"
 DIGIT: "0".."9"
 INT: DIGIT+
 FLOAT: INT "." INT? | "." INT
-NUMBER: FLOAT | INT  
+NUMBER: FLOAT | INT

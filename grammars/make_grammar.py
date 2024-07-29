@@ -1,0 +1,135 @@
+import argparse
+import json
+import os
+import warnings
+from lark import Lark
+
+# exclude zipcodes
+CATEGORICAL_EXCLUSIONS = ['Zipcode']
+NORMAL_EXCLUSIONS = []
+
+prob_grammar_template = """start: " probability of " variable EOS
+| " probability of " variable " given " variable EOS
+| " probability of " variable " given " assignment EOS 
+| " probability of " variable " given " assignment ", " variable EOS
+| " probability of " variable " given " variable ", " assignment EOS
+| " probability of " variable " given " assignment ", " assignment EOS
+| " probability of " assignment " given " variable EOS
+| " probability of " assignment " given " variable ", " variable EOS
+| " probability of " assignment " given " assignment ", " variable EOS
+| " probability of " assignment " given " variable ", " assignment EOS
+| " probability of " assignment " given State_PUMA10\\n" -> geo
+| " I can't answer that" EOS
+EOS: "\\n"
+assignment: {assignment}
+variable: {var_nonterminals}
+{var_names}
+{categorical_values}
+OPERATOR: "=" | " = "
+NORM_DIGIT: "-2" | "-1" | "0" | "1" | "2"
+DIGIT: "0".."9"
+INT: DIGIT+
+FLOAT: INT "." INT? | "." INT
+NUMBER: FLOAT | INT"""
+
+cols_grammar_template = """start: " " var_list EOS | " I can't answer that\\n"
+EOS: "\\n"
+var_list: var | var ", " var | var ", " var ", " var | var ", " var ", " var ", " var | var ", " var ", " var ", " var ", " var
+var: {var_nonterminals}
+{var_names}
+"""
+
+def make_grammars(schema_path):
+    # at most 2 free variables
+    schema = json.load(open(schema_path, 'r'))
+
+    normals = [x for x in schema["types"]["normal"] if x not in NORMAL_EXCLUSIONS]
+    categoricals = [x for x in schema["types"]["categorical"] if x not in CATEGORICAL_EXCLUSIONS]
+
+    n_n = range(len(normals))
+    n_c = range(len(categoricals))
+    normal_variable_nts = [f"NORMAL{i}" for i in n_n]
+    categorical_variable_nts = [f"CATEGORICAL{i}" for i in n_c]
+    var_nonterminals = normal_variable_nts + categorical_variable_nts
+    normal_var_names = [
+        f"NORMAL{i}: \"{var}\"" for i, var in enumerate(normals)
+    ]
+    categorical_var_names = [
+        f"CATEGORICAL{i}: \"{var}\"" for i, var in enumerate(categoricals)
+    ]
+    var_names = normal_var_names + categorical_var_names
+
+    # normal currently a hack for age only to make it easier for genparse
+    normal_assignment = [f"{nt} OPERATOR NORM_DIGIT" for nt in normal_variable_nts]
+    categorical_assignment = [f"{nt} OPERATOR {nt}_VAL" for nt in categorical_variable_nts]
+    assignment = normal_assignment + categorical_assignment
+
+    categorical_values = []
+    for i, var in enumerate(categoricals):
+        prefix = f"CATEGORICAL{i}_VAL: " 
+        levels = [f"\"\'{level}\'\""
+            for level in schema["var_metadata"][var]["levels"]]
+        levels = "\n\t| ".join(levels)
+        categorical_values.append(prefix + levels)
+        
+
+    us_lpm_prob = prob_grammar_template.format(
+        assignment="\n\t| ".join(assignment),
+        categorical_values="\n".join(categorical_values),
+        var_names="\n".join(var_names),
+        var_nonterminals="\n\t| ".join(var_nonterminals),
+    )
+
+    us_lpm_cols = cols_grammar_template.format(
+        var_names="\n".join(var_names),
+        var_nonterminals="\n\t| ".join(var_nonterminals),
+    )
+
+    return us_lpm_prob, us_lpm_cols
+
+prob_test_sentences = [
+    " probability of Age",
+    " probability of Age given Total_income",
+    " probability of Age = -2 given Total_income",
+    " probability of Age = -2 given Total_income, Race",
+    " probability of Age = -2 given Total_income, Race = 'White'",
+    " probability of Total_income given Age = 0, Race",
+    " probability of Total_income given Race, Age = 2",
+    " probability of Total_income given Age = 0, Race = 'White'",
+]
+
+cols_test_sentences = [
+    " Age",
+    " Age, Total_income",
+    " Age, Total_income, Race"
+]
+
+def test_grammar(grammar, test_sentences):
+    l = Lark(grammar)
+
+    for sentence in test_sentences:
+        try:
+            l.parse(sentence + "\n")
+        except Exception as e:
+            warnings.warn(
+                f'Failed to parse {sentence} with {e}. There may be a problem with this grammar.'
+            )
+
+
+if __name__=='__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--schema-path', help='Path to grammar schema')
+    parser.add_argument('--output-dir', help='Path to output grammar dir', default='')
+
+    args = parser.parse_args()
+
+    prob_grammar, cols_grammar = make_grammars(args.schema_path)
+    
+    test_grammar(prob_grammar, prob_test_sentences)
+    test_grammar(cols_grammar, cols_test_sentences)
+
+    with open(os.path.join(args.output_dir, 'us_lpm_prob.lark'), 'w+') as f:
+        f.write(prob_grammar)
+
+    with open(os.path.join(args.output_dir, 'us_lpm_cols.lark'), 'w+') as f:
+        f.write(cols_grammar)
