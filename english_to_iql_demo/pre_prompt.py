@@ -33,7 +33,7 @@ def make_prob_pre_prompt(schema):
         return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in the query.
 
 
-Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The grammar used is the following:
+Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The variables which can be queried are:
 
 ```
 {schema}
@@ -41,7 +41,7 @@ Statements should take the form "{constructor('X','Y')}" where X is one of the f
 
 The variables X and Y should be closely related to the entities mentioned in the user query.
 
-If the answer is not about probabilities, you can type "I can't answer that".
+If the answer is about variables which are not in the schema, you can should answer "I can't answer that". Only answer this when the user has asked a question about something which is not in the above schema.
 
 Here are some examples of user queries and paired translations:
 
@@ -51,16 +51,20 @@ Here are some examples of user queries and paired translations:
         return [
             ("How does someone's age affect their income?", 
             constructor("Total_income", ["Age"])),
-            ("What are variables related to income?",
-             "I can't answer that"),
-            ("How does someone's credit rating affect whether or not they are conservative?", 
-            constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating"])),
-            ("How does someone's credit rating and race affect whether or not they are conservative? ", 
-            constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating", "Race"])),
-            ("Why is the sky grey sometimes?",
-            "I can't answer that"),
+            ("What is the relationship between occupation and voting?", 
+            constructor("Occupation", ["Did_you_vote"])),
+            ("What are variables related to income?", "I can't answer that"),
+            ("How does someone having covid affect whether or not they are conservative?", 
+            constructor("Political_ideology = 'Likely Conservative'", ["I_had_covid_last_year"])),
+            ("How does someone's credit rating and smoking habits affect whether or not they are conservative? ", 
+            constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating", "Cigarettes"])),
+            ("Relationship between liking vegatables and being a democrat", "I can't answer that"),
             ("How does the probability that someone is conservative change by income?",
             constructor("Political_ideology = 'Likely Conservative'", ["Total_income"])),
+            ("Relationship between support for expanding medicare depending on some's education, given they are a democrat",
+            constructor("Policy_support_expanding_medicare", ["Educational_attainment", "Party_allegiance = 'Democrat'"])),
+            ("What is the probability that someone is white based on their location?",
+            constructor("Race = 'White'", ["State_PUMA10"])),
         ]
     
     def make_prompt(preamble, example_pairs, eos=None):
@@ -103,7 +107,7 @@ Here are some examples of user queries and paired translations:
          "I can't answer that"),
         ("Tell me the variables in the model related to someone's credit rating",
         "Credit_rating"),
-        ("Tell me all the variables in the model related to someone's insurace",
+        ("Which variables are related to someone's insurace",
         "Health_insurance_coverage, Insurance_health_private, Insurance_health_public, Insurance_via_employer, Insurance_purchased_directly, Insurance_Medicare"),
         ("Why is the sky grey sometimes?",
         "I can't answer that"),
