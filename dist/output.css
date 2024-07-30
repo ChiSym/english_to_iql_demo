@@ -683,6 +683,10 @@ video {
   height: 100%;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .min-h-4 {
   min-height: 1rem;
 }
@@ -989,6 +993,10 @@ video {
 
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 
 .text-gray-500 {
