@@ -32,7 +32,7 @@ def interpreter_dispatch(grammar_path):
             prob_interpreter_metadata = pickle.load(f)
             return ProbInterpreter(
             variables=prob_interpreter_metadata["variables"],
-            schema=prob_interpreter_metadata["schema"],
+            schema=json.load(open("schema.json", "r")),
             model=mixture_model,
             args=prob_interpreter_metadata["args"],
             inf_alg=SumProductInference(),
