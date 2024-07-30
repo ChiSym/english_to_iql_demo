@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GenParse/GenSQL demo</title>
+    <title>GenParse/LPM demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
     <link href="{{url_for('static',path='/output.css')}}" rel="stylesheet">
@@ -95,7 +95,7 @@
             </form>
             <form id="iql_query" class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_iql_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
                 {% block iql_query %}
-                <label for="iql_textarea" class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">GenSQL</label>
+                <label for="iql_textarea" class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">Translated query</label>
                 <div class="col-span-6 row-span-3 relative">
                     <div class='loading-indicator absolute flex space-x-2 justify-center items-center h-full w-full backdrop-blur-sm'>
                         <span class='sr-only'>Loading...</span>
@@ -103,12 +103,12 @@
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
                         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
                     </div>
-                    <textarea name="iql_query" id="iql_textarea" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="GenSQL query">{{ iql_query }}</textarea>
+                    <textarea name="iql_query" id="iql_textarea" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="Translated query">{{ iql_query }}</textarea>
                 </div>
                 <div class="col-span-6 grid grid-cols-subgrid grid-rows-subgrid justify-between p-0">
                     <div id="qpbar" class="col-span-2"></div>
                     <script>
-                        // Array of maps of generated GenSQL and pvals. Each map has keys 'query' and 'pval'.
+                        // Array of maps of generated queries and pvals. Each map has keys 'query' and 'pval'.
                         var parses = {{ iql_queries | default([]) | tojson | safe }}; 
 
                         var vegaSpec = {
