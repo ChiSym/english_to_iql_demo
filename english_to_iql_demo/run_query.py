@@ -28,6 +28,9 @@ Interpreter = Union[ProbInterpreter, ColumnInterpreter]
 
 def interpreter_dispatch(grammar_path):
     if grammar_path == "us_lpm_prob.lark":
+        geo_df=gpd.read_file('geodataframe.gpkg', engine='pyogrio', use_arrow=True)
+        s = geo_df["geometry"].simplify(1e-2)
+        geo_df["geometry"] = s
         with open("interpreter_metadata.pkl", "rb") as f:
             prob_interpreter_metadata = pickle.load(f)
             return ProbInterpreter(
@@ -37,7 +40,7 @@ def interpreter_dispatch(grammar_path):
             args=prob_interpreter_metadata["args"],
             inf_alg=SumProductInference(),
             df=pl.read_parquet("data-subsample-columns.parquet"),
-            geo_df=gpd.read_file('geodataframe.gpkg', engine='pyogrio', use_arrow=True),
+            geo_df=geo_df,
         )
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:

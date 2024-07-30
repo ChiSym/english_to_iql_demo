@@ -93,6 +93,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
     background="#FFFFFF00" # transparent
 
     if isinstance(df, gpd.GeoDataFrame):
+        df = df[['geometry', 'probability']]
         chart = alt.Chart(df, title="Vega-Altair").mark_geoshape().encode(
             alt.Color("probability:Q")
         ).project(
@@ -179,7 +180,6 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 x=x,
                 y=alt.Y(f'mean({p_mean_var}):Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
-                opacity=.6,
             ).properties(
                 height=height,
                 width=width,
