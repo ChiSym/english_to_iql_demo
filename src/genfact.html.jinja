@@ -49,7 +49,9 @@
                     <div id="row-{{idnum}}" class="grid gap-4 grid-cols-12 grid-rows-2 grid-flow-col p-2 justify-self-end even:bg-slate-50">
                         <div id="english-{{idnum}}" class="col-span-3 whitespace-pre-wrap">{{ english_query | default("") }}</div>
                         <div id="query2-{{idnum}}" class="col-span-3"><iql-code>{{ gensql_query | default("") }}</iql-code></div>
-                            {% if combined %}
+                            {% if error %}
+                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Error: {{ error }}</div>
+                            {% else %}
                                 <div id="vis-{{idnum}}" class="col-span-9 row-span-2 w-full h-full overflow-x-auto">
                                     {% if docs %}
                                         <table class="min-w-full table-auto text-left text-sm font-light text-surface dark:text-white">
@@ -120,57 +122,13 @@
                                     {% else %}
                                         <p class="text-gray-500">No business data available.</p>
                                     {% endif %}
-
-                                    {% if combined %}
-                                        <table class="min-w-full table-auto text-left text-sm font-light text-surface dark:text-white mt-2">
-                                            <caption class="caption-top text-left font-extrabold">Combined Physicians / Businesses</caption>
-                                            <thead>
-                                                <tr class="bg-gray-100">
-                                                    <th scope="col" class="p-2 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">Histogram</th>
-                                                    {% for key in doc_keys %}
-                                                        <th scope="col" class="p-2 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">{{ 'NPI' if key == 'npi' else key }}</th>
-                                                    {% endfor %}
-                                                    {% for key in biz_keys %}
-                                                        <th scope="col" class="p-2 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">{{ 'Legal Name' if key == 'legal_name' else key }}</th>
-                                                    {% endfor %}
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for doc_biz in combined %}
-                                                    <tr class="h-4 border-b border-neutral-200 dark:border-white/10">
-                                                        <td class="whitespace-nowrap h-full relative">
-                                                            <div class="w-full h-full min-h-4 flex justify-end items-stretch bg-gray-200 rounded-none">
-                                                                    <div class="h-full bg-blue-700 rounded-none" style="width: {{ (doc_biz['proportion'] * 100)|round(2) }}%"></div>
-                                                            </div>
-                                                            <div class="absolute left-1 inset-y-0 h-full text-left text-xs flex flex-col justify-center text-slate-400">
-                                                                <div>{{ (doc_biz['proportion'] * 100)|round(2) }}%</div>
-                                                            </div>
-                                                        </td>
-                                                        {% for key in doc_keys %}
-                                                            <td class="whitespace-nowrap p-2">
-                                                                {{ doc_biz["physician"].get(key, '') }}
-                                                            </td>
-                                                        {% endfor %}
-                                                        {% for key in biz_keys %}
-                                                            <td class="whitespace-nowrap p-2">
-                                                                {{ doc_biz["business"].get(key, '') }}
-                                                            </td>
-                                                        {% endfor %}
-                                                    </tr>
-                                                {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    {% else %}
-                                        <p class="text-gray-500">No combined data available.</p>
-                                    {% endif %}
+                                    
                                     <div class="min-w-full text-left text-md font-extrabold text-surface dark:text-white mt-2">
                                         Probability that entity is not in database: {{ "{:.2f}".format(not_found_pval * 100) }}%
                                     </div>
                                 </div>
-                            {% elif error %}
-                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2 text-red-500">Error: {{ error }}</div>
-                            {% else %}
-                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2">No results found.</div>
+                            {# {% else %}
+                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2">No results found.</div> #}
                             {% endif %} 
                         <script type="text/javascript">
                             document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
