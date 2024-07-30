@@ -4,8 +4,9 @@ import os
 import warnings
 from lark import Lark
 
-# exclude zipcodes
-CATEGORICAL_EXCLUSIONS = ['Zipcode']
+
+CATEGORICAL_EXCLUSIONS_COLS = ['Zipcode']
+CATEGORICAL_EXCLUSIONS_PROB = ['Zipcode', 'State_PUMA10']
 NORMAL_EXCLUSIONS = []
 
 prob_grammar_template = """start: " probability of " variable EOS
@@ -39,12 +40,9 @@ var: {var_nonterminals}
 {var_names}
 """
 
-def make_grammars(schema_path):
-    # at most 2 free variables
-    schema = json.load(open(schema_path, 'r'))
-
-    normals = [x for x in schema["types"]["normal"] if x not in NORMAL_EXCLUSIONS]
-    categoricals = [x for x in schema["types"]["categorical"] if x not in CATEGORICAL_EXCLUSIONS]
+def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
+    normals = [x for x in schema["types"]["normal"] if x not in normal_exclusions]
+    categoricals = [x for x in schema["types"]["categorical"] if x not in categorical_exclusions]
 
     n_n = range(len(normals))
     n_c = range(len(categoricals))
@@ -71,13 +69,32 @@ def make_grammars(schema_path):
             for level in schema["var_metadata"][var]["levels"]]
         levels = "\n\t| ".join(levels)
         categorical_values.append(prefix + levels)
-        
+
+    return (
+        assignment,
+        categorical_values,
+        var_names,
+        var_nonterminals
+    )
+
+
+def make_grammars(schema_path):
+    # at most 2 free variables
+    schema = json.load(open(schema_path, 'r'))
+
+    (assignment, categorical_values, var_names, var_nonterminals) = make_grammar_symbols(
+        schema, CATEGORICAL_EXCLUSIONS_PROB, NORMAL_EXCLUSIONS
+    )
 
     us_lpm_prob = prob_grammar_template.format(
         assignment="\n\t| ".join(assignment),
         categorical_values="\n".join(categorical_values),
         var_names="\n".join(var_names),
         var_nonterminals="\n\t| ".join(var_nonterminals),
+    )
+
+    (_, _, var_names, var_nonterminals) = make_grammar_symbols(
+        schema, CATEGORICAL_EXCLUSIONS_COLS, NORMAL_EXCLUSIONS
     )
 
     us_lpm_cols = cols_grammar_template.format(
@@ -96,12 +113,14 @@ prob_test_sentences = [
     " probability of Total_income given Age = 0, Race",
     " probability of Total_income given Race, Age = 2",
     " probability of Total_income given Age = 0, Race = 'White'",
+    " probability of Race = 'White' given State_PUMA10",
 ]
 
 cols_test_sentences = [
     " Age",
     " Age, Total_income",
-    " Age, Total_income, Race"
+    " Age, Total_income, Race",
+    " State_PUMA10"
 ]
 
 def test_grammar(grammar, test_sentences):

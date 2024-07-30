@@ -25,7 +25,13 @@ def pre_prompt_dispatch(grammar_path):
 
 
 def make_prob_pre_prompt(schema):
-    constructor = lambda event, conditioners : f"probability of {event} given {', '.join(conditioners)}"
+   
+    def constructor(event, conditioners):
+        if len(conditioners) == 0:
+            return f"probability of {event}"
+        else:
+            return f"probability of {event} given {', '.join(conditioners)}"
+
     # edit schema to remove PUMA10 levels, so that we fit the context window
 
 
@@ -58,13 +64,16 @@ Here are some examples of user queries and paired translations:
             constructor("Political_ideology = 'Likely Conservative'", ["I_had_covid_last_year"])),
             ("How does someone's credit rating and smoking habits affect whether or not they are conservative? ", 
             constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating", "Cigarettes"])),
+            ("What is the probability that someone is white based on their location?",
+            constructor("Race = 'White'", ["State_PUMA10"])),
             ("Relationship between liking vegatables and being a democrat", "I can't answer that"),
             ("How does the probability that someone is conservative change by income?",
             constructor("Political_ideology = 'Likely Conservative'", ["Total_income"])),
             ("Relationship between support for expanding medicare depending on some's education, given they are a democrat",
             constructor("Policy_support_expanding_medicare", ["Educational_attainment", "Party_allegiance = 'Democrat'"])),
-            ("What is the probability that someone is white based on their location?",
-            constructor("Race = 'White'", ["State_PUMA10"])),
+            ("Probability that someone is disabled based on location",
+            constructor("Disability = 'Yes'", ["State_PUMA10"])),
+            ("What is the probability that someone served in the military?", constructor("Military_service", [])),
         ]
     
     def make_prompt(preamble, example_pairs, eos=None):
@@ -72,9 +81,9 @@ Here are some examples of user queries and paired translations:
         return preamble + examples
 
     pre_prompt = make_prompt(
-        preamble=make_preamble(constructor), 
-        example_pairs=make_example_pairs(constructor), 
-        eos=None
+        preamble = make_preamble(constructor), 
+        example_pairs = make_example_pairs(constructor), 
+        eos = None
     )
 
     return pre_prompt
