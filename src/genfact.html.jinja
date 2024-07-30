@@ -54,7 +54,7 @@
                             {% else %}
                                 <div id="vis-{{idnum}}" class="col-span-9 row-span-2 w-full h-full overflow-x-auto">
                                     <table class="min-w-full table-auto text-left text-sm font-light text-surface dark:text-white">
-                                        <caption class="caption-top text-left font-extrabold">Physicians</caption>
+                                        <caption class="caption-top text-xl text-left font-extrabold">Physicians</caption>
                                         <thead>
                                             <tr class="bg-gray-100">
                                                 <th scope="col" class="p-2 text-left text-xs font-medium text-gray-500 capitalize tracking-wide">Histogram</th>
@@ -84,11 +84,11 @@
                                         </tbody>
                                     </table>
                                     <div class="min-w-full text-left text-md font-extrabold text-surface dark:text-white mt-2">
-                                        Probability that doctor is not in database: 100%
+                                        Probability that doctor is not in database: {{ "{:.1f}".format(doc_new_entity_pval * 100) }}%
                                     </div>
 
                                     <table class="min-w-full table-auto text-left text-sm font-light text-surface dark:text-white mt-2">
-                                        <caption class="caption-top text-left font-extrabold">Businesses</caption>
+                                        <caption class="caption-top text-xl text-left font-extrabold">Businesses</caption>
                                         <thead>
                                             <tr class="bg-gray-100">
                                                 <th scope="col" class="p-2 text-left text-xs font-medium text-gray-500 capitalize tracking-wide">Histogram</th>
@@ -118,15 +118,9 @@
                                         </tbody>
                                     </table>
                                     <div class="min-w-full text-left text-md font-extrabold text-surface dark:text-white mt-2">
-                                        Probability that business is not in database: 100%
-                                    </div>
-                                    
-                                    <div class="min-w-full text-left text-md font-extrabold text-surface dark:text-white mt-2">
-                                        Probability that entity is not in database: {{ "{:.2f}".format(not_found_pval * 100) }}%
+                                        Probability that business is not in database: {{ "{:.1f}".format(biz_new_entity_pval * 100) }}%
                                     </div>
                                 </div>
-                            {# {% else %}
-                                <div id="vis-{{idnum}}" class="col-span-8 row-span-2">No results found.</div> #}
                             {% endif %} 
                         <script type="text/javascript">
                             document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
@@ -151,7 +145,7 @@
                 <button id="english_query_button" type="submit" class="col-span-1 col-start-6 bottom-1 right-1 font-medium text-sm px-3 py-1.5 text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200">Ask</button>
             </form>
 
-            <form id="query2" class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_pclean_dummy" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
+            <form id="query2" class="col-span-6 row-span-5 grid grid-cols-subgrid grid-rows-subgrid w-full h-full" hx-post="/post_pclean_query" hx-target="#chat" hx-swap="beforeend scroll:bottom" hx-trigger="submit" hx-include="previous [name='english_query']" hx-on::after-settle="checkAutorun()">
                 {% block query2 %}
                 <input type="hidden" id="genfact_entity" name="genfact_entity" value="{{ ml_entity['as_object'] | tojson | forceescape if ml_entity else '' }}">
                 <div class="col-span-6 w-full text-xl font-medium flex items-end text-gray-900 dark:text-white">GenFact</div>

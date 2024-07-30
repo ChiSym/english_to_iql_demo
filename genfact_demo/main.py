@@ -125,35 +125,7 @@ async def post_pclean_query(request: Request,
         response = requests.post(genfact_url, json=pclean_payload, timeout=90.0)
         pclean_resp = response.json()
 
-        # log.debug(f"pclean response: {pclean_resp}")
-
-        extracted_results = extract_docs_and_biz(pclean_resp)
-        docs, biz, doc_keys, biz_keys = extracted_results.values()
-        doc_keys = physician_fields + list(doc_keys - set(physician_fields))
-        biz_keys = business_fields + list(biz_keys - set(business_fields))
-        
-        # combined = pclean_resp["results"]
-        # combined.sort(key=lambda x: x["count"], reverse=True)
-        # normalize_counts(combined)
-
-        sample_count = pclean_resp["count"]
-        not_found_pval = 1 # (sample_count - entities_count(combined)) / sample_count
-
-        return templates.TemplateResponse(
-            "genfact.html.jinja",
-            {"request": request, 
-            "idnum": next(query_counter),
-            "physician_fields": physician_fields,
-            "business_fields": business_fields,
-            "english_query": english_query,
-            "genfact_entity": genfact_entity,
-            "not_found_pval": not_found_pval,
-            "docs": docs,
-            "biz": biz,
-            "doc_keys": doc_keys,
-            "biz_keys": biz_keys,
-            },
-            block_name="plot")
+        return pclean_row_response(pclean_resp=pclean_resp, request=request, english_query=english_query, genfact_entity=genfact_entity)
     
     except Exception as e:
         log.error(f"Error running pclean for genfact_entity (\"{genfact_entity}\") : {e}")
@@ -172,11 +144,13 @@ def pclean_row_response(*, pclean_resp: dict, request, english_query, genfact_en
 
     extracted_results = extract_docs_and_biz(pclean_resp)
     docs, biz, doc_keys, biz_keys = extracted_results.values()
+    # Add any extra fields to the end of the standard list
     doc_keys = physician_fields + list(doc_keys - set(physician_fields))
     biz_keys = business_fields + list(biz_keys - set(business_fields))
     
-    sample_count = pclean_resp["count"]
-    not_found_pval = 1 # (sample_count - entities_count(combined)) / sample_count
+
+    doc_new_entity_pval = pclean_resp["physician_new_entity"] / pclean_resp["physician_count"]
+    biz_new_entity_pval = pclean_resp["business_new_entity"] / pclean_resp["businesses_count"]
 
     return templates.TemplateResponse(
         "genfact.html.jinja",
@@ -186,7 +160,8 @@ def pclean_row_response(*, pclean_resp: dict, request, english_query, genfact_en
         "business_fields": business_fields,
         "english_query": english_query,
         "genfact_entity": genfact_entity,
-        "not_found_pval": not_found_pval,
+        "doc_new_entity_pval": doc_new_entity_pval,
+        "biz_new_entity_pval": biz_new_entity_pval,
         "docs": docs,
         "biz": biz,
         "doc_keys": doc_keys,
@@ -225,17 +200,12 @@ def extract_docs_and_biz(pclean_result: dict) -> dict:
     normalize_counts(sorted_docs)
     normalize_counts(sorted_biz)
 
-    # print(f"docs: {docs}")
-    # print(">>>>>>>")
-    # print(f"biz: {biz}")
-    # print(f"sorted biz {sorted_biz}")
-    # print(f"doc keys: {doc_keys}")
-    # print(">>>>>>>")
-    # print(f"biz keys: {biz_keys}")
     return {"docs": sorted_docs, "biz": sorted_biz, "doc_keys": doc_keys, "biz_keys": biz_keys}
+
 
 def entities_count(entities: list) -> int:
     return sum([ent["count"] for ent in entities])
+
 
 def normalize_counts(entities: list) -> None:
     log.debug(f"normalizing entities entities: {entities}")
