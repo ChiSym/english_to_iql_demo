@@ -64,6 +64,7 @@ Here are some examples of user queries and paired translations:
             constructor("Political_ideology = 'Likely Conservative'", ["I_had_covid_last_year"])),
             ("How does someone's credit rating and smoking habits affect whether or not they are conservative? ", 
             constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating", "Cigarettes"])),
+            ("probability of total income", constructor("Total_income", [])),
             ("What is the probability that someone is white based on their location?",
             constructor("Race = 'White'", ["State_PUMA10"])),
             ("Relationship between liking vegatables and being a democrat", "I can't answer that"),
