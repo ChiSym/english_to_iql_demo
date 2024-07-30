@@ -9,6 +9,12 @@ import geopandas as gpd
 
 alt.data_transformers.enable("vegafusion")
 
+NUMERIC_POLARS_DTYPES = [
+    pl.Int8, pl.Int16, pl.Int32, pl.Int64, 
+    pl.UInt8, pl.UInt16, pl.UInt32, pl.UInt64,
+    pl.Float32, pl.Float64, 
+]
+
 custom_order  = {"Credit_rating": [
         "Under 499",
         "500-549",
@@ -48,21 +54,36 @@ def plot_ood(df: pl.DataFrame) -> dict:
 def plot_data(df: pl.DataFrame) -> dict:
     df = df.drop_nulls()
     # plot at most 4 variables
-    # col_types = [get_col_type(df, col) for col in df.columns[:4]]
+    col_types = [get_col_type(df, col) for col in df.columns[:4]]
 
-    # x_encodings = [
-    #     f"{x}:Q" if x_type == "quantitative" else f"{x}:N"
-    #     for x, x_type in zip(df.columns[:4], col_types)
-    # ]
-    x_encodings = df.columns[:4]
+    x_encodings = [
+        f"{x}:Q" if x_type == "quantitative" else f"{x}:N"
+        for x, x_type in zip(df.columns[:4], col_types)
+    ]
+    # x_encodings = df.columns[:4]
 
-    chart = alt.Chart(df, width=300, height=200).mark_bar().encode(
-        x=alt.X(alt.repeat('repeat'), type="nominal"),
-        y='count()'
-    ).repeat(
-        repeat=x_encodings,
-        columns=2
+    charts = [
+        alt.Chart(df, width=300, height=200).mark_bar().encode(
+            x=alt.X(f"{x}:Q", bin=True),
+            y='count()'
     )
+        if x_type == "quantitative" else alt.Chart(df, width=300, height=200).mark_bar().encode(
+            x=alt.X(f"{x}:N"),
+            y='count()'
+        )
+        for x, x_type in zip(df.columns[:4], col_types)
+    ]
+
+    # a bit clunky but it'll do for now---the issue is that 
+    # I couldn't get `repeat` to work with the varying Q and N plots
+    if len(charts) == 1:
+        chart = charts[0]
+    if len(charts) == 2:
+        chart = charts[0] | charts[1]
+    if len(charts) == 3:
+        chart = (charts[0] | charts[1]) & charts[2]
+    elif len(charts) == 4:
+        chart = (charts[0] | charts[1]) & (charts[2] | charts[3])
 
     return {"chart": json.loads(chart.to_json(format="vega"))}
 
@@ -376,7 +397,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
 
 
 def get_col_type(df: pl.DataFrame, col: str) -> str:
-    if df[col].dtype == pl.Float32:
+    if df[col].dtype in NUMERIC_POLARS_DTYPES:
         return "quantitative"
     else:
         return "nominal"
