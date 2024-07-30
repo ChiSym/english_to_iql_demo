@@ -663,8 +663,8 @@ video {
   display: none;
 }
 
-.h-4 {
-  height: 1rem;
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .h-8 {
@@ -681,14 +681,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-36 {
-  height: 9rem;
-}
-
-.min-h-4 {
-  min-height: 1rem;
 }
 
 .w-8 {
@@ -989,10 +981,6 @@ video {
 
 .capitalize {
   text-transform: capitalize;
-}
-
-.tracking-wider {
-  letter-spacing: 0.05em;
 }
 
 .tracking-wide {
