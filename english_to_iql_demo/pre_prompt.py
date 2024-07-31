@@ -10,7 +10,7 @@ def pre_prompt_dispatch(grammar_path):
 
             new_schema_normal = {var: "number" for var in schema['types']['normal']}
             new_schema_cat = {var: schema['var_metadata'][var]['levels']
-                if var not in ['Zipcode', 'State_PUMA10'] else []
+                if var not in ['Zipcode', 'State_PUMA10', 'Work_industry_sector'] else []
                 for var in schema['types']['categorical']}
 
             schema = new_schema_normal | new_schema_cat
@@ -47,7 +47,7 @@ Statements should take the form "{constructor('X','Y')}" where X is one of the f
 
 The variables X and Y should be closely related to the entities mentioned in the user query.
 
-If the answer is about variables which are not in the schema, you can should answer "I can't answer that". When deciding whether to answer "I can't answer that", pay attention to the above variables.
+If the answer is about variables which are not in the above schema, you should answer "I can't answer that". When deciding whether to answer "I can't answer that", pay attention to the above variables.
 
 Here are some examples of user queries and paired translations:
 
@@ -62,6 +62,8 @@ Here are some examples of user queries and paired translations:
             ("What are variables related to income?", "I can't answer that"),
             ("How does someone having covid affect whether or not they are conservative?", 
             constructor("Political_ideology = 'Likely Conservative'", ["I_had_covid_last_year"])),
+            ("Relationship between Disability and whether they are not currently in the workforce",
+            constructor("Disability", ["Work_industry_sector = 'Not in workforce'"])),
             ("How does someone's credit rating and smoking habits affect whether or not they are conservative? ", 
             constructor("Political_ideology = 'Likely Conservative'", ["Credit_rating", "Cigarettes"])),
             ("probability of total income", constructor("Total_income", [])),
@@ -72,9 +74,9 @@ Here are some examples of user queries and paired translations:
             constructor("Political_ideology = 'Likely Conservative'", ["Total_income"])),
             ("Relationship between support for expanding medicare depending on some's education, given they are a democrat",
             constructor("Policy_support_expanding_medicare", ["Educational_attainment", "Party_allegiance = 'Democrat'"])),
-            ("Probability that someone is disabled based on location",
-            constructor("Disability = 'Yes'", ["State_PUMA10"])),
             ("What is the probability that someone served in the military?", constructor("Military_service", [])),
+            ("Probability that someone is registered to vote based on their PUMA10 state",
+            constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"])),
         ]
     
     def make_prompt(preamble, example_pairs, eos=None):
@@ -118,7 +120,7 @@ Here are some examples of user queries and paired translations:
         ("Tell me the variables in the model related to someone's credit rating",
         "Credit_rating"),
         ("Which variables are related to someone's insurace",
-        "Health_insurance_coverage, Insurance_health_private, Insurance_health_public, Insurance_via_employer, Insurance_purchased_directly, Insurance_Medicare"),
+        "Health Insurance Coverage, Insurance Medicare, Insurance_gov_assisted_medicaid, Life_and_other_personal_insurance"),
         ("Why is the sky grey sometimes?",
         "I can't answer that"),
         ("List two variables that could be confounders of the relationship of between Credit_rating and Race",
