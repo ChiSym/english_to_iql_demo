@@ -2,6 +2,7 @@ import logging as log
 from dataclasses import dataclass
 from itertools import count
 from typing import Annotated, List
+import traceback
 
 import polars as pl
 from lark import Lark
@@ -132,6 +133,7 @@ async def post_iql_query(request: Request):
             context = plot_dispatch(data.current_dsl, data.df)
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
+        traceback.print_exception(e)
         return templates.TemplateResponse(
             "index.html.jinja",
             {"request": request, 
