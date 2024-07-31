@@ -19,9 +19,11 @@ prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " assignment " given " variable ", " variable EOS
 | " probability of " assignment " given " assignment ", " variable EOS
 | " probability of " assignment " given " variable ", " assignment EOS
-| " probability of " assignment " given State_PUMA10\\n" -> geo
+| " probability of " expr " given State_PUMA10\\n" -> geo
 | " I can't answer that" EOS
 EOS: "\\n"
+expr: assignment | assignment BOOL_OPERATOR assignment
+BOOL_OPERATOR: " and " | " or "
 assignment: {assignment}
 variable: {var_nonterminals}
 {var_names}
