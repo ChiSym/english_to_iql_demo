@@ -75,8 +75,8 @@ Here are some examples of user queries and paired translations:
             ("Relationship between support for expanding medicare depending on some's education, given they are a democrat",
             constructor("Policy_support_expanding_medicare", ["Educational_attainment", "Party_allegiance = 'Democrat'"])),
             ("What is the probability that someone served in the military?", constructor("Military_service", [])),
-            ("Probability that someone is registered to vote based on their PUMA10 state",
-            constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"])),
+            ("Probability that someone is male and disabled in california",
+            constructor("Sex = 'Male' and Disability = 'Yes'", ["State_PUMA10, State = 'California'"])),
         ]
     
     def make_prompt(preamble, example_pairs, eos=None):
