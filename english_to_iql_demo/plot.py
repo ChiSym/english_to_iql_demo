@@ -94,7 +94,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
 
     if isinstance(df, gpd.GeoDataFrame):
         df = df[['geometry', 'probability']]
-        chart = alt.Chart(df, title="Vega-Altair").mark_geoshape().encode(
+        chart = alt.Chart(df).mark_geoshape().encode(
             alt.Color("probability:Q")
         ).project(
             type='albersUsa'
@@ -176,7 +176,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             x = x.sort(custom_order[n_var])
 
         chart = alt.layer(
-            alt.Chart(df).mark_bar(filled=False).encode(
+            alt.Chart(df).mark_boxplot(filled=False).encode(
                 x=x,
                 y=alt.Y(f'mean({p_mean_var}):Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
@@ -308,7 +308,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         }
         
         chart = alt.layer(
-            alt.Chart(df).mark_bar(filled=False).encode(
+            alt.Chart(df).mark_boxplot(filled=False).encode(
                 color=color,
                 xOffset=color,
                 strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
