@@ -94,7 +94,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
 
     if isinstance(df, gpd.GeoDataFrame):
         df = df[['geometry', 'probability']]
-        chart = alt.Chart(df, title="Vega-Altair").mark_geoshape().encode(
+        chart = alt.Chart(df).mark_geoshape().encode(
             alt.Color("probability:Q")
         ).project(
             type='albersUsa'

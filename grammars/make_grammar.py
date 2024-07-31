@@ -9,6 +9,7 @@ CATEGORICAL_EXCLUSIONS_COLS = ['Zipcode']
 CATEGORICAL_EXCLUSIONS_PROB = ['Zipcode', 'State_PUMA10']
 NORMAL_EXCLUSIONS = []
 
+# we'll want to change expr to only take Census/PUMS variables
 prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " variable " given " variable EOS
 | " probability of " variable " given " assignment EOS 
@@ -22,8 +23,9 @@ prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] "\\n" -> geo
 | " I can't answer that" EOS
 EOS: "\\n"
-expr: assignment | assignment BOOL_OPERATOR assignment
+expr: census_assignment | census_assignment BOOL_OPERATOR census_assignment
 BOOL_OPERATOR: " and " | " or "
+census_assignment: {census_assignment}
 assignment: {assignment}
 variable: {var_nonterminals}
 {var_names}
@@ -43,19 +45,20 @@ var: {var_nonterminals}
 """
 
 def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
-    normals = [x for x in schema["types"]["normal"] if x not in normal_exclusions]
-    categoricals = [x for x in schema["types"]["categorical"] if x not in categorical_exclusions]
+    normals = [x for x in schema["types"]["normal"]]
+    categoricals = [x for x in schema["types"]["categorical"]]
 
     n_n = range(len(normals))
     n_c = range(len(categoricals))
-    normal_variable_nts = [f"NORMAL{i}" for i in n_n]
-    categorical_variable_nts = [f"CATEGORICAL{i}" for i in n_c]
+    normal_variable_nts = [f"NORMAL{i}" for i, var in enumerate(normals) if var not in normal_exclusions]
+    categorical_variable_nts = [f"CATEGORICAL{i}" for i, var in enumerate(categoricals) 
+        if var not in categorical_exclusions]
     var_nonterminals = normal_variable_nts + categorical_variable_nts
     normal_var_names = [
-        f"NORMAL{i}: \"{var}\"" for i, var in enumerate(normals)
+        f"NORMAL{i}: \"{var}\"" for i, var in enumerate(normals) if var not in normal_exclusions
     ]
     categorical_var_names = [
-        f"CATEGORICAL{i}: \"{var}\"" for i, var in enumerate(categoricals)
+        f"CATEGORICAL{i}: \"{var}\"" for i, var in enumerate(categoricals)  if var not in categorical_exclusions
     ]
     var_names = normal_var_names + categorical_var_names
 
@@ -66,11 +69,12 @@ def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
 
     categorical_values = []
     for i, var in enumerate(categoricals):
-        prefix = f"CATEGORICAL{i}_VAL: " 
-        levels = [f"\"\'{level}\'\""
-            for level in schema["var_metadata"][var]["levels"]]
-        levels = "\n\t| ".join(levels)
-        categorical_values.append(prefix + levels)
+        if var not in categorical_exclusions:
+            prefix = f"CATEGORICAL{i}_VAL: " 
+            levels = [f"\"\'{level}\'\""
+                for level in schema["var_metadata"][var]["levels"]]
+            levels = "\n\t| ".join(levels)
+            categorical_values.append(prefix + levels)
 
     return (
         assignment,
@@ -79,20 +83,35 @@ def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
         var_nonterminals
     )
 
+def get_grammar_names(col, schema):
+    if col in schema["types"]["normal"]:
+        return f"NORMAL{schema['types']['normal'].index(col)}"
+    elif col in schema["types"]["categorical"]:
+        return f"CATEGORICAL{schema['types']['categorical'].index(col)}"
+    else:
+        raise ValueError(f"Unrecognized column {col}")
 
-def make_grammars(schema_path):
+def make_grammars(schema_path, census_cols_path):
     # at most 2 free variables
     schema = json.load(open(schema_path, 'r'))
+    census_cols = json.load(open(census_cols_path, 'r'))
+    census_grammar_names = [
+        get_grammar_names(census_col, schema)
+        for census_col in census_cols]
 
     (assignment, categorical_values, var_names, var_nonterminals) = make_grammar_symbols(
         schema, CATEGORICAL_EXCLUSIONS_PROB, NORMAL_EXCLUSIONS
     )
+
+    census_assignment = [a for a in assignment 
+        if a.split(" ")[0] in census_grammar_names]
 
     us_lpm_prob = prob_grammar_template.format(
         assignment="\n\t| ".join(assignment),
         categorical_values="\n".join(categorical_values),
         var_names="\n".join(var_names),
         var_nonterminals="\n\t| ".join(var_nonterminals),
+        census_assignment="\n\t| ".join(census_assignment),
     )
 
     (_, _, var_names, var_nonterminals) = make_grammar_symbols(
@@ -140,11 +159,12 @@ def test_grammar(grammar, test_sentences):
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--schema-path', help='Path to grammar schema')
+    parser.add_argument('--census-cols-path', help='Path to census cols')
     parser.add_argument('--output-dir', help='Path to output grammar dir', default='')
 
     args = parser.parse_args()
 
-    prob_grammar, cols_grammar = make_grammars(args.schema_path)
+    prob_grammar, cols_grammar = make_grammars(args.schema_path, args.census_cols_path)
     
     test_grammar(prob_grammar, prob_test_sentences)
     test_grammar(cols_grammar, cols_test_sentences)
