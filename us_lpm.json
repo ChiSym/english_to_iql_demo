@@ -1,482 +1,713 @@
 [{
-    "Grandparents_living_with_grandchildren": {
-        "parsed": "Grandparents living with grandchildren",
-        "type": "nominal",
-        "description": "Whether the grandparents of the household live with their grandchildren"
+    "State": {
+        "parsed": "State",
+        "description": "The state code based on the Census definitions."
     },
-    "Jewelry_buyer": {
-        "parsed": "Jewelry buyer",
-        "type": "nominal",
-        "description": "Whether the individual purchases jewelry"
+    "State_PUMA10": {
+        "parsed": "State PUMA10",
+        "description": "Public use microdata area code for the state based on the 2010 Census definition."
     },
     "Age": {
         "parsed": "Age",
-        "type": "numerical",
-        "description": "The age of the individual"
-    },
-    "Childrens_learning_toys": {
-        "parsed": "Children's learning toys",
-        "type": "nominal",
-        "description": "Whether the household purchases educational toys for children"
-    },
-    "Insurance_health_public": {
-        "parsed": "Public health insurance",
-        "type": "nominal",
-        "description": "Whether the individual has public health insurance coverage"
-    },
-    "Income_public_assistance": {
-        "parsed": "Income from public assistance",
-        "type": "numerical",
-        "description": "The amount of income received from public assistance programs"
-    },
-    "Gave_bith_last_12_months": {
-        "parsed": "Gave birth in the last 12 months",
-        "type": "nominal",
-        "description": "Whether the individual gave birth in the last 12 months"
-    },
-    "Childrens_back_to_school": {
-        "parsed": "Children's back-to-school",
-        "type": "nominal",
-        "description": "Whether the household purchases back-to-school items for children"
-    },
-    "Income_salary_wages": {
-        "parsed": "Income from salary and wages",
-        "type": "numerical",
-        "description": "The amount of income received from salary and wages"
-    },
-    "Divorced_in_past_12_months": {
-        "parsed": "Divorced in the past 12 months",
-        "type": "nominal",
-        "description": "Whether the individual got divorced in the past 12 months"
-    },
-    "Photography_video_equip": {
-        "parsed": "Photography and video equipment",
-        "type": "nominal",
-        "description": "Whether the household purchases photography and video equipment"
-    },
-    "Military_served_Vietnam_era": {
-        "parsed": "Served in Vietnam era",
-        "type": "nominal",
-        "description": "Whether the individual served in the military during the Vietnam era"
-    },
-    "Pets_cats": {
-        "parsed": "Has pet cats",
-        "type": "nominal",
-        "description": "Whether the household has pet cat(s)"
-    },
-    "Sports_grouping": {
-        "parsed": "Sports grouping",
-        "type": "nominal",
-        "description": "The individual's participation or interest in grouped sports activities"
-    },
-    "Apparel_mens": {
-        "parsed": "Men's apparel",
-        "type": "nominal",
-        "description": "Whether the household purchases men's apparel"
-    },
-    "Donor_animal_welfare": {
-        "parsed": "Animal welfare donor",
-        "type": "nominal",
-        "description": "Whether the individual donates to animal welfare causes"
-    },
-    "Income_other": {
-        "parsed": "Other income",
-        "type": "numerical",
-        "description": "The amount of income received from other sources"
-    },
-    "Apparel_childrens": {
-        "parsed": "Children's apparel",
-        "type": "nominal",
-        "description": "Whether the household purchases children's apparel"
-    },
-    "Insurance_health_private": {
-        "parsed": "Private health insurance",
-        "type": "nominal",
-        "description": "Whether the individual has private health insurance coverage"
-    },
-    "Owns_credit_card": {
-        "parsed": "Owns a credit card",
-        "type": "nominal",
-        "description": "Whether the individual owns a credit card"
-    },
-    "Difficulty_hearing": {
-        "parsed": "Difficulty hearing",
-        "type": "nominal",
-        "description": "Whether the individual has difficulty hearing"
-    },
-    "Education": {
-        "parsed": "Education",
-        "type": "nominal",
-        "description": "The highest level of education attained by the individual"
-    },
-    "Collectibles_coins": {
-        "parsed": "Coin collectibles",
-        "type": "nominal",
-        "description": "Whether the individual collects coins"
-    },
-    "Commute_minutes": {
-        "parsed": "Commute time",
-        "type": "numerical",
-        "description": "The time spent commuting to work (in minutes)"
-    },
-    "Exercise_enthusiast": {
-        "parsed": "Exercise enthusiast",
-        "type": "nominal",
-        "description": "Whether the individual is enthusiastic about exercising"
-    },
-    "Camping_hiking": {
-        "parsed": "Camping and hiking enthusiast",
-        "type": "nominal",
-        "description": "Whether the individual participates in camping and hiking activities"
-    },
-    "Difficulty_cognitive": {
-        "parsed": "Cognitive difficulty",
-        "type": "nominal",
-        "description": "Whether the individual has cognitive difficulties"
-    },
-    "Religious_inspiration": {
-        "parsed": "Religious inspiration",
-        "type": "nominal",
-        "description": "Whether the individual seeks religious inspiration"
-    },
-    "Income_self_employment": {
-        "parsed": "Income from self-employment",
-        "type": "numerical",
-        "description": "The amount of income received from self-employment"
-    },
-    "Disability": {
-        "parsed": "Disability",
-        "type": "nominal",
-        "description": "Whether the individual has a disability"
-    },
-    "House_plants": {
-        "parsed": "Has house plants",
-        "type": "nominal",
-        "description": "Whether the household has house plants"
-    },
-    "Insurance_Medicare": {
-        "parsed": "Has Medicare insurance",
-        "type": "nominal",
-        "description": "Whether the individual is covered by Medicare insurance"
+        "description": "The age of the individual in years."
     },
     "Sex": {
         "parsed": "Sex",
-        "type": "nominal",
-        "description": "The sex of the individual"
-    },
-    "Business_owner": {
-        "parsed": "Business owner",
-        "type": "nominal",
-        "description": "Whether the individual owns a business"
-    },
-    "Auto_work": {
-        "parsed": "Involved in the automobile industry",
-        "type": "nominal",
-        "description": "Whether the individual takes an automobile to work"
-    },
-    "Cooking_general": {
-        "parsed": "General cooking",
-        "type": "nominal",
-        "description": "Whether the individual is interested in general cooking"
-    },
-    "Apparel_womens": {
-        "parsed": "Women's apparel",
-        "type": "nominal",
-        "description": "Whether the household purchases women's apparel"
+        "description": "The sex of the individual."
     },
     "Race": {
         "parsed": "Race",
-        "type": "nominal",
-        "description": "The race of the individual"
+        "description": "The race of the individual as reported in the survey."
     },
-    "Food_wines": {
-        "parsed": "Food and wines",
-        "type": "nominal",
-        "description": "Whether the individual is interested in food and wines"
+    "Citizen_status": {
+        "parsed": "Citizen Status",
+        "description": "The citizenship status of the individual."
     },
-    "Outdoor_enthusiast": {
-        "parsed": "Outdoor enthusiast",
-        "type": "nominal",
-        "description": "Whether the individual is enthusiastic about outdoor activities"
+    "Difficulty_hearing": {
+        "parsed": "Difficulty Hearing",
+        "description": "Indicates whether the individual has difficulty hearing."
     },
-    "Investments": {
-        "parsed": "Investments",
-        "type": "nominal",
-        "description": "Whether the individual makes investments"
+    "Difficulty_vision": {
+        "parsed": "Difficulty Vision",
+        "description": "Indicates whether the individual has difficulty seeing."
     },
     "English_fluency": {
-        "parsed": "English fluency",
-        "type": "nominal",
-        "description": "The level of fluency in English of the individual"
+        "parsed": "Level of English Proficiency",
+        "description": "The level of English proficiency of the individual, e.g., whether they are fluent."
     },
-    "Credit_rating": {
-        "parsed": "Credit rating",
-        "type": "nominal",
-        "description": "The credit rating of the individual"
-    },
-    "Electronics_computers": {
-        "parsed": "Electronics and computers",
-        "type": "nominal",
-        "description": "Whether the household purchases electronics and computers"
-    },
-    "Donor_arts_cultural": {
-        "parsed": "Arts and cultural donor",
-        "type": "nominal",
-        "description": "Whether the individual donates to arts and cultural causes"
-    },
-    "Health_and_beauty": {
-        "parsed": "Health and beauty",
-        "type": "nominal",
-        "description": "Whether the household purchases health and beauty products"
-    },
-    "Collectibles_arts": {
-        "parsed": "Arts collectibles",
-        "type": "nominal",
-        "description": "Whether the individual collects arts-related items"
-    },
-    "Insurance_purchased_directly": {
-        "parsed": "Insurance purchased directly",
-        "type": "nominal",
-        "description": "Whether the individual has purchased insurance directly"
-    },
-    "Married_in_past_12_months": {
-        "parsed": "Married in the past 12 months",
-        "type": "nominal",
-        "description": "Whether the individual got married in the past 12 months"
-    },
-    "World_region_of_birth": {
-        "parsed": "World region of birth",
-        "type": "nominal",
-        "description": "The world region where the individual was born"
-    },
-    "Collectibles_antiques": {
-        "parsed": "Antique collectibles",
-        "type": "nominal",
-        "description": "Whether the individual collects antiques"
-    },
-    "Political_ideology": {
-        "parsed": "Political ideology",
-        "type": "nominal",
-        "description": "The political ideology of the individual"
-    },
-    "Smoking": {
-        "parsed": "Smoking",
-        "type": "nominal",
-        "description": "Whether the individual smokes"
+    "Gave_bith_last_12_months": {
+        "parsed": "Gave Birth Last 12 Months",
+        "description": "Indicates whether the individual gave birth in the last 12 months."
     },
     "Health_insurance_coverage": {
-        "parsed": "Health insurance coverage",
-        "type": "nominal",
-        "description": "Whether the individual has health insurance coverage"
+        "parsed": "Health Insurance Coverage",
+        "description": "Indicates whether the individual has health insurance coverage."
     },
-    "Work_looking": {
-        "parsed": "Looking for work",
-        "type": "nominal",
-        "description": "Whether the individual is looking for work"
+    "Insurance_Medicare": {
+        "parsed": "Insurance Medicare",
+        "description": "Indicates whether the individual has Medicare insurance."
     },
-    "Insurance_via_employer": {
-        "parsed": "Insurance via employer",
-        "type": "nominal",
-        "description": "Whether the individual has insurance coverage through an employer"
+    "Insurance_gov_assisted_medicaid": {
+        "parsed": "Government Assisted Medicaid Insurance",
+        "description": "Indicates whether the individual has government-assisted Medicaid insurance."
     },
-    "Home_and_garden": {
-        "parsed": "Home and garden",
-        "type": "nominal",
-        "description": "Whether the household purchases home and garden products"
+    "Commute_minutes": {
+        "parsed": "Commute Minutes",
+        "description": "The time in minutes the individual takes to commute to work."
     },
-    "Home_mortgage_amount": {
-        "parsed": "Home mortgage amount",
-        "type": "numerical",
-        "description": "The amount of home mortgage"
+    "Marital_status": {
+        "parsed": "Marital Status",
+        "description": "Whether an individual is married."
+    },
+    "Divorced_in_past_12_months": {
+        "parsed": "Divorced in Past 12 Months",
+        "description": "Indicates whether the individual got divorced in the past 12 months."
+    },
+    "Married_in_past_12_months": {
+        "parsed": "Married in Past 12 Months",
+        "description": "Indicates whether the individual got married in the past 12 months."
+    },
+    "Widowed_in_past_12_months": {
+        "parsed": "Widowed in Past 12 Months",
+        "description": "Indicates whether the individual became widowed in the past 12 months."
+    },
+    "Mobility_status": {
+        "parsed": "Mobility Status",
+        "description": "Whether the individual has recently moved."
+    },
+    "Military_service": {
+        "parsed": "Military Service",
+        "description": "Indicates whether the individual has served in the military."
+    },
+    "Total_earnings": {
+        "parsed": "Total Earnings",
+        "description": "The total earnings of the individual."
+    },
+    "Total_income": {
+        "parsed": "Total Income",
+        "description": "The total income of the individual."
+    },
+    "Income_retirement": {
+        "parsed": "Retirement Income",
+        "description": "The income the individual receives from retirement."
+    },
+    "Income_social_security": {
+        "parsed": "Social Security Income",
+        "description": "The income the individual receives from social security."
+    },
+    "Educational_attainment": {
+        "parsed": "Educational Attainment",
+        "description": "The highest level of education attained by the individual."
+    },
+    "Disability": {
+        "parsed": "Disability",
+        "description": "Indicates whether the individual has any disability."
+    },
+    "Employment_status": {
+        "parsed": "Employment Status",
+        "description": "The employment status of the individual."
+    },
+    "Work_industry_sector": {
+        "parsed": "Work Industry Sector",
+        "description": "The industry sector in which the individual works."
+    },
+    "Language_spoken_at_home": {
+        "parsed": "Language Spoken at Home",
+        "description": "The primary language spoken by the individual at home."
+    },
+    "Family_income": {
+        "parsed": "Family Income",
+        "description": "The total income of the family."
+    },
+    "Year": {
+        "parsed": "Year",
+        "description": "The year in which the data was collected."
+    },
+    "Data_source": {
+        "parsed": "Data Source",
+        "description": "The source from which the data was collected."
     },
     "Occupation": {
         "parsed": "Occupation",
-        "type": "nominal",
-        "description": "The occupation of the individual"
+        "description": "The occupation of the individual."
     },
-    "Income_supplementary_security": {
-        "parsed": "Income from supplementary security",
-        "type": "numerical",
-        "description": "The amount of income received from supplementary security"
+    "Salary": {
+        "parsed": "Salary",
+        "description": "The salary of the individual."
     },
-    "Religious_contributor": {
-        "parsed": "Religious contributor",
-        "type": "nominal",
-        "description": "Whether the individual contributes to religious organizations"
+    "Environment": {
+        "parsed": "Lives in an urban or rural environment",
+        "description": "Whether the individual lives in an urban or rural enviornment."
     },
-    "Military_served_WW2": {
-        "parsed": "Served in WWII",
-        "type": "nominal",
-        "description": "Whether the individual served in the military during World War II"
+    "Medicare_payments": {
+        "parsed": "Medicare Payments",
+        "description": "The payments made under Medicare."
     },
-    "Book_buyer": {
-        "parsed": "Book buyer",
-        "type": "nominal",
-        "description": "Whether the individual purchases books"
+    "Computer_information_services_internet": {
+        "parsed": "Expenditure on Computer and Internet Services",
+        "description": "Expenditures on computer and internet services."
     },
-    "Dwelling_type": {
-        "parsed": "Dwelling type",
-        "type": "nominal",
-        "description": "The type of dwelling the individual lives in"
+    "Dating_services": {
+        "parsed": "Expenditure on Dating Services",
+        "description": "Expenditures on dating services."
     },
-    "Active_snow_skiing": {
-        "parsed": "Active in snow skiing",
-        "type": "nominal",
-        "description": "Whether the individual actively participates in snow skiing"
+    "Admission_to_sporting_events": {
+        "parsed": "Expenditure on Admission to Sporting Events",
+        "description": "Expenditures on admission to sporting events."
     },
-    "Apparel_infant_toddlers": {
-        "parsed": "Infant and toddler apparel",
-        "type": "nominal",
-        "description": "Whether the household purchases apparel for infants and toddlers"
+    "Alcoholic_beverages": {
+        "parsed": "Expenditure on Alcoholic Beverages",
+        "description": "Expenditures on alcoholic beverages."
     },
-    "Income_retirement": {
-        "parsed": "Income from retirement",
-        "type": "numerical",
-        "description": "The amount of income received from retirement funds"
+    "Indoor_plants_and_fresh_flowers": {
+        "parsed": "Expenditure on Indoor Plants and Fresh Flowers",
+        "description": "Expenditures on indoor plants and fresh flowers."
     },
-    "Childrens_babycare": {
-        "parsed": "Children's babycare",
-        "type": "nominal",
-        "description": "Whether the household purchases babycare products for children"
+    "Sports_recreation_and_exercise_equipment": {
+        "parsed": "Expenditure on Sports, Recreation, and Exercise Equipment",
+        "description": "Expenditures on sports, recreation, and exercise equipment."
     },
-    "Political_contributor": {
-        "parsed": "Political contributor",
-        "type": "nominal",
-        "description": "Whether the individual contributes to political organizations"
+    "Video_game_software": {
+        "parsed": "Expenditure on Video Game Software",
+        "description": "Expenditures on video game software."
     },
-    "Marital_status": {
-        "parsed": "Marital status",
-        "type": "nominal",
-        "description": "The marital status of the individual"
+    "Living_room_tables": {
+        "parsed": "Expenditure on Living Room Tables",
+        "description": "Expenditures on living room tables."
     },
-    "Pets_dogs": {
-        "parsed": "Dogs as pets",
-        "type": "nominal",
-        "description": "Whether the household has dogs as pets"
+    "Credit_card_memberships": {
+        "parsed": "Expenditure on Credit Card Memberships",
+        "description": "Expenditures on credit card memberships."
     },
-    "Military_served_Korean_war_era": {
-        "parsed": "Served in Korean War era",
-        "type": "nominal",
-        "description": "Whether the individual served in the military during the Korean War era"
+    "Telephone_services": {
+        "parsed": "Expenditure on Telephone Services",
+        "description": "Expenditures on telephone services."
     },
-    "Means_of_transportation": {
-        "parsed": "Means of transportation",
-        "type": "nominal",
-        "description": "The means of transportation used by the individual"
+    "Cooking_stoves_and_ovens_owned_home": {
+        "parsed": "Expenditure on Cooking Stoves and Ovens",
+        "description": "Expenditures on cooking stove(s) and oven(s) that are owned in the respondent's home."
     },
-    "Games_video": {
-        "parsed": "Video games",
-        "type": "nominal",
-        "description": "Whether the individual plays video games"
+    "Wall_units_cabinets_and_other_furniture": {
+        "parsed": "Expenditure on Wall Units, Cabinets, and Other Furniture",
+        "description": "Expenditures on wall units, cabinets, and other furniture."
     },
-    "Woodwork": {
-        "parsed": "Woodwork",
-        "type": "nominal",
-        "description": "Whether the individual is interested in woodwork"
+    "Natural_gas": {
+        "parsed": "Expenditure on Natural Gas",
+        "description": "Expenditures on natural gas."
     },
-    "School_enrollment": {
-        "parsed": "School enrollment",
-        "type": "nominal",
-        "description": "Whether the individual is enrolled in school"
+    "Babysitting_and_childcare": {
+        "parsed": "Expenditure on Babysitting and Childcare",
+        "description": "Expenditures on babysitting and childcare services."
     },
-    "Consumer_electronics": {
-        "parsed": "Consumer electronics",
-        "type": "nominal",
-        "description": "Whether the household purchases consumer electronics"
+    "Books_digital_books_or_book_subscriptions": {
+        "parsed": "Expenditure on Books, Digital Books, or Book Subscriptions",
+        "description": "Expenditures on books, digital books, or book subscriptions."
     },
-    "Total_earnings": {
-        "parsed": "Total earnings",
-        "type": "numerical",
-        "description": "The total amount of earnings"
+    "Computers_and_computer_hardware_for_nonbusiness_use": {
+        "parsed": "Expenditure on Computers and Computer Hardware for Nonbusiness Use",
+        "description": "Expenditures on computers and computer hardware for personal use."
     },
-    "State": {
-        "parsed": "State",
-        "type": "nominal",
-        "description": "The state of residence of the individual"
+    "Fuel_oil_and_other_fuels": {
+        "parsed": "Expenditure on Fuel Oil and Other Fuels",
+        "description": "Expenditures on fuel oil and other fuels."
     },
-    "Travel_grouping": {
-        "parsed": "Travel grouping",
-        "type": "nominal",
-        "description": "The individual's participation or interest in grouped travel activities"
+    "Apparel_and_services": {
+        "parsed": "Expenditure on Apparel and Services",
+        "description": "Expenditures on apparel and related services."
     },
-    "Aviation_int": {
-        "parsed": "International aviation",
-        "type": "nominal",
-        "description": "Whether the individual is involved in international aviation"
+    "Electricity": {
+        "parsed": "Expenditure on Electricity",
+        "description": "Expenditures on electricity."
     },
-    "Home_owner": {
-        "parsed": "Homeowner",
-        "type": "nominal",
-        "description": "Whether the individual is a homeowner"
+    "Parking_fees": {
+        "parsed": "Expenditure on Parking Fees",
+        "description": "Expenditures on parking fees."
     },
-    "Dieting_weightloss": {
-        "parsed": "Involved in dieting / weight loss",
-        "type": "nominal",
-        "description": "Whether the individual is involved in dieting and weight loss activities"
+    "Cash_contributions_to_charities_and_other_organizations": {
+        "parsed": "Cash Contributions to Charities and Other Organizations",
+        "description": "Cash contributions made to charities and other organizations."
     },
-    "Childrens_general": {
-        "parsed": "Children's general",
-        "type": "nominal",
-        "description": "Whether the household purchases general items for children"
+    "Medicaid_premiums": {
+        "parsed": "Medicaid Premiums",
+        "description": "Amount paid for Medicaid premiums."
     },
-    "Total_income": {
-        "parsed": "Total income",
-        "type": "nominal",
-        "description": "The total income of the individual"
+    "College_tuition": {
+        "parsed": "Expenditure on College Tuition",
+        "description": "Expenditures on college tuition."
     },
-    "Military_memorabilia_weapons": {
-        "parsed": "Military memorabilia and weapons",
-        "type": "nominal",
-        "description": "Whether the individual collects military memorabilia and weapons"
+    "Public_and_other_transportation": {
+        "parsed": "Expenditure on Public and Other Transportation",
+        "description": "Expenditures on public and other transportation services."
     },
-    "Cosmetics_beauty": {
-        "parsed": "Cosmetics and beauty",
-        "type": "nominal",
-        "description": "Whether the household purchases cosmetics and beauty products"
+    "Entertainment": {
+        "parsed": "Expenditure on Entertainment",
+        "description": "Expenditures on entertainment."
     },
-    "Citizen_status": {
-        "parsed": "Citizenship status",
-        "type": "nominal",
-        "description": "The citizenship status of the individual"
+    "Sofas": {
+        "parsed": "Expenditure on Sofas",
+        "description": "Expenditures on sofas."
     },
-    "Home_improvement": {
-        "parsed": "Home improvement",
-        "type": "nominal",
-        "description": "Whether the household engages in home improvement activities"
+    "Medical_services": {
+        "parsed": "Expenditure on Medical Services",
+        "description": "Expenditures on medical services."
     },
-    "Difficulty_vision": {
-        "parsed": "Difficulty seeing",
-        "type": "nominal",
-        "description": "Whether the individual has difficulty seeing"
+    "Computer_software": {
+        "parsed": "Expenditure on Computer Software",
+        "description": "Expenditures on computer software."
     },
-    "Active_nascar": {
-        "parsed": "Active in NASCAR",
-        "type": "nominal",
-        "description": "Whether the individual actively participates in NASCAR events"
+    "Life_and_other_personal_insurance": {
+        "parsed": "Expenditure on Life and Other Personal Insurance",
+        "description": "Expenditures on life and other personal insurance."
     },
-    "Employment_status": {
-        "parsed": "Employment status",
-        "type": "nominal",
-        "description": "The employment status of the individual"
+    "Televisions": {
+        "parsed": "Expenditure on Televisions",
+        "description": "Expenditures on televisions."
     },
-    "Income_social_security": {
-        "parsed": "Income from social security",
-        "type": "numerical",
-        "description": "The amount of income received from social security"
+    "Mortgage_interest_and_charges": {
+        "parsed": "Expenditure on Mortgage Interest and Charges",
+        "description": "Payments made for mortgage interest and related charges."
     },
-    "Online_buyer": {
-        "parsed": "Is an online buyer",
-        "type": "nominal",
-        "description": "Whether the individual purchases items online"
+    "Apparel_women_16_and_over": {
+        "parsed": "Expenditure on Apparel for Women (16 and Over)",
+        "description": "Expenditures on apparel for women aged 16 and over."
     },
-    "Career_improvement": {
-        "parsed": "Seeks career improvement",
-        "type": "nominal",
-        "description": "Whether the individual seeks career improvement"
+    "Applications_games_and_ringtones_for_handheld_devices": {
+        "parsed": "Expenditure on Applications, Games, and Ringtones for Handheld Devices",
+        "description": "Expenditures on applications, games, and ringtones for handheld devices."
+    },
+    "Computer_accessories": {
+        "parsed": "Expenditure on Computer Accessories",
+        "description": "Expenditures on computer accessories."
+    },
+    "Major_appliances": {
+        "parsed": "Expenditure on Major Appliances",
+        "description": "Expenditures on major appliances."
+    },
+    "Apparel_men_16_and_over": {
+        "parsed": "Expenditure on Apparel for Men (16 and Over)",
+        "description": "Expenditures on apparel for men aged 16 and over."
+    },
+    "Cash_contribution_to_political_organizations": {
+        "parsed": "Cash Contribution to Political Organizations",
+        "description": "Cash contributions made to political organizations."
+    },
+    "Education": {
+        "parsed": "Expenditure on Education",
+        "description": "Expenditures on education."
+    },
+    "Healthcare": {
+        "parsed": "Expenditure on Healthcare",
+        "description": "Expenditures on healthcare services and products."
+    },
+    "Care_for_elderly_invalids_handicapped_etc": {
+        "parsed": "Expenditure on Care for Elderly, Invalids, Handicapped, etc.",
+        "description": "Expenditures on care for elderly, invalids, handicapped individuals, etc."
+    },
+    "Furniture": {
+        "parsed": "Expenditure on Furniture",
+        "description": "Expenditures on furniture."
+    },
+    "Child_support_expenditures": {
+        "parsed": "Expenditure on Child Support",
+        "description": "Expenditures on child support."
+    },
+    "Refrigerators_and_freezers_owned_home": {
+        "parsed": "Expenditure on Refrigerators and Freezers",
+        "description": "Expenditures on refrigerator(s) and freezer(s) that are owned in the home."
+    },
+    "Personal_care_products_and_services": {
+        "parsed": "Expenditure on Personal Care Products and Services",
+        "description": "Expenditures on personal care products and services."
+    },
+    "Telephones_and_accessories": {
+        "parsed": "Expenditure on Telephones and Accessories",
+        "description": "Expenditures on telephones and accessories."
+    },
+    "Electric_vehicle_charging": {
+        "parsed": "Expenditure on Electric Vehicle Charging",
+        "description": "Expenditures on electric vehicle charging."
+    },
+    "Vehicle_purchases": {
+        "parsed": "Expenditure on Vehicle Purchases",
+        "description": "Expenditures on vehicle purchases."
+    },
+    "Rent": {
+        "parsed": "Expenditure on Rent",
+        "description": "Expenditures on rent."
+    },
+    "Video_game_hardware_and_accessories": {
+        "parsed": "Expenditure on Video Game Hardware and Accessories",
+        "description": "Expenditures on video game hardware and accessories."
+    },
+    "Water_and_other_public_services": {
+        "parsed": "Expenditure on Water and Other Public Services",
+        "description": "Expenditures on water and other public services."
+    },
+    "Clothes_washers_or_dryers_owned_home": {
+        "parsed": "Expenditure on Clothes, Washers, or Dryers",
+        "description": "Expenditures on clothes washers or dryers owned in the home."
+    },
+    "Cigarettes": {
+        "parsed": "Expenditure on Cigarettes",
+        "description": "Expenditures on cigarettes."
+    },
+    "Online_gaming_services": {
+        "parsed": "Expenditure on Online Gaming Services",
+        "description": "Expenditures on online gaming services."
+    },
+    "New_cars": {
+        "parsed": "Expenditure on New Cars",
+        "description": "Expenditures on new cars."
+    },
+    "Diesel_fuel": {
+        "parsed": "Expenditure on Diesel Fuel",
+        "description": "Expenditures on diesel fuel."
+    },
+    "Food": {
+        "parsed": "Expenditure on Food",
+        "description": "Expenditures on food."
+    },
+    "Gasoline": {
+        "parsed": "Expenditure on Gasoline",
+        "description": "Expenditures on gasoline."
+    },
+    "Pets": {
+        "parsed": "Expenditure on Pets",
+        "description": "Expenditures on pets."
+    },
+    "Streaming_and_downloading_audio": {
+        "parsed": "Expenditure on Streaming and Downloading Audio",
+        "description": "Expenditures on streaming and downloading audio."
+    },
+    "Gasoline_other_fuels_and_motor_oil": {
+        "parsed": "Expenditure on Gasoline, Other Fuels, and Motor Oil",
+        "description": "Expenditures on gasoline, other fuels, and motor oil."
+    },
+    "Zipcode": {
+        "parsed": "Zipcode",
+        "description": "The zipcode of the respondent."
     },
     "Registered_to_vote": {
-        "parsed": "Registered to vote",
-        "type": "nominal",
-        "description": "Whether the individual is registered to vote"
-    }
-}]
+        "parsed": "Registered to Vote",
+        "description": "Whether the respondent is registered to vote."
+    },
+    "Religion": {
+        "parsed": "Religion",
+        "description": "The religion of the respondent."
+    },
+    "Union_member": {
+        "parsed": "Union Member",
+        "description": "Indicates whether the respondent is a member of a union."
+    },
+    "Did_you_vote": {
+        "parsed": "Did You Vote",
+        "description": "Indicates whether the respondent voted in the last election."
+    },
+    "How_did_you_vote": {
+        "parsed": "How Did You Vote",
+        "description": "Indicates how the respondent voted in the last election (e.g., voted in-person, voted by mail)."
+    },
+    "Where_was_ballot_returned": {
+        "parsed": "Where Was Ballot Returned",
+        "description": "Indicates where the respondent returned their ballot (e.g., returned at a voting center, post office box)."
+    },
+    "Problem_voting": {
+        "parsed": "Problem Voting",
+        "description": "Indicates whether the respondent experienced problems voting."
+    },
+    "State_senate_vote": {
+        "parsed": "State Senate Vote",
+        "description": "Indicates the party of the respondent's vote for state senate."
+    },
+    "Lower_chamber_vote": {
+        "parsed": "Lower Chamber Vote",
+        "description": "Indicates the party of the respondent's vote for the lower chamber."
+    },
+    "Waiting_for_voting": {
+        "parsed": "Wait Time to Vote",
+        "description": "Indicates the time the respondent had to wait on the day they voted."
+    },
+    "Device_used": {
+        "parsed": "Device Used to Vote",
+        "description": "Indicates the device used by the respondent to vote."
+    },
+    "Party_allegiance": {
+        "parsed": "Party Allegiance",
+        "description": "Indicates the party allegiance of the respondent."
+    },
+   
+        "Received_a_raise_last_year": {
+            "parsed": "Received a Raise Last Year",
+            "description": "Indicates whether the respondent received a raise in the last year."
+        },
+        "Had_pay_cut_last_year": {
+            "parsed": "Had Pay Cut Last Year",
+            "description": "Indicates whether the respondent had a pay cut in the last year."
+        },
+        "Police_makes_me_feel": {
+            "parsed": "How Police Makes Me Feel",
+            "description": "Describes how the police make the respondent feel."
+        },
+        "I_had_covid_last_year": {
+            "parsed": "Had COVID Last Year",
+            "description": "Indicates whether the respondent had COVID-19 in the last year."
+        },
+        "Family_member_had_covid_last_year": {
+            "parsed": "Family Member Had COVID Last Year",
+            "description": "Indicates whether a family member of the respondent had COVID-19 in the last year."
+        },
+        "Friend_had_covid_last_year": {
+            "parsed": "Friend Had COVID Last Year",
+            "description": "Indicates whether a friend of the respondent had COVID-19 in the last year."
+        },
+        "Co_worker_had_covid_last_year": {
+            "parsed": "Co-worker Had COVID Last Year",
+            "description": "Indicates whether a co-worker of the respondent had COVID-19 in the last year."
+        },
+        "Vaccination_status": {
+            "parsed": "Vaccination Status",
+            "description": "Indicates the vaccination status of the respondent."
+        },
+        "Pandemic_work_hours_reduced": {
+            "parsed": "Work Hours Reduced during Pandemic",
+            "description": "Indicates whether the respondent's work hours were reduced during the COVID pandemic."
+        },
+        "Pandemic_work_hours_restored": {
+            "parsed": "Work Hours Restored after Pandemic",
+            "description": "Indicates whether the respondent's work hours were restored after the COVID pandemic."
+        },
+        "Pandemic_temporarily_laid_off": {
+            "parsed": "Temporarily Laid Off during Pandemic",
+            "description": "Indicates whether the respondent was temporarily laid off during the COVID pandemic."
+        },
+        "Pandemic_re_hired_after_temporarily_laid_off": {
+            "parsed": "Re-hired After Temporarily Laid Off during Pandemic",
+            "description": "Indicates whether the respondent was re-hired after being temporarily laid off during the COVID pandemic."
+        },
+        "Pandemic_multiple_jobs_lost_one": {
+            "parsed": "Lost One Job (of Multiple Jobs) during Pandemic",
+            "description": "Indicates whether the respondent lost one of multiple jobs during the COVID pandemic."
+        },
+        "Pandemic_hours_increased": {
+            "parsed": "Work Hours Increased during Pandemic",
+            "description": "Indicates whether the respondent's work hours increased during the COVID pandemic."
+        },
+        "Pandemic_take_additional_jobs": {
+            "parsed": "Took Additional Jobs during Pandemic",
+            "description": "Indicates whether the respondent took additional jobs during the COVID pandemic."
+        },
+        "Pay_for_emergency_with_credit_card_pay_off_next_statement": {
+            "parsed": "Pay for Emergency with Credit Card, Pay Off Next Statement",
+            "description": "Indicates whether the respondent would pay for an emergency with a credit card and pay off the balance with the next statement."
+        },
+        "Pay_for_emergency_with_credit_card_pay_off_over_time": {
+            "parsed": "Pay for Emergency with Credit Card, Pay Off Over Time",
+            "description": "Indicates whether the respondent would pay for an emergency with a credit card and pay off the balance over time."
+        },
+        "Pay_for_emergency_with_money_in_credit_savings_account": {
+            "parsed": "Pay for Emergency with Money in Checking/Savings Account",
+            "description": "Indicates whether the respondent would pay for an emergency with money in their checking or savings account."
+        },
+        "Pay_for_emergency_with_bank_loan": {
+            "parsed": "Pay for Emergency with Bank Loan",
+            "description": "Indicates whether the respondent would pay for an emergency with a bank loan."
+        },
+        "Pay_for_emergency_by_borrowing_from_friends_or_family": {
+            "parsed": "Pay for Emergency by Borrowing from Friends or Family",
+            "description": "Indicates whether the respondent would pay for an emergency by borrowing from friends or family."
+        },
+        "Pay_for_emergency_with_advance_or_overdraft": {
+            "parsed": "Pay for Emergency with Advance or Overdraft",
+            "description": "Indicates whether the respondent would pay for an emergency with an advance or overdraft."
+        },
+        "Pay_for_emergency_by_sell_something": {
+            "parsed": "Pay for Emergency by Selling Something",
+            "description": "Indicates whether the respondent would pay for an emergency by selling something."
+        },
+        "Mental_health_status": {
+            "parsed": "Mental Health Status",
+            "description": "Mental health status of the respondent."
+        },
+        "Which_party_has_majority_house": {
+            "parsed": "Which Party Has Majority in House",
+            "description": "Indicates which party has the majority in the House of Representatives during the time of survey collection."
+        },
+        "Which_party_has_majority_senate": {
+            "parsed": "Which Party Has Majority in Senate",
+            "description": "Indicates which party has the majority in the Senate during the time of survey collection."
+        },
+        "Which_party_has_majority_in_my_state_senate": {
+            "parsed": "Which Party Has Majority in My State Senate",
+            "description": "Indicates which party has the majority in the respondent's state senate during the time of survey collection."
+        },
+        "Which_party_has_majority_in_my_state_lower_chamber": {
+            "parsed": "Which Party Has Majority in My State Lower Chamber",
+            "description": "Indicates which party has the majority in the respondent's state lower chamber during the time of survey collection."
+        },
+        "Approval_president": {
+            "parsed": "Approval of President",
+            "description": "Indicates the respondent's approval of the President."
+        },
+        "Approval_congress": {
+            "parsed": "Approval of Congress",
+            "description": "Indicates the respondent's approval of Congress."
+        },
+        "Approval_governor": {
+            "parsed": "Approval of Governor",
+            "description": "Indicates the respondent's approval of their state governor."
+        },
+        "Approval_state_legislature": {
+            "parsed": "Approval of State Legislature",
+            "description": "Indicates the respondent's approval of their state legislature."
+        },
+        "Approval_my_current_member_congress": {
+            "parsed": "Approval of My Current Member of Congress",
+            "description": "Indicates the respondent's approval of their current member of Congress."
+        },
+        "Approval_my_current_second_senator": {
+            "parsed": "Approval of My Current Second Senator",
+            "description": "Indicates the respondent's approval of their current second senator."
+        },
+        "Policy_support_expanding_medicare": {
+            "parsed": "Policy Support for Expanding Medicare",
+            "description": "Indicates the respondent's support for expanding Medicare."
+        },
+        "Policy_support_government_negotiate_with_drug_companies": {
+            "parsed": "Policy Support for Government Negotiations with Drug Companies",
+            "description": "Indicates the respondent's support for the government negotiating with drug companies."
+        },
+        "Policy_support_repealing_aca": {
+            "parsed": "Policy Support for Repealing the Affordable Care Act",
+            "description": "Indicates the respondent's support for repealing the Affordable Care Act (ACA)."
+        },
+        "Policy_support_allow_states_import_drugs_from_other_countries": {
+            "parsed": "Policy Support for Allowing States to Import Drugs from Other Countries",
+            "description": "Indicates the respondent's support for allowing states to import drugs from other countries."
+        },
+        "Policy_support_prohibiting_states_publishing_names_of_gun_owners": {
+            "parsed": "Policy Support for Prohibiting States from Publishing Names of Gun Owners",
+            "description": "Indicates the respondent's support for prohibiting states from publishing the names of gun owners."
+        },
+        "Policy_support_ban_assault_rifles": {
+            "parsed": "Policy Support for Banning Assault Rifles",
+            "description": "Indicates the respondent's support for banning assault rifles."
+        },
+        "Policy_support_easier_to_get_concealed_carry_permit": {
+            "parsed": "Policy Support for Making it Easier to Get a Concealed Carry Permit",
+            "description": "Indicates the respondent's support for making it easier to get a concealed carry permit."
+        },
+        "Policy_support_take_guns_away_from_people_who_pose_threat": {
+            "parsed": "Policy Support for Taking Guns Away from People Who Pose a Threat",
+            "description": "Indicates the respondent's support for taking guns away from people who pose a threat."
+        },
+        "Policy_support_background_checks_guns": {
+            "parsed": "Policy Support for Background Checks on Guns",
+            "description": "Indicates the respondent's support for background checks on gun purchases."
+        },
+        "Policy_support_allowing_teachers_to_carry_guns": {
+            "parsed": "Policy Support for Allowing Teachers to Carry Guns",
+            "description": "Indicates the respondent's support for allowing teachers to carry guns."
+        },
+        "Policy_support_grant_legal_status_if_working_for_3_years": {
+            "parsed": "Policy Support for Granting Legal Status if Working for 3 Years",
+            "description": "Indicates the respondent's support for granting legal status to immigrants who have been working for at least 3 years."
+        },
+        "Policy_support_increase_border_patrol": {
+            "parsed": "Policy Support for Increasing Border Patrol",
+            "description": "Indicates the respondent's support for increasing the number of border patrol agents."
+        },
+        "Policy_support_eliminate_visa_lottery_and_family_based_immigration": {
+            "parsed": "Policy Support for Eliminating Visa Lottery and Family-Based Immigration",
+            "description": "Indicates the respondent's support for eliminating the visa lottery and family-based immigration."
+        },
+        "Policy_support_increase_spending_on_border_security_25_billions_and_build_wall": {
+            "parsed": "Policy Support for Increasing Spending on Border Security and Building a Wall",
+            "description": "Indicates the respondent's support for increasing spending on border security and building a wall."
+        },
+        "Policy_support_always_allow_abortion": {
+            "parsed": "Policy Support for Always Allowing Abortion",
+            "description": "Indicates the respondent's support for always allowing abortion."
+        },
+        "Policy_support_permit_abortion_only_in_emergency": {
+            "parsed": "Policy Support for Permitting Abortion Only in Emergency",
+            "description": "Indicates the respondent's support for permitting abortion only in cases of emergency."
+        },
+        "Policy_support_prohibit_all_abortions_after_week_20": {
+            "parsed": "Policy Support for Prohibiting All Abortions After Week 20",
+            "description": "Indicates the respondent's support for prohibiting all abortions after the 20th week of pregnancy."
+        },
+        "Policy_support_allow_employers_deny_abortion_coverage": {
+            "parsed": "Policy Support for Allowing Employers to Deny Abortion Coverage",
+            "description": "Indicates the respondent's support for allowing employers to deny abortion coverage in their health insurance plans."
+        },
+        "Policy_support_prohibit_federal_funds_be_used_for_abortion": {
+            "parsed": "Policy Support for Prohibiting Federal Funds to Be Used for Abortion",
+            "description": "Indicates the respondent's support for prohibiting the use of federal funds for abortion services."
+        },
+        "Policy_support_make_all_abortions_illegal": {
+            "parsed": "Policy Support for Making All Abortions Illegal",
+            "description": "Indicates the respondent's support for making all abortions illegal."
+        },
+
+         "Used_social_media_in_past_24hrs": {
+                "parsed": "Used Social Media in Past 24 Hours",
+                "description": "Indicates whether the respondent used social media in the past 24 hours."
+            },
+            "Watched_tv_news_in_past_24hrs": {
+                "parsed": "Watched TV News in Past 24 Hours",
+                "description": "Indicates whether the respondent watched TV news in the past 24 hours."
+            },
+            "Read_newspaper_in_past_24hrs": {
+                "parsed": "Read Newspaper in Past 24 Hours",
+                "description": "Indicates whether the respondent read a newspaper in the past 24 hours."
+            },
+            "Listened_to_radio_news_in_past_24hrs": {
+                "parsed": "Listened to Radio News in Past 24 Hours",
+                "description": "Indicates whether the respondent listened to radio news in the past 24 hours."
+            },
+            "National_econony_has": {
+                "parsed": "Opinion of the National Economy",
+                "description": "Respondent's opinion on the current state of the national economy."
+            },
+            "My_house_income_has": {
+                "parsed": "Opinion of Household Income",
+                "description": "Respondent's opinion on the current state of their household income."
+            },
+            "Prices_have": {
+                "parsed": "Opinion on Prices",
+                "description": "Respondent's opinion on the current state of prices."
+            },
+            "Lost_job_last_year": {
+                "parsed": "Lost Job Last Year",
+                "description": "Indicates whether the respondent lost their job in the last year."
+            },
+            "Finished_school_last_year": {
+                "parsed": "Finished School Last Year",
+                "description": "Indicates whether the respondent finished school in the last year."
+            },
+            "Retired_last_year": {
+                "parsed": "Retired Last Year",
+                "description": "Indicates whether the respondent retired in the last year."
+            },
+            "Had_a_child_last_year": {
+                "parsed": "Had a Child Last Year",
+                "description": "Indicates whether the respondent had a child in the last year."
+            },
+            "Taken_new_job_last_year": {
+                "parsed": "Took a New Job Last Year",
+                "description": "Indicates whether the respondent took a new job in the last year."
+            },
+            "Been_victim_of_crime_last_year": {
+                "parsed": "Victim of Crime Last Year",
+                "description": "Indicates whether the respondent was a victim of crime in the last year."
+            },
+            "Visited_emergency_room_last_year": {
+                "parsed": "Visited Emergency Room Last Year",
+                "description": "Indicates whether the respondent visited the emergency room in the last year."
+            },
+            "Visited_doctor_for_regular_examination_last_year": {
+                "parsed": "Visited Doctor for Regular Examination Last Year",
+                "description": "Indicates whether the respondent visited a doctor for a regular examination in the last year."
+            }
+        }
+]
