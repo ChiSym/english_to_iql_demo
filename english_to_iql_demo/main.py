@@ -9,7 +9,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from jinja2_fragments.fastapi import Jinja2Blocks
 
-from english_to_iql_demo.english_to_iql import english_query_to_iql, sync_query_state
+from english_to_iql_demo.english_to_iql import english_query_to_iql, sync_query_state, OOD_REPLY
 from english_to_iql_demo.plot import plot_dispatch
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
@@ -34,7 +34,6 @@ class Data:
     interpreters: List[Interpreter]
     sorted_posteriors: List[List[dict]]
     log_ml_estimates: List[float]
-    dsl_map_queries: List[str]
     iql_queries: List[str]
     iql_query: str
     df: pl.DataFrame
@@ -69,7 +68,6 @@ data = Data(
     interpreters=interpreters,
     sorted_posteriors=[[{"query": "", "pval": 1.0}] for _ in indices],
     log_ml_estimates=[-float("inf") for _ in indices],
-    dsl_map_queries=["" for _ in indices],
     iql_queries=[""],
     iql_query="",
     df=default_df,
@@ -126,10 +124,12 @@ async def post_iql_query(request: Request):
         sync_query_state(data, form_query)
 
     try:
-        if data.current_dsl == "OOD":
+        if (data.current_dsl == "OOD") or (form_query.strip() == OOD_REPLY):
             data.df = default_df
+            context = plot_dispatch("OOD", data.df)
         else:
             data.df = run_query(data.parser, data.interpreter, form_query)
+            context = plot_dispatch(data.current_dsl, data.df)
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         return templates.TemplateResponse(
@@ -141,8 +141,6 @@ async def post_iql_query(request: Request):
              "error": f"{e}"},
             block_name="plot",
         )
-
-    context = plot_dispatch(data.current_dsl, data.df)
 
     return templates.TemplateResponse(
         "index.html.jinja", 

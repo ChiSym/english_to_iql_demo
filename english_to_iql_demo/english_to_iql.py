@@ -2,9 +2,12 @@ import json
 import requests
 from concurrent.futures import ThreadPoolExecutor
 
+import jax.numpy as jnp
+from jax.nn import logsumexp
 
-OOD_REPLY = "Sorry, I can't answer that. Could you try again?"
-DSLs = ["LPM", "data"] + ["OOD"] # if updating, OOD must remain last
+
+OOD_REPLY = "I can't answer that"
+DSLs = ["LPM", "data"]
 
 
 def english_query_to_iql(data):
@@ -14,24 +17,20 @@ def english_query_to_iql(data):
             data.sorted_posteriors[idx], data.log_ml_estimates[idx] = english_query_to_iql_posterior(
                 data.english_query, data.genparse_urls[idx], data.grammars[idx], data.pre_prompts[idx]
             )
-            map_particle = data.sorted_posteriors[idx][0]["query"]
-            data.dsl_map_queries[idx] = map_particle
 
         with ThreadPoolExecutor() as executor:
             executor.map(score_query_dsl, indices)
-        assert all(data.dsl_map_queries), "Failure in scoring queries"
 
     def select_best_dsl(data):
-        options = [idx for idx in indices if data.dsl_map_queries[idx]!="I can't answer that"]
-        if not options:
-            return -1
-        return max(options, key=lambda idx: data.log_ml_estimates[idx])
+        ood_probs = [[x['pval'] for x in post if x['query']==OOD_REPLY] for post in data.sorted_posteriors]
+        if any(ood_probs):
+            flat = [x[0] if x else 0 for x in ood_probs]
+            return min(indices, key=lambda idx: flat[idx])
+        return max(indices, key=lambda idx: data.log_ml_estimates[idx])
 
     score_query_dsls(data)
     idx = select_best_dsl(data)
     data.current_dsl = DSLs[idx]
-    if data.current_dsl == "OOD":
-        return [{"query": OOD_REPLY, "pval": 0.999999}]
     data.parser = data.parsers[idx]
     data.interpreter = data.interpreters[idx]
     return data.sorted_posteriors[idx]
@@ -58,12 +57,13 @@ def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: 
     response = json.loads(x.text)
     print(response)
     posterior = response['posterior']
-    log_ml_estimate = response['log_ml_estimate']
     sorted_posterior = [
         {"query": k.strip(), "pval": v} 
         for k, v 
         in sorted(posterior.items(), key=lambda item: -item[1])
     ]
+    log_weights = [v for k,v in response['log_weights'].items() if k.strip()!=OOD_REPLY]
+    log_ml_estimate = logsumexp(jnp.array(log_weights)) - jnp.log(len(log_weights))
     return sorted_posterior, log_ml_estimate
 
 def sync_query_state(data, form_query):
@@ -73,7 +73,7 @@ def sync_query_state(data, form_query):
         data.iql_queries = [data.iql_query]
     bos, eos = " ", "\n"
     query = bos + form_query.strip() + eos
-    if query == " I can't answer that\n":
+    if form_query.strip() == OOD_REPLY:
         set_ood()
         return
     for idx, parser in enumerate(data.parsers):
