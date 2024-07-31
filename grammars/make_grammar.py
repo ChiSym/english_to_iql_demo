@@ -19,7 +19,7 @@ prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " assignment " given " variable ", " variable EOS
 | " probability of " assignment " given " assignment ", " variable EOS
 | " probability of " assignment " given " variable ", " assignment EOS
-| " probability of " expr " given State_PUMA10\\n" -> geo
+| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] "\\n" -> geo
 | " I can't answer that" EOS
 EOS: "\\n"
 expr: assignment | assignment BOOL_OPERATOR assignment
