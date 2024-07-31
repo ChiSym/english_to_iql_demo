@@ -176,14 +176,9 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             x = x.sort(custom_order[n_var])
 
         chart = alt.layer(
-            alt.Chart(df).mark_boxplot(
-                median=True,
-                outliers=False,
-                box=alt.MarkConfig(fill=None, 
-                    stroke='blue')
-            ).encode(
+            alt.Chart(df).mark_bar(filled=False).encode(
                 x=x,
-                y=alt.Y(f'{p_sample_var}:Q', title="probability").scale(zero=False),
+                y=alt.Y(f'mean({p_mean_var}):Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
             ).properties(
                 height=height,
@@ -313,24 +308,18 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         }
         
         chart = alt.layer(
-            alt.Chart(df).mark_boxplot(
-                median=True,
-                outliers=False,
-                box=alt.MarkConfig(fill=None,)
-            ).encode(
-                stroke=color,
+            alt.Chart(df).mark_bar(filled=False).encode(
+                color=color,
                 xOffset=color,
                 strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
-                x=x,
-                y=alt.Y(f'{p_sample_var}:Q', title="probability").scale(zero=False)
+                **shared_line_encoding
             ),
             # These invisible point marks exist to support "nearest" selection, 
             # which doesn't work well with line/area marks
             alt.Chart(df).mark_point().encode(
                 opacity = {"value": 0},
                 xOffset=color,
-                x=x,
-                y=alt.Y(f'mean({p_mean_var}):Q').scale(zero=False)
+                **shared_line_encoding
             ).add_params( # adding this to other views breaks clicking, just add to the one used for targeting
                 selection
             ),
@@ -338,7 +327,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
                 xOffset=color,
-                color=alt.Color(color, legend=False),
+                color=color,
                 opacity=cond_opacity,
             )
         ).properties(
