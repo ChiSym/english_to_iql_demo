@@ -183,7 +183,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                     stroke='blue')
             ).encode(
                 x=x,
-                y=alt.Y(f'mean({p_mean_var}):Q', title="probability").scale(zero=False),
+                y=alt.Y(f'{p_sample_var}:Q', title="probability").scale(zero=False),
                 tooltip=[f'{n_var}', f'{p_mean_var}'],
             ).properties(
                 height=height,
@@ -321,14 +321,16 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 stroke=color,
                 xOffset=color,
                 strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
-                **shared_line_encoding
+                x=x,
+                y=alt.Y(f'{p_sample_var}:Q', title="probability").scale(zero=False)
             ),
             # These invisible point marks exist to support "nearest" selection, 
             # which doesn't work well with line/area marks
             alt.Chart(df).mark_point().encode(
                 opacity = {"value": 0},
                 xOffset=color,
-                **shared_line_encoding
+                x=x,
+                y=alt.Y(f'mean({p_mean_var}):Q').scale(zero=False)
             ).add_params( # adding this to other views breaks clicking, just add to the one used for targeting
                 selection
             ),
@@ -336,7 +338,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 x=x,
                 y=alt.Y(f'{p_sample_var}:Q'),
                 xOffset=color,
-                color=color,
+                color=alt.Color(color, legend=False),
                 opacity=cond_opacity,
             )
         ).properties(
