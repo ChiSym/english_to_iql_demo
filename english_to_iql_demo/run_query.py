@@ -34,18 +34,18 @@ def interpreter_dispatch(grammar_path):
         with open("interpreter_metadata.pkl", "rb") as f:
             prob_interpreter_metadata = pickle.load(f)
             return ProbInterpreter(
-            variables=prob_interpreter_metadata["variables"],
-            schema=json.load(open("schema.json", "r")),
-            model=mixture_model,
-            args=prob_interpreter_metadata["args"],
-            inf_alg=SumProductInference(),
-            df=pl.read_parquet("data-subsample-columns.parquet"),
-            geo_df=geo_df,
-        )
+                variables=prob_interpreter_metadata["variables"],
+                schema=json.load(open("schema.json", "r")),
+                model=mixture_model,
+                args=prob_interpreter_metadata["args"],
+                inf_alg=SumProductInference(),
+                df=pl.read_parquet("synthetic_data.parquet", use_pyarrow=True),
+                geo_df=geo_df,
+            )
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
             col_interpreter_metadata = json.load(f)[0]
-        df = pl.read_parquet("data-subsample-columns.parquet")
+        df = pl.read_parquet("synthetic_data.parquet")
         return ColumnInterpreter(col_interpreter_metadata, df)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")

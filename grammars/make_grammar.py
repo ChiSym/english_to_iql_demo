@@ -23,9 +23,8 @@ prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] "\\n" -> geo
 | " I can't answer that" EOS
 EOS: "\\n"
-expr: census_assignment | census_assignment BOOL_OPERATOR census_assignment
+expr: assignment | assignment BOOL_OPERATOR assignment
 BOOL_OPERATOR: " and " | " or "
-census_assignment: {census_assignment}
 assignment: {assignment}
 variable: {var_nonterminals}
 {var_names}
@@ -94,24 +93,24 @@ def get_grammar_names(col, schema):
 def make_grammars(schema_path, census_cols_path):
     # at most 2 free variables
     schema = json.load(open(schema_path, 'r'))
-    census_cols = json.load(open(census_cols_path, 'r'))
-    census_grammar_names = [
-        get_grammar_names(census_col, schema)
-        for census_col in census_cols]
+    #census_cols = json.load(open(census_cols_path, 'r'))
+    #census_grammar_names = [
+    #    get_grammar_names(census_col, schema)
+    #    for census_col in census_cols]
 
     (assignment, categorical_values, var_names, var_nonterminals) = make_grammar_symbols(
         schema, CATEGORICAL_EXCLUSIONS_PROB, NORMAL_EXCLUSIONS
     )
 
-    census_assignment = [a for a in assignment 
-        if a.split(" ")[0] in census_grammar_names]
+    #census_assignment = [a for a in assignment 
+    #    if a.split(" ")[0] in census_grammar_names]
 
     us_lpm_prob = prob_grammar_template.format(
         assignment="\n\t| ".join(assignment),
         categorical_values="\n".join(categorical_values),
         var_names="\n".join(var_names),
         var_nonterminals="\n\t| ".join(var_nonterminals),
-        census_assignment="\n\t| ".join(census_assignment),
+       #census_assignment="\n\t| ".join(census_assignment),
     )
 
     (_, _, var_names, var_nonterminals) = make_grammar_symbols(
