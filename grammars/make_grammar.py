@@ -23,16 +23,20 @@ prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment] "\\n" -> geo
 | " I can't answer that" EOS
 EOS: "\\n"
-expr: assignment 
-    | assignment BOOL_EXPR assignment
-    | assignment BOOL_EXPR assignment BOOL_EXPR assignment
-    | assignment BOOL_EXPR assignment BOOL_EXPR assignment BOOL_EXPR assignment
+expr: geo_assignment 
+    | geo_assignment BOOL_EXPR geo_assignment
+    | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
+    | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
 BOOL_EXPR: " and " | " or "
 assignment: {assignment}
+geo_assignment: continuous_ineq_assignment | categorical_assignment
+continuous_ineq_assignment: {continuous_ineq_assignment}
+categorical_assignment: {categorical_assignment}
 variable: {var_nonterminals}
 {var_names}
 {categorical_values}
 OPERATOR: "=" | " = "
+INEQUALITY: " > " | " < "
 NORM_DIGIT: "-2" | "-1" | "0" | "1" | "2"
 DIGIT: "0".."9"
 INT: DIGIT+
@@ -66,6 +70,7 @@ def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
 
     # normal currently a hack for age only to make it easier for genparse
     normal_assignment = [f"{nt} OPERATOR NORM_DIGIT" for nt in normal_variable_nts]
+    normal_ineq_assignment = [f"{nt} INEQUALITY NORM_DIGIT" for nt in normal_variable_nts]
     categorical_assignment = [f"{nt} OPERATOR {nt}_VAL" for nt in categorical_variable_nts]
     assignment = normal_assignment + categorical_assignment
 
@@ -82,7 +87,9 @@ def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
         assignment,
         categorical_values,
         var_names,
-        var_nonterminals
+        var_nonterminals,
+        categorical_assignment,
+        normal_ineq_assignment,
     )
 
 def get_grammar_names(col, schema):
@@ -101,7 +108,7 @@ def make_grammars(schema_path):
     #    get_grammar_names(census_col, schema)
     #    for census_col in census_cols]
 
-    (assignment, categorical_values, var_names, var_nonterminals) = make_grammar_symbols(
+    (assignment, categorical_values, var_names, var_nonterminals, categorical_assignment, normal_ineq_assignment) = make_grammar_symbols(
         schema, CATEGORICAL_EXCLUSIONS_PROB, NORMAL_EXCLUSIONS
     )
 
@@ -113,10 +120,12 @@ def make_grammars(schema_path):
         categorical_values="\n".join(categorical_values),
         var_names="\n".join(var_names),
         var_nonterminals="\n\t| ".join(var_nonterminals),
+        categorical_assignment= "\n\t| ".join(categorical_assignment),
+        continuous_ineq_assignment="\n\t| ".join(normal_ineq_assignment),
        #census_assignment="\n\t| ".join(census_assignment),
     )
 
-    (_, _, var_names, var_nonterminals) = make_grammar_symbols(
+    (_, _, var_names, var_nonterminals, _, _) = make_grammar_symbols(
         schema, CATEGORICAL_EXCLUSIONS_COLS, NORMAL_EXCLUSIONS
     )
 
