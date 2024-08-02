@@ -57,28 +57,31 @@ Here are some examples of user queries and paired translations:
 
     def make_example_pairs(constructor):
         return [
-            ("How does someone's age affect their income?", 
-            constructor("Total_income", ["Age"])),
+            ("What's the relationship between income and party allegiance?", 
+            constructor("Party_allegiance", ["Total_income"])),
             ("Show me the probability of recent social media use given occupation", 
             constructor("Used_social_media_in_part_24hrs", ["Occupation"])),
             ("What are variables related to income?", "I can't answer that"),
             ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency?", 
             constructor("Pay_for_emergency_by_borrowing_from_friends = 'Yes'", ["I_had_covid_last_year"])),
-            ("Find the relationship between disability and whether a voter is not currently in the workforce",
+            ("What is the relationship between disability and whether a voter is unemployed",
             constructor("Disability", ["Employment_status = 'Not in workforce'"])),
             ("What’s the probability that someone is registered to vote given their location? ", 
             constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"])),
             ("Show me the probability that a voter is white given their location?",
             constructor("Race = 'White'", ["State_PUMA10"])),
+            ("Show me the probability of being a low income asian voter given location being California and being democrat",
+            constructor("Total_income < -1 and Race = 'Asian'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"])),
             ("Relationship between liking vegatables and being a democrat", "I can't answer that"),
             ("find the probability of high-income rural voters by location",
             constructor("Total_income > 1 and Environment = 'Rural'", ["State_PUMA10"])),
             ("Show me the probability of support for expanding medicare depending on some's party allegiance, given they are a non-college educated",
             constructor("Policy_support_expanding_medicare", ["Educational_attainment = '(b) High school graduate'", "Party_allegiance"])),
-            ("Probability that a voter is democrat and disabled in california",
-            constructor("Party_allegiance = 'Democrat' and Disability = 'Yes'", ["State_PUMA10, State = 'California'"])),
-            ("Shoe mw the probability of poor white voters by location",
-            constructor("Total_income < 0 and Race = 'White'", ["State_PUMA10"]))
+            ("What is the relationship between being registered to vote and age?", constructor("Registered_to_vote", ["Age"])),
+            ("Probability that a voter is disabled in california given that they are a democrat",
+            constructor("Disability = 'Yes'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"])),
+            ("Show me the probability of poor democratic voters by location",
+            constructor("Total_income < 0 and Party_allegiance = 'Democrat'", ["State_PUMA10"]))
         ]
     
     def make_prompt(preamble, example_pairs, eos=None):

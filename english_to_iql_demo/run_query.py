@@ -32,7 +32,7 @@ def interpreter_dispatch(grammar_path):
         s = geo_df["geometry"].simplify(1e-2)
         geo_df["geometry"] = s
         with open("interpreter_metadata.pkl", "rb") as f:
-            df = pl.read_parquet("synthetic_data-2.parquet", use_pyarrow=True)
+            df = pl.read_parquet("synthetic_data800k.parquet", use_pyarrow=True)
             # override state variable in synthetic data with PUMA state
             df = df.with_columns(
                 pl.col("State_PUMA10")
@@ -55,7 +55,7 @@ def interpreter_dispatch(grammar_path):
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
             col_interpreter_metadata = json.load(f)[0]
-        df = pl.read_parquet("synthetic_data-2.parquet")
+        df = pl.read_parquet("synthetic_data800k.parquet")
         return ColumnInterpreter(col_interpreter_metadata, df)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")
