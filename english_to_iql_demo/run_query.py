@@ -32,6 +32,16 @@ def interpreter_dispatch(grammar_path):
         s = geo_df["geometry"].simplify(1e-2)
         geo_df["geometry"] = s
         with open("interpreter_metadata.pkl", "rb") as f:
+            df = pl.read_parquet("synthetic_data.parquet", use_pyarrow=True)
+            # override state variable in synthetic data with PUMA state
+            df = df.with_columns(
+                pl.col("State_PUMA10")
+                .str.split_exact("--", 0)
+                .struct.rename_fields(["State_new"])
+                .alias("fields")
+            ).unnest("fields").select(pl.exclude('State')).rename(
+                {"State_new": "State"}
+            )            
             prob_interpreter_metadata = pickle.load(f)
             return ProbInterpreter(
                 variables=prob_interpreter_metadata["variables"],
@@ -39,7 +49,7 @@ def interpreter_dispatch(grammar_path):
                 model=mixture_model,
                 args=prob_interpreter_metadata["args"],
                 inf_alg=SumProductInference(),
-                df=pl.read_parquet("synthetic_data.parquet", use_pyarrow=True),
+                df=df,
                 geo_df=geo_df,
             )
     elif grammar_path == "us_lpm_cols.lark":
