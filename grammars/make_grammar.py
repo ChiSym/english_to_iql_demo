@@ -20,11 +20,14 @@ prob_grammar_template = """start: " probability of " variable EOS
 | " probability of " assignment " given " variable ", " variable EOS
 | " probability of " assignment " given " assignment ", " variable EOS
 | " probability of " assignment " given " variable ", " assignment EOS
-| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] "\\n" -> geo
+| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment] "\\n" -> geo
 | " I can't answer that" EOS
 EOS: "\\n"
-expr: assignment | assignment BOOL_OPERATOR assignment
-BOOL_OPERATOR: " and " | " or "
+expr: assignment 
+    | assignment BOOL_EXPR assignment
+    | assignment BOOL_EXPR assignment BOOL_EXPR assignment
+    | assignment BOOL_EXPR assignment BOOL_EXPR assignment BOOL_EXPR assignment
+BOOL_EXPR: " and " | " or "
 assignment: {assignment}
 variable: {var_nonterminals}
 {var_names}
@@ -90,7 +93,7 @@ def get_grammar_names(col, schema):
     else:
         raise ValueError(f"Unrecognized column {col}")
 
-def make_grammars(schema_path, census_cols_path):
+def make_grammars(schema_path):
     # at most 2 free variables
     schema = json.load(open(schema_path, 'r'))
     #census_cols = json.load(open(census_cols_path, 'r'))
@@ -158,12 +161,11 @@ def test_grammar(grammar, test_sentences):
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--schema-path', help='Path to grammar schema')
-    parser.add_argument('--census-cols-path', help='Path to census cols')
     parser.add_argument('--output-dir', help='Path to output grammar dir', default='')
 
     args = parser.parse_args()
 
-    prob_grammar, cols_grammar = make_grammars(args.schema_path, args.census_cols_path)
+    prob_grammar, cols_grammar = make_grammars(args.schema_path)
     
     test_grammar(prob_grammar, prob_test_sentences)
     test_grammar(cols_grammar, cols_test_sentences)

@@ -8,11 +8,14 @@ start: " probability of " variable EOS
 | " probability of " assignment " given " variable ", " variable EOS
 | " probability of " assignment " given " assignment ", " variable EOS
 | " probability of " assignment " given " variable ", " assignment EOS
-| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] "\n" -> geo
+| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment] "\n" -> geo
 | " I can't answer that" EOS
 EOS: "\n"
-expr: assignment | assignment BOOL_OPERATOR assignment
-BOOL_OPERATOR: " and " | " or "
+expr: assignment 
+    | assignment BOOL_EXPR assignment
+    | assignment BOOL_EXPR assignment BOOL_EXPR assignment
+    | assignment BOOL_EXPR assignment BOOL_EXPR assignment BOOL_EXPR assignment
+BOOL_EXPR: " and " | " or "
 assignment: NORMAL0 OPERATOR NORM_DIGIT
 	| NORMAL1 OPERATOR NORM_DIGIT
 	| NORMAL2 OPERATOR NORM_DIGIT
