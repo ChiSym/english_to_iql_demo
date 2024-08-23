@@ -36,18 +36,20 @@ def make_prob_pre_prompt(schema):
 
 
     def make_preamble(constructor):
-        return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in the query.
+        return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in a query.
 
 
-Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The variables which can be queried are:
+Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The variables which can be queried are related to the US population:
 
 ```
 {schema}
 ```
 
-The variables X and Y should be closely related to the entities mentioned in the user query.
+The variables X and Y should be closely related to the entities mentioned in the user query. 
 
-If the answer is about variables which are not in the above schema, you should answer "I can't answer that". When deciding whether to answer "I can't answer that", pay attention to the above variables.
+Numerical variables can take on -2 (very low); -1 (low); 0 (average); 1 (high) and 2 (very high).
+
+If the answer is about variables which are not in the above schema, you should answer "I can't answer that".
 
 Here are some examples of user queries and paired translations:
 
@@ -55,27 +57,31 @@ Here are some examples of user queries and paired translations:
 
     def make_example_pairs(constructor):
         return [
-            ("How does someone's age affect their income?", 
-            constructor("Total_income", ["Age"])),
-            ("What is the relationship between occupation and voting?", 
-            constructor("Occupation", ["Did_you_vote"])),
+            ("What's the relationship between income and party allegiance?", 
+            constructor("Party_allegiance", ["Total_income"])),
+            ("Show me the probability of recent social media use given occupation", 
+            constructor("Used_social_media_in_part_24hrs", ["Occupation"])),
             ("What are variables related to income?", "I can't answer that"),
-            ("How does someone having covid affect whether or not they are conservative?", 
-            constructor("Political_ideology = 'Likely Conservative'", ["I_had_covid_last_year"])),
-            ("Relationship between Disability and whether they are not currently in the workforce",
-            constructor("Disability", ["Work_industry_sector = 'Not in workforce'"])),
+            ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency?", 
+            constructor("Pay_for_emergency_by_borrowing_from_friends = 'Yes'", ["I_had_covid_last_year"])),
+            ("What is the relationship between disability and whether a voter is unemployed",
+            constructor("Disability", ["Employment_status = 'Not in workforce'"])),
             ("What’s the probability that someone is registered to vote given their location? ", 
             constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"])),
-            ("probability of total income", constructor("Total_income", [])),
-            ("What is the probability that someone is white given their location?",
+            ("Show me the probability that a voter is white given their location?",
             constructor("Race = 'White'", ["State_PUMA10"])),
+            ("Show me the probability of being a low income asian voter given location being California and being democrat",
+            constructor("Total_income < -1 and Race = 'Asian'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"])),
             ("Relationship between liking vegatables and being a democrat", "I can't answer that"),
-            ("Probability that someone has never served in the military given their political ideology",
-            constructor("Military_service = '(d) Never served'", ["Political_ideology "])),
-            ("Relationship between support for expanding medicare depending on some's education, given they are a democrat",
-            constructor("Policy_support_expanding_medicare", ["Educational_attainment", "Party_allegiance = 'Democrat'"])),
-            ("Probability that someone is male and disabled in california",
-            constructor("Sex = 'Male' and Disability = 'Yes'", ["State_PUMA10, State = 'California'"])),
+            ("find the probability of high-income rural voters by location",
+            constructor("Total_income > 1 and Environment = 'Rural'", ["State_PUMA10"])),
+            ("Show me the probability of support for expanding medicare depending on some's party allegiance, given they are a non-college educated",
+            constructor("Policy_support_expanding_medicare", ["Educational_attainment = '(b) High school graduate'", "Party_allegiance"])),
+            ("What is the relationship between being registered to vote and age?", constructor("Registered_to_vote", ["Age"])),
+            ("Probability that a voter is disabled in california given that they are a democrat",
+            constructor("Disability = 'Yes'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"])),
+            ("Show me the probability of poor democratic voters by location",
+            constructor("Total_income < 0 and Party_allegiance = 'Democrat'", ["State_PUMA10"]))
         ]
     
     def make_prompt(preamble, example_pairs, eos=None):
@@ -112,18 +118,15 @@ Here are some examples of user queries and paired translations:
         return preamble + examples  
 
     example_pairs = [
-        ("What are variables related to income?",
-        "Total_income"),
-        ("How does someone's age affect their income?",
-         "I can't answer that"),
-        ("Tell me the variables in the model related to someone's credit rating",
-        "Credit_rating"),
+        ("What are variables related to income?", "Total_income"),
+        ("How does someone's age affect their income?", "I can't answer that"),
+        ("Tell me the variables in the model related to someone's credit rating", "Credit_rating"),
         ("Which variables are related to someone's insurace",
         "Health Insurance Coverage, Insurance Medicare, Insurance_gov_assisted_medicaid, Life_and_other_personal_insurance"),
         ("Why is the sky grey sometimes?",
         "I can't answer that"),
-        ("List two variables that could be confounders of the relationship of between Credit_rating and Race",
-        "Education, Total_income"),
+        ("Show me variables related to language",
+        "English_fluency, Language_spoken_at_home"),
         ("What variables are about education?", "Education, Educational_attainment")
     ]
 
