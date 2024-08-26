@@ -1,29 +1,25 @@
 import logging as log
 from dataclasses import dataclass
-from itertools import count
+from fastapi import Request
 from typing import Annotated, List
 import traceback
 
 import polars as pl
 from lark import Lark
-from fastapi import FastAPI, Request, Form
-from fastapi.staticfiles import StaticFiles
-from jinja2_fragments.fastapi import Jinja2Blocks
 
 from english_to_iql_demo.english_to_iql import english_query_to_iql, sync_query_state, OOD_REPLY
 from english_to_iql_demo.plot import plot_dispatch
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
 
+from chat_demo.chat_demo_server import ChatDemoServer
+
+
 log.getLogger().setLevel(log.DEBUG)
 log.getLogger("jax").setLevel(log.WARNING)
 log.getLogger("asyncio").setLevel(log.WARNING)
 
 
-templates = Jinja2Blocks(directory="src")
-query_counter = count(1)
-app = FastAPI()
-app.mount("/static", StaticFiles(directory="dist"), name="static")
 
 @dataclass
 class Data:
@@ -75,50 +71,49 @@ data = Data(
     current_dsl="OOD",
 )
 
-@app.get("/")
-async def root(request: Request):
-    context = plot_dispatch(data.current_dsl, data.df)
+default_context = {"page_title": "GenParse/LPM demo",
+                #    "extra_js_scripts": "<script goes here..."
+                #    "extra_css": "<style goes here...",
+                   "english_query_placeholder": "Ask a question in plain English",
+                   "row_result_template": "row_result_lpm_demo.html.jinja", 
+                   "query2_template": "query2_lpm_demo.html.jinja"}
 
-    return templates.TemplateResponse(
-        "index.html.jinja",
-        {"request": request, 
-         "idnum": next(query_counter),
-         "root": True,
-        **context},
-    )
+templates = ChatDemoServer.get_templates("src")
 
-
-@app.post("/post_english_query")
-async def post_english_query(request: Request, english_query: Annotated[str, Form()]):
+async def post_english_query(request: Request, english_query: str, query_counter):
     data.english_query = english_query
 
     try:
         data.iql_queries = english_query_to_iql(data)
+        log.debug(f"Returned {len(data.iql_queries)} queries")
         data.iql_query = data.iql_queries[0]["query"]
+
+        return templates.TemplateResponse(
+            "index.html.jinja",
+            default_context |
+            {"request": request, 
+            "idnum": next(query_counter),
+            "iql_query": data.iql_query, 
+            "iql_queries": data.iql_queries},
+            block_name="query2",
+        )
+    
     except Exception as e:
         log.error(f"Error converting English query (\"{english_query}\") to GenSQL: {e}")
         return templates.TemplateResponse(
             "index.html.jinja",
+            default_context |
             {"request": request, 
              "idnum": next(query_counter),
              "iql_query": f"{e}",
              "iql_queries": [{"query": f"{e}", "pval": 0.999999}]
              },
-            block_name="iql_query")
+            block_name="query2")
 
-    return templates.TemplateResponse(
-        "index.html.jinja",
-        {"request": request, 
-         "idnum": next(query_counter),
-         "iql_query": data.iql_query, 
-         "iql_queries": data.iql_queries},
-        block_name="iql_query",
-    )
 
-@app.post("/post_iql_query")
-async def post_iql_query(request: Request):
+async def post_iql_query(request: Request, query_counter, **kwargs):
     form_data = await request.form()
-    log.debug(f"/post_iql_query form data: {form_data}")
+    log.debug(f"post_iql_query form data: {form_data}")
     
     form_query = form_data.get('iql_query', '')
     if form_query != data.iql_query:
@@ -131,25 +126,34 @@ async def post_iql_query(request: Request):
         else:
             data.df = run_query(data.parser, data.interpreter, form_query)
             context = plot_dispatch(data.current_dsl, data.df)
+        
+        return templates.TemplateResponse(
+            "index.html.jinja", 
+            default_context |
+            {"request": request, 
+            "english_query": form_data["english_query"], 
+            "query2_html": form_data["iql_query"], 
+            "idnum": next(query_counter), 
+            **context}, 
+            block_name="plot"
+        )
+    
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         traceback.print_exception(e)
         return templates.TemplateResponse(
             "index.html.jinja",
+            default_context |
             {"request": request, 
              "english_query": form_data["english_query"], 
-             "gensql_query": form_data["iql_query"], 
+             "query2_html": form_data["iql_query"], 
              "idnum": next(query_counter), 
              "error": f"{e}"},
             block_name="plot",
         )
 
-    return templates.TemplateResponse(
-        "index.html.jinja", 
-        {"request": request, 
-         "english_query": form_data["english_query"], 
-         "gensql_query": form_data["iql_query"], 
-         "idnum": next(query_counter), 
-         **context}, 
-        block_name="plot"
-    )
+
+
+server = ChatDemoServer(templates, default_context, post_english_query, post_iql_query)
+server.setup_routes() # Create the default routes
+app = server.get_app() # Expose the app for uvicorn CLI
