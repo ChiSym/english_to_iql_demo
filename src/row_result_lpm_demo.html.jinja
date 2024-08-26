@@ -1,0 +1,20 @@
+{% if chart %}
+    <div class="col-span-8 row-span-2 w-full h-full overflow-x-auto flex justify-center items-center">
+        <div id="vis-{{idnum}}"></div>
+    </div>
+    <script type="text/javascript">
+        var spec = {{ chart | tojson | safe }} ;
+        var opt = {
+            "renderer": "svg", 
+            "actions": false
+        };
+        vegaEmbed("#vis-{{idnum}}", spec, opt).then(result => {
+            document.getElementById("vis-{{idnum}}").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+            console.debug("Inserted plot {{idnum}}");
+        })
+    </script>
+{% else %}
+    <div class="col-span-8 row-span-2 w-full h-full overflow-x-auto flex justify-center items-center">
+        <div id="vis-{{idnum}}">Missing fields. Template was given nothing to render.</div>
+    </div>
+{% endif %} 
