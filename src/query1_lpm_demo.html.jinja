@@ -1,0 +1,5 @@
+<div class="flex flex-row w-full h-full gap-y-2 gap-x-4">
+    <textarea name="english_query" id="english_query" placeholder="{{ english_query_placeholder | default("Please enter an English query") | e }}" class="basis-4/5 p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
+    {# <div id="query1-dropzone" class="basis-1/5 dropzone">FOOO</div> #}
+    <input hx-on:change="console.log('file input changed')" hx-on:input="console.log('file input has input')" type='file' name='file'>
+</div>

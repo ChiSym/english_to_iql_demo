@@ -55,7 +55,7 @@ def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: 
     x = requests.post(genparse_url, json = request, headers=headers)
 
     response = json.loads(x.text)
-    print(response)
+    # print(response)
     posterior = response['posterior']
     sorted_posterior = [
         {"query": k.strip(), "pval": v} 

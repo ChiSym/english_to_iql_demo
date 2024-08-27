@@ -142,8 +142,6 @@ def plot_lpm(df: pl.DataFrame) -> dict:
     col_counter = Counter(col_types)
     log.debug(col_counter)
     chart = None
-    log.debug(col_counter)
-    chart = None
 
     if col_counter['quantitative'] == 1 and col_counter['nominal'] == 0:
         q_var = nonp_df.columns[0]

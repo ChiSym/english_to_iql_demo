@@ -76,16 +76,33 @@ default_context = {"page_title": "GenParse/LPM demo",
                 #    "extra_css": "<style goes here...",
                    "english_query_placeholder": "Ask a question in plain English",
                    "row_result_template": "row_result_lpm_demo.html.jinja", 
-                   "query2_template": "query2_lpm_demo.html.jinja"}
+                   "query1_template": "query1_lpm_demo.html.jinja",
+                   "query2_template": "query2_lpm_demo.html.jinja",
+                   "extra_query1_form_attrs": 'hx-encoding="multipart/form-data"'}
 
 templates = ChatDemoServer.get_templates("src")
 
 async def post_english_query(request: Request, english_query: str, query_counter):
-    data.english_query = english_query
-
     try:
+        form_data = dict(await request.form())
+
+        # Check if 'file' is in the form data
+        if 'file' in form_data:
+            file = form_data['file']
+            log.debug(f"File info:")
+            log.debug(f"  Filename: {file.filename}")
+            log.debug(f"  Content type: {file.content_type}")
+            log.debug(f"  File size: {len(file.file.read())} bytes")
+            # Reset the file pointer to the beginning
+            file.file.seek(0)
+
+            # TODO: Something with the file
+        else:
+            log.debug("No file was uploaded in this request.")
+            
+        data.english_query = english_query
         data.iql_queries = english_query_to_iql(data)
-        log.debug(f"Returned {len(data.iql_queries)} queries")
+        # log.debug(f"Returned {len(data.iql_queries)} queries")
         data.iql_query = data.iql_queries[0]["query"]
 
         return templates.TemplateResponse(
@@ -113,7 +130,7 @@ async def post_english_query(request: Request, english_query: str, query_counter
 
 async def post_iql_query(request: Request, query_counter, **kwargs):
     form_data = await request.form()
-    log.debug(f"post_iql_query form data: {form_data}")
+    # log.debug(f"post_iql_query form data: {form_data}")
     
     form_query = form_data.get('iql_query', '')
     if form_query != data.iql_query:
