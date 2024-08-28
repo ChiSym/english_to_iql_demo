@@ -177,3 +177,4 @@ node_modules/
 .vscode-test
 
 synthetic_data800k.parquet
+uvicorn.log

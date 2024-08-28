@@ -370,7 +370,6 @@ ipdb = "^0.13.13"
 jinja2 = "^3.1.2"
 jinja2-fragments = "^1.1.0"
 pyarrow = "^16.1.0"
-pytailwindcss = "^0.2.0"
 pytest = "^8.2.2"
 python-multipart = "^0.0.6"
 requests = "^2.32.3"
@@ -379,8 +378,8 @@ uvicorn = "^0.23.2"
 [package.source]
 type = "git"
 url = "https://github.com/probcomp/chat_demo_server.git"
-reference = "fadf9069fbabadc0cb4dddf46637eac17c73dbc7"
-resolved_reference = "fadf9069fbabadc0cb4dddf46637eac17c73dbc7"
+reference = "152cb94dc8192317db30ba086a436a024dbd373f"
+resolved_reference = "152cb94dc8192317db30ba086a436a024dbd373f"
 
 [[package]]
 name = "click"
@@ -2038,17 +2037,6 @@ files = [
 certifi = "*"
 
 [[package]]
-name = "pytailwindcss"
-version = "0.2.0"
-description = "Standalone Tailwind CSS CLI, installable via pip. Use Tailwind CSS without Node.js."
-optional = false
-python-versions = ">=3.8,<4.0"
-files = [
-    {file = "pytailwindcss-0.2.0-py3-none-any.whl", hash = "sha256:30e7bd3b78de19a39a7e66329db02d393ee540f010924397b4d780e85041fae4"},
-    {file = "pytailwindcss-0.2.0.tar.gz", hash = "sha256:112718583a33f42c57b2718270dd0e0605574da0023cab4829fad3a98ebe450b"},
-]
-
-[[package]]
 name = "pytest"
 version = "8.2.2"
 description = "pytest: simple powerful testing with Python"
@@ -2886,4 +2874,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "81ef35f2fdc9ac3c6a88af3c6e6fc67f419c110dccc70d5507429689ba60f45a"
+content-hash = "d837922d42d363ccc940d3e85d2b8cfca6402d6920a0007b929cafd28dc83b04"

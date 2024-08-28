@@ -155,6 +155,11 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
 
 
 
-server = ChatDemoServer(templates, default_context, post_english_query, post_iql_query)
+server = ChatDemoServer(
+    templates=templates, 
+    default_context=default_context, 
+    query1_callback=post_english_query, 
+    query2_callback=post_iql_query
+)
 server.setup_routes() # Create the default routes
 app = server.get_app() # Expose the app for uvicorn CLI

@@ -15,7 +15,6 @@ polars = "^1.1.0"
 jinja2 = "^3.1.2"
 jinja2-fragments = "^1.1.0"
 python-multipart = "^0.0.6"
-pytailwindcss = "^0.2.0"
 black = "^23.9.1"
 requests = "^2.32.3"
 altair = "^5.3.0"
@@ -27,8 +26,7 @@ pyyaml = "^6.0.1"
 vegafusion = {extras = ["embed"], version = "^1.6.9"}
 geopandas = "^1.0.1"
 pyogrio = "^0.9.0"
-chat-demo = { git = "https://github.com/probcomp/chat_demo_server.git", rev = "fadf9069fbabadc0cb4dddf46637eac17c73dbc7" }
-
+chat-demo = { git = "https://github.com/probcomp/chat_demo_server.git", rev = "152cb94dc8192317db30ba086a436a024dbd373f" }
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"

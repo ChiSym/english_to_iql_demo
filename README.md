@@ -14,10 +14,7 @@
 
 ### Development
 
-1. To start the web server, run `uvicorn english_to_iql_demo.main:app --reload`. It will be available on localhost at port 8000.
-2. To work on the Tailwind CSS, run `npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch`
-
-By default, Tailwind only adds necessary CSS classes, so you can't add unused classes in the browser for experimenting. (There's a commented-out line in the template that loads all Tailwind styles, so you can do this, but it messes with the "Loading..." spinner when used.)
+To start the web server, run `uvicorn english_to_iql_demo.main:app --reload`. It will be available on localhost at port 8000.
 
 
 ### Production
