@@ -133,6 +133,7 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
             {"request": request, 
             "english_query": form_data["english_query"], 
             "query2_html": form_data["iql_query"], 
+            "query2_modified": form_data["query2_modified"], 
             "idnum": next(query_counter), 
             **context}, 
             block_name="plot"

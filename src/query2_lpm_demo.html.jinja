@@ -7,6 +7,13 @@
         <div class='h-8 w-8 bg-gray-500 rounded-full animate-bounce'></div>
     </div>
     <textarea name="iql_query" id="iql_textarea" class="w-full h-full p-2 text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="Translated query">{{ iql_query }}</textarea>
+    <input type="hidden" name="query2_modified" id="query2_modified" value="0">
+    <script>
+        document.getElementById('iql_textarea').addEventListener('input', function() {
+            document.getElementById('query2_modified').value = '1';
+            {# console.log('Set query2_modified to', document.getElementById('query2_modified').value); #}
+        });
+    </script>
 </div>
 <div class="col-span-6 grid grid-cols-subgrid grid-rows-subgrid justify-between p-0">
     <div id="qpbar" class="col-span-2"></div>
@@ -219,6 +226,8 @@
                 result.view.addSignalListener('select', (name, value) => {
                     if (value) {
                         document.getElementById("iql_textarea").value = value.query;
+                        document.getElementById('query2_modified').value = '0';
+                        {# console.log('Reset query2_modified to', document.getElementById('query2_modified').value); #}
                     }
                 });
             });
