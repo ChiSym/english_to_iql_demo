@@ -26,7 +26,7 @@ pyyaml = "^6.0.1"
 vegafusion = {extras = ["embed"], version = "^1.6.9"}
 geopandas = "^1.0.1"
 pyogrio = "^0.9.0"
-chat-demo = { git = "https://github.com/probcomp/chat_demo_server.git", rev = "152cb94dc8192317db30ba086a436a024dbd373f" }
+chat-demo = { git = "https://github.com/probcomp/chat_demo_server.git", rev = "110d4896b3d0e6344415fe35a80da97319bda532" }
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
