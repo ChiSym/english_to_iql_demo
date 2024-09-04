@@ -361,7 +361,7 @@ description = "A base for ChatGPT-style probcomp demos"
 optional = false
 python-versions = ">=3.10,<3.13"
 files = []
-develop = true
+develop = false
 
 [package.dependencies]
 black = "^23.9.1"
@@ -376,8 +376,10 @@ requests = "^2.32.3"
 uvicorn = "^0.23.2"
 
 [package.source]
-type = "directory"
-url = "../chat_demo_server"
+type = "git"
+url = "https://github.com/probcomp/chat_demo_server.git"
+reference = "0e8e470c89aedf59fbe3155ae7924da0612fc22a"
+resolved_reference = "0e8e470c89aedf59fbe3155ae7924da0612fc22a"
 
 [[package]]
 name = "click"
@@ -2872,4 +2874,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "0d0b5569efd9afeb04449216f9f0222fecebf3334c00668cac1df4c580d4ec0b"
+content-hash = "063695c69f931f3e1d52204fea0bc6bac436b97d6b3f6d0fdf7b25abf78a8a14"
