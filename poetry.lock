@@ -378,8 +378,8 @@ uvicorn = "^0.23.2"
 [package.source]
 type = "git"
 url = "https://github.com/probcomp/chat_demo_server.git"
-reference = "152cb94dc8192317db30ba086a436a024dbd373f"
-resolved_reference = "152cb94dc8192317db30ba086a436a024dbd373f"
+reference = "0e8e470c89aedf59fbe3155ae7924da0612fc22a"
+resolved_reference = "0e8e470c89aedf59fbe3155ae7924da0612fc22a"
 
 [[package]]
 name = "click"
@@ -2874,4 +2874,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "d837922d42d363ccc940d3e85d2b8cfca6402d6920a0007b929cafd28dc83b04"
+content-hash = "063695c69f931f3e1d52204fea0bc6bac436b97d6b3f6d0fdf7b25abf78a8a14"
