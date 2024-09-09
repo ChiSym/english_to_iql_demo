@@ -41,7 +41,7 @@ def interpreter_dispatch(grammar_path):
                 .alias("fields")
             ).unnest("fields").select(pl.exclude('State')).rename(
                 {"State_new": "State"}
-            )            
+            )
             prob_interpreter_metadata = pickle.load(f)
             return ProbInterpreter(
                 variables=prob_interpreter_metadata["variables"],

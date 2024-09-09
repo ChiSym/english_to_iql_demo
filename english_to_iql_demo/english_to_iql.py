@@ -58,8 +58,8 @@ def english_query_to_iql_posterior(user_query: str, genparse_url: str, grammar: 
     # print(response)
     posterior = response['posterior']
     sorted_posterior = [
-        {"query": k.strip(), "pval": v} 
-        for k, v 
+        {"query": k.strip(), "pval": v}
+        for k, v
         in sorted(posterior.items(), key=lambda item: -item[1])
     ]
     log_weights = [v for k,v in response['log_weights'].items() if k.strip()!=OOD_REPLY]

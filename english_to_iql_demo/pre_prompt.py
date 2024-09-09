@@ -25,7 +25,7 @@ def pre_prompt_dispatch(grammar_path):
 
 
 def make_prob_pre_prompt(schema):
-   
+
     def constructor(event, conditioners):
         if len(conditioners) == 0:
             return f"probability of {event}"
@@ -45,7 +45,7 @@ Statements should take the form "{constructor('X','Y')}" where X is one of the f
 {schema}
 ```
 
-The variables X and Y should be closely related to the entities mentioned in the user query. 
+The variables X and Y should be closely related to the entities mentioned in the user query.
 
 Numerical variables can take on -2 (very low); -1 (low); 0 (average); 1 (high) and 2 (very high).
 
@@ -57,16 +57,16 @@ Here are some examples of user queries and paired translations:
 
     def make_example_pairs(constructor):
         return [
-            ("What's the relationship between income and party allegiance?", 
+            ("What's the relationship between income and party allegiance?",
             constructor("Party_allegiance", ["Total_income"])),
-            ("Show me the probability of recent social media use given occupation", 
+            ("Show me the probability of recent social media use given occupation",
             constructor("Used_social_media_in_part_24hrs", ["Occupation"])),
             ("What are variables related to income?", "I can't answer that"),
-            ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency?", 
+            ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency?",
             constructor("Pay_for_emergency_by_borrowing_from_friends = 'Yes'", ["I_had_covid_last_year"])),
             ("What is the relationship between disability and whether a voter is unemployed",
             constructor("Disability", ["Employment_status = 'Not in workforce'"])),
-            ("What’s the probability that someone is registered to vote given their location? ", 
+            ("What’s the probability that someone is registered to vote given their location? ",
             constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"])),
             ("Show me the probability that a voter is white given their location?",
             constructor("Race = 'White'", ["State_PUMA10"])),
@@ -83,14 +83,14 @@ Here are some examples of user queries and paired translations:
             ("Show me the probability of poor democratic voters by location",
             constructor("Total_income < 0 and Party_allegiance = 'Democrat'", ["State_PUMA10"]))
         ]
-    
+
     def make_prompt(preamble, example_pairs, eos=None):
         examples = '\n\n'.join([f"Q: {nl}\nA: {fl}{f' {eos}' if eos is not None else ''}" for (nl,fl) in example_pairs]) + "\n\nQ: {user_query}\nA:"
         return preamble + examples
 
     pre_prompt = make_prompt(
-        preamble = make_preamble(constructor), 
-        example_pairs = make_example_pairs(constructor), 
+        preamble = make_preamble(constructor),
+        example_pairs = make_example_pairs(constructor),
         eos = None
     )
 
@@ -115,7 +115,7 @@ Here are some examples of user queries and paired translations:
 
     def make_prompt(preamble, example_pairs, eos=None):
         examples = '\n\n'.join([f"Q: {nl}\nA: {fl}{f' {eos}' if eos is not None else ''}" for (nl,fl) in example_pairs]) + "\n\nQ: {user_query}\nA:"
-        return preamble + examples  
+        return preamble + examples
 
     example_pairs = [
         ("What are variables related to income?", "Total_income"),

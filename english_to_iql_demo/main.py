@@ -45,7 +45,7 @@ grammar_paths = ["us_lpm_prob.lark", "us_lpm_cols.lark"]
 indices = range(len(grammar_paths))
 genparse_urls = [
     "http://34.31.182.25:8888/infer",
-    # "http://34.122.30.137:8888/infer", 
+    # "http://34.122.30.137:8888/infer",
     "http://35.225.217.118:8888/infer",
     ]
 assert len(grammar_paths) == len(set(genparse_urls))
@@ -75,7 +75,7 @@ default_context = {"page_title": "GenParse/LPM demo",
                 #    "extra_js_scripts": "<script goes here..."
                 #    "extra_css": "<style goes here...",
                    "english_query_placeholder": "Ask a question in plain English",
-                   "row_result_template": "row_result_lpm_demo.html.jinja", 
+                   "row_result_template": "row_result_lpm_demo.html.jinja",
                    "query1_template": "query1_lpm_demo.html.jinja",
                    "query2_template": "query2_lpm_demo.html.jinja",
                    "extra_query1_form_attrs": 'hx-encoding="multipart/form-data"'}
@@ -99,7 +99,7 @@ async def post_english_query(request: Request, english_query: str, query_counter
             # TODO: Something with the file
         else:
             log.debug("No file was uploaded in this request.")
-            
+
         data.english_query = english_query
         data.iql_queries = english_query_to_iql(data)
         # log.debug(f"Returned {len(data.iql_queries)} queries")
@@ -108,19 +108,19 @@ async def post_english_query(request: Request, english_query: str, query_counter
         return templates.TemplateResponse(
             "index.html.jinja",
             default_context |
-            {"request": request, 
+            {"request": request,
             "idnum": next(query_counter),
-            "iql_query": data.iql_query, 
+            "iql_query": data.iql_query,
             "iql_queries": data.iql_queries},
             block_name="query2",
         )
-    
+
     except Exception as e:
         log.error(f"Error converting English query (\"{english_query}\") to GenSQL: {e}")
         return templates.TemplateResponse(
             "index.html.jinja",
             default_context |
-            {"request": request, 
+            {"request": request,
              "idnum": next(query_counter),
              "iql_query": f"{e}",
              "iql_queries": [{"query": f"{e}", "pval": 0.999999}]
@@ -131,7 +131,7 @@ async def post_english_query(request: Request, english_query: str, query_counter
 async def post_iql_query(request: Request, query_counter, **kwargs):
     form_data = await request.form()
     # log.debug(f"post_iql_query form data: {form_data}")
-    
+
     form_query = form_data.get('iql_query', '')
     if form_query != data.iql_query:
         sync_query_state(data, form_query)
@@ -143,29 +143,29 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
         else:
             data.df = run_query(data.parser, data.interpreter, form_query)
             context = plot_dispatch(data.current_dsl, data.df)
-        
+
         return templates.TemplateResponse(
-            "index.html.jinja", 
+            "index.html.jinja",
             default_context |
-            {"request": request, 
-            "english_query": form_data["english_query"], 
-            "query2_html": form_data["iql_query"], 
-            "query2_modified": form_data["query2_modified"], 
-            "idnum": next(query_counter), 
-            **context}, 
+            {"request": request,
+            "english_query": form_data["english_query"],
+            "query2_html": form_data["iql_query"],
+            "query2_modified": form_data["query2_modified"],
+            "idnum": next(query_counter),
+            **context},
             block_name="plot"
         )
-    
+
     except Exception as e:
         log.error(f"Error running GenSQL query: {e}")
         traceback.print_exception(e)
         return templates.TemplateResponse(
             "index.html.jinja",
             default_context |
-            {"request": request, 
-             "english_query": form_data["english_query"], 
-             "query2_html": form_data["iql_query"], 
-             "idnum": next(query_counter), 
+            {"request": request,
+             "english_query": form_data["english_query"],
+             "query2_html": form_data["iql_query"],
+             "idnum": next(query_counter),
              "error": f"{e}"},
             block_name="plot",
         )
@@ -173,9 +173,9 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
 
 
 server = ChatDemoServer(
-    templates=templates, 
-    default_context=default_context, 
-    query1_callback=post_english_query, 
+    templates=templates,
+    default_context=default_context,
+    query1_callback=post_english_query,
     query2_callback=post_iql_query
 )
 server.setup_routes() # Create the default routes

@@ -10,9 +10,9 @@ import geopandas as gpd
 alt.data_transformers.enable("vegafusion")
 
 NUMERIC_POLARS_DTYPES = [
-    pl.Int8, pl.Int16, pl.Int32, pl.Int64, 
+    pl.Int8, pl.Int16, pl.Int32, pl.Int64,
     pl.UInt8, pl.UInt16, pl.UInt32, pl.UInt64,
-    pl.Float32, pl.Float64, 
+    pl.Float32, pl.Float64,
 ]
 
 custom_order  = {"Credit_rating": [
@@ -74,7 +74,7 @@ def plot_data(df: pl.DataFrame) -> dict:
         for x, x_type in zip(df.columns[:4], col_types)
     ]
 
-    # a bit clunky but it'll do for now---the issue is that 
+    # a bit clunky but it'll do for now---the issue is that
     # I couldn't get `repeat` to work with the varying Q and N plots
     if len(charts) == 1:
         chart = charts[0]
@@ -204,20 +204,20 @@ def plot_lpm(df: pl.DataFrame) -> dict:
 
         if n_var in custom_order.keys():
             color = color.sort(custom_order[n_var])
-        
+
         if n_var in ordinal_vars:
             color = color.scale(scheme="viridis")
 
         group_col = n_var
 
         selection = alt.selection_point(
-            on='click', 
+            on='click',
             # what should the selection return when nothing is selected? altair weirdly selects *everything*
-            empty=False, 
+            empty=False,
             # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
-            nearest=True, 
+            nearest=True,
             # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
-            fields=[group_col] 
+            fields=[group_col]
         )
 
         # opacity is based on weight var when selected, invisible otherwise
@@ -239,7 +239,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
                 **shared_line_encoding
             ),
-            # These invisible point marks exist to support "nearest" selection, 
+            # These invisible point marks exist to support "nearest" selection,
             # which doesn't work well with line/area marks
             alt.Chart(df).mark_point().encode(
                 opacity = {"value": 0},
@@ -276,20 +276,20 @@ def plot_lpm(df: pl.DataFrame) -> dict:
 
         if n_var2 in custom_order.keys():
             color = color.sort(custom_order[n_var2])
-        
+
         if n_var2 in ordinal_vars:
             color = color.scale(scheme="viridis")
 
         group_col = n_var2
 
         selection = alt.selection_point(
-            on='click', 
+            on='click',
             # what should the selection return when nothing is selected? altair weirdly selects *everything*
-            empty=False, 
+            empty=False,
             # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
-            nearest=True, 
+            nearest=True,
             # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
-            fields=[group_col] 
+            fields=[group_col]
         )
 
         # opacity is based on weight var when selected, invisible otherwise
@@ -304,7 +304,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
             "x": x,
             "y": alt.Y(f'mean({p_mean_var}):Q', title="probability").scale(zero=False)
         }
-        
+
         chart = alt.layer(
             alt.Chart(df).mark_bar(filled=False).encode(
                 color=color,
@@ -312,7 +312,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
                 **shared_line_encoding
             ),
-            # These invisible point marks exist to support "nearest" selection, 
+            # These invisible point marks exist to support "nearest" selection,
             # which doesn't work well with line/area marks
             alt.Chart(df).mark_point().encode(
                 opacity = {"value": 0},
@@ -345,13 +345,13 @@ def plot_lpm(df: pl.DataFrame) -> dict:
         group_col = q_var2
 
         selection = alt.selection_point(
-            on='click', 
+            on='click',
             # what should the selection return when nothing is selected? altair weirdly selects *everything*
-            empty=False, 
+            empty=False,
             # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
-            nearest=True, 
+            nearest=True,
             # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
-            fields=[group_col] 
+            fields=[group_col]
         )
 
         # opacity is based on weight var when selected, invisible otherwise
@@ -373,7 +373,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
                 strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
                 **shared_line_encoding
             ),
-            # These invisible point marks exist to support "nearest" selection, 
+            # These invisible point marks exist to support "nearest" selection,
             # which doesn't work well with line/area marks
             alt.Chart(df).mark_point().encode(
                 opacity = {"value": 0},
@@ -394,7 +394,7 @@ def plot_lpm(df: pl.DataFrame) -> dict:
 
     if not chart:
         raise ValueError("No chart type matches the data's column types")
-    
+
     return {"chart": json.loads(chart.to_json(format="vega"))}
 
 
