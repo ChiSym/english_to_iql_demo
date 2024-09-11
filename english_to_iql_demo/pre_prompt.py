@@ -26,11 +26,11 @@ def pre_prompt_dispatch(grammar_path):
 
 def make_prob_pre_prompt(schema):
 
-    def constructor(event, conditioners):
+    def constructor(event, conditioners, model):
         if len(conditioners) == 0:
-            return f"probability of {event}"
+            return f"probability of {event} using {model}"
         else:
-            return f"probability of {event} given {', '.join(conditioners)}"
+            return f"probability of {event} given {', '.join(conditioners)} using {model}"
 
     # edit schema to remove PUMA10 levels, so that we fit the context window
 
@@ -39,7 +39,7 @@ def make_prob_pre_prompt(schema):
         return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in a query.
 
 
-Statements should take the form "{constructor('X','Y')}" where X is one of the following variables and Y one or a list of multiple variables. The variables which can be queried are related to the US population:
+Statements should take the form "{constructor('X','Y', 'Z')}" where X is one of the following variables, Y one or a list of multiple variables and Z a particular model. The variables which can be queried are related to the US population:
 
 ```
 {schema}
@@ -49,6 +49,8 @@ The variables X and Y should be closely related to the entities mentioned in the
 
 Numerical variables can take on -2 (very low); -1 (low); 0 (average); 1 (high) and 2 (very high).
 
+The models which can be queried are "ChiExpert", "GLM" and "data". You should use the model mentionned in the user query, and default to "ChiExpert" if the model is not mentionned in the query.
+
 If the answer is about variables which are not in the above schema, you should answer "I can't answer that".
 
 Here are some examples of user queries and paired translations:
@@ -57,31 +59,31 @@ Here are some examples of user queries and paired translations:
 
     def make_example_pairs(constructor):
         return [
-            ("What's the relationship between income and party allegiance?",
-            constructor("Party_allegiance", ["Total_income"])),
-            ("Show me the probability of recent social media use given occupation",
-            constructor("Used_social_media_in_part_24hrs", ["Occupation"])),
+            ("Show the relationship between income and party allegiance using ChiExpert",
+            constructor("Party_allegiance", ["Total_income"], "ChiExpert")),
+            ("Show me the probability of recent social media use given occupation under the data",
+            constructor("Used_social_media_in_part_24hrs", ["Occupation"], 'data')),
             ("What are variables related to income?", "I can't answer that"),
-            ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency?",
-            constructor("Pay_for_emergency_by_borrowing_from_friends = 'Yes'", ["I_had_covid_last_year"])),
+            ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency under the GLM?",
+            constructor("Pay_for_emergency_by_borrowing_from_friends = 'Yes'", ["I_had_covid_last_year"], 'GLM')),
             ("What is the relationship between disability and whether a voter is unemployed",
-            constructor("Disability", ["Employment_status = 'Not in workforce'"])),
-            ("What’s the probability that someone is registered to vote given their location? ",
-            constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"])),
-            ("Show me the probability that a voter is white given their location?",
-            constructor("Race = 'White'", ["State_PUMA10"])),
-            ("Show me the probability of being a low income asian voter given location being California and being democrat",
-            constructor("Total_income < -1 and Race = 'Asian'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"])),
-            ("Relationship between liking vegatables and being a democrat", "I can't answer that"),
-            ("find the probability of high-income rural voters by location",
-            constructor("Total_income > 1 and Environment = 'Rural'", ["State_PUMA10"])),
-            ("Show me the probability of support for expanding medicare depending on some's party allegiance, given they are a non-college educated",
-            constructor("Policy_support_expanding_medicare", ["Educational_attainment = '(b) High school graduate'", "Party_allegiance"])),
-            ("What is the relationship between being registered to vote and age?", constructor("Registered_to_vote", ["Age"])),
-            ("Probability that a voter is disabled in california given that they are a democrat",
-            constructor("Disability = 'Yes'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"])),
-            ("Show me the probability of poor democratic voters by location",
-            constructor("Total_income < 0 and Party_allegiance = 'Democrat'", ["State_PUMA10"]))
+            constructor("Disability", ["Employment_status = 'Not in workforce'"], 'ChiExpert')),
+            ("What’s the probability that someone is registered to vote given their location under ChiExpert? ",
+            constructor("Registered_to_vote = 'Yes'", ["State_PUMA10"], 'ChiExpert')),
+            ("Show me the probability that a voter is white given their location using GLM",
+            constructor("Race = 'White'", ["State_PUMA10"], "GLM")),
+            ("Show me the probability of being a low income asian voter given location being California and being democrat using the data",
+            constructor("Total_income < -1 and Race = 'Asian'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"], 'data')),
+            ("Relationship between liking vegatables and being a democrat under ChiExpert", "I can't answer that"),
+            ("find the probability of high-income rural voters by location using ChiExpert",
+            constructor("Total_income > 1 and Environment = 'Rural'", ["State_PUMA10"], 'ChiExpert')),
+            ("Show me the probability of support for expanding medicare depending on some's party allegiance, given they are a non-college educated, using ChiExpert",
+            constructor("Policy_support_expanding_medicare", ["Educational_attainment = '(b) High school graduate'", "Party_allegiance"], 'ChiExpert')),
+            ("What is the relationship between being registered to vote and age under the data?", constructor("Registered_to_vote", ["Age"], 'data')),
+            ("Probability that a voter is disabled in california given that they are a democrat using a GLM",
+            constructor("Disability = 'Yes'", ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"], 'GLM')),
+            ("Show me the probability of poor democratic voters by location using ChiExpert",
+            constructor("Total_income < 0 and Party_allegiance = 'Democrat'", ["State_PUMA10"], 'ChiExpert'))
         ]
 
     def make_prompt(preamble, example_pairs, eos=None):

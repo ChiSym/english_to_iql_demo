@@ -1,6 +1,8 @@
-import argparse
-import json
+# Example usage: python make_grammar.py --schema-path ../schema.json
+
 import os
+import json
+import argparse
 import warnings
 from lark import Lark
 
@@ -10,18 +12,22 @@ CATEGORICAL_EXCLUSIONS_PROB = ['Zipcode', 'State_PUMA10']
 NORMAL_EXCLUSIONS = []
 
 # we'll want to change expr to only take Census/PUMS variables
-prob_grammar_template = """start: " probability of " variable EOS
-| " probability of " variable " given " variable EOS
-| " probability of " variable " given " assignment EOS 
-| " probability of " variable " given " assignment ", " variable EOS
-| " probability of " variable " given " variable ", " assignment EOS
-| " probability of " variable " given " assignment ", " assignment EOS
-| " probability of " assignment " given " variable EOS
-| " probability of " assignment " given " variable ", " variable EOS
-| " probability of " assignment " given " assignment ", " variable EOS
-| " probability of " assignment " given " variable ", " assignment EOS
-| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " geo_assignment] "\\n" -> geo
-| " I can't answer that" EOS
+prob_grammar_template = """start: query_wrapper EOS
+query_wrapper: (prob_clause | geo) " using ChiExpert" -> chiexpert
+| (prob_clause | geo) " using data" -> data
+| (prob_clause | geo) " using GLM" -> glm
+| "I can't answer that"
+prob_clause: " probability of " variable 
+| " probability of " variable " given " variable
+| " probability of " variable " given " assignment
+| " probability of " variable " given " assignment ", " variable
+| " probability of " variable " given " variable ", " assignment
+| " probability of " variable " given " assignment ", " assignment
+| " probability of " assignment " given " variable
+| " probability of " assignment " given " variable ", " variable
+| " probability of " assignment " given " assignment ", " variable
+| " probability of " assignment " given " variable ", " assignment
+geo: " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment]
 EOS: "\\n"
 expr: geo_assignment 
     | geo_assignment BOOL_EXPR geo_assignment
@@ -137,22 +143,21 @@ def make_grammars(schema_path):
     return us_lpm_prob, us_lpm_cols
 
 prob_test_sentences = [
-    " probability of Age",
-    " probability of Age given Total_income",
-    " probability of Age = -2 given Total_income",
-    " probability of Age = -2 given Total_income, Race",
-    " probability of Age = -2 given Total_income, Race = 'White'",
-    " probability of Total_income given Age = 0, Race",
-    " probability of Total_income given Race, Age = 2",
-    " probability of Total_income given Age = 0, Race = 'White'",
-    " probability of Race = 'White' given State_PUMA10",
+    " probability of Age using ChiExpert",
+    " probability of Age given Total_income using data",
+    " probability of Age = -2 given Total_income using GLM",
+    " probability of Age = -2 given Total_income, Race using ChiExpert",
+    " probability of Age = -2 given Total_income, Race = 'White' using data",
+    " probability of Total_income given Age = 0, Race using GLM",
+    " probability of Total_income given Race, Age = 2 using ChiExpert",
+    " probability of Total_income given Age = 0, Race = 'White' using GLM",
+    " probability of Race = 'White' given State_PUMA10 using data",
 ]
 
 cols_test_sentences = [
     " Age",
     " Age, Total_income",
-    " Age, Total_income, Race",
-    " State_PUMA10"
+    " Age, Total_income, Race"
 ]
 
 def test_grammar(grammar, test_sentences):
@@ -173,6 +178,9 @@ if __name__=='__main__':
     parser.add_argument('--output-dir', help='Path to output grammar dir', default='')
 
     args = parser.parse_args()
+
+    schema_path = os.path.abspath(args.schema_path)
+    output_dir = os.path.abspath(args.output_dir) if args.output_dir else os.getcwd()
 
     prob_grammar, cols_grammar = make_grammars(args.schema_path)
     
