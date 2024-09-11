@@ -1,15 +1,19 @@
-start: " probability of " variable EOS
-| " probability of " variable " given " variable EOS
-| " probability of " variable " given " assignment EOS 
-| " probability of " variable " given " assignment ", " variable EOS
-| " probability of " variable " given " variable ", " assignment EOS
-| " probability of " variable " given " assignment ", " assignment EOS
-| " probability of " assignment " given " variable EOS
-| " probability of " assignment " given " variable ", " variable EOS
-| " probability of " assignment " given " assignment ", " variable EOS
-| " probability of " assignment " given " variable ", " assignment EOS
-| " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " geo_assignment] "\n" -> geo
-| " I can't answer that" EOS
+start: query_wrapper EOS
+query_wrapper: (prob_clause | geo) [" using ChiExpert"] -> chiexpert
+| (prob_clause | geo) " using data" -> data
+| (prob_clause | geo) " using GLM" -> glm
+| "I can't answer that"
+prob_clause: " probability of " variable 
+| " probability of " variable " given " variable
+| " probability of " variable " given " assignment
+| " probability of " variable " given " assignment ", " variable
+| " probability of " variable " given " variable ", " assignment
+| " probability of " variable " given " assignment ", " assignment
+| " probability of " assignment " given " variable
+| " probability of " assignment " given " variable ", " variable
+| " probability of " assignment " given " assignment ", " variable
+| " probability of " assignment " given " variable ", " assignment
+geo: " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment]
 EOS: "\n"
 expr: geo_assignment 
     | geo_assignment BOOL_EXPR geo_assignment

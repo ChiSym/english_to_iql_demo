@@ -18,15 +18,14 @@ python-multipart = "^0.0.6"
 black = "^23.9.1"
 requests = "^2.32.3"
 altair = "^5.3.0"
-pyarrow = "^16.1.0"
 lark = "^1.1.9"
-jax-multimix = {git = "git@github.com:probcomp/jax_multimix.git", branch="schaechtle/larger_grammar-new-model", rev = "8293f767090fb889ed1ae9c20af2ae0f0933f0a1"}
+jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git", rev = "glm_backend"}
 genjax = {version = "^0.5.0", source = "gcp"}
 pyyaml = "^6.0.1"
 vegafusion = {extras = ["embed"], version = "^1.6.9"}
 geopandas = "^1.0.1"
 pyogrio = "^0.9.0"
-chat-demo = { git = "git@github.com:probcomp/chat_demo_server.git", rev = "0e8e470c89aedf59fbe3155ae7924da0612fc22a" }
+chat-demo = { git = "https://github.com/probcomp/chat_demo_server.git"}
 # chat-demo = { path = "../chat_demo_server", develop = true }
 
 [tool.poetry.group.dev.dependencies]
@@ -40,4 +39,3 @@ build-backend = "poetry.core.masonry.api"
 name = "gcp"
 url = "https://us-west1-python.pkg.dev/probcomp-caliban/probcomp/simple/"
 priority = "explicit"
-

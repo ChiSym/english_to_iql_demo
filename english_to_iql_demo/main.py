@@ -130,7 +130,6 @@ async def post_english_query(request: Request, english_query: str, query_counter
 
 async def post_iql_query(request: Request, query_counter, **kwargs):
     form_data = await request.form()
-    # log.debug(f"post_iql_query form data: {form_data}")
 
     form_query = form_data.get('iql_query', '')
     if form_query != data.iql_query:
@@ -139,10 +138,10 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
     try:
         if (data.current_dsl == "OOD") or (form_query.strip() == OOD_REPLY):
             data.df = default_df
-            context = plot_dispatch("OOD", data.df)
+            context = plot_dispatch("OOD", data.df, data.iql_query)
         else:
             data.df = run_query(data.parser, data.interpreter, form_query)
-            context = plot_dispatch(data.current_dsl, data.df)
+            context = plot_dispatch(data.current_dsl, data.df, data.iql_query)
 
         return templates.TemplateResponse(
             "index.html.jinja",
