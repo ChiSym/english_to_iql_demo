@@ -7,6 +7,7 @@ prob_clause: " probability of " sample_variable
 | " probability of " sample_variable ", " sample_variable
 | " probability of " sample_variable " given " condition_variable
 | " probability of " sample_variable ", " sample_variable " given " condition_assignment
+| " probability of " sample_variable ", " sample_variable " given " condition_assignment, ", " condition_assignment
 | " probability of " sample_variable " given " condition_assignment
 | " probability of " sample_variable " given " condition_assignment ", " condition_variable
 | " probability of " sample_variable " given " condition_variable ", " condition_assignment
