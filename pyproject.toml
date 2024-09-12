@@ -19,7 +19,7 @@ black = "^23.9.1"
 requests = "^2.32.3"
 altair = "^5.3.0"
 lark = "^1.1.9"
-jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git", rev = "glm_backend"}
+jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git", rev = "sample_condition_variables"}
 genjax = {version = "^0.5.0", source = "gcp"}
 pyyaml = "^6.0.1"
 vegafusion = {extras = ["embed"], version = "^1.6.9"}

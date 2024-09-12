@@ -8,7 +8,7 @@ import polars as pl
 from lark import Lark
 
 from english_to_iql_demo.english_to_iql import english_query_to_iql, sync_query_state, OOD_REPLY
-from english_to_iql_demo.plot import plot_dispatch
+from english_to_iql_demo.plot import plot_cols, plot_lpm, plot_ood
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
 
@@ -136,12 +136,18 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
         sync_query_state(data, form_query)
 
     try:
-        if (data.current_dsl == "OOD") or (form_query.strip() == OOD_REPLY):
-            data.df = default_df
-            context = plot_dispatch("OOD", data.df, data.iql_query)
-        else:
-            data.df = run_query(data.parser, data.interpreter, form_query)
-            context = plot_dispatch(data.current_dsl, data.df, data.iql_query)
+        match data.current_dsl:
+            case "OOD":
+                data.df = default_df
+                context = plot_ood(data.df)
+            case "LPM":
+                query_schema, data.df = run_query(data.parser, data.interpreter, form_query)
+                context = plot_lpm(data.df, query_schema)
+            case "data":
+                data.df = run_query(data.parser, data.interpreter, form_query)
+                context = plot_cols(data.df)
+            case _:
+                raise log.error(f"Invalid DSL: {data.current_dsl}")
 
         return templates.TemplateResponse(
             "index.html.jinja",

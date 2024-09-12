@@ -17,16 +17,17 @@ query_wrapper: (prob_clause | geo) " using ChiExpert" -> chiexpert
 | (prob_clause | geo) " using data" -> data
 | (prob_clause | geo) " using GLM" -> glm
 | "I can't answer that"
-prob_clause: " probability of " variable 
-| " probability of " variable " given " variable
-| " probability of " variable " given " assignment
-| " probability of " variable " given " assignment ", " variable
-| " probability of " variable " given " variable ", " assignment
-| " probability of " variable " given " assignment ", " assignment
-| " probability of " assignment " given " variable
-| " probability of " assignment " given " variable ", " variable
-| " probability of " assignment " given " assignment ", " variable
-| " probability of " assignment " given " variable ", " assignment
+prob_clause: " probability of " sample_variable 
+| " probability of " sample_variable ", " sample_variable
+| " probability of " sample_variable " given " condition_variable
+| " probability of " sample_variable ", " sample_variable " given " condition_assignment
+| " probability of " sample_variable " given " condition_assignment
+| " probability of " sample_variable " given " condition_assignment ", " condition_variable
+| " probability of " sample_variable " given " condition_variable ", " condition_assignment
+| " probability of " sample_variable " given " condition_assignment ", " condition_assignment
+| " probability of " sample_assignment " given " condition_variable
+| " probability of " sample_assignment " given " condition_variable ", " condition_variable
+| " probability of " sample_assignment " given " condition_assignment ", " condition_variable
 geo: " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment]
 EOS: "\\n"
 expr: geo_assignment 
@@ -34,6 +35,10 @@ expr: geo_assignment
     | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
     | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
 BOOL_EXPR: " and " | " or "
+sample_assignment: assignment
+condition_assignment: assignment
+sample_variable: variable
+condition_variable: variable
 assignment: {assignment}
 geo_assignment: continuous_ineq_assignment | categorical_assignment
 continuous_ineq_assignment: {continuous_ineq_assignment}
