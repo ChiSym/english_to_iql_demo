@@ -27,6 +27,21 @@ custom_order  = {"Credit_rating": [
 }
 ordinal_vars = ["Credit_rating", "Total_income", "Commute_minutes", "Education"]
 
+def heatmap_plot(df: pl.DataFrame, n1: str, n2: str, height: int, width: int, background: str) -> dict:
+    x=alt.X(f'{n1}:N')
+    y=alt.Y(f'{n2}:N')
+    color=alt.Color(f'probability:Q')
+    color = color.scale(scheme="viridis")   
+
+    return alt.Chart(df).mark_rect().encode(
+        x=x,
+        y=y,
+        color=color).properties(   
+        height=height,
+        width=width,
+        background=background
+    )
+
 def qq_plot(df: pl.DataFrame, q1: str, q2: str, height: int, width: int, background: str) -> dict:
     x=alt.X(f'{q1}:Q')
     color=alt.Color(f'{q2}:Q')
@@ -128,7 +143,7 @@ def plot_lpm(raw_df: pl.DataFrame, query_schema: list[tuple[str, str]]) -> dict:
         case (["nominal"], ["nominal"]):
             chart = nn_plot(df, free_sample_variables[0], free_condition_variables[0], height, width, background)
         case (["nominal", "nominal"], []):
-            chart = nn_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
+            chart = heatmap_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
         case (["quantitative", "nominal"], []):
             chart = qn_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
         case (["nominal", "quantitative"], []):
