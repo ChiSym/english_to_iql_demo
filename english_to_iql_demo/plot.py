@@ -15,17 +15,7 @@ NUMERIC_POLARS_DTYPES = [
     pl.Float32, pl.Float64,
 ]
 
-custom_order  = {"Credit_rating": [
-        "Under 499",
-        "500-549",
-        "550-599",
-        "600-649",
-        "650-699",
-        "700-749",
-        "750-799",
-        "800+"],
-}
-ordinal_vars = ["Credit_rating", "Total_income", "Commute_minutes", "Education"]
+schema = json.load(open("schema.json"))
 
 def plot_geo(df: pl.DataFrame) -> dict:
     height = 300
@@ -88,10 +78,8 @@ def qn_plot(df: pl.DataFrame, q: str, n: str) -> dict:
     x=alt.X(f'{q}:Q')
     color=alt.Color(f'{n}:N')
 
-    if n in custom_order.keys():
-        color = color.sort(custom_order[n])
-
-    if n in ordinal_vars:
+    n_levels = schema["var_metadata"][n]["levels"]
+    if n_levels[0].startswith("(a)"):
         color = color.scale(scheme="viridis")
 
     # group_col = n
@@ -108,19 +96,11 @@ def nn_plot(df: pl.DataFrame, n1: str, n2: str) -> dict:
         n1, n2 = n2, n1
 
     x=alt.X(f'{n1}:N')
-
-    if n1 in custom_order.keys():
-        x = x.sort(custom_order[n1])    
-
     color=alt.Color(f'{n2}:N')
 
-    if n2 in custom_order.keys():
-        color = color.sort(custom_order[n2])
-
-    if n2 in ordinal_vars:
+    n_levels = schema["var_metadata"][n2]["levels"]
+    if n_levels[0].startswith("(a)"):
         color = color.scale(scheme="viridis")
-
-    # group_col = n2
 
     return alt.Chart(df).mark_bar(filled=False).encode(
         x=x,
@@ -155,16 +135,10 @@ def uncertainty_nn_plot(df: pl.DataFrame, agg_df: pl.DataFrame, n1: str, n2: str
 
     x=alt.X(f'{n1}:N')
 
-    if n1 in custom_order.keys():
-        x = x.sort(custom_order[n1])
-
     color=alt.Color(f'{n2}:N')
-    # color=alt.Color(f'{n_var2}:O')
 
-    if n2 in custom_order.keys():
-        color = color.sort(custom_order[n2])
-
-    if n2 in ordinal_vars:
+    n_levels = schema["var_metadata"][n2]["levels"]
+    if n_levels[0].startswith("(a)"):
         color = color.scale(scheme="viridis")
 
     group_col = n2
@@ -226,10 +200,8 @@ def uncertainty_qn_plot(df: pl.DataFrame, agg_df: pl.DataFrame, q: str, n: str) 
     x=alt.X(f'{q}:Q')
     color=alt.Color(f'{n}:N')
 
-    if n in custom_order.keys():
-        color = color.sort(custom_order[n])
-
-    if n in ordinal_vars:
+    n_levels = schema["var_metadata"][n]["levels"]
+    if n_levels[0].startswith("(a)"):
         color = color.scale(scheme="viridis")
 
     group_col = n

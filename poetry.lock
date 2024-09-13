@@ -946,7 +946,7 @@ statsmodels = "^0.14.2"
 type = "git"
 url = "https://github.com/probcomp/jax_multimix.git"
 reference = "sample_condition_variables"
-resolved_reference = "75d4be6dd9d1bd5d99c053a573493974ec526d45"
+resolved_reference = "9394428e7b3244c0ed331874b76c5ec9ebe63970"
 
 [[package]]
 name = "jaxlib"
