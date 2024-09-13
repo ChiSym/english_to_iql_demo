@@ -27,6 +27,20 @@ custom_order  = {"Credit_rating": [
 }
 ordinal_vars = ["Credit_rating", "Total_income", "Commute_minutes", "Education"]
 
+def plot_geo(df: pl.DataFrame) -> dict:
+    height = 300
+    width = 400
+    df = df[['geometry', 'probability']]
+    chart = alt.Chart(df).mark_geoshape().encode(
+        alt.Color("probability:Q")
+    ).project(
+        type='albersUsa'
+    ).properties(
+            height=height,
+            width=width,
+        )
+    return {"chart": json.loads(chart.to_json(format="vega"))}
+
 def heatmap_plot(df: pl.DataFrame, n1: str, n2: str, height: int, width: int, background: str) -> dict:
     x=alt.X(f'{n1}:N')
     y=alt.Y(f'{n2}:N')
@@ -130,8 +144,10 @@ def plot_lpm(raw_df: pl.DataFrame, query_schema: list[tuple[str, str]]) -> dict:
     sample_variables_type = [get_col_type(df, var) for var in free_sample_variables]
     condition_variables_type = [get_col_type(df, var) for var in free_condition_variables]
 
-    if "model" in df.columns:
-        df = df.unique(subset=free_sample_variables + free_condition_variables)
+    if "sample" in df.columns:
+        var_cols = [col for col in df.columns if col not in ["sample", "probability", "weight"]]
+        df = df.with_columns(weighted_probability=pl.col("weight") * pl.col("probability")).group_by(
+            var_cols).agg(pl.sum("weighted_probability").alias("probability"))
 
     match (sample_variables_type, condition_variables_type):
         case (["quantitative"], ["quantitative"]):
