@@ -56,7 +56,21 @@ def heatmap_plot(df: pl.DataFrame, n1: str, n2: str, height: int, width: int, ba
         background=background
     )
 
-def qq_plot(df: pl.DataFrame, q1: str, q2: str, height: int, width: int, background: str) -> dict:
+def q_plot(df: pl.DataFrame, q: str) -> dict:
+    return alt.Chart(df).mark_line().encode(
+                alt.X(f'{q}:Q'),
+                alt.Y('probability:Q', title="probability").scale(zero=False),
+                tooltip=[f'{q}', 'probability'],
+            )
+    
+def n_plot(df: pl.DataFrame, n: str) -> dict:
+    return alt.Chart(df).mark_bar(filled=False).encode(
+        x=alt.X(f'{n}:N'),
+        y=alt.Y('probability:Q').scale(zero=False),
+        tooltip=[f'{n}', 'probability']
+    )
+
+def qq_plot(df: pl.DataFrame, q1: str, q2: str) -> dict:
     x=alt.X(f'{q1}:Q')
     color=alt.Color(f'{q2}:Q')
     color = color.scale(scheme="viridis")   
@@ -68,13 +82,9 @@ def qq_plot(df: pl.DataFrame, q1: str, q2: str, height: int, width: int, backgro
         y=alt.Y("probability:Q").scale(zero=False),
         color=color,
         tooltip=[f'{q1}', f'{q2}', 'probability']
-    ).properties(
-        height=height,
-        width=width,
-        background=background
     )
 
-def qn_plot(df: pl.DataFrame, q: str, n: str, height: int, width: int, background: str) -> dict:
+def qn_plot(df: pl.DataFrame, q: str, n: str) -> dict:
     x=alt.X(f'{q}:Q')
     color=alt.Color(f'{n}:N')
 
@@ -91,13 +101,9 @@ def qn_plot(df: pl.DataFrame, q: str, n: str, height: int, width: int, backgroun
         y=alt.Y(f'probability:Q').scale(zero=False),
         color=color,
         tooltip=[f'{n}', f'{q}', 'probability']
-    ).properties(
-        height=height,
-        width=width,
-        background=background
     )
 
-def nn_plot(df: pl.DataFrame, n1: str, n2: str, height: int, width: int, background: str) -> dict:
+def nn_plot(df: pl.DataFrame, n1: str, n2: str) -> dict:
     if len(df[n1].unique()) <= len(df[n2].unique()):
         n1, n2 = n2, n1
 
@@ -122,11 +128,85 @@ def nn_plot(df: pl.DataFrame, n1: str, n2: str, height: int, width: int, backgro
         color=color,
         xOffset=alt.XOffset(f'{n2}:N'),
         tooltip=[f'{n1}', f'{n2}', 'probability']
-    ).properties(
-        height=height,
-        width=width,
-        background=background
     )
+
+def uncertainty_q_plot(df: pl.DataFrame, q: str) -> dict:
+    return alt.Chart(df).mark_circle().encode(
+                alt.X(f'{q}:Q'),
+                alt.Y('probability:Q'),
+                alt.Opacity(f'weight:Q', legend=None)
+            )
+
+def uncertainty_n_plot(df: pl.DataFrame, n: str) -> dict:
+    return alt.Chart(df).mark_circle().encode(
+                x=alt.X(f'{n}:N'),
+                y=alt.Y(f'probability:Q'),
+                opacity=alt.Opacity(f'weight:Q', legend=None)
+            )
+
+def uncertainty_qn_plot(df: pl.DataFrame, agg_df: pl.DataFrame, q: str, n: str) -> dict:
+    df = df.join(agg_df, on=[q, n], how="left").with_columns(
+        sample_probability=pl.col("probability"),
+        probability=pl.col("probability_right")
+    )
+
+    x=alt.X(f'{q}:Q')
+    color=alt.Color(f'{n}:N')
+
+    if n in custom_order.keys():
+        color = color.sort(custom_order[n])
+
+    if n in ordinal_vars:
+        color = color.scale(scheme="viridis")
+
+    group_col = n
+    selection = alt.selection_point(
+        on='click',
+        # what should the selection return when nothing is selected? altair weirdly selects *everything*
+        empty=False,
+        # necessary to make clicking nearby work, else hitting a line is really hard, surprisingly
+        nearest=True,
+        # extends selection to everything with the same val in the group_col, and not just the actual value clicked on
+        fields=[group_col]
+    )
+
+    # opacity is based on weight var when selected, invisible otherwise
+    cond_opacity = alt.condition(
+        selection,
+        alt.Opacity(f'weight:Q', legend=None),
+        alt.value(0.0)
+    )
+
+    # Needed for visible line, and invisible point marks
+    shared_line_encoding = {
+        "x": x,
+        "y": alt.Y(f'probability:Q').scale(zero=False)
+    }
+
+    return alt.layer(
+        alt.Chart(df).mark_line().encode(
+            color=color,
+            strokeWidth=alt.condition(selection, alt.value(5), alt.value(2)),
+            **shared_line_encoding
+        ),
+        # These invisible point marks exist to support "nearest" selection,
+        # which doesn't work well with line/area marks
+        alt.Chart(df).mark_point().encode(
+            opacity = {"value": 0},
+            **shared_line_encoding
+        ).add_params( # adding this to other views breaks clicking, just add to the one used for targeting
+            selection
+        ),
+        alt.Chart(df).mark_circle().encode(
+            x=x,
+            y=alt.Y(f'sample_probability:Q'),
+            color=color,
+            opacity=cond_opacity,
+        )
+    )
+
+
+
 
 def plot_lpm(raw_df: pl.DataFrame, query_schema: list[tuple[str, str]]) -> dict:
     height = 300
@@ -144,34 +224,71 @@ def plot_lpm(raw_df: pl.DataFrame, query_schema: list[tuple[str, str]]) -> dict:
     sample_variables_type = [get_col_type(df, var) for var in free_sample_variables]
     condition_variables_type = [get_col_type(df, var) for var in free_condition_variables]
 
+    samples = False
     if "sample" in df.columns:
+        samples = True
+
         var_cols = [col for col in df.columns if col not in ["sample", "probability", "weight"]]
         df = df.with_columns(weighted_probability=pl.col("weight") * pl.col("probability")).group_by(
             var_cols).agg(pl.sum("weighted_probability").alias("probability"))
 
     match (sample_variables_type, condition_variables_type):
+        case (["quantitative"], []):
+            chart = q_plot(df, free_sample_variables[0])
+            if samples:
+                chart += uncertainty_q_plot(raw_df, free_sample_variables[0])
+        case (["nominal"], []):
+            chart = n_plot(df, free_sample_variables[0])
+            if samples:
+                chart += uncertainty_n_plot(raw_df, free_sample_variables[0])
+        case ([], ["quantitative"]):
+            chart = q_plot(df, free_condition_variables[0])
+            if samples:
+                chart += uncertainty_q_plot(raw_df, free_condition_variables[0])
+        case ([], ["nominal"]):
+            chart = n_plot(df, free_condition_variables[0])
+            if samples:
+                chart += uncertainty_n_plot(raw_df, free_condition_variables[0])
         case (["quantitative"], ["quantitative"]):
-            chart = qq_plot(df, free_sample_variables[0], free_condition_variables[0], height, width, background)
+            chart = qq_plot(df, free_sample_variables[0], free_condition_variables[0])
         case (["quantitative"], ["nominal"]):
-            chart = qn_plot(df, free_sample_variables[0], free_condition_variables[0], height, width, background)
+            if samples:
+                chart = uncertainty_qn_plot(raw_df, df, free_sample_variables[0], free_condition_variables[0])
+            else:
+                chart = qn_plot(df, free_sample_variables[0], free_condition_variables[0], height, width, background)
         case (["nominal"], ["quantitative"]):
-            chart = qn_plot(df, free_condition_variables[0], free_sample_variables[0], height, width, background)
+            if samples:
+                chart = uncertainty_qn_plot(raw_df, df, free_condition_variables[0], free_sample_variables[0])
+            else:
+                chart = qn_plot(df, free_condition_variables[0], free_sample_variables[0], height, width, background)
         case (["nominal"], ["nominal"]):
             chart = nn_plot(df, free_sample_variables[0], free_condition_variables[0], height, width, background)
         case (["nominal", "nominal"], []):
             chart = heatmap_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
         case (["quantitative", "nominal"], []):
-            chart = qn_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
+            if samples:
+                chart = uncertainty_qn_plot(raw_df, df, free_sample_variables[0], free_sample_variables[1])
+            else:
+                chart = qn_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
         case (["nominal", "quantitative"], []):
-            chart = qn_plot(df, free_sample_variables[1], free_sample_variables[0], height, width, background)
+            if samples:
+                chart = uncertainty_qn_plot(raw_df, df, free_sample_variables[1], free_sample_variables[0])
+            else:
+                chart = qn_plot(df, free_sample_variables[1], free_sample_variables[0], height, width, background)
         case (["quantitative", "quantitative"], []):
             chart = qq_plot(df, free_sample_variables[0], free_sample_variables[1], height, width, background)
         case ([], ["nominal", "nominal"]):
             chart = nn_plot(df, free_condition_variables[0], free_condition_variables[1], height, width, background)
         case ([], ["nominal", "quantitative"]):
-            chart = qn_plot(df, free_condition_variables[1], free_condition_variables[0], height, width, background)
+            if samples:
+                chart = uncertainty_qn_plot(raw_df, df, free_condition_variables[1], free_condition_variables[0])
+            else:
+                chart = qn_plot(df, free_condition_variables[1], free_condition_variables[0], height, width, background)
         case ([], ["quantitative", "nominal"]):
-            chart = qn_plot(df, free_condition_variables[0], free_condition_variables[1], height, width, background)
+            if samples:
+                chart = uncertainty_qn_plot(raw_df, df, free_condition_variables[0], free_condition_variables[1])
+            else:
+                chart = qn_plot(df, free_condition_variables[0], free_condition_variables[1], height, width, background)
         case ([], ["quantitative", "quantitative"]):
             chart = qq_plot(df, free_condition_variables[0], free_condition_variables[1], height, width, background)
         case _:
@@ -179,6 +296,12 @@ def plot_lpm(raw_df: pl.DataFrame, query_schema: list[tuple[str, str]]) -> dict:
             
     if not chart:
         raise ValueError("No chart type matches the data's column types")
+
+    chart = chart.properties(
+        height=height,
+        width=width,
+        background=background
+    )
 
     return {"chart": json.loads(chart.to_json(format="vega"))}
             
