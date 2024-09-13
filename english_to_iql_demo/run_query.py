@@ -29,9 +29,9 @@ def interpreter_dispatch(grammar_path):
         geo_df=gpd.read_file('geodataframe.gpkg', engine='pyogrio', use_arrow=True)
         s = geo_df["geometry"].simplify(1e-2)
         geo_df["geometry"] = s
-        df = pl.read_parquet("synthetic_data800k.parquet", use_pyarrow=True)
+        synthetic_df = pl.read_parquet("synthetic_data800k.parquet", use_pyarrow=True)
         # override state variable in synthetic data with PUMA state
-        df = df.with_columns(
+        synthetic_df = synthetic_df.with_columns(
             pl.col("State_PUMA10")
             .str.split_exact("--", 0)
             .struct.rename_fields(["State_new"])
@@ -39,6 +39,7 @@ def interpreter_dispatch(grammar_path):
         ).unnest("fields").select(pl.exclude('State')).rename(
             {"State_new": "State"}
         )
+        df = pl.read_parquet("data-subsample-columns.parquet", use_pyarrow=True)
         with open("schema.json", "r") as f:
             schema=json.load(f)
         with open("lpm_parameters.json", "r") as f:
@@ -50,6 +51,7 @@ def interpreter_dispatch(grammar_path):
             args=make_GenJax_mixture(parameters),
             inf_alg=SumProductInference(),
             df=df,
+            synthetic_df=synthetic_df,
             geo_df=geo_df,
         )
     elif grammar_path == "us_lpm_cols.lark":

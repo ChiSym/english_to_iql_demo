@@ -8,7 +8,7 @@ import polars as pl
 from lark import Lark
 
 from english_to_iql_demo.english_to_iql import english_query_to_iql, sync_query_state, OOD_REPLY
-from english_to_iql_demo.plot import plot_cols, plot_lpm, plot_ood
+from english_to_iql_demo.plot import plot_cols, plot_lpm, plot_ood, plot_geo
 from english_to_iql_demo.pre_prompt import pre_prompt_dispatch
 from english_to_iql_demo.run_query import run_query, interpreter_dispatch, Interpreter
 
@@ -142,7 +142,10 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
                 context = plot_ood(data.df)
             case "LPM":
                 query_schema, data.df = run_query(data.parser, data.interpreter, form_query)
-                context = plot_lpm(data.df, query_schema)
+                if query_schema == "geo":
+                    context = plot_geo(data.df)
+                else:
+                    context = plot_lpm(data.df, query_schema)
             case "data":
                 data.df = run_query(data.parser, data.interpreter, form_query)
                 context = plot_cols(data.df)
