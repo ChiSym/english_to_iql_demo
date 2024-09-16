@@ -2,9 +2,6 @@ start: query_wrapper EOS
 query_wrapper: prob_clause " using ChiExpert" -> chiexpert
 | prob_clause " using data" -> data
 | prob_clause " using GLM" -> glm
-| geo " using ChiExpert" -> geo_chiexpert
-| geo " using data" -> geo_data
-| specialized_geo_glm " using GLM" -> geo_glm
 | "I can't answer that"
 prob_clause: " probability of " sample_variable 
 | " probability of " sample_variable ", " sample_variable
@@ -19,13 +16,7 @@ prob_clause: " probability of " sample_variable
 | " probability of " sample_assignment " given " condition_variable ", " condition_variable
 | " probability of " sample_assignment " given " condition_assignment ", " condition_variable
 | " probability of " sample_assignment " given " condition_variable ", " condition_assignment
-geo: " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment]
-specialized_geo_glm: " probability of " sample_assignment [", " sample_assignment] " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " condition_assignment]
 EOS: "\n"
-expr: geo_assignment 
-    | geo_assignment BOOL_EXPR geo_assignment
-    | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
-    | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
 BOOL_EXPR: " and " | " or "
 sample_assignment: assignment
 condition_assignment: assignment
@@ -455,6 +446,7 @@ variable: NORMAL0
 	| NORMAL68
 	| NORMAL69
 	| CATEGORICAL0
+	| CATEGORICAL1
 	| CATEGORICAL2
 	| CATEGORICAL3
 	| CATEGORICAL4
@@ -631,6 +623,7 @@ NORMAL67: "Pets"
 NORMAL68: "Streaming_and_downloading_audio"
 NORMAL69: "Gasoline_other_fuels_and_motor_oil"
 CATEGORICAL0: "State"
+CATEGORICAL1: "State_PUMA10"
 CATEGORICAL2: "Sex"
 CATEGORICAL3: "Race"
 CATEGORICAL4: "Citizen_status"

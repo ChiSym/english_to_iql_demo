@@ -2,40 +2,27 @@
 name = "english-to-iql-demo"
 version = "0.1.0"
 description = ""
-authors = ["joao loula <jloula@mit.edu>"]
+authors = ["João Loula <jloula@mit.edu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-pytest = "^8.2.2"
-ipdb = "^0.13.13"
-fastapi = "^0.103.2"
-uvicorn = "^0.23.2"
-polars = "^1.1.0"
-jinja2 = "^3.1.2"
-jinja2-fragments = "^1.1.0"
-python-multipart = "^0.0.6"
-black = "^23.9.1"
-requests = "^2.32.3"
-altair = "^5.3.0"
-lark = "^1.1.9"
+python = ">=3.12,<3.13"
+genjax = {version = "^0.6.1", source = "gcp"}
 jax-multimix = {git = "https://github.com/probcomp/jax_multimix.git", rev = "sample_condition_variables"}
-genjax = {version = "^0.5.0", source = "gcp"}
-pyyaml = "^6.0.1"
+altair = "^5.4.1"
+pyarrow = "^17.0.0"
+lark = "^1.2.2"
 vegafusion = {extras = ["embed"], version = "^1.6.9"}
 geopandas = "^1.0.1"
 pyogrio = "^0.9.0"
-chat-demo = { git = "https://github.com/probcomp/chat_demo_server.git"}
-# chat-demo = { path = "../chat_demo_server", develop = true }
+chat-demo = {git = "https://github.com/probcomp/chat_demo_server.git"}
 
-[tool.poetry.group.dev.dependencies]
-ipykernel = "^6.29.4"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 [[tool.poetry.source]]
 name = "gcp"
 url = "https://us-west1-python.pkg.dev/probcomp-caliban/probcomp/simple/"
 priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

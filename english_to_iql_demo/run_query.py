@@ -2,11 +2,10 @@ from typing import Union
 
 import polars as pl
 import json
-import pickle
-import geopandas as gpd
+import dill
 
 from jax_multimix.interpreter import Interpreter as ProbInterpreter
-from jax_multimix.model import mixture_model, SumProductInference, make_GenJax_mixture, make_variables
+from jax_multimix.model import mixture_model, SumProductInference, make_variables
 
 class ColumnInterpreter:
     def __init__(self, datadict, df):
@@ -25,39 +24,25 @@ class ColumnInterpreter:
 Interpreter = Union[ProbInterpreter, ColumnInterpreter]
 
 def interpreter_dispatch(grammar_path):
+    data_path = "data.parquet"
     if grammar_path == "us_lpm_prob.lark":
-        geo_df=gpd.read_file('geodataframe.gpkg', engine='pyogrio', use_arrow=True)
-        s = geo_df["geometry"].simplify(1e-2)
-        geo_df["geometry"] = s
-        synthetic_df = pl.read_parquet("synthetic_data800k.parquet", use_pyarrow=True)
         # override state variable in synthetic data with PUMA state
-        synthetic_df = synthetic_df.with_columns(
-            pl.col("State_PUMA10")
-            .str.split_exact("--", 0)
-            .struct.rename_fields(["State_new"])
-            .alias("fields")
-        ).unnest("fields").select(pl.exclude('State')).rename(
-            {"State_new": "State"}
-        )
-        df = pl.read_parquet("data-subsample-columns.parquet", use_pyarrow=True)
-        with open("schema.json", "r") as f:
-            schema=json.load(f)
-        with open("lpm_parameters.json", "r") as f:
-            parameters=json.load(f)
+        df = pl.read_parquet(data_path, use_pyarrow=True)
+        schema = json.load(open("schema.json"))
+        jaxcat_model = dill.load(open("mixture_model.dill", "rb"))
+        
         return ProbInterpreter(
             variables=make_variables(schema),
             schema=schema,
             model=mixture_model,
-            args=make_GenJax_mixture(parameters),
+            args=jaxcat_model,
             inf_alg=SumProductInference(),
             df=df,
-            synthetic_df=synthetic_df,
-            geo_df=geo_df,
         )
     elif grammar_path == "us_lpm_cols.lark":
         with open("us_lpm.json", "r", encoding="utf-8") as f:
             col_interpreter_metadata = json.load(f)[0]
-        df = pl.read_parquet("synthetic_data800k.parquet")
+        df = pl.read_parquet(data_path)
         return ColumnInterpreter(col_interpreter_metadata, df)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")

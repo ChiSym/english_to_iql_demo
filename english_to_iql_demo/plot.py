@@ -17,9 +17,20 @@ NUMERIC_POLARS_DTYPES = [
 
 schema = json.load(open("schema.json"))
 
-def plot_geo(df: pl.DataFrame) -> dict:
+def plot_geo(df: pl.DataFrame, geo_df: gpd.GeoDataFrame) -> dict:
     height = 300
     width = 400
+    df = df.with_columns(
+            pl.col("State_PUMA10")
+            .str.split_exact("--", 0)
+            .struct.rename_fields(["PUMACE"])
+            .alias("fields")
+        ).unnest("fields").with_columns(
+            pl.col("PUMACE").str.replace("-", "0")
+        )
+
+    df = geo_df.merge(df.to_pandas(), on="PUMACE")
+    
     df = df[['geometry', 'probability']]
     chart = alt.Chart(df).mark_geoshape().encode(
         alt.Color("probability:Q")

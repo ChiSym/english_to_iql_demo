@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from fastapi import Request
 from typing import Annotated, List
 import traceback
+import geopandas as gpd
 
 import polars as pl
 from lark import Lark
@@ -55,6 +56,9 @@ parsers = list(map(Lark, grammars))
 pre_prompts = list(map(pre_prompt_dispatch, grammar_paths))
 interpreters = list(map(interpreter_dispatch, grammar_paths))
 default_df = pl.from_dict({"x": [0], "y": [0]})
+geo_df=gpd.read_file('geodataframe.gpkg', engine='pyogrio', use_arrow=True)
+s = geo_df["geometry"].simplify(1e-2)
+geo_df["geometry"] = s
 
 data = Data(
     english_query="",
@@ -142,8 +146,8 @@ async def post_iql_query(request: Request, query_counter, **kwargs):
                 context = plot_ood(data.df)
             case "LPM":
                 query_schema, data.df = run_query(data.parser, data.interpreter, form_query)
-                if query_schema == "geo":
-                    context = plot_geo(data.df)
+                if "State_PUMA10" in data.df.columns:
+                    context = plot_geo(data.df, geo_df)
                 else:
                     context = plot_lpm(data.df, query_schema)
             case "data":
