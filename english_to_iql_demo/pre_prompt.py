@@ -2,24 +2,22 @@ import json
 import yaml
 
 def pre_prompt_dispatch(grammar_path):
+    with open("schema.json", "r", encoding="utf-8") as f:
+        schema = json.loads(f.read())
+        schema['var_metadata']['State_PUMA10'] = []
+        schema['var_metadata']['Zipcode'] = []
+
+        new_schema_normal = {var: "number" for var in schema['types']['normal']}
+        new_schema_cat = {var: schema['var_metadata'][var]['levels']
+            if var not in ['Zipcode', 'State_PUMA10', 'Work_industry_sector'] else []
+            for var in schema['types']['categorical']}
+
+        schema = new_schema_normal | new_schema_cat
+        schema = yaml.dump(schema)
     if grammar_path == "us_lpm_prob.lark":
-        with open("schema.json", "r", encoding="utf-8") as f:
-            schema = json.loads(f.read())
-            schema['var_metadata']['State_PUMA10'] = []
-            schema['var_metadata']['Zipcode'] = []
-
-            new_schema_normal = {var: "number" for var in schema['types']['normal']}
-            new_schema_cat = {var: schema['var_metadata'][var]['levels']
-                if var not in ['Zipcode', 'State_PUMA10', 'Work_industry_sector'] else []
-                for var in schema['types']['categorical']}
-
-            schema = new_schema_normal | new_schema_cat
-            schema = yaml.dump(schema)
         return make_prob_pre_prompt(schema)
     elif grammar_path == "us_lpm_cols.lark":
-        with open("us_lpm.json", "r", encoding="utf-8") as f:
-            datadict = yaml.dump(json.loads(f.read()))
-        return make_cols_pre_prompt(datadict)
+        return make_cols_pre_prompt(schema)
     else:
         raise NotImplementedError(f"Preprompt constructor not yet defined for {grammar_path}.")
 
@@ -39,7 +37,7 @@ def make_prob_pre_prompt(schema):
         return f"""Your goal is to translate user questions into conditional probability statements relating the variables mentioned in a query.
 
 
-Statements should take the form "{constructor('X', 'Y', 'Z')}" where X is one or a list of the following variables, Y one or a list of multiple variables and Z a particular model. The variables which can be queried are related to the US population:
+Statements should take the form "{constructor('X', 'Y', 'Z')}" where X is one or a list of the following variables, Y one or a list of multiple variables and Z a particular model. The variables which can be queried are related to the US population and medical data:
 
 ```
 {schema}
@@ -60,32 +58,32 @@ Here are some examples of user queries and paired translations:
     def make_example_pairs(constructor):
         return [
             ("Show the relationship between income and party allegiance using ChiExpert",
-            constructor(["Party_allegiance", "Total_income"], [], "ChiExpert")),
-            ("Show me the probability of recent social media use given occupation under the data",
-            constructor(["Used_social_media_in_part_24hrs"], ["Occupation"], 'data')),
+            constructor(["Party_allegiance", "Family_income"], [], "ChiExpert")),
+            ("Show me the probability of mental health status given whether someone lost their job last year using the data",
+            constructor(["Mental_health_status"], ["Lost_job_last_year = 'Yes'"], 'data')),
             ("What are variables related to income?", "I can't answer that"),
-            ("How does a voter having covid affect whether or not they had to borrow money from family for an emergency?",
-            constructor(["Pay_for_emergency_by_borrowing_from_friends = 'Yes'"], ["I_had_covid_last_year"], 'ChiExpert')),
-            ("What is the relationship between disability and whether a voter is unemployed under ChiExpert",
-            constructor(["Disability"], ["Employment_status = 'Not in workforce'"], 'ChiExpert')),
-            ("What’s the probability that someone is registered to vote given their location under ChiExpert? ",
+            ("How does do different cancer types affect whether or not someone supports expanding medicare?",
+            constructor(["Policy_support_expanding_medicare = 'Yes'"], ["cancer_type"], 'ChiExpert')),
+            ("What is the relationship between bmi and cancer stage under the data",
+            constructor(['bmi', 'cancer_stage'], [], 'data')),
+            ("What’s the probability that someone is registered to vote given their location under ChiExpert?",
             constructor(["Registered_to_vote = 'Yes'"], ["State_PUMA10"], 'ChiExpert')),
             ("Show me the probability that a voter is white given their location using GLM",
             constructor(["Race = 'White'"], ["State_PUMA10"], "GLM")),
             ("Show me the probability of being a low income asian voter given location being California and being democrat using the data",
-            constructor(["Total_income < -1 and Race = 'Asian'"], ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"], 'data')),
-            ("Relationship between being registered to vote and race",
-            constructor(["Registered_to_vote", "Race"], [], "ChiExpert")),
-            ("find the probability of high-income rural voters by location using ChiExpert",
-            constructor(["Total_income > 1 and Environment = 'Rural'"], ["State_PUMA10"], 'ChiExpert')),
-            ("How does party allegiance affect support for expanding medicare?",
-            constructor(["Policy_support_expanding_medicare"], ["Party_allegiance"], 'ChiExpert')),
-            ("What is the relationship between being registered to vote and age under the data?", 
-            constructor(["Registered_to_vote", "Age"], [], 'data')),
-            ("Probability that a voter is disabled in california given that they are a democrat using a GLM",
-            constructor(["Disability = 'Yes'"], ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"], 'GLM')),
+            constructor(["Family_income < -1 and Race = 'Asian'"], ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"], 'data')),
+            ("Relationship between being tissue progression and tumor laterality",
+            constructor(["tissue_progression", "tumor_laterality"], [], "ChiExpert")),
+            ("find the probability of having high bmi by location using ChiExpert",
+            constructor(["bmi > 1"], ["State_PUMA10"], 'ChiExpert')),
+            ("How does party allegiance affect support for negotiating with drug companies?",
+            constructor(["Policy_support_government_negotiate_with_drug_companies"], ["Party_allegiance"], 'ChiExpert')),
+            ("What is the relationship between tumor size and cancer stage under a GLM?", 
+            constructor(["tumor_size", "cancer_stage"], [], 'GLM')),
+            ("Probability that a voter is a union member in california given that they are a democrat",
+            constructor(["Union_member = 'Yes'"], ["State_PUMA10, State = 'California', Party_allegiance = 'Democrat'"], 'ChiExpert')),
             ("Show me the probability of poor democratic voters by location using ChiExpert",
-            constructor(["Total_income < 0 and Party_allegiance = 'Democrat'"], ["State_PUMA10"], 'ChiExpert'))
+            constructor(["Family_income < 0 and Party_allegiance = 'Democrat'"], ["State_PUMA10"], 'ChiExpert'))
         ]
 
     def make_prompt(preamble, example_pairs, eos=None):
@@ -100,13 +98,13 @@ Here are some examples of user queries and paired translations:
 
     return pre_prompt
 
-def make_cols_pre_prompt(datadict):
+def make_cols_pre_prompt(schema):
     preamble = """Your goal is to translate user questions about which variables are present in the model into lists of column names.
 
-Here is the data dictionary containing all the column names and their descriptions:
+Here is the schema containing all the column names:
 
 ```
-{datadict}
+{schema}
 ```
 
 Return a series of variables from the selection above.
@@ -122,17 +120,18 @@ Here are some examples of user queries and paired translations:
         return preamble + examples
 
     example_pairs = [
-        ("What are variables related to income?", "Total_income"),
+        ("What are variables related to income?", "Family_income"),
         ("How does someone's age affect their income?", "I can't answer that"),
-        ("Tell me the variables in the model related to someone's credit rating", "Credit_rating"),
-        ("Which variables are related to someone's insurace",
+        ("variables related to cancer", 
+        "cancer_stage, cancer_type, tumor_laterality, tumor_size, tumor_stage_n, tumor_stage_t"),
+        ("variables related to someone's insurace",
         "Health Insurance Coverage, Insurance Medicare, Insurance_gov_assisted_medicaid, Life_and_other_personal_insurance"),
         ("Why is the sky grey sometimes?",
         "I can't answer that"),
-        ("Show me variables related to language",
-        "English_fluency, Language_spoken_at_home"),
-        ("What variables are about education?", "Education, Educational_attainment")
+        ("Show me variables related to jobs",
+        "Employment_status, Lost_job_last_year, Jad_pay_cut_last_year, Union_member"),
+        ("What variables are about education?", "Educational_attainment")
     ]
 
-    pre_prompt = make_prompt(preamble.format(datadict=datadict), example_pairs)
+    pre_prompt = make_prompt(preamble.format(schema=schema), example_pairs)
     return pre_prompt

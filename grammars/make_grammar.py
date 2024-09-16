@@ -6,16 +6,19 @@ import argparse
 import warnings
 from lark import Lark
 
+# categoricals which should be excluded from the grammar entirely
+CATEGORICAL_EXCLUSIONS_COLS = []
+CATEGORICAL_EXCLUSIONS_PROB = []
+# categoricals which cannot be in an assignment clause
+CATEGORICAL_ASSIGNMENT_EXCLUSIONS_PROB = ['State_PUMA10']
+CATEGORICAL_ASSIGNMENT_EXCLUSIONS_COLS = []
 
-CATEGORICAL_EXCLUSIONS_COLS = ['Zipcode']
-CATEGORICAL_EXCLUSIONS_PROB = ['Zipcode', 'State_PUMA10']
 NORMAL_EXCLUSIONS = []
 
-# we'll want to change expr to only take Census/PUMS variables
 prob_grammar_template = """start: query_wrapper EOS
-query_wrapper: (prob_clause | geo) " using ChiExpert" -> chiexpert
-| (prob_clause | geo) " using data" -> data
-| (prob_clause | geo) " using GLM" -> glm
+query_wrapper: prob_clause " using ChiExpert" -> chiexpert
+| prob_clause " using data" -> data
+| prob_clause " using GLM" -> glm
 | "I can't answer that"
 prob_clause: " probability of " sample_variable 
 | " probability of " sample_variable ", " sample_variable
@@ -29,19 +32,14 @@ prob_clause: " probability of " sample_variable
 | " probability of " sample_assignment " given " condition_variable
 | " probability of " sample_assignment " given " condition_variable ", " condition_variable
 | " probability of " sample_assignment " given " condition_assignment ", " condition_variable
-geo: " probability of " expr " given State_PUMA10" [", State = " CATEGORICAL0_VAL] [", " assignment]
+| " probability of " sample_assignment " given " condition_variable ", " condition_assignment
 EOS: "\\n"
-expr: geo_assignment 
-    | geo_assignment BOOL_EXPR geo_assignment
-    | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
-    | geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment BOOL_EXPR geo_assignment
 BOOL_EXPR: " and " | " or "
 sample_assignment: assignment
 condition_assignment: assignment
 sample_variable: variable
 condition_variable: variable
 assignment: {assignment}
-geo_assignment: continuous_ineq_assignment | categorical_assignment
 continuous_ineq_assignment: {continuous_ineq_assignment}
 categorical_assignment: {categorical_assignment}
 variable: {var_nonterminals}
@@ -62,46 +60,56 @@ var: {var_nonterminals}
 {var_names}
 """
 
-def make_grammar_symbols(schema, categorical_exclusions, normal_exclusions):
+def make_grammar_symbols(
+    schema, categorical_exclusions, categorical_assignment_exclusions, normal_exclusions
+):
     normals = [x for x in schema["types"]["normal"]]
     categoricals = [x for x in schema["types"]["categorical"]]
 
     n_n = range(len(normals))
     n_c = range(len(categoricals))
-    normal_variable_nts = [f"NORMAL{i}" for i, var in enumerate(normals) if var not in normal_exclusions]
-    categorical_variable_nts = [f"CATEGORICAL{i}" for i, var in enumerate(categoricals) 
-        if var not in categorical_exclusions]
-    var_nonterminals = normal_variable_nts + categorical_variable_nts
-    normal_var_names = [
-        f"NORMAL{i}: \"{var}\"" for i, var in enumerate(normals) if var not in normal_exclusions
-    ]
-    categorical_var_names = [
-        f"CATEGORICAL{i}: \"{var}\"" for i, var in enumerate(categoricals)  if var not in categorical_exclusions
-    ]
-    var_names = normal_var_names + categorical_var_names
-
-    # normal currently a hack for age only to make it easier for genparse
-    normal_assignment = [f"{nt} OPERATOR NORM_DIGIT" for nt in normal_variable_nts]
-    normal_ineq_assignment = [f"{nt} INEQUALITY NORM_DIGIT" for nt in normal_variable_nts]
-    categorical_assignment = [f"{nt} OPERATOR {nt}_VAL" for nt in categorical_variable_nts]
-    assignment = normal_assignment + categorical_assignment
 
     categorical_values = []
+    categorical_var_names = []
+    categorical_assignments = []
+    categorical_variable_nts = []
     for i, var in enumerate(categoricals):
         if var not in categorical_exclusions:
-            prefix = f"CATEGORICAL{i}_VAL: " 
-            levels = [f"\"\'{level}\'\""
-                for level in schema["var_metadata"][var]["levels"]]
-            levels = "\n\t| ".join(levels)
-            categorical_values.append(prefix + levels)
+            nt = f"CATEGORICAL{i}"
+            categorical_variable_nts.append(nt)
+            categorical_var_names.append(f"{nt}: \"{var}\"")
+            if var not in categorical_assignment_exclusions:
+                categorical_assignments.append(f"{nt} OPERATOR {nt}_VAL")
+                prefix = f"{nt}_VAL: " 
+                levels = [f"\"\'{level}\'\""
+                    for level in schema["var_metadata"][var]["levels"]]
+                levels = "\n\t| ".join(levels)
+                categorical_values.append(prefix + levels)
+
+    normal_variable_nts = []
+    normal_var_names = []
+    normal_assignments = []
+    normal_ineq_assignments = []
+    for i, var in enumerate(normals):
+        if var not in normal_exclusions:
+            nt = f"NORMAL{i}"
+            normal_variable_nts.append(nt)
+            normal_var_names.append(f"{nt}: \"{var}\"")
+            normal_assignments.append(f"{nt} OPERATOR NORM_DIGIT")
+            normal_ineq_assignments.append(f"{nt} INEQUALITY NORM_DIGIT")
+
+    
+    var_nonterminals = normal_variable_nts + categorical_variable_nts
+    var_names = normal_var_names + categorical_var_names
+    assignments = normal_assignments + categorical_assignments
 
     return (
-        assignment,
+        assignments,
         categorical_values,
         var_names,
         var_nonterminals,
-        categorical_assignment,
-        normal_ineq_assignment,
+        categorical_assignments,
+        normal_ineq_assignments,
     )
 
 def get_grammar_names(col, schema):
@@ -113,19 +121,11 @@ def get_grammar_names(col, schema):
         raise ValueError(f"Unrecognized column {col}")
 
 def make_grammars(schema_path):
-    # at most 2 free variables
     schema = json.load(open(schema_path, 'r'))
-    #census_cols = json.load(open(census_cols_path, 'r'))
-    #census_grammar_names = [
-    #    get_grammar_names(census_col, schema)
-    #    for census_col in census_cols]
 
     (assignment, categorical_values, var_names, var_nonterminals, categorical_assignment, normal_ineq_assignment) = make_grammar_symbols(
-        schema, CATEGORICAL_EXCLUSIONS_PROB, NORMAL_EXCLUSIONS
+        schema, CATEGORICAL_EXCLUSIONS_PROB, CATEGORICAL_ASSIGNMENT_EXCLUSIONS_PROB, NORMAL_EXCLUSIONS
     )
-
-    #census_assignment = [a for a in assignment 
-    #    if a.split(" ")[0] in census_grammar_names]
 
     us_lpm_prob = prob_grammar_template.format(
         assignment="\n\t| ".join(assignment),
@@ -134,11 +134,10 @@ def make_grammars(schema_path):
         var_nonterminals="\n\t| ".join(var_nonterminals),
         categorical_assignment= "\n\t| ".join(categorical_assignment),
         continuous_ineq_assignment="\n\t| ".join(normal_ineq_assignment),
-       #census_assignment="\n\t| ".join(census_assignment),
     )
 
     (_, _, var_names, var_nonterminals, _, _) = make_grammar_symbols(
-        schema, CATEGORICAL_EXCLUSIONS_COLS, NORMAL_EXCLUSIONS
+        schema, CATEGORICAL_EXCLUSIONS_COLS, CATEGORICAL_ASSIGNMENT_EXCLUSIONS_COLS, NORMAL_EXCLUSIONS
     )
 
     us_lpm_cols = cols_grammar_template.format(
@@ -150,20 +149,21 @@ def make_grammars(schema_path):
 
 prob_test_sentences = [
     " probability of Age using ChiExpert",
-    " probability of Age given Total_income using data",
-    " probability of Age = -2 given Total_income using GLM",
-    " probability of Age = -2 given Total_income, Race using ChiExpert",
-    " probability of Age = -2 given Total_income, Race = 'White' using data",
-    " probability of Total_income given Age = 0, Race using GLM",
-    " probability of Total_income given Race, Age = 2 using ChiExpert",
-    " probability of Total_income given Age = 0, Race = 'White' using GLM",
+    " probability of Age given Family_income using data",
+    " probability of Age = -2 given Family_income using GLM",
+    " probability of Age = -2 given Family_income, Race using ChiExpert",
+    " probability of Age = -2 given Family_income, Race = 'White' using data",
+    " probability of Family_income given Age = 0, Race using GLM",
+    " probability of Family_income given Race, Age = 2 using ChiExpert",
+    " probability of Family_income given Age = 0, Race = 'White' using GLM",
     " probability of Race = 'White' given State_PUMA10 using data",
+    " probability of Race, Family_income using ChiExpert"
 ]
 
 cols_test_sentences = [
     " Age",
-    " Age, Total_income",
-    " Age, Total_income, Race"
+    " Age, Family_income",
+    " Age, Family_income, Race"
 ]
 
 def test_grammar(grammar, test_sentences):

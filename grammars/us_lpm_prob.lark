@@ -27,71 +27,6 @@ assignment: NORMAL0 OPERATOR NORM_DIGIT
 	| NORMAL2 OPERATOR NORM_DIGIT
 	| NORMAL3 OPERATOR NORM_DIGIT
 	| NORMAL4 OPERATOR NORM_DIGIT
-	| NORMAL5 OPERATOR NORM_DIGIT
-	| NORMAL6 OPERATOR NORM_DIGIT
-	| NORMAL7 OPERATOR NORM_DIGIT
-	| NORMAL8 OPERATOR NORM_DIGIT
-	| NORMAL9 OPERATOR NORM_DIGIT
-	| NORMAL10 OPERATOR NORM_DIGIT
-	| NORMAL11 OPERATOR NORM_DIGIT
-	| NORMAL12 OPERATOR NORM_DIGIT
-	| NORMAL13 OPERATOR NORM_DIGIT
-	| NORMAL14 OPERATOR NORM_DIGIT
-	| NORMAL15 OPERATOR NORM_DIGIT
-	| NORMAL16 OPERATOR NORM_DIGIT
-	| NORMAL17 OPERATOR NORM_DIGIT
-	| NORMAL18 OPERATOR NORM_DIGIT
-	| NORMAL19 OPERATOR NORM_DIGIT
-	| NORMAL20 OPERATOR NORM_DIGIT
-	| NORMAL21 OPERATOR NORM_DIGIT
-	| NORMAL22 OPERATOR NORM_DIGIT
-	| NORMAL23 OPERATOR NORM_DIGIT
-	| NORMAL24 OPERATOR NORM_DIGIT
-	| NORMAL25 OPERATOR NORM_DIGIT
-	| NORMAL26 OPERATOR NORM_DIGIT
-	| NORMAL27 OPERATOR NORM_DIGIT
-	| NORMAL28 OPERATOR NORM_DIGIT
-	| NORMAL29 OPERATOR NORM_DIGIT
-	| NORMAL30 OPERATOR NORM_DIGIT
-	| NORMAL31 OPERATOR NORM_DIGIT
-	| NORMAL32 OPERATOR NORM_DIGIT
-	| NORMAL33 OPERATOR NORM_DIGIT
-	| NORMAL34 OPERATOR NORM_DIGIT
-	| NORMAL35 OPERATOR NORM_DIGIT
-	| NORMAL36 OPERATOR NORM_DIGIT
-	| NORMAL37 OPERATOR NORM_DIGIT
-	| NORMAL38 OPERATOR NORM_DIGIT
-	| NORMAL39 OPERATOR NORM_DIGIT
-	| NORMAL40 OPERATOR NORM_DIGIT
-	| NORMAL41 OPERATOR NORM_DIGIT
-	| NORMAL42 OPERATOR NORM_DIGIT
-	| NORMAL43 OPERATOR NORM_DIGIT
-	| NORMAL44 OPERATOR NORM_DIGIT
-	| NORMAL45 OPERATOR NORM_DIGIT
-	| NORMAL46 OPERATOR NORM_DIGIT
-	| NORMAL47 OPERATOR NORM_DIGIT
-	| NORMAL48 OPERATOR NORM_DIGIT
-	| NORMAL49 OPERATOR NORM_DIGIT
-	| NORMAL50 OPERATOR NORM_DIGIT
-	| NORMAL51 OPERATOR NORM_DIGIT
-	| NORMAL52 OPERATOR NORM_DIGIT
-	| NORMAL53 OPERATOR NORM_DIGIT
-	| NORMAL54 OPERATOR NORM_DIGIT
-	| NORMAL55 OPERATOR NORM_DIGIT
-	| NORMAL56 OPERATOR NORM_DIGIT
-	| NORMAL57 OPERATOR NORM_DIGIT
-	| NORMAL58 OPERATOR NORM_DIGIT
-	| NORMAL59 OPERATOR NORM_DIGIT
-	| NORMAL60 OPERATOR NORM_DIGIT
-	| NORMAL61 OPERATOR NORM_DIGIT
-	| NORMAL62 OPERATOR NORM_DIGIT
-	| NORMAL63 OPERATOR NORM_DIGIT
-	| NORMAL64 OPERATOR NORM_DIGIT
-	| NORMAL65 OPERATOR NORM_DIGIT
-	| NORMAL66 OPERATOR NORM_DIGIT
-	| NORMAL67 OPERATOR NORM_DIGIT
-	| NORMAL68 OPERATOR NORM_DIGIT
-	| NORMAL69 OPERATOR NORM_DIGIT
 	| CATEGORICAL0 OPERATOR CATEGORICAL0_VAL
 	| CATEGORICAL2 OPERATOR CATEGORICAL2_VAL
 	| CATEGORICAL3 OPERATOR CATEGORICAL3_VAL
@@ -118,6 +53,7 @@ assignment: NORMAL0 OPERATOR NORM_DIGIT
 	| CATEGORICAL24 OPERATOR CATEGORICAL24_VAL
 	| CATEGORICAL25 OPERATOR CATEGORICAL25_VAL
 	| CATEGORICAL26 OPERATOR CATEGORICAL26_VAL
+	| CATEGORICAL27 OPERATOR CATEGORICAL27_VAL
 	| CATEGORICAL28 OPERATOR CATEGORICAL28_VAL
 	| CATEGORICAL29 OPERATOR CATEGORICAL29_VAL
 	| CATEGORICAL30 OPERATOR CATEGORICAL30_VAL
@@ -140,135 +76,11 @@ assignment: NORMAL0 OPERATOR NORM_DIGIT
 	| CATEGORICAL47 OPERATOR CATEGORICAL47_VAL
 	| CATEGORICAL48 OPERATOR CATEGORICAL48_VAL
 	| CATEGORICAL49 OPERATOR CATEGORICAL49_VAL
-	| CATEGORICAL50 OPERATOR CATEGORICAL50_VAL
-	| CATEGORICAL51 OPERATOR CATEGORICAL51_VAL
-	| CATEGORICAL52 OPERATOR CATEGORICAL52_VAL
-	| CATEGORICAL53 OPERATOR CATEGORICAL53_VAL
-	| CATEGORICAL54 OPERATOR CATEGORICAL54_VAL
-	| CATEGORICAL55 OPERATOR CATEGORICAL55_VAL
-	| CATEGORICAL56 OPERATOR CATEGORICAL56_VAL
-	| CATEGORICAL57 OPERATOR CATEGORICAL57_VAL
-	| CATEGORICAL58 OPERATOR CATEGORICAL58_VAL
-	| CATEGORICAL59 OPERATOR CATEGORICAL59_VAL
-	| CATEGORICAL60 OPERATOR CATEGORICAL60_VAL
-	| CATEGORICAL61 OPERATOR CATEGORICAL61_VAL
-	| CATEGORICAL62 OPERATOR CATEGORICAL62_VAL
-	| CATEGORICAL63 OPERATOR CATEGORICAL63_VAL
-	| CATEGORICAL64 OPERATOR CATEGORICAL64_VAL
-	| CATEGORICAL65 OPERATOR CATEGORICAL65_VAL
-	| CATEGORICAL66 OPERATOR CATEGORICAL66_VAL
-	| CATEGORICAL67 OPERATOR CATEGORICAL67_VAL
-	| CATEGORICAL68 OPERATOR CATEGORICAL68_VAL
-	| CATEGORICAL69 OPERATOR CATEGORICAL69_VAL
-	| CATEGORICAL70 OPERATOR CATEGORICAL70_VAL
-	| CATEGORICAL71 OPERATOR CATEGORICAL71_VAL
-	| CATEGORICAL72 OPERATOR CATEGORICAL72_VAL
-	| CATEGORICAL73 OPERATOR CATEGORICAL73_VAL
-	| CATEGORICAL74 OPERATOR CATEGORICAL74_VAL
-	| CATEGORICAL75 OPERATOR CATEGORICAL75_VAL
-	| CATEGORICAL76 OPERATOR CATEGORICAL76_VAL
-	| CATEGORICAL77 OPERATOR CATEGORICAL77_VAL
-	| CATEGORICAL78 OPERATOR CATEGORICAL78_VAL
-	| CATEGORICAL79 OPERATOR CATEGORICAL79_VAL
-	| CATEGORICAL80 OPERATOR CATEGORICAL80_VAL
-	| CATEGORICAL81 OPERATOR CATEGORICAL81_VAL
-	| CATEGORICAL82 OPERATOR CATEGORICAL82_VAL
-	| CATEGORICAL83 OPERATOR CATEGORICAL83_VAL
-	| CATEGORICAL84 OPERATOR CATEGORICAL84_VAL
-	| CATEGORICAL85 OPERATOR CATEGORICAL85_VAL
-	| CATEGORICAL86 OPERATOR CATEGORICAL86_VAL
-	| CATEGORICAL87 OPERATOR CATEGORICAL87_VAL
-	| CATEGORICAL88 OPERATOR CATEGORICAL88_VAL
-	| CATEGORICAL89 OPERATOR CATEGORICAL89_VAL
-	| CATEGORICAL90 OPERATOR CATEGORICAL90_VAL
-	| CATEGORICAL91 OPERATOR CATEGORICAL91_VAL
-	| CATEGORICAL92 OPERATOR CATEGORICAL92_VAL
-	| CATEGORICAL93 OPERATOR CATEGORICAL93_VAL
-	| CATEGORICAL94 OPERATOR CATEGORICAL94_VAL
-	| CATEGORICAL95 OPERATOR CATEGORICAL95_VAL
-	| CATEGORICAL96 OPERATOR CATEGORICAL96_VAL
-	| CATEGORICAL97 OPERATOR CATEGORICAL97_VAL
-	| CATEGORICAL98 OPERATOR CATEGORICAL98_VAL
-	| CATEGORICAL99 OPERATOR CATEGORICAL99_VAL
-	| CATEGORICAL100 OPERATOR CATEGORICAL100_VAL
-	| CATEGORICAL101 OPERATOR CATEGORICAL101_VAL
-	| CATEGORICAL102 OPERATOR CATEGORICAL102_VAL
-	| CATEGORICAL103 OPERATOR CATEGORICAL103_VAL
-	| CATEGORICAL104 OPERATOR CATEGORICAL104_VAL
-	| CATEGORICAL105 OPERATOR CATEGORICAL105_VAL
-	| CATEGORICAL106 OPERATOR CATEGORICAL106_VAL
-	| CATEGORICAL107 OPERATOR CATEGORICAL107_VAL
-geo_assignment: continuous_ineq_assignment | categorical_assignment
 continuous_ineq_assignment: NORMAL0 INEQUALITY NORM_DIGIT
 	| NORMAL1 INEQUALITY NORM_DIGIT
 	| NORMAL2 INEQUALITY NORM_DIGIT
 	| NORMAL3 INEQUALITY NORM_DIGIT
 	| NORMAL4 INEQUALITY NORM_DIGIT
-	| NORMAL5 INEQUALITY NORM_DIGIT
-	| NORMAL6 INEQUALITY NORM_DIGIT
-	| NORMAL7 INEQUALITY NORM_DIGIT
-	| NORMAL8 INEQUALITY NORM_DIGIT
-	| NORMAL9 INEQUALITY NORM_DIGIT
-	| NORMAL10 INEQUALITY NORM_DIGIT
-	| NORMAL11 INEQUALITY NORM_DIGIT
-	| NORMAL12 INEQUALITY NORM_DIGIT
-	| NORMAL13 INEQUALITY NORM_DIGIT
-	| NORMAL14 INEQUALITY NORM_DIGIT
-	| NORMAL15 INEQUALITY NORM_DIGIT
-	| NORMAL16 INEQUALITY NORM_DIGIT
-	| NORMAL17 INEQUALITY NORM_DIGIT
-	| NORMAL18 INEQUALITY NORM_DIGIT
-	| NORMAL19 INEQUALITY NORM_DIGIT
-	| NORMAL20 INEQUALITY NORM_DIGIT
-	| NORMAL21 INEQUALITY NORM_DIGIT
-	| NORMAL22 INEQUALITY NORM_DIGIT
-	| NORMAL23 INEQUALITY NORM_DIGIT
-	| NORMAL24 INEQUALITY NORM_DIGIT
-	| NORMAL25 INEQUALITY NORM_DIGIT
-	| NORMAL26 INEQUALITY NORM_DIGIT
-	| NORMAL27 INEQUALITY NORM_DIGIT
-	| NORMAL28 INEQUALITY NORM_DIGIT
-	| NORMAL29 INEQUALITY NORM_DIGIT
-	| NORMAL30 INEQUALITY NORM_DIGIT
-	| NORMAL31 INEQUALITY NORM_DIGIT
-	| NORMAL32 INEQUALITY NORM_DIGIT
-	| NORMAL33 INEQUALITY NORM_DIGIT
-	| NORMAL34 INEQUALITY NORM_DIGIT
-	| NORMAL35 INEQUALITY NORM_DIGIT
-	| NORMAL36 INEQUALITY NORM_DIGIT
-	| NORMAL37 INEQUALITY NORM_DIGIT
-	| NORMAL38 INEQUALITY NORM_DIGIT
-	| NORMAL39 INEQUALITY NORM_DIGIT
-	| NORMAL40 INEQUALITY NORM_DIGIT
-	| NORMAL41 INEQUALITY NORM_DIGIT
-	| NORMAL42 INEQUALITY NORM_DIGIT
-	| NORMAL43 INEQUALITY NORM_DIGIT
-	| NORMAL44 INEQUALITY NORM_DIGIT
-	| NORMAL45 INEQUALITY NORM_DIGIT
-	| NORMAL46 INEQUALITY NORM_DIGIT
-	| NORMAL47 INEQUALITY NORM_DIGIT
-	| NORMAL48 INEQUALITY NORM_DIGIT
-	| NORMAL49 INEQUALITY NORM_DIGIT
-	| NORMAL50 INEQUALITY NORM_DIGIT
-	| NORMAL51 INEQUALITY NORM_DIGIT
-	| NORMAL52 INEQUALITY NORM_DIGIT
-	| NORMAL53 INEQUALITY NORM_DIGIT
-	| NORMAL54 INEQUALITY NORM_DIGIT
-	| NORMAL55 INEQUALITY NORM_DIGIT
-	| NORMAL56 INEQUALITY NORM_DIGIT
-	| NORMAL57 INEQUALITY NORM_DIGIT
-	| NORMAL58 INEQUALITY NORM_DIGIT
-	| NORMAL59 INEQUALITY NORM_DIGIT
-	| NORMAL60 INEQUALITY NORM_DIGIT
-	| NORMAL61 INEQUALITY NORM_DIGIT
-	| NORMAL62 INEQUALITY NORM_DIGIT
-	| NORMAL63 INEQUALITY NORM_DIGIT
-	| NORMAL64 INEQUALITY NORM_DIGIT
-	| NORMAL65 INEQUALITY NORM_DIGIT
-	| NORMAL66 INEQUALITY NORM_DIGIT
-	| NORMAL67 INEQUALITY NORM_DIGIT
-	| NORMAL68 INEQUALITY NORM_DIGIT
-	| NORMAL69 INEQUALITY NORM_DIGIT
 categorical_assignment: CATEGORICAL0 OPERATOR CATEGORICAL0_VAL
 	| CATEGORICAL2 OPERATOR CATEGORICAL2_VAL
 	| CATEGORICAL3 OPERATOR CATEGORICAL3_VAL
@@ -295,6 +107,7 @@ categorical_assignment: CATEGORICAL0 OPERATOR CATEGORICAL0_VAL
 	| CATEGORICAL24 OPERATOR CATEGORICAL24_VAL
 	| CATEGORICAL25 OPERATOR CATEGORICAL25_VAL
 	| CATEGORICAL26 OPERATOR CATEGORICAL26_VAL
+	| CATEGORICAL27 OPERATOR CATEGORICAL27_VAL
 	| CATEGORICAL28 OPERATOR CATEGORICAL28_VAL
 	| CATEGORICAL29 OPERATOR CATEGORICAL29_VAL
 	| CATEGORICAL30 OPERATOR CATEGORICAL30_VAL
@@ -317,134 +130,11 @@ categorical_assignment: CATEGORICAL0 OPERATOR CATEGORICAL0_VAL
 	| CATEGORICAL47 OPERATOR CATEGORICAL47_VAL
 	| CATEGORICAL48 OPERATOR CATEGORICAL48_VAL
 	| CATEGORICAL49 OPERATOR CATEGORICAL49_VAL
-	| CATEGORICAL50 OPERATOR CATEGORICAL50_VAL
-	| CATEGORICAL51 OPERATOR CATEGORICAL51_VAL
-	| CATEGORICAL52 OPERATOR CATEGORICAL52_VAL
-	| CATEGORICAL53 OPERATOR CATEGORICAL53_VAL
-	| CATEGORICAL54 OPERATOR CATEGORICAL54_VAL
-	| CATEGORICAL55 OPERATOR CATEGORICAL55_VAL
-	| CATEGORICAL56 OPERATOR CATEGORICAL56_VAL
-	| CATEGORICAL57 OPERATOR CATEGORICAL57_VAL
-	| CATEGORICAL58 OPERATOR CATEGORICAL58_VAL
-	| CATEGORICAL59 OPERATOR CATEGORICAL59_VAL
-	| CATEGORICAL60 OPERATOR CATEGORICAL60_VAL
-	| CATEGORICAL61 OPERATOR CATEGORICAL61_VAL
-	| CATEGORICAL62 OPERATOR CATEGORICAL62_VAL
-	| CATEGORICAL63 OPERATOR CATEGORICAL63_VAL
-	| CATEGORICAL64 OPERATOR CATEGORICAL64_VAL
-	| CATEGORICAL65 OPERATOR CATEGORICAL65_VAL
-	| CATEGORICAL66 OPERATOR CATEGORICAL66_VAL
-	| CATEGORICAL67 OPERATOR CATEGORICAL67_VAL
-	| CATEGORICAL68 OPERATOR CATEGORICAL68_VAL
-	| CATEGORICAL69 OPERATOR CATEGORICAL69_VAL
-	| CATEGORICAL70 OPERATOR CATEGORICAL70_VAL
-	| CATEGORICAL71 OPERATOR CATEGORICAL71_VAL
-	| CATEGORICAL72 OPERATOR CATEGORICAL72_VAL
-	| CATEGORICAL73 OPERATOR CATEGORICAL73_VAL
-	| CATEGORICAL74 OPERATOR CATEGORICAL74_VAL
-	| CATEGORICAL75 OPERATOR CATEGORICAL75_VAL
-	| CATEGORICAL76 OPERATOR CATEGORICAL76_VAL
-	| CATEGORICAL77 OPERATOR CATEGORICAL77_VAL
-	| CATEGORICAL78 OPERATOR CATEGORICAL78_VAL
-	| CATEGORICAL79 OPERATOR CATEGORICAL79_VAL
-	| CATEGORICAL80 OPERATOR CATEGORICAL80_VAL
-	| CATEGORICAL81 OPERATOR CATEGORICAL81_VAL
-	| CATEGORICAL82 OPERATOR CATEGORICAL82_VAL
-	| CATEGORICAL83 OPERATOR CATEGORICAL83_VAL
-	| CATEGORICAL84 OPERATOR CATEGORICAL84_VAL
-	| CATEGORICAL85 OPERATOR CATEGORICAL85_VAL
-	| CATEGORICAL86 OPERATOR CATEGORICAL86_VAL
-	| CATEGORICAL87 OPERATOR CATEGORICAL87_VAL
-	| CATEGORICAL88 OPERATOR CATEGORICAL88_VAL
-	| CATEGORICAL89 OPERATOR CATEGORICAL89_VAL
-	| CATEGORICAL90 OPERATOR CATEGORICAL90_VAL
-	| CATEGORICAL91 OPERATOR CATEGORICAL91_VAL
-	| CATEGORICAL92 OPERATOR CATEGORICAL92_VAL
-	| CATEGORICAL93 OPERATOR CATEGORICAL93_VAL
-	| CATEGORICAL94 OPERATOR CATEGORICAL94_VAL
-	| CATEGORICAL95 OPERATOR CATEGORICAL95_VAL
-	| CATEGORICAL96 OPERATOR CATEGORICAL96_VAL
-	| CATEGORICAL97 OPERATOR CATEGORICAL97_VAL
-	| CATEGORICAL98 OPERATOR CATEGORICAL98_VAL
-	| CATEGORICAL99 OPERATOR CATEGORICAL99_VAL
-	| CATEGORICAL100 OPERATOR CATEGORICAL100_VAL
-	| CATEGORICAL101 OPERATOR CATEGORICAL101_VAL
-	| CATEGORICAL102 OPERATOR CATEGORICAL102_VAL
-	| CATEGORICAL103 OPERATOR CATEGORICAL103_VAL
-	| CATEGORICAL104 OPERATOR CATEGORICAL104_VAL
-	| CATEGORICAL105 OPERATOR CATEGORICAL105_VAL
-	| CATEGORICAL106 OPERATOR CATEGORICAL106_VAL
-	| CATEGORICAL107 OPERATOR CATEGORICAL107_VAL
 variable: NORMAL0
 	| NORMAL1
 	| NORMAL2
 	| NORMAL3
 	| NORMAL4
-	| NORMAL5
-	| NORMAL6
-	| NORMAL7
-	| NORMAL8
-	| NORMAL9
-	| NORMAL10
-	| NORMAL11
-	| NORMAL12
-	| NORMAL13
-	| NORMAL14
-	| NORMAL15
-	| NORMAL16
-	| NORMAL17
-	| NORMAL18
-	| NORMAL19
-	| NORMAL20
-	| NORMAL21
-	| NORMAL22
-	| NORMAL23
-	| NORMAL24
-	| NORMAL25
-	| NORMAL26
-	| NORMAL27
-	| NORMAL28
-	| NORMAL29
-	| NORMAL30
-	| NORMAL31
-	| NORMAL32
-	| NORMAL33
-	| NORMAL34
-	| NORMAL35
-	| NORMAL36
-	| NORMAL37
-	| NORMAL38
-	| NORMAL39
-	| NORMAL40
-	| NORMAL41
-	| NORMAL42
-	| NORMAL43
-	| NORMAL44
-	| NORMAL45
-	| NORMAL46
-	| NORMAL47
-	| NORMAL48
-	| NORMAL49
-	| NORMAL50
-	| NORMAL51
-	| NORMAL52
-	| NORMAL53
-	| NORMAL54
-	| NORMAL55
-	| NORMAL56
-	| NORMAL57
-	| NORMAL58
-	| NORMAL59
-	| NORMAL60
-	| NORMAL61
-	| NORMAL62
-	| NORMAL63
-	| NORMAL64
-	| NORMAL65
-	| NORMAL66
-	| NORMAL67
-	| NORMAL68
-	| NORMAL69
 	| CATEGORICAL0
 	| CATEGORICAL1
 	| CATEGORICAL2
@@ -472,6 +162,7 @@ variable: NORMAL0
 	| CATEGORICAL24
 	| CATEGORICAL25
 	| CATEGORICAL26
+	| CATEGORICAL27
 	| CATEGORICAL28
 	| CATEGORICAL29
 	| CATEGORICAL30
@@ -494,1022 +185,301 @@ variable: NORMAL0
 	| CATEGORICAL47
 	| CATEGORICAL48
 	| CATEGORICAL49
-	| CATEGORICAL50
-	| CATEGORICAL51
-	| CATEGORICAL52
-	| CATEGORICAL53
-	| CATEGORICAL54
-	| CATEGORICAL55
-	| CATEGORICAL56
-	| CATEGORICAL57
-	| CATEGORICAL58
-	| CATEGORICAL59
-	| CATEGORICAL60
-	| CATEGORICAL61
-	| CATEGORICAL62
-	| CATEGORICAL63
-	| CATEGORICAL64
-	| CATEGORICAL65
-	| CATEGORICAL66
-	| CATEGORICAL67
-	| CATEGORICAL68
-	| CATEGORICAL69
-	| CATEGORICAL70
-	| CATEGORICAL71
-	| CATEGORICAL72
-	| CATEGORICAL73
-	| CATEGORICAL74
-	| CATEGORICAL75
-	| CATEGORICAL76
-	| CATEGORICAL77
-	| CATEGORICAL78
-	| CATEGORICAL79
-	| CATEGORICAL80
-	| CATEGORICAL81
-	| CATEGORICAL82
-	| CATEGORICAL83
-	| CATEGORICAL84
-	| CATEGORICAL85
-	| CATEGORICAL86
-	| CATEGORICAL87
-	| CATEGORICAL88
-	| CATEGORICAL89
-	| CATEGORICAL90
-	| CATEGORICAL91
-	| CATEGORICAL92
-	| CATEGORICAL93
-	| CATEGORICAL94
-	| CATEGORICAL95
-	| CATEGORICAL96
-	| CATEGORICAL97
-	| CATEGORICAL98
-	| CATEGORICAL99
-	| CATEGORICAL100
-	| CATEGORICAL101
-	| CATEGORICAL102
-	| CATEGORICAL103
-	| CATEGORICAL104
-	| CATEGORICAL105
-	| CATEGORICAL106
-	| CATEGORICAL107
 NORMAL0: "Age"
-NORMAL1: "Commute_minutes"
-NORMAL2: "Total_earnings"
-NORMAL3: "Total_income"
-NORMAL4: "Income_retirement"
-NORMAL5: "Income_social_security"
-NORMAL6: "Family_income"
-NORMAL7: "Salary"
-NORMAL8: "Medicare_payments"
-NORMAL9: "Computer_information_services_internet"
-NORMAL10: "Dating_services"
-NORMAL11: "Admission_to_sporting_events"
-NORMAL12: "Alcoholic_beverages"
-NORMAL13: "Indoor_plants_and_fresh_flowers"
-NORMAL14: "Sports_recreation_and_exercise_equipment"
-NORMAL15: "Video_game_software"
-NORMAL16: "Living_room_tables"
-NORMAL17: "Credit_card_memberships"
-NORMAL18: "Telephone_services"
-NORMAL19: "Cooking_stoves_and_ovens_owned_home"
-NORMAL20: "Wall_units_cabinets_and_other_furniture"
-NORMAL21: "Natural_gas"
-NORMAL22: "Babysitting_and_childcare"
-NORMAL23: "Kitchen_and_dining_room_furniture"
-NORMAL24: "Books_digital_books_or_book_subscriptions"
-NORMAL25: "Computers_and_computer_hardware_for_nonbusiness_use"
-NORMAL26: "Fuel_oil_and_other_fuels"
-NORMAL27: "Apparel_and_services"
-NORMAL28: "Electricity"
-NORMAL29: "Parking_fees"
-NORMAL30: "Cash_contributions_to_charities_and_other_organizations"
-NORMAL31: "Medicaid_premiums"
-NORMAL32: "College_tuition"
-NORMAL33: "Public_and_other_transportation"
-NORMAL34: "Entertainment"
-NORMAL35: "Sofas"
-NORMAL36: "Medical_services"
-NORMAL37: "Computer_software"
-NORMAL38: "Life_and_other_personal_insurance"
-NORMAL39: "Televisions"
-NORMAL40: "Mortgage_interest_and_charges"
-NORMAL41: "Apparel_women_16_and_over"
-NORMAL42: "Applications_games_and_ringtones_for_handheld_devices"
-NORMAL43: "Computer_accessories"
-NORMAL44: "Major_appliances"
-NORMAL45: "Apparel_men_16_and_over"
-NORMAL46: "Cash_contribution_to_political_organizations"
-NORMAL47: "Education"
-NORMAL48: "Healthcare"
-NORMAL49: "Care_for_elderly_invalids_handicapped_etc"
-NORMAL50: "Furniture"
-NORMAL51: "Child_support_expenditures"
-NORMAL52: "Refrigerators_and_freezers_owned_home"
-NORMAL53: "Personal_care_products_and_services"
-NORMAL54: "Telephones_and_accessories"
-NORMAL55: "Electric_vehicle_charging"
-NORMAL56: "Vehicle_purchases"
-NORMAL57: "Rent"
-NORMAL58: "Video_game_hardware_and_accessories"
-NORMAL59: "Water_and_other_public_services"
-NORMAL60: "Clothes_washers_or_dryers_owned_home"
-NORMAL61: "Cigarettes"
-NORMAL62: "Online_gaming_services"
-NORMAL63: "New_cars"
-NORMAL64: "Diesel_fuel"
-NORMAL65: "Food"
-NORMAL66: "Gasoline"
-NORMAL67: "Pets"
-NORMAL68: "Streaming_and_downloading_audio"
-NORMAL69: "Gasoline_other_fuels_and_motor_oil"
+NORMAL1: "Family_income"
+NORMAL2: "tumor_size"
+NORMAL3: "bmi"
+NORMAL4: "survival_time"
 CATEGORICAL0: "State"
 CATEGORICAL1: "State_PUMA10"
-CATEGORICAL2: "Sex"
-CATEGORICAL3: "Race"
-CATEGORICAL4: "Citizen_status"
-CATEGORICAL5: "Difficulty_hearing"
-CATEGORICAL6: "Difficulty_vision"
-CATEGORICAL7: "English_fluency"
-CATEGORICAL8: "Gave_birth_last_12_months"
-CATEGORICAL9: "Health_insurance_coverage"
-CATEGORICAL10: "Insurance_Medicare"
-CATEGORICAL11: "Insurance_gov_assisted_medicaid"
-CATEGORICAL12: "Marital_status"
-CATEGORICAL13: "Divorced_in_past_12_months"
-CATEGORICAL14: "Married_in_past_12_months"
-CATEGORICAL15: "Widowed_in_past_12_months"
-CATEGORICAL16: "Mobility_status"
-CATEGORICAL17: "Military_service"
-CATEGORICAL18: "Educational_attainment"
-CATEGORICAL19: "Disability"
-CATEGORICAL20: "Employment_status"
-CATEGORICAL21: "Work_industry_sector"
-CATEGORICAL22: "Language_spoken_at_home"
-CATEGORICAL23: "Year"
-CATEGORICAL24: "Data_source"
-CATEGORICAL25: "Occupation"
-CATEGORICAL26: "Environment"
-CATEGORICAL28: "Registered_to_vote"
-CATEGORICAL29: "Religion"
-CATEGORICAL30: "Union_member"
-CATEGORICAL31: "Did_you_vote"
-CATEGORICAL32: "How_did_you_vote"
-CATEGORICAL33: "Where_was_ballot_returned"
-CATEGORICAL34: "Problem_voting"
-CATEGORICAL35: "State_senate_vote"
-CATEGORICAL36: "Lower_chamber_vote"
-CATEGORICAL37: "Waiting_for_voting"
-CATEGORICAL38: "Device_used"
-CATEGORICAL39: "Party_allegiance"
-CATEGORICAL40: "Used_social_media_in_past_24hrs"
-CATEGORICAL41: "Watched_tv_news_in_past_24hrs"
-CATEGORICAL42: "Read_newspaper_in_past_24hrs"
-CATEGORICAL43: "Listened_to_radio_news_in_past_24hrs"
-CATEGORICAL44: "National_econony_has"
-CATEGORICAL45: "My_house_income_has"
-CATEGORICAL46: "Prices_have"
-CATEGORICAL47: "Lost_job_last_year"
-CATEGORICAL48: "Finished_school_last_year"
-CATEGORICAL49: "Retired_last_year"
-CATEGORICAL50: "Had_a_child_last_year"
-CATEGORICAL51: "Taken_new_job_last_year"
-CATEGORICAL52: "Been_victim_of_crime_last_year"
-CATEGORICAL53: "Visited_emergency_room_last_year"
-CATEGORICAL54: "Visited_doctor_for_regular_examination_last_year"
-CATEGORICAL55: "Received_a_raise_last_year"
-CATEGORICAL56: "Jad_pay_cut_last_year"
-CATEGORICAL57: "Police_makes_me_feel"
-CATEGORICAL58: "I_had_covid_last_year"
-CATEGORICAL59: "Family_member_had_covid_last_year"
-CATEGORICAL60: "Friend_had_covid_last_year"
-CATEGORICAL61: "Co_worker_had_covid_last_year"
-CATEGORICAL62: "Vaccination_status"
-CATEGORICAL63: "Pandemic_work_hours_reduced"
-CATEGORICAL64: "Pandemic_work_hours_restored"
-CATEGORICAL65: "Pandemic_temporarily_laid_off"
-CATEGORICAL66: "Pandemic_re_hired_after_temporarily_laid_off"
-CATEGORICAL67: "Pandemic_multiple_jobs_lost_one"
-CATEGORICAL68: "Pandemic_hours_increased"
-CATEGORICAL69: "Pandemic_take_additional_jobs"
-CATEGORICAL70: "Pay_for_emergency_with_credit_card_pay_off_next_statement"
-CATEGORICAL71: "Pay_for_emergency_with_credit_card_pay_off_over_time"
-CATEGORICAL72: "Pay_for_emergency_with_money_in_credit_savings_account"
-CATEGORICAL73: "Pay_for_emergency_with_bank_loan"
-CATEGORICAL74: "Pay_for_emergency_by_borrowing_from_friends_or_family"
-CATEGORICAL75: "Pay_for_emergency_with_advance_or_overdraft"
-CATEGORICAL76: "Pay_for_emergency_by_sell_something"
-CATEGORICAL77: "Mental_health_status"
-CATEGORICAL78: "Which_party_has_majority_house"
-CATEGORICAL79: "Which_party_has_majority_senate"
-CATEGORICAL80: "Which_party_has_majority_in_my_state_senate"
-CATEGORICAL81: "Which_party_has_majority_in_my_state_lower_chamber"
-CATEGORICAL82: "Approval_president"
-CATEGORICAL83: "Approval_congress"
-CATEGORICAL84: "Approval_governor"
-CATEGORICAL85: "Approval_state_legislature"
-CATEGORICAL86: "Approval_my_current_member_congress"
-CATEGORICAL87: "Approval_my_current_second_senator"
-CATEGORICAL88: "Policy_support_expanding_medicare"
-CATEGORICAL89: "Policy_support_government_negotiate_with_drug_companies"
-CATEGORICAL90: "Policy_support_repealing_aca"
-CATEGORICAL91: "Policy_support_allow_states_import_drugs_from_other_countries"
-CATEGORICAL92: "Policy_support_prohibiting_states_publishing_names_of_gun_owners"
-CATEGORICAL93: "Policy_support_ban_assault_rifles"
-CATEGORICAL94: "Policy_support_easier_to_get_concealed_carry_permit"
-CATEGORICAL95: "Policy_support_take_guns_away_from_people_who_pose_threat"
-CATEGORICAL96: "Policy_support_background_checks_guns"
-CATEGORICAL97: "Policy_support_allowing_teachers_to_carry_guns"
-CATEGORICAL98: "Policy_support_grant_legal_status_if_working_for_3_years"
-CATEGORICAL99: "Policy_support_increase_border_patrol"
-CATEGORICAL100: "Policy_support_eliminate_visa_lottery_and_family_based_immigration"
-CATEGORICAL101: "Policy_support_increase_spending_on_border_security_25_billions_and_build_wall"
-CATEGORICAL102: "Policy_support_always_allow_abortion"
-CATEGORICAL103: "Policy_support_permit_abortion_only_in_emergency"
-CATEGORICAL104: "Policy_support_prohbit_all_abortions_after_week_20"
-CATEGORICAL105: "Policy_support_allow_employers_deny_abortion_coverage"
-CATEGORICAL106: "Policy_support_prohibit_federal_funds_be_used_for_abortion"
-CATEGORICAL107: "Policy_support_make_all_abortions_illegal"
-CATEGORICAL0_VAL: "'Illinois'"
-	| "'Florida'"
-	| "'Texas'"
-	| "'Louisiana'"
-	| "'Missouri'"
-	| "'Ohio'"
-	| "'Wyoming'"
-	| "'California'"
-	| "'New Jersey'"
-	| "'Washington'"
-	| "'Kentucky'"
-	| "'Wisconsin'"
-	| "'Oklahoma'"
-	| "'Arizona'"
-	| "'Virginia'"
-	| "'North Carolina'"
-	| "'Colorado'"
-	| "'New Hampshire'"
-	| "'North Dakota'"
-	| "'Indiana'"
-	| "'Mississippi'"
-	| "'Michigan'"
-	| "'Georgia'"
-	| "'Maryland'"
-	| "'Arkansas'"
-	| "'Massachusetts'"
-	| "'Hawaii'"
-	| "'Tennessee'"
-	| "'New York'"
-	| "'South Carolina'"
-	| "'Nebraska'"
-	| "'Montana'"
-	| "'Nevada'"
-	| "'Pennsylvania'"
-	| "'Utah'"
-	| "'Iowa'"
-	| "'Kansas'"
-	| "'New Mexico'"
-	| "'Oregon'"
-	| "'West Virginia'"
-	| "'Idaho'"
-	| "'Connecticut'"
-	| "'Vermont'"
-	| "'South Dakota'"
-	| "'Alabama'"
-	| "'Minnesota'"
-	| "'Rhode Island'"
+CATEGORICAL2: "Data_source"
+CATEGORICAL3: "Sex"
+CATEGORICAL4: "Race"
+CATEGORICAL5: "Educational_attainment"
+CATEGORICAL6: "Marital_status"
+CATEGORICAL7: "Employment_status"
+CATEGORICAL8: "Health_insurance"
+CATEGORICAL9: "Registered_to_vote"
+CATEGORICAL10: "Religion"
+CATEGORICAL11: "Union_member"
+CATEGORICAL12: "Did_you_vote"
+CATEGORICAL13: "Party_allegiance"
+CATEGORICAL14: "Used_social_media_in_past_24hrs"
+CATEGORICAL15: "My_house_income_has"
+CATEGORICAL16: "Lost_job_last_year"
+CATEGORICAL17: "Had_a_child_last_year"
+CATEGORICAL18: "Jad_pay_cut_last_year"
+CATEGORICAL19: "Mental_health_status"
+CATEGORICAL20: "Apporoval_president"
+CATEGORICAL21: "Apporoval_governor"
+CATEGORICAL22: "Policy_support_expanding_medicare"
+CATEGORICAL23: "Policy_support_government_negotiate_with_drug_companies"
+CATEGORICAL24: "Policy_support_repealing_aca"
+CATEGORICAL25: "Policy_support_allow_states_import_drugs_from_other_countries"
+CATEGORICAL26: "Policy_support_prohibiting_states_publishing_names_of_gun_owners"
+CATEGORICAL27: "cancer_stage"
+CATEGORICAL28: "tumor_stage_t"
+CATEGORICAL29: "tumor_stage_n"
+CATEGORICAL30: "er_status"
+CATEGORICAL31: "pgr_status"
+CATEGORICAL32: "survival"
+CATEGORICAL33: "her2_status"
+CATEGORICAL34: "histological_grade"
+CATEGORICAL35: "menopause_status"
+CATEGORICAL36: "progression_free_survival"
+CATEGORICAL37: "visceral_progression"
+CATEGORICAL38: "tissue_progression"
+CATEGORICAL39: "bone_progression"
+CATEGORICAL40: "mastectomy_surgery"
+CATEGORICAL41: "tumor_laterality"
+CATEGORICAL42: "taxane"
+CATEGORICAL43: "anthracycline"
+CATEGORICAL44: "cyclosphosphamide"
+CATEGORICAL45: "cancer_type"
+CATEGORICAL46: "ethnicity"
+CATEGORICAL47: "performance_exam_score"
+CATEGORICAL48: "insurance_type"
+CATEGORICAL49: "cyclophosphamide"
+CATEGORICAL0_VAL: "'Alabama'"
 	| "'Alaska'"
-	| "'Maine'"
+	| "'Arizona'"
+	| "'Arkansas'"
+	| "'California'"
+	| "'Colorado'"
+	| "'Connecticut'"
 	| "'Delaware'"
 	| "'District of Columbia'"
-CATEGORICAL2_VAL: "'Female'"
+	| "'Florida'"
+	| "'Georgia'"
+	| "'Hawaii'"
+	| "'Idaho'"
+	| "'Illinois'"
+	| "'Indiana'"
+	| "'Iowa'"
+	| "'Kansas'"
+	| "'Kentucky'"
+	| "'Louisiana'"
+	| "'Maine'"
+	| "'Maryland'"
+	| "'Massachusetts'"
+	| "'Michigan'"
+	| "'Minnesota'"
+	| "'Mississippi'"
+	| "'Missouri'"
+	| "'Montana'"
+	| "'Nebraska'"
+	| "'Nevada'"
+	| "'New Hampshire'"
+	| "'New Jersey'"
+	| "'New Mexico'"
+	| "'New York'"
+	| "'North Carolina'"
+	| "'North Dakota'"
+	| "'Ohio'"
+	| "'Oklahoma'"
+	| "'Oregon'"
+	| "'Pennsylvania'"
+	| "'Rhode Island'"
+	| "'South Carolina'"
+	| "'South Dakota'"
+	| "'Tennessee'"
+	| "'Texas'"
+	| "'Utah'"
+	| "'Vermont'"
+	| "'Virginia'"
+	| "'Washington'"
+	| "'West Virginia'"
+	| "'Wisconsin'"
+	| "'Wyoming'"
+CATEGORICAL2_VAL: "'CES'"
+	| "'PUMS'"
+	| "'pds_158'"
+	| "'pds_162'"
+	| "'pds_200'"
+	| "'pds_216'"
+	| "'pds_393'"
+	| "'pds_414'"
+	| "'xcures'"
+CATEGORICAL3_VAL: "'Female'"
 	| "'Male'"
 	| "'Non-binary'"
 	| "'Other'"
-CATEGORICAL3_VAL: "'White'"
-	| "'Asian'"
+CATEGORICAL4_VAL: "'Asian'"
 	| "'Black'"
+	| "'Middle Eastern'"
 	| "'Native American'"
-	| "'Two or more'"
 	| "'Other'"
 	| "'Pacific Islander'"
-	| "'Middle Eastern'"
-CATEGORICAL4_VAL: "'US Citizen'"
-	| "'Not a US Citizen'"
-CATEGORICAL5_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL6_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL7_VAL: "'(a) Native speaker'"
-	| "'(c) Well'"
-	| "'(b) Very well'"
-	| "'(d) Not well'"
-	| "'(e) Not at all'"
-CATEGORICAL8_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL9_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL10_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL11_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL12_VAL: "'Married'"
-	| "'Never married'"
-	| "'Divorced'"
-	| "'Widowed'"
-	| "'Separated'"
-CATEGORICAL13_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL14_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL15_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL16_VAL: "'(a) Did not move'"
-	| "'(c) Moved from within US'"
-	| "'(b) Moved from outside US'"
-CATEGORICAL17_VAL: "'(d) Never served'"
-	| "'(b) Past active duty'"
-	| "'(c) Reserves/National Guard'"
-	| "'(a) Active duty'"
-CATEGORICAL18_VAL: "'(e) Bachelor's degree'"
-	| "'(c) Some college but no degree'"
+	| "'Two or more'"
+	| "'White'"
+CATEGORICAL5_VAL: "'(a) No high school degree'"
 	| "'(b) High school graduate'"
-	| "'(f) Master's, professional, or doctorate degree'"
-	| "'(a) No high school degree'"
+	| "'(c) Some college but no degree'"
 	| "'(d) Associate's degree in college'"
-CATEGORICAL19_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL20_VAL: "'Not in labor force'"
-	| "'Civilian employed, at work'"
-	| "'Unemployed'"
-	| "'Civilian employed, with a job but not at work'"
-	| "'Armed forces, at work'"
-	| "'Not -employed less than 16 years old'"
+	| "'(e) Bachelor's degree'"
+	| "'(f) Master's, professional, or doctorate degree'"
+CATEGORICAL6_VAL: "'Divorced'"
+	| "'Married'"
+	| "'Never married'"
+	| "'Separated'"
+	| "'Widowed'"
+CATEGORICAL7_VAL: "'Armed forces, at work'"
 	| "'Armed forces, with a job but not at work'"
-CATEGORICAL21_VAL: "'RET-General Merchandise Stores, Including Warehouse Clubs and upercenters'"
-	| "'MED-Other Health Care Services'"
-	| "'FIN-Automotive Equipment Rental And Leasing'"
-	| "'AGR-Animal Production And Aquaculture'"
-	| "'MED-General Medical And Surgical Hospitals, And Specialty .(Except Psychiatric And Substance Abuse) Hospitals'"
-	| "'ENT-Restaurants And Other Food Services'"
-	| "'PRF-Management, Scientific, And Technical Consulting .Services'"
-	| "'PRF-Computer Systems Design And Related Services'"
-	| "'EDU-Elementary And Secondary Schools'"
-	| "'RET-Florists'"
-	| "'FIN-Banking And Related Activities'"
-	| "'PRF-Landscaping Services'"
-	| "'TRN-Rail Transportation'"
-	| "'FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And Brokers'"
-	| "'PRF-Business Support Services'"
-	| "'SRV-Religious Organizations'"
-	| "'TRN-Couriers And Messengers'"
-	| "'CON-Construction (The Cleaning Of Buildings And Dwellings, Incidental During Construction And Immediately After Construction)'"
-	| "'EDU-Other Schools And Instruction, And Educational Support .Services'"
-	| "'MFG-Electric Lighting And Electrical Equipment, And Other Electrical Component, N.E.C.'"
-	| "'MED-Offices Of Physicians'"
-	| "'EDU-Colleges, Universities, And Professional Schools, .Including Junior Colleges'"
-	| "'ENT-Drinking Places, Alcoholic Beverages'"
-	| "'WHL-Professional And Commercial Equipment And Supplies Merchant Wholesalers'"
-	| "'ADM-Executive Offices And Legislative Bodies'"
-	| "'MFG-Miscellaneous Manufacturing, N.E.C.'"
-	| "'PRF-Legal Services'"
-	| "'MED-Offices Of Dentists'"
-	| "'MFG-Computer And Peripheral Equipment'"
-	| "'MED-Residential Care Facilities, Except Skilled Nursing Facilities'"
-	| "'PRF-Services To Buildings And Dwellings (Except Cleaning .During Construction And Immediately After Construction)'"
-	| "'ADM-Administration Of Economic Programs And Space Research'"
-	| "'SCA-Child Day Care Services'"
-	| "'MED-Outpatient Care Centers'"
-	| "'RET-Other Direct Selling Establishments'"
-	| "'TRN-Air Transportation'"
-	| "'SRV-Business, Professional, Political, And Similar .Organizations'"
-	| "'PRF-Employment Services'"
-	| "'RET-Health And Personal Care, Except Drug, Stores'"
-	| "'RET-Sporting Goods, And Hobby And Toy Stores'"
-	| "'MFG-Other Transportation Equipment'"
-	| "'RET-Supermarkets and Other Grocery (Except Convenience) Stores'"
-	| "'INF-Data Processing, Hosting, And Related Services'"
-	| "'ENT-Other Amusement, Gambling, And Recreation Industries'"
-	| "'PRF-Travel Arrangements And Reservation Services'"
-	| "'FIN-Insurance Carriers'"
-	| "'SRV-Automotive Repair And Maintenance'"
-	| "'EXT-Nonmetallic Mineral Mining And Quarrying'"
-	| "'MFG-Fruit And Vegetable Preserving And Specialty Food'"
-	| "'ENT-Traveler Accommodation'"
-	| "'FIN-Real Estate Property Managers, Offices Of Real Estate Appraisers, And Other Activities Related To Real Estate'"
-	| "'FIN-Commercial, Industrial, And Other Intangible Assets .Rental And Leasing'"
-	| "'WHL-Farm Supplies Merchant Wholesalers'"
-	| "'SRV-Beauty Salons'"
-	| "'MED-Nursing Care Facilities (Skilled Nursing Facilities)'"
-	| "'PRF-Investigation And Security Services'"
-	| "'RET-Clothing Stores'"
-	| "'MFG-Aircraft And Parts'"
-	| "'SCA-Vocational Rehabilitation Services'"
-	| "'SCA-Community Food And Housing, And Emergency Services'"
-	| "'TRN-Warehousing And Storage'"
-	| "'TRN-Bus Service And Urban Transit'"
-	| "'ADM-Justice, Public Order, And Safety Activities'"
-	| "'FIN-Agencies, Brokerages, And Other Insurance Related .Activities'"
-	| "'MFG-Motor Vehicles And Motor Vehicle Equipment'"
-	| "'TRN-Postal Service'"
-	| "'MFG-Iron And Steel Mills And Steel Product'"
-	| "'MFG-Carpet And Rug Mills'"
-	| "'INF-Broadcasting (Except Internet)'"
-	| "'INF-Motion Pictures And Video Industries'"
-	| "'PRF-Advertising, Public Relations, And Related Services'"
-	| "'MFG-Sporting And Athletic Goods, And Doll, Toy And Game'"
-	| "'RET-Shoe Stores'"
-	| "'INF-Libraries And Archives'"
-	| "'MFG-Electronic Component And Product, N.E.C.'"
-	| "'MFG-Not Specified Manufacturing Industries'"
-	| "'INF-Telecommunications, Except Wired Telecommunications Carriers'"
-	| "'AGR-Crop Production'"
-	| "'MIL-U.S. Navy'"
-	| "'TRN-Taxi And Limousine Service'"
-	| "'MFG-Medical Equipment And Supplies'"
-	| "'MED-Offices Of Other Health Practitioners'"
-	| "'RET-Automobile Dealers'"
-	| "'TRN-Truck Transportation'"
-	| "'MFG-Metal Forgings And Stampings'"
-	| "'RET-Gasoline Stations'"
-	| "'RET-Building Material And Supplies Dealers'"
-	| "'MIL-Military Reserves Or National Guard'"
-	| "'ADM-Administration Of Human Resource Programs'"
-	| "'WHL-Paper And Paper Products Merchant Wholesalers'"
-	| "'SRV-Other Personal Services'"
-	| "'8564'"
-	| "'WHL-Metals And Minerals, Except Petroleum, Merchant Wholesalers'"
-	| "'MIL-U.S. Army'"
-	| "'RET-Furniture And Home Furnishings Stores'"
-	| "'FIN-Securities, Commodities, Funds, Trusts, And Other .Financial Investments'"
-	| "'ENT-Museums, Art Galleries, Historical Sites, And Similar .Institutions'"
-	| "'PRF-Other Professional, Scientific, And Technical Services'"
-	| "'MIL-U.S. Air Force'"
-	| "'ADM-National Security And International Affairs'"
-	| "'SRV-Civic, Social, Advocacy Organizations, And Grantmaking .And Giving Services'"
-	| "'ENT-Promoters'"
-	| "'SCA-Individual And Family Services'"
-	| "'MFG-Printing And Related Support Activities'"
-	| "'RET-Electronic Shopping And Mail-Order Houses'"
-	| "'RET-Pharmacies And Drug Stores'"
-	| "'PRF-Scientific Research And Development Services'"
-	| "'RET-Other Motor Vehicle Dealers'"
-	| "'AGR-Forestry Except Logging'"
-	| "'MED-Home Health Care Services'"
-	| "'UTL-Electric Power Generation, Transmission And Distribution'"
-	| "'RET-Electronics Stores'"
-	| "'PRF-Other Administrative And Other Support Services'"
-	| "'RET-Used Merchandise Stores'"
-	| "'ADM-Other General Government And Support'"
-	| "'WHL-Motor Vehicle And Motor Vehicle Parts And Supplies .Merchant Wholesalers'"
-	| "'WHL-Furniture And Home Furnishing Merchant Wholesalers'"
-	| "'WHL-Miscellaneous Nondurable Goods Merchant Wholesalers'"
-	| "'RET-Miscellaneous Retail Stores'"
-	| "'Not in workforce'"
-	| "'WHL-Household Appliances And Electrical And Electronic Goods Merchant Wholesalers'"
-	| "'MFG-Paperboard Container'"
-	| "'RET-Department Stores'"
-	| "'MIL-U.S. Marines'"
-	| "'MFG-Machinery, N.E.C. Or Not Specified'"
-	| "'INF-Wired Telecommunications Carriers'"
-	| "'MFG-Petroleum Refining'"
-	| "'SRV-Nail Salons And Other Personal Care Services'"
-	| "'FIN-Nondepository Credit And Related Activities'"
-	| "'MFG-Animal Food, Grain And Oilseed Milling'"
-	| "'PRF-Architectural, Engineering, And Related Services'"
-	| "'INF-Newspaper Publishers'"
-	| "'MFG-Navigational, Measuring, Electromedical, And Control Instruments'"
-	| "'UTL-Electric And Gas, And Other Combinations'"
-	| "'PRF-Waste Management And Remediation Services'"
-	| "'RET-Book Stores And News Dealers'"
-	| "'RET-Specialty Food Stores'"
-	| "'MFG-Industrial And Miscellaneous Chemicals'"
-	| "'MFG-Coating, Engraving, Heat Treating, And Allied Actiities'"
-	| "'WHL-Wholesale Electronic Markets And Agents And Brokers'"
-	| "'MFG-Miscellaneous Fabricated Metal Products'"
-	| "'EDU-Business, Technical, And Trade Schools And Training'"
-	| "'PRF-Accounting, Tax Preparation, Bookkeeping, And Payroll .Services'"
-	| "'RET-Lawn And Garden Equipment And Supplies Stores'"
-	| "'RET-Not Specified Retail Trade'"
-	| "'SRV-Private Households'"
-	| "'MFG-Pulp, Paper, And Paperboard Mills'"
-	| "'SRV-Commercial And Industrial Machinery And Equipment .Repair And Maintenance'"
-	| "'EXT-Oil And Gas Extraction'"
-	| "'TRN-Services Incidental To Transportation'"
-	| "'WHL-Grocery And Related Product Merchant Wholesalers'"
-	| "'UTL-Sewage Treatment Facilities'"
-	| "'RET-Beer, Wine, And Liquor Stores'"
-	| "'FIN-Savings Institutions, Including Credit Unions'"
-	| "'MFG-Machine Shops; Turned Product; Screw, Nut, And Bolt'"
-	| "'RET-Convenience Stores'"
-	| "'MFG-Dairy Product'"
-	| "'TRN-Scenic And Sightseeing Transportation'"
-	| "'MFG-Ship And Boat Building'"
-	| "'ENT-Spectator Sports'"
-	| "'PRF-Veterinary Services'"
-	| "'PRF-Specialized Design Services'"
-	| "'UTL-Water, Steam, Air-Conditioning, And Irrigation Systems'"
-	| "'ADM-Public Finance Activities'"
-	| "'RET-Fuel Dealers'"
-	| "'MFG-Foundries'"
-	| "'MFG-Pharmaceutical And Medicine'"
-	| "'SRV-Labor Unions'"
-	| "'MFG-Railroad Rolling Stock'"
-	| "'RET-Automotive Parts, Accessories, And Tire Stores'"
-	| "'SRV-Electronic And Precision Equipment Repair And .Maintenance'"
-	| "'MFG-Textile Product Mills, Except Carpet And Rug'"
-	| "'MFG-Cement, Concrete, Lime, And Gypsum Product'"
-	| "'RET-Hardware Stores'"
-	| "'MFG-Commercial And Service Industry Machinery'"
-	| "'MFG-Cut And Sew, And Apparel Accessories And Other Apparel'"
-	| "'MFG-Aluminum Production And Processing'"
-	| "'MFG-Animal Slaughtering And Processing'"
-	| "'MFG-Prefabricated Wood Buildings And Mobile Homes'"
-	| "'WHL-Hardware, And Plumbing And Heating Equipment, And .Supplies Merchant Wholesalers'"
-	| "'ENT-Recreational Vehicle Parks And Camps, And Rooming And .Boarding Houses, Dormitories, And Workers' Camps'"
-	| "'ENT-Performing Arts Companies'"
-	| "'WHL-Machinery, Equipment, And Supplies Merchant Wholesalers'"
-	| "'UTL-Natural Gas Distribution'"
-	| "'MED-Psychiatric And Substance Abuse Hospitals'"
-	| "'MFG-Textile And Fabric Finishing And Fabric Coating Mills'"
-	| "'MFG-Glass And Glass Product'"
-	| "'UTL-Not Specified Utilities'"
-	| "'EXT-Coal Mining'"
-	| "'MFG-Sugar And Confectionery Products'"
-	| "'MFG-Aerospace Products And Parts'"
-	| "'EXT-Support Activities For Mining'"
-	| "'WHL-Not Specified Wholesale Trade'"
-	| "'MFG-Beverage'"
-	| "'MFG-Structural Metals, And Boiler, Tank, And Shipping'"
-	| "'SRV-Personal And Household Goods Repair And Maintenance'"
-	| "'MFG-Furniture And Related Product'"
-	| "'RET-Gift, Novelty, And Souvenir Shops'"
-	| "'MFG-Soap, Cleaning Compound, And Cosmetics'"
-	| "'MFG-Clay Building Material And Refractories'"
-	| "'MFG-Ordnance'"
-	| "'MFG-Metalworking Machinery'"
-	| "'WHL-Apparel, Piece Goods, And Notions Merchant Wholesalers'"
-	| "'MFG-Bakeries And Tortilla, Except Retail Bakeries'"
-	| "'SRV-Barber Shops'"
-	| "'SRV-Drycleaning And Laundry Services'"
-	| "'MFG-Construction, And Mining And Oil And Gas Field Machinery'"
-	| "'WHL-Alcoholic Beverages Merchant Wholesalers'"
-	| "'SRV-Car Washes'"
-	| "'MFG-Plastics Product'"
-	| "'RET-Jewelry, Luggage, And Leather Goods Stores'"
-	| "'MFG-Miscellaneous Paper And Pulp Products'"
-	| "'AGR-Support Activities For Agriculture And Forestry'"
-	| "'WHL-Miscellaneous Durable Goods Merchant Wholesalers'"
-	| "'MFG-Footwear'"
-	| "'MFG-Miscellaneous Nonmetallic Mineral Product'"
-	| "'MIL-Armed Forces, Branch Not Specified'"
-	| "'ADM-Administration Of Environmental Quality And Housing .Programs'"
-	| "'MFG-Seafood And Other Miscellaneous Foods, N.E.C.'"
-	| "'MED-Offices Of Chiropractors'"
-	| "'WHL-Drugs, Sundries, And Chemical And Allied Products Merchant Wholesalers'"
-	| "'MFG-Miscellaneous Wood Products'"
-	| "'WHL-Petroleum And Petroleum Products Merchant Wholesalers'"
-	| "'PRF-Management Of Companies And Enterprises'"
-	| "'MFG-Rubber Products, Except Tires'"
-	| "'INF-Internet Publishing And Broadcasting And Web Search Portals'"
-	| "'MED-Offices Of Optometrists'"
-	| "'MFG-Agricultural Implement'"
-	| "'MFG-Leather And Hide Tanning And Finishing, And Other Leather And Allied Product'"
-	| "'MFG-Fabric Mills, Except Knitting Mills'"
-	| "'MFG-Resin, Synthetic Rubber, And Fibers And Filaments'"
-	| "'MFG-Paint, Coating, And Adhesive'"
-	| "'MFG-Communications, Audio, And Video Equipment'"
-	| "'MFG-Retail Bakeries'"
-	| "'MFG-Household Appliance'"
-	| "'INF-Periodical, Book, And Directory Publishers'"
-	| "'MFG-Cutlery And Hand Tool'"
-	| "'FIN-Other Consumer Goods Rental'"
-	| "'RET-Office Supplies And Stationery Stores'"
-	| "'MFG-Sawmills And Wood Preservation'"
-	| "'RET-Sewing, Needlework, And Piece Goods Stores'"
-	| "'EXT-Metal Ore Mining'"
-	| "'INF-Sound Recording Industries'"
-	| "'MFG-Miscellaneous Petroleum And Coal Products'"
-	| "'INF-Software Publishers'"
-	| "'MFG-Pottery, Ceramics, And Plumbing Fixture'"
-	| "'RET-Household Appliance Stores'"
-	| "'MFG-Engine, Turbine, And Power Transmission Equipment'"
-	| "'WHL-Recyclable Material Merchant Wholesalers'"
-	| "'RET-Vending Machine Operators'"
-	| "'AGR-Fishing, Hunting And Trapping'"
-	| "'INF-Other Information Services, Except Libraries And Archives, And Internet Publishing And Broadcasting And Web Search Portals'"
-	| "'MFG-Veneer, Plywood, And Engineered Wood Products'"
-	| "'AGR-Logging'"
-	| "'TRN-Water Transportation'"
-	| "'WHL-Lumber And Other Construction Materials Merchant .Wholesalers'"
-	| "'TRN-Pipeline Transportation'"
-	| "'WHL-Farm Product Raw Material Merchant Wholesalers'"
-	| "'SRV-Funeral Homes, And Cemeteries And Crematories'"
-	| "'MFG-Tire'"
-	| "'MIL-U.S. Coast Guard'"
-	| "'MFG-Not Specified Food Industries'"
-	| "'MFG-Knitting Fabric Mills, And Apparel Knitting Mills'"
-	| "'MFG-Nonferrous Metal (Except Aluminum) Production And Processing'"
-	| "'RET-Musical Instrument And Supplies Stores'"
-	| "'MFG-Tobacco'"
-	| "'MFG-Fiber, Yarn, And Thread Mills'"
-	| "'ENT-Bowling Centers'"
-	| "'MFG-Not Specified Metal Industries'"
-	| "'MFG-Agricultural Chemical'"
-CATEGORICAL22_VAL: "'Chinese'"
-	| "'Hindi'"
-	| "'Spanish'"
-	| "'Vietnamese'"
-	| "'Farsi'"
-	| "'Portuguese'"
-	| "'Russian'"
-	| "'Dutch'"
-	| "'Hebrew'"
-	| "'Cantonese'"
-	| "'Korean'"
-	| "'French'"
-	| "'Telugu'"
-	| "'Ojibwa'"
-	| "'Thai'"
-	| "'Japanese'"
-	| "'Khmer'"
-	| "'Aleut languages'"
-	| "'German'"
-	| "'Polish'"
-	| "'Irish'"
-	| "'Haitian'"
-	| "'Gujarati'"
-	| "'Romanian'"
-	| "'Other Native North American languages'"
-	| "'Greek'"
-	| "'Hmong'"
-	| "'Filipino'"
-	| "'Armenian'"
-	| "'Tagalog'"
-	| "'Italian'"
-	| "'Pennsylvania German'"
-	| "'Hungarian'"
-	| "'Tamil'"
-	| "'Mandarin'"
-	| "'Igbo'"
-	| "'Yoruba'"
-	| "'Arabic'"
-	| "'Malayalam'"
-	| "'Urdu'"
-	| "'Indonesian'"
-	| "'Ukrainian'"
-	| "'Min Nan Chinese'"
-	| "'Samoan'"
-	| "'Cajun French'"
-	| "'Swiss German'"
-	| "'Swahili'"
-	| "'Other and unspecified languages'"
-	| "'Nepali'"
-	| "'Punjabi'"
-	| "'Bosnian'"
-	| "'Somali'"
-	| "'Burmese'"
-	| "'Akan (incl. Twi)'"
-	| "'Swedish'"
-	| "'Tongan'"
-	| "'Bengali'"
-	| "'Lao'"
-	| "'Croatian'"
-	| "'Amharic'"
-	| "'Bulgarian'"
-	| "'Turkish'"
-	| "'Serbian'"
-	| "'Tigrinya'"
-	| "'Finnish'"
-	| "'India N.E.C.'"
-	| "'Navajo'"
-	| "'Other Philippine languages'"
-	| "'Czech'"
-	| "'Albanian'"
-	| "'Lithuanian'"
-	| "'Ga'"
-	| "'Kabuverdianu'"
-	| "'Kannada'"
-	| "'Dakota languages'"
-	| "'Other languages of Asia'"
-	| "'Sinhala'"
-	| "'Other Niger-Congo languages'"
-	| "'Macedonian'"
-	| "'Yiddish'"
-	| "'Pashto'"
-	| "'Marathi'"
-	| "'Other English-based Creole languages'"
-	| "'Danish'"
-	| "'Other Bantu languages'"
-	| "'Hawaiian'"
-	| "'Chuukese'"
-	| "'Muskogean languages'"
-	| "'Other Eastern Malayo-Polynesian languages'"
-	| "'Cebuano'"
-	| "'Other languages of Africa'"
-	| "'Uto-Aztecan languages'"
-	| "'Ilocano'"
-	| "'Chin languages'"
-	| "'Tibetan'"
-	| "'Oromo'"
-	| "'Other Afro-Asiatic languages'"
-	| "'Jamaican Creole English'"
-	| "'Norwegian'"
-	| "'Gbe languages'"
-	| "'Dari'"
-	| "'Afrikaans'"
-	| "'Marshallese'"
-	| "'Shona'"
-	| "'Serbocroatian'"
-	| "'Other Mande languages'"
-	| "'Malay'"
-	| "'Assyrian Neo-Aramaic'"
-	| "'Other Indo-European languages'"
-	| "'Slovak'"
-	| "'Nilo-Saharan languages'"
-	| "'Other Indo-Iranian languages'"
-	| "'Chaldean Neo-Aramaic'"
-	| "'Manding languages'"
-	| "'Apache languages'"
-	| "'Fulah'"
-	| "'Chamorro'"
-	| "'Mongolian'"
-	| "'Karen languages'"
-	| "'Latvian'"
-	| "'Other Central and South American languages'"
-	| "'Iu Mien'"
-	| "'Edoid languages'"
-	| "'Konkani'"
-	| "'Ganda'"
-	| "'Cherokee'"
-	| "'Wolof'"
-	| "'Kurdish'"
-CATEGORICAL23_VAL: "'2021'"
-	| "'2020'"
-	| "'2019'"
-	| "'2018'"
-	| "'2022'"
-CATEGORICAL24_VAL: "'PUMS'"
-	| "'PUMD'"
-	| "'CES'"
-CATEGORICAL25_VAL: "'Manager, Professional Administrator'"
-	| "'Administrative support, including clerical'"
-	| "'Teacher'"
-	| "'Sales, retail'"
-	| "'Technician Service'"
-	| "'Professional'"
-	| "'Other Service'"
-	| "'Transportation operator'"
-	| "'Sales, business goods, and services'"
-	| "'Machine Operator, assembler, inspector'"
-	| "'Handler, helper, laborer'"
-	| "'Mechanic, repairer, precision production'"
-	| "'Private household service'"
-	| "'Construction, mining'"
-	| "'Protective Service'"
-CATEGORICAL26_VAL: "'Urban'"
-	| "'Rural'"
-CATEGORICAL28_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL29_VAL: "'Nothing in particular'"
-	| "'Protestant'"
-	| "'Agnostic'"
+	| "'Civilian employed, at work'"
+	| "'Civilian employed, with a job but not at work'"
+	| "'Not -employed less than 16 years old'"
+	| "'Not in labor force'"
+	| "'Unemployed'"
+CATEGORICAL8_VAL: "'None'"
+	| "'Private'"
+	| "'Public'"
+CATEGORICAL9_VAL: "'No'"
+	| "'Yes'"
+CATEGORICAL10_VAL: "'Agnostic'"
 	| "'Atheist'"
-	| "'Roman Catholic'"
-	| "'Something else'"
-	| "'Jewish'"
-	| "'Mormon'"
-	| "'Hindu'"
 	| "'Buddhist'"
 	| "'Eastern or Greek Orthodox'"
+	| "'Hindu'"
+	| "'Jewish'"
+	| "'Mormon'"
 	| "'Muslim'"
-CATEGORICAL30_VAL: "'formerly'"
+	| "'Nothing in particular'"
+	| "'Protestant'"
+	| "'Roman Catholic'"
+	| "'Something else'"
+CATEGORICAL11_VAL: "'Yes'"
+	| "'formerly'"
 	| "'no, never'"
-	| "'Yes'"
-CATEGORICAL31_VAL: "'(e) I definitely voted in the November 2022 General Election'"
-	| "'(a) I did not vote in the election this November'"
+CATEGORICAL12_VAL: "'(a) I did not vote in the election this November'"
 	| "'(b) I thought about voting this time – but didn't'"
 	| "'(c) I usually vote, but didn't this time'"
 	| "'(d) I attempted to vote but did not or could not'"
-CATEGORICAL32_VAL: "'mail'"
-	| "'in person, on election day'"
-	| "'in person, before election day'"
-	| "'don't know'"
-CATEGORICAL33_VAL: "'Drop box used only for ballots, not located at an election office or polling place'"
-	| "'Post office box at a U.S. Postal Service location'"
-	| "'Picked up by the postal worker who delivers mail to my home'"
-	| "'Official post office box not at a U.S. Postal Service location'"
-	| "'Main election office'"
-	| "'Neighborhood polling place'"
-	| "'Voting center, not a neighborhood polling place'"
-	| "'I don’t know'"
-	| "'Other'"
-CATEGORICAL34_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL35_VAL: "'Democratic'"
-	| "'Republican'"
-	| "'Did not vote in this race'"
-	| "'There was no race for this office'"
-	| "'Other'"
-CATEGORICAL36_VAL: "'Democratic'"
-	| "'Republican'"
-	| "'Did not vote in this race'"
-	| "'Other'"
-	| "'There was no race for this office'"
-CATEGORICAL37_VAL: "'(a) Not at all'"
-	| "'(f) I don’t know'"
-	| "'(b) Less than 10 minutes'"
-	| "'(d) 31 minutes – 1 hour'"
-	| "'(c) 10-30 minutes'"
-	| "'(e) More than 1 hour'"
-CATEGORICAL38_VAL: "'phone'"
-	| "'computer'"
-	| "'tablet'"
-CATEGORICAL39_VAL: "'Democrat'"
+	| "'(e) I definitely voted in the November 2022 General Election'"
+CATEGORICAL13_VAL: "'Democrat'"
+	| "'Repulican'"
 	| "'independent'"
-	| "'other'"
-	| "'Republican'"
 	| "'not sure'"
-CATEGORICAL40_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL41_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL42_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL43_VAL: "'No'"
+	| "'other'"
+CATEGORICAL14_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL44_VAL: "'(b) Gotten somewhat better'"
-	| "'(e) Gotten much worse'"
-	| "'(d) Gotten somewhat worse'"
-	| "'6.0'"
-	| "'(a) Gotten much better'"
-	| "'(c) Stayed about the same'"
-CATEGORICAL45_VAL: "'(c) Stayed about the same'"
+CATEGORICAL15_VAL: "'(a) Increased a lot'"
 	| "'(b) Increased somewhat'"
-	| "'(a) Increased a lot'"
-	| "'(e) Decreased somewhat'"
-	| "'(f) Decreased a lot'"
-CATEGORICAL46_VAL: "'(b) Increased somewhat'"
-	| "'(a) Increased a lot'"
 	| "'(c) Stayed about the same'"
 	| "'(e) Decreased somewhat'"
 	| "'(f) Decreased a lot'"
-CATEGORICAL47_VAL: "'No'"
+CATEGORICAL16_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL48_VAL: "'No'"
+CATEGORICAL17_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL49_VAL: "'No'"
+CATEGORICAL18_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL50_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL51_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL52_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL53_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL54_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL55_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL56_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL57_VAL: "'(b) Somewhat safe'"
-	| "'(c) Somewhat unsafe'"
-	| "'(a) Mostly safe'"
-	| "'(d) Mostly unsafe'"
-CATEGORICAL58_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL59_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL60_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL61_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL62_VAL: "'(a) fully vaccinated and have received at least one booster shot'"
-	| "'(b) fully vaccinated but have not received a booster shot'"
-	| "'(d) not vaccinated at all'"
-	| "'(c) partially vaccinated'"
-CATEGORICAL63_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL64_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL65_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL66_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL67_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL68_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL69_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL70_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL71_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL72_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL73_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL74_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL75_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL76_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL77_VAL: "'(c) Good'"
-	| "'(a) Excellent'"
+CATEGORICAL19_VAL: "'(a) Excellent'"
 	| "'(b) Very good'"
+	| "'(c) Good'"
 	| "'(d) Fair'"
 	| "'(e) Poor'"
-CATEGORICAL78_VAL: "'Democrats'"
-	| "'not sure'"
-	| "'Republicans'"
-	| "'neither'"
-CATEGORICAL79_VAL: "'Democrats'"
-	| "'not sure'"
-	| "'Republicans'"
-	| "'neither'"
-CATEGORICAL80_VAL: "'Republicans'"
-	| "'Democrats'"
-	| "'not sure'"
-	| "'neither'"
-CATEGORICAL81_VAL: "'Republicans'"
-	| "'Democrats'"
-	| "'not sure'"
-	| "'neither'"
-CATEGORICAL82_VAL: "'(b) somewhat approve'"
-	| "'(e) strongly disapprove'"
-	| "'(a) strongly approve'"
+CATEGORICAL20_VAL: "'(a) strongly approve'"
+	| "'(b) somewhat approve'"
 	| "'(c) not sure'"
 	| "'(d) somewhat disapprove'"
-CATEGORICAL83_VAL: "'(d) somewhat disapprove'"
 	| "'(e) strongly disapprove'"
+CATEGORICAL21_VAL: "'(a) strongly approve'"
+	| "'(b) somewhat approve'"
 	| "'(c) not sure'"
-	| "'(b) somewhat approve'"
-	| "'(a) strongly approve'"
-CATEGORICAL84_VAL: "'(e) strongly disapprove'"
-	| "'(b) somewhat approve'"
-	| "'(d) somewhat disapprove'"
-	| "'(a) strongly approve'"
-	| "'(c) not sure'"
-CATEGORICAL85_VAL: "'(a) strongly approve'"
-	| "'(b) somewhat approve'"
 	| "'(d) somewhat disapprove'"
 	| "'(e) strongly disapprove'"
-	| "'(c) not sure'"
-CATEGORICAL86_VAL: "'(e) strongly disapprove'"
-	| "'(d) somewhat disapprove'"
-	| "'(c) not sure'"
-	| "'(b) somewhat approve'"
-	| "'(a) strongly approve'"
-CATEGORICAL87_VAL: "'(d) somewhat disapprove'"
-	| "'(e) strongly disapprove'"
-	| "'(c) not sure'"
-	| "'(a) strongly approve'"
-	| "'(b) somewhat approve'"
-CATEGORICAL88_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL89_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL90_VAL: "'No'"
+CATEGORICAL22_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL91_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL92_VAL: "'No'"
+CATEGORICAL23_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL93_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL94_VAL: "'No'"
+CATEGORICAL24_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL95_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL96_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL97_VAL: "'No'"
+CATEGORICAL25_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL98_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL99_VAL: "'No'"
+CATEGORICAL26_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL100_VAL: "'No'"
+CATEGORICAL27_VAL: "'stage 0'"
+	| "'stage IA'"
+	| "'stage IB'"
+	| "'stage IIA'"
+	| "'stage IIB'"
+	| "'stage IIIA'"
+	| "'stage IIIC'"
+	| "'stage IV'"
+CATEGORICAL28_VAL: "'t0'"
+	| "'t1'"
+	| "'t1m'"
+	| "'t2'"
+	| "'t3'"
+	| "'t4'"
+	| "'tis'"
+CATEGORICAL29_VAL: "'n0'"
+	| "'n0(i+)'"
+	| "'n1'"
+	| "'n1mic'"
+	| "'n2'"
+	| "'n2b'"
+	| "'n3'"
+	| "'nx'"
+CATEGORICAL30_VAL: "'negative'"
+	| "'positive'"
+CATEGORICAL31_VAL: "'negative'"
+	| "'positive'"
+CATEGORICAL32_VAL: "'alive'"
+	| "'dead'"
+CATEGORICAL33_VAL: "'negative'"
+	| "'positive'"
+CATEGORICAL34_VAL: "'grade 1'"
+	| "'grade 2'"
+	| "'grade 3'"
+	| "'grade 4'"
+CATEGORICAL35_VAL: "'postmenopausal'"
+	| "'premenopausal'"
+CATEGORICAL36_VAL: "'no'"
+	| "'yes'"
+CATEGORICAL37_VAL: "'no'"
+	| "'yes'"
+CATEGORICAL38_VAL: "'no'"
+	| "'yes'"
+CATEGORICAL39_VAL: "'no'"
+	| "'yes'"
+CATEGORICAL40_VAL: "'full'"
+	| "'none'"
+	| "'partial'"
+CATEGORICAL41_VAL: "'bilateral'"
+	| "'left'"
+	| "'right'"
+CATEGORICAL42_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL101_VAL: "'No'"
+	| "'no'"
+	| "'yes'"
+CATEGORICAL43_VAL: "'No'"
 	| "'Yes'"
-CATEGORICAL102_VAL: "'Yes'"
-	| "'No'"
-CATEGORICAL103_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL104_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL105_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL106_VAL: "'No'"
-	| "'Yes'"
-CATEGORICAL107_VAL: "'No'"
+	| "'no'"
+	| "'yes'"
+CATEGORICAL44_VAL: "'no'"
+	| "'yes'"
+CATEGORICAL45_VAL: "'breast'"
+	| "'colorectal'"
+	| "'glioma'"
+	| "'gynecological'"
+	| "'melanoma'"
+CATEGORICAL46_VAL: "'Hispanic or Latino'"
+	| "'Not Hispanic or Latino'"
+CATEGORICAL47_VAL: "'0'"
+	| "'1'"
+	| "'2'"
+	| "'3'"
+	| "'4'"
+CATEGORICAL48_VAL: "'None'"
+	| "'Private'"
+	| "'Public'"
+CATEGORICAL49_VAL: "'No'"
 	| "'Yes'"
 OPERATOR: "=" | " = "
 INEQUALITY: " > " | " < "
-NORM_DIGIT: INT | FLOAT
+NORM_DIGIT: "-2" | "-1" | "0" | "1" | "2"
 DIGIT: "0".."9"
-INT: DIGIT | DIGIT DIGIT | DIGIT DIGIT DIGIT | DIGIT DIGIT DIGIT DIGIT | DIGIT DIGIT DIGIT DIGIT DIGIT
+INT: DIGIT+
 FLOAT: INT "." INT? | "." INT
+NUMBER: FLOAT | INT
